@@ -1,22 +1,16 @@
-.. NoteBook documentation master file, created by
-   sphinx-quickstart on Thu Jan 28 12:27:57 2021.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
 
-Welcome to NoteBook's documentation!
-====================================
+========================
+Eugene forest 的学习笔记
+========================
 
-Contents:
+.. note:: 
+   | **这是我自己在学习过程中的一些笔记，可能包括软件的安装配置、技术的知识点、技术的使用技巧、软件的使用方法、以及学习过程当中的感悟、学习过程中出现的疑问以及疑问的解决。**
 
 .. toctree::
-   :maxdepth: 2
+   :caption: 主目录
+   :numbered:
 
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
+   学习笔记记录 <knowledge/index>
+   软件/工具安装配置记录 <software/index>
+   项目学习笔记 <project/index>
+   
