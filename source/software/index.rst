@@ -7,6 +7,7 @@ software
 
 .. toctree::
    :caption: 软件或工具包安装以及配置记录
+   :numbered:
 
    sphinx <sphinx/index>
    idea <idea/index>

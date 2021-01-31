@@ -9,7 +9,6 @@ python
 
 .. toctree::
    :caption: python
-   :numbered:
 
    自动化 <auto/index>
    基础篇 <basic/index>

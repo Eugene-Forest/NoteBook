@@ -1,6 +1,6 @@
 
 ========================
-Eugene forest 的学习笔记
+Eugene forest's notebook
 ========================
 
 .. note:: 
@@ -8,9 +8,26 @@ Eugene forest 的学习笔记
 
 .. toctree::
    :caption: 主目录
-   :numbered:
+   :maxdepth: 3
 
-   学习笔记记录 <knowledge/index>
+   笔记记录 <knowledge/index>
    软件/工具安装配置记录 <software/index>
    项目学习笔记 <project/index>
-   
+
+.. 
+.. toctree::
+   :numbered:
+   :caption: 软件/工具安装配置记录
+   :maxdepth: 3
+..
+   vs code <software/vs_code/index>
+   idea <software/idea/index>
+   sphinx <software/sphinx/index>
+..
+.. toctree::
+   :numbered:
+   :caption: 项目学习笔记
+   :maxdepth: 3
+..
+   项目学习笔记 <project/index>
+

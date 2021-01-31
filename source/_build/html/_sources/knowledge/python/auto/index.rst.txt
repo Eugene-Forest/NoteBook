@@ -6,4 +6,4 @@ python 自动化任务 index
 .. toctree::
    :caption: 第二部分
 
-   正则表达式 <part1>
+   模式匹配和正则表达式 <regex>
