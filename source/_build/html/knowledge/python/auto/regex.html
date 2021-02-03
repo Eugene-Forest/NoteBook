@@ -182,19 +182,24 @@
   <div class="section" id="pattern-matching-and-regex">
 <h1><span class="section-number">2.1.1. </span>Pattern matching and Regex<a class="headerlink" href="#pattern-matching-and-regex" title="Permalink to this headline">¶</a></h1>
 <p>主要对python的正则表达式进行字符串匹配方法的记录。该部分代码需要导入re模块—— <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">re</span></code> 。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>本章节需要特别注意反斜杠（）的使用。</p>
+</div>
 <hr class="docutils" />
-<div class="section" id="create-a-regex-and-using-it-matches-character-string">
-<h2><span class="section-number">2.1.1.1. </span>create a regex and using it matches character string<a class="headerlink" href="#create-a-regex-and-using-it-matches-character-string" title="Permalink to this headline">¶</a></h2>
-<p><em>python code</em></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># step1: create a regex in a format.</span>
+<div class="section" id="create-a-regex-and-using-it-matches-character-string-basic">
+<h2><span class="section-number">2.1.1.1. </span>create a regex and using it matches character string 【Basic】<a class="headerlink" href="#create-a-regex-and-using-it-matches-character-string-basic" title="Permalink to this headline">¶</a></h2>
+<p>创建一个带有格式的正则表达式对象并通过这个对象来 <em>匹配字符串</em> （搜索字符串中的符合正则表达式的格式的子字符串，若没有则返回None）。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># python code</span>
+<span class="c1"># step1: create a regex in a format.</span>
 <span class="n">phone_number_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d\d\d-\d\d\d-\d\d\d\d&#39;</span><span class="p">)</span>
 <span class="c1"># step2: entity matching regex; if the search is successful, it returns a string.</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">phone_number_regex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;My phone number is 4414-555-0192&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The result is &quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><em>screenshot</em></p>
-<div class="highlight-word notranslate"><div class="highlight"><pre><span></span>The result is  &lt;re.Match object; span=(20, 32), match=&#39;414-555-0192&#39;&gt;
+<div class="highlight-word notranslate"><div class="highlight"><pre><span></span># screenshot
+The result is  &lt;re.Match object; span=(20, 32), match=&#39;414-555-0192&#39;&gt;
 </pre></div>
 </div>
 <div class="admonition note">
@@ -203,8 +208,50 @@
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="group">
-<h2><span class="section-number">2.1.1.2. </span>group()<a class="headerlink" href="#group" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="group-by-brackets">
+<h2><span class="section-number">2.1.1.2. </span>Group by brackets -()-<a class="headerlink" href="#group-by-brackets" title="Permalink to this headline">¶</a></h2>
+<p>通过括号进行正则表达式搜索结果分组。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># step1: create a regex in a format.</span>
+<span class="n">phone_number_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(\d\d\d)-(\d\d\d-\d\d\d\d)&#39;</span><span class="p">)</span>
+<span class="c1"># step2: entity matching regex; if the search is successful, it returns a string.</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">phone_number_regex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;My phone number is 414-555-0192&#39;</span><span class="p">)</span>
+<span class="c1"># getting all items by groups()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The result is &quot;</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">groups</span><span class="p">())</span>
+<span class="n">area_code</span><span class="p">,</span> <span class="n">main_code</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">groups</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The areaCode is &quot;</span><span class="o">+</span><span class="n">area_code</span><span class="o">+</span><span class="s2">&quot;, the mainCode is &quot;</span><span class="o">+</span><span class="n">main_code</span><span class="p">)</span>
+<span class="c1"># get all items by subscript</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The areaCode is &quot;</span><span class="o">+</span><span class="n">result</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;, the mainCode is &quot;</span><span class="o">+</span><span class="n">result</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The phone number is &quot;</span><span class="o">+</span><span class="n">result</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The phone number is &quot;</span><span class="o">+</span><span class="n">result</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="highlight-word notranslate"><div class="highlight"><pre><span></span>The result is  (&#39;414&#39;, &#39;555-0192&#39;)
+The areaCode is 414, the mainCode is 555-0192
+The areaCode is 414, the mainCode is 555-0192
+The phone number is 414-555-0192
+The phone number is 414-555-0192
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>text
+需要注意的是，通过regexObject.groups()获取的结果是一个元组，包含用括号分组的元素。同时，如果是使用下表获取分组元素，组要注意的是regexObject.group()或regexObject.group(0)获取的东西是未分组的匹配字符串。</p>
+</div>
+</div>
+<div class="section" id="group-by-pipeline">
+<h2><span class="section-number">2.1.1.3. </span>Group by pipeline(|)<a class="headerlink" href="#group-by-pipeline" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="group-by-question-mark">
+<h2><span class="section-number">2.1.1.4. </span>Group by question mark (?)<a class="headerlink" href="#group-by-question-mark" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="group-by-asterisk">
+<h2><span class="section-number">2.1.1.5. </span>Group by asterisk(*)<a class="headerlink" href="#group-by-asterisk" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="group-by-plus-sign">
+<h2><span class="section-number">2.1.1.6. </span>Group by plus sign (+)<a class="headerlink" href="#group-by-plus-sign" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="group-by-brace">
+<h2><span class="section-number">2.1.1.7. </span>Group by brace -{}-<a class="headerlink" href="#group-by-brace" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
