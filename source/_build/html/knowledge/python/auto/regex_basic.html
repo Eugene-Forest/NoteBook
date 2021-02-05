@@ -1,0 +1,427 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>2.1.1. Pattern matching and Regex(1) &mdash; NoteBook 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="2.1.2. Pattern matching and Regex(2)" href="regex_plus.html" />
+    <link rel="prev" title="2.1. python 自动化任务 index" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> NoteBook
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">主目录</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">笔记记录</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../java/index.html">1. java笔记记录</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">2. python笔记记录</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">2.1. 自动化</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">2.1.1. 模式匹配和正则表达式(1)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="regex_plus.html">2.1.2. 模式匹配和正则表达式(2)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../basic/index.html">2.2. 基础篇</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../linux/index.html">3. linux笔记记录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/index.html">4. git笔记记录</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/index.html">软件/工具安装配置记录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../project/index.html">项目学习笔记</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">NoteBook</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">学习笔记记录（知识记录）</a> &raquo;</li>
+        
+          <li><a href="../index.html"><span class="section-number">2. </span>python</a> &raquo;</li>
+        
+          <li><a href="index.html"><span class="section-number">2.1. </span>python 自动化任务 index</a> &raquo;</li>
+        
+      <li><span class="section-number">2.1.1. </span>Pattern matching and Regex(1)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/knowledge/python/auto/regex_basic.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pattern-matching-and-regex-1">
+<h1><span class="section-number">2.1.1. </span>Pattern matching and Regex(1)<a class="headerlink" href="#pattern-matching-and-regex-1" title="Permalink to this headline">¶</a></h1>
+<p>主要对python的正则表达式进行字符串匹配方法的记录。该部分代码需要导入re模块—— <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">re</span></code> 。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>本章节需要特别注意反斜杠（）的使用。同时，在这个小节中，所有的匹配字符串搜索都是使 <code class="docutils literal notranslate"><span class="pre">regexObject.search('character</span> <span class="pre">string')</span></code> 方法，该方法与 <code class="docutils literal notranslate"><span class="pre">regexObject.findall('character</span> <span class="pre">string')</span></code> 不同在于前者最多只能匹配到一个子字符串，而后者可以匹配所以符合表达式的子字符串。</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="create-a-regex-and-using-it-matches-character-string-basic">
+<h2><span class="section-number">2.1.1.1. </span>create a regex and using it matches character string 【Basic】<a class="headerlink" href="#create-a-regex-and-using-it-matches-character-string-basic" title="Permalink to this headline">¶</a></h2>
+<p>创建一个带有格式的正则表达式对象并通过这个对象来 <em>匹配字符串</em> （搜索字符串中的符合正则表达式的格式的子字符串，若没有则返回None）。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># python code</span>
+<span class="c1"># step1: create a regex in a format.</span>
+<span class="n">phone_number_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d\d\d-\d\d\d-\d\d\d\d&#39;</span><span class="p">)</span>
+<span class="c1"># step2: entity matching regex; if the search is successful, it returns a string.</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">phone_number_regex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;My phone number is 4414-555-0192&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The result is &quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-word notranslate"><div class="highlight"><pre><span></span># screenshot
+The result is  &lt;re.Match object; span=(20, 32), match=&#39;414-555-0192&#39;&gt;
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>在python中，转义字符使用倒斜杠（），所以在字符串表示换行符时，需要写成 <code class="docutils literal notranslate"><span class="pre">&quot;\\n&quot;</span></code> ，同理在写正则表达式的匹配字符串时要用转义字符如例子的匹配字符串为 <code class="docutils literal notranslate"><span class="pre">\\d\\d\\d-\\d\\d\\d-\\d\\d\\d\\d</span></code> ，因为正则表达式常常使用倒斜杠，所以输入原始字符串—— <code class="docutils literal notranslate"><span class="pre">r'\d\d\d-\d\d\d-\d\d\d\d'</span></code> 就会比较方便。</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="group-by-brackets">
+<h2><span class="section-number">2.1.1.2. </span>Group by brackets -()-<a class="headerlink" href="#group-by-brackets" title="Permalink to this headline">¶</a></h2>
+<p>通过括号进行正则表达式搜索结果分组。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># step1: create a regex in a format.</span>
+<span class="n">phone_number_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(\d\d\d)-(\d\d\d-\d\d\d\d)&#39;</span><span class="p">)</span>
+<span class="c1"># step2: entity matching regex; if the search is successful, it returns a string.</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">phone_number_regex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;My phone number is 414-555-0192&#39;</span><span class="p">)</span>
+<span class="c1"># getting all items by groups()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The result is &quot;</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">groups</span><span class="p">())</span>
+<span class="n">area_code</span><span class="p">,</span> <span class="n">main_code</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">groups</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The areaCode is &quot;</span><span class="o">+</span><span class="n">area_code</span><span class="o">+</span><span class="s2">&quot;, the mainCode is &quot;</span><span class="o">+</span><span class="n">main_code</span><span class="p">)</span>
+<span class="c1"># get all items by subscript</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The areaCode is &quot;</span><span class="o">+</span><span class="n">result</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;, the mainCode is &quot;</span><span class="o">+</span><span class="n">result</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The phone number is &quot;</span><span class="o">+</span><span class="n">result</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The phone number is &quot;</span><span class="o">+</span><span class="n">result</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="highlight-word notranslate"><div class="highlight"><pre><span></span>The result is  (&#39;414&#39;, &#39;555-0192&#39;)
+The areaCode is 414, the mainCode is 555-0192
+The areaCode is 414, the mainCode is 555-0192
+The phone number is 414-555-0192
+The phone number is 414-555-0192
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>需要注意的是，通过regexObject.groups()获取的结果是一个元组，包含用括号分组的元素。同时，如果是使用下表获取分组元素，组要注意的是regexObject.group()或regexObject.group(0)获取的是未分组的匹配字符串。</p>
+</div>
+</div>
+<div class="section" id="group-by-pipeline">
+<h2><span class="section-number">2.1.1.3. </span>Group by pipeline(|)<a class="headerlink" href="#group-by-pipeline" title="Permalink to this headline">¶</a></h2>
+<p>需要 <strong>匹配多个表达式（分组）中的一个</strong> 的情况下，使用管道 <code class="docutils literal notranslate"><span class="pre">|</span></code>。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">batRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Bat(man|mobile|bat)&#39;</span><span class="p">)</span>
+<span class="n">mo</span> <span class="o">=</span> <span class="n">batRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Batmobile lost a Batbat&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mo</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mo</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mo</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;----------&#39;</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+<span class="n">batRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Batman|Tina Fey&#39;</span><span class="p">)</span>
+<span class="n">mo</span> <span class="o">=</span> <span class="n">batRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Batman and Tina Fey.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mo</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mo</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-word notranslate"><div class="highlight"><pre><span></span>Batmobile
+mobile
+&lt;re.Match object; span=(0, 9), match=&#39;Batmobile&#39;&gt;
+   ----------
+Batman
+&lt;re.Match object; span=(0, 6), match=&#39;Batman&#39;&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="group-by-question-mark">
+<h2><span class="section-number">2.1.1.4. </span>Group by question mark (?)<a class="headerlink" href="#group-by-question-mark" title="Permalink to this headline">¶</a></h2>
+<p>需要 <strong>可选匹配表达式（分组）</strong>，使用问号。即想匹配的模式是可选的。 可以认为，<code class="docutils literal notranslate"><span class="pre">?</span></code> 是在说“匹配这个问号之前的分组零次或者一次”。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">batRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Bat(wo)?man&#39;</span><span class="p">)</span>
+<span class="n">mo</span> <span class="o">=</span> <span class="n">batRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;The Adventures of Batman&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mo</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;**********&quot;</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+<span class="n">mo</span> <span class="o">=</span> <span class="n">batRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;The Adventures of Batwoman&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mo</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;**********&quot;</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+<span class="n">mo</span> <span class="o">=</span> <span class="n">batRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;The Adventures of Batwowoman&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mo</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-word notranslate"><div class="highlight"><pre><span></span>Batman
+   **********
+Batwoman
+   **********
+None
+</pre></div>
+</div>
+</div>
+<div class="section" id="group-by-asterisk">
+<h2><span class="section-number">2.1.1.5. </span>Group by asterisk(*)<a class="headerlink" href="#group-by-asterisk" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">*</span></code> 意味着“<strong>匹配零次或多次</strong>”，即星号之前的分组可以在被匹配文本中出现任意次。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">batRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Bat(wo)*man&#39;</span><span class="p">)</span>
+<span class="n">mo</span> <span class="o">=</span> <span class="n">batRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;The Adventures of Batman&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mo</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;**********&quot;</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+<span class="n">mo</span> <span class="o">=</span> <span class="n">batRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;The Adventures of Batwoman&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mo</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;**********&quot;</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+<span class="n">mo</span> <span class="o">=</span> <span class="n">batRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;The Adventures of Batwowoman&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mo</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="highlight-word notranslate"><div class="highlight"><pre><span></span>Batman
+   **********
+Batwoman
+   **********
+Batwowoman
+</pre></div>
+</div>
+</div>
+<div class="section" id="group-by-plus-sign">
+<h2><span class="section-number">2.1.1.6. </span>Group by plus sign (+)<a class="headerlink" href="#group-by-plus-sign" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">+</span></code> 意味着“<strong>匹配一次或多次</strong>”，即加号之前的分组可以在被匹配文本中出现一次或一次以上。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">batRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Bat(wo)+man&#39;</span><span class="p">)</span>
+<span class="n">mo</span> <span class="o">=</span> <span class="n">batRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;The Adventures of Batman&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mo</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;**********&quot;</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+<span class="n">mo</span> <span class="o">=</span> <span class="n">batRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;The Adventures of Batwoman&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mo</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;**********&quot;</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+<span class="n">mo</span> <span class="o">=</span> <span class="n">batRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;The Adventures of Batwowoman&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mo</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="highlight-word notranslate"><div class="highlight"><pre><span></span>None
+   **********
+Batwoman
+   **********
+Batwowoman
+</pre></div>
+</div>
+</div>
+<div class="section" id="group-by-brace">
+<h2><span class="section-number">2.1.1.7. </span>Group by brace -{}-<a class="headerlink" href="#group-by-brace" title="Permalink to this headline">¶</a></h2>
+<p><strong>使用花括号匹配特定次数</strong>。如果想要一个分组重复特定次数，就在正则表达式中该分组的后面跟上花括号并包围重复次数数字。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">batRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Bat(wo)</span><span class="si">{0}</span><span class="s1">man&#39;</span><span class="p">)</span>
+<span class="n">mo</span> <span class="o">=</span> <span class="n">batRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;The Adventures of Batman&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mo</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;**********&quot;</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+<span class="n">mo</span> <span class="o">=</span> <span class="n">batRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;The Adventures of Batwoman&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mo</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;**********&quot;</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+<span class="n">mo</span> <span class="o">=</span> <span class="n">batRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;The Adventures of Batwowoman&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mo</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-word notranslate"><div class="highlight"><pre><span></span>Batman
+   **********
+None
+   **********
+None
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>花括号除了可以包含一个数字，亦可以指定特定范围，即在花括号写下一个最小值、逗号、一个最大值。如下所示:</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">batRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Bat(wo){0,1}man&#39;</span><span class="p">)</span>
+<span class="n">mo</span> <span class="o">=</span> <span class="n">batRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;The Adventures of Batman&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mo</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;**********&quot;</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+<span class="n">mo</span> <span class="o">=</span> <span class="n">batRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;The Adventures of Batwoman&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mo</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;**********&quot;</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+<span class="n">mo</span> <span class="o">=</span> <span class="n">batRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;The Adventures of Batwowoman&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mo</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;**********&quot;</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-word notranslate"><div class="highlight"><pre><span></span>&lt;re.Match object; span=(18, 24), match=&#39;Batman&#39;&gt;
+   **********
+&lt;re.Match object; span=(18, 26), match=&#39;Batwoman&#39;&gt;
+   **********
+None
+   **********
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="regex_plus.html" class="btn btn-neutral float-right" title="2.1.2. Pattern matching and Regex(2)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="2.1. python 自动化任务 index" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Eugene Forest.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
