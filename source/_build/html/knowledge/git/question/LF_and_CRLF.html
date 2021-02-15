@@ -1,0 +1,309 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>4.3.1. Q: windows平台下使用git add，git deploy 文件时经常出现“warning: LF will be replaced by CRLF” 的提示 &mdash; NoteBook 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="software" href="../../../software/index.html" />
+    <link rel="prev" title="4.3. Git/Github/Gitee疑问集" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> NoteBook
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">主目录</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">笔记记录</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../java/index.html">1. java笔记记录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/index.html">2. python笔记记录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linux/index.html">3. linux笔记记录</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">4. git笔记记录</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../gitee/index.html">4.1. Gitee</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../github/index.html">4.2. Github</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">4.3. Question</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">4.3.1. “warning: LF will be replaced by CRLF”</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/index.html">软件/工具安装配置记录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../project/index.html">项目学习笔记</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">NoteBook</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">学习笔记记录（知识记录）</a> &raquo;</li>
+        
+          <li><a href="../index.html"><span class="section-number">4. </span>Git , gitee , and github</a> &raquo;</li>
+        
+          <li><a href="index.html"><span class="section-number">4.3. </span>Git/Github/Gitee疑问集</a> &raquo;</li>
+        
+      <li><span class="section-number">4.3.1. </span>Q: windows平台下使用git add，git deploy 文件时经常出现“warning: LF will be replaced by CRLF” 的提示</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/knowledge/git/question/LF_and_CRLF.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="q-windowsgit-add-git-deploy-warning-lf-will-be-replaced-by-crlf">
+<h1><span class="section-number">4.3.1. </span>Q: windows平台下使用git add，git deploy 文件时经常出现“warning: LF will be replaced by CRLF” 的提示<a class="headerlink" href="#q-windowsgit-add-git-deploy-warning-lf-will-be-replaced-by-crlf" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add README.md
+warning: LF will be replaced by CRLF <span class="k">in</span> README.md.
+The file will have its original line endings <span class="k">in</span> your working directory
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>本文链接：<a class="reference external" href="https://blog.csdn.net/wq6ylg08/article/details/88761581">https://blog.csdn.net/wq6ylg08/article/details/88761581</a></p>
+<hr class="docutils" />
+<div class="section" id="cr-and-crlf">
+<h2><span class="section-number">4.3.1.1. </span>分析了解CR and CRLF<a class="headerlink" href="#cr-and-crlf" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>不同操作系统下，处理行尾结束符的方法是不同的：</p>
+<ol class="arabic simple">
+<li><p>Windows和Dos下：使用回车（CR）和换行（LF）两个字符来结束一行，回车+换行(CR+LF)，即“\r\n”；</p></li>
+<li><p>Unix和mac下：只使用换行（LF）一个字符来结束一行，即“\n”；</p></li>
+</ol>
+<ul class="simple">
+<li><p>(最早Mac每行结尾是回车CR 即’\r’，后mac os x 也投奔了 unix)</p></li>
+</ul>
+</li>
+<li><p>Git下处理“换行”（line ending）
+core.autocrlf是git中负责处理line ending的变量，可以设置3个值：true，false，input。</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>设置为true【<code class="docutils literal notranslate"><span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.autocrlf</span> <span class="pre">true</span></code>】</dt><dd><p>当设置成true时，这意味着你在任何时候添加(add)文件到git仓库时，git都会视为它是一个文本文件(text file)。它将把crlf变成LF。</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>设置为false【<code class="docutils literal notranslate"><span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.autocrlf</span> <span class="pre">false</span></code>】</dt><dd><p>当设置成false时，line endings将不做转换操作。文本文件保持原来的样子。</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>设置为input【<code class="docutils literal notranslate"><span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.autocrlf</span> <span class="pre">input</span></code>】</dt><dd><p>设置为input时，添加文件git仓库时，git把crlf编程lf。当有人Check代码时还是lf方式。因此在window操作系统下，不要使用这个设置。</p>
+</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="id1">
+<h2><span class="section-number">4.3.1.2. </span>此问题的负面影响<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>格式化与多余的空白字符，特别是在跨平台情况下，有时候是一个令人发指的问题。由于编辑器的不同或者文件行尾的换行符在 Windows 下被替换了，一些细微的空格变化会不经意地混入提交，造成麻烦。虽然这是小问题，但会极大地扰乱跨平台协作。</p>
+</div>
+<p>假如你正在Windows上写程序;又或者你正在和其他人合作，他们在Windows上编程，而你却在其他系统上，在这些情况下，你可能会遇到行尾结束符问题。此问题的全部负面影响如下：</p>
+<p>(1)一个直接后果是，Unix/Mac系统下的一个“多行文本”文件在Windows里打开的话，“多行文本”会变成“一行”。（原因：Unix/Mac换行只用了换行符‘\n’，而Windows的换行要求是回车换行符’\r\n’，因此Unix/Mac中的“多行文本”的换行不符合Windows的规则，所以Windows对这些不符合换行规则的“多行文本”全部按照“没有换行”处理，所以导致“多行文本”会变成“一行”）</p>
+<p>(2)而Windows里的文件在Unix/Mac下打开的话，在每行的结尾可能会多出一个^M符号。</p>
+<p>(3)Linux保存的文件在windows上用记事本看的话会出现黑点。</p>
+</div>
+<div class="section" id="id2">
+<h2><span class="section-number">4.3.1.3. </span>解决此问题的方案<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>如果我们目前是Window平台并出现该警告，啥也别做就行，虽然这个警告难看，但这个警告能保证我们项目团队正常跨系统git操作代码</p>
+<p>因为git的Windows 客户端基本都会默认设置 core.autocrlf=true（我们可通过git config core.autocrlf命令查询我们的Windows上该属性是否默认true。如不是true,通过config –global core.autocrlf true命令设置该属性为true），而“core.autocrlf=true”有以下3个功能来避免我们出错：</p>
+<ul class="simple">
+<li><p>在“把 modified修改过的文件git add到暂存区stage”时，Git自动把LF转换成CRLF,并给出那条警告”LF will be replaced by CRLF”</p></li>
+<li><p>在“把modified修改过的文件由暂存区(stage) 提交(commit)到版本库/仓库(repository)”时，Git自动把CRLF转换成LF</p></li>
+<li><p>在“用 检出/git checkout切换到指定分支 或 git clone克隆远程版本库”来加载代码时，Git自动把LF转换成CRLF</p></li>
+</ul>
+</li>
+<li><p>如果我们是Linux 或 Mac平台,我们不需要功能“在检出或克隆远程版本库时，Git自动把LF转换成CRLF”。然而当一个CRLF作为行结束符的文件在我们的Linux 或 Mac平台不小心被引入时，你肯定想让 Git 修正。 所以，你可以通过config –global core.autocrlf input命令把 core.autocrlf 设置成 input 来告诉 Git 在提交(commit)时把CRLF转换成LF，检出(git checkout)时不转换</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>提到的那句警告：“IF will be replaced by CRLF in &lt;file-name&gt;”</p>
+<p>这句警告的下面其实还有一句很重要的话：The file will have its original line endings in your working directory.</p>
+<p>(翻译：”在工作区里，这个文件会保留它原本的换行符”)</p>
+</div>
+<p>这样在 Windows 上的检出(checkout)文件中会保留CRLF，而在 Mac 和 Linux 上，以及版本库中会保留LF，从而保证我们项目团队正常跨系统git操作代码。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../../../software/index.html" class="btn btn-neutral float-right" title="software" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="4.3. Git/Github/Gitee疑问集" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Eugene Forest.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -7,7 +7,7 @@ Git , gitee , and github
 
 .. toctree::
 
-   Git <git/index>
    Gitee <gitee/index>
    Github <github/index>
+   Question <question/index>
 
