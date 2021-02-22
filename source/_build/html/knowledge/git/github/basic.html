@@ -183,6 +183,23 @@
             
   <div class="section" id="git-basic">
 <h1><span class="section-number">4.2.2. </span>git basic<a class="headerlink" href="#git-basic" title="Permalink to this headline">¶</a></h1>
+<img alt="git-command" src="../../../_images/git-command1.jpg" />
+<ul class="simple">
+<li><p>workspace：工作区</p></li>
+<li><p>staging area：暂存区/缓存区</p></li>
+<li><p>local repository：版本库或本地仓库</p></li>
+<li><p>remote repository：远程仓库</p></li>
+</ul>
+<p>Git 常用的是以下 6 个命令：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code></p></li>
+</ul>
+<hr class="docutils" />
 <p>介绍如何通过git bash创建一个存储库并进行基本操作。</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> 初始化仓库</p></li>
@@ -192,6 +209,55 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> 查看提交历史</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> 查看更改前后的差异</p></li>
 </ul>
+<hr class="docutils" />
+<div class="section" id="git-status">
+<h2><span class="section-number">4.2.2.1. </span>初始化仓库–git status<a class="headerlink" href="#git-status" title="Permalink to this headline">¶</a></h2>
+<p>实际建立一个目录并初始化仓库</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mkdir GitRepositoryManual
+$ <span class="nb">cd</span> GitRepositoryManual
+$ git init
+Initialized empty Git repository <span class="k">in</span> /c/Users/qaz22/GitRepository
+/GitRepositoryManual/.git/
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>在 Git 中，我们将 <code class="docutils literal notranslate"><span class="pre">.git</span></code> 这个目录的内容称为“附属于该仓库的工作树”。文件的编辑等操作在工作树中进行，然后记录到仓库中，以此管理文件的历史快照。( <strong>.git</strong> 文件夹内的文件可以认为是对仓库操作的日志文件)</p>
+</div>
+</div>
+<div class="section" id="id1">
+<h2><span class="section-number">4.2.2.2. </span>查看仓库状态–git status<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>工作树和仓库在被操作的过程中，状态会不断发生变化。在 Git 操作过程中时常用 git status命令查看当前状态。(<em>会显示当前分支</em>)</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git status
+On branch main
+
+No commits yet
+
+nothing to commit <span class="o">(</span>create/copy files and use <span class="s2">&quot;git add&quot;</span> to track<span class="o">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="git-add-git-add">
+<h2><span class="section-number">4.2.2.3. </span>向暂存区中添加文件–git add ( <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code> :将工作区的所有变动的文件提交到暂存区)<a class="headerlink" href="#git-add-git-add" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git add README.md
+$ git status
+<span class="c1"># On branch main</span>
+<span class="c1">#</span>
+<span class="c1"># Initial commit</span>
+<span class="c1">#</span>
+<span class="c1"># Changes to be committed:</span>
+<span class="c1"># (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)</span>
+<span class="c1">#</span>
+<span class="c1"># new file: README.md</span>
+<span class="c1">#</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="git-commit">
+<h2><span class="section-number">4.2.2.4. </span>保存到仓库—-git commit<a class="headerlink" href="#git-commit" title="Permalink to this headline">¶</a></h2>
+<p>git commit命令可以将当前暂存区中的文件实际保存到仓库的历史记录中。通过这些记录，我们就可以在工作树中复原文件。</p>
+<p>不妨养成这样一个好习惯：在执行 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> 命令之前先执行 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">HEAD</span></code> 命令，查看本次提交与上次提交之间有什么差别，等确认完毕后再进行提交。</p>
+</div>
 </div>
 
 
