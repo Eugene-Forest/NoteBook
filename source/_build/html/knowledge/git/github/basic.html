@@ -300,6 +300,52 @@ create mode <span class="m">100644</span> fecture_c
 <div class="section" id="git-diff">
 <h2><span class="section-number">4.2.2.6. </span>git diff<a class="headerlink" href="#git-diff" title="Permalink to this headline">¶</a></h2>
 <p>如果 git status 命令的输出对于你来说过于简略，而你想知道具体修改了什么地方，可以用 git diff 命令。</p>
+<ol class="arabic">
+<li><p>查看已暂存和未暂存的修改。( <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code>)</p></li>
+<li><p>比对已暂存文件与最后一次提交的文件差异。( <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">--staged</span></code> )</p>
+<p>首先，查看已暂存和未暂存的修改：</p>
+</li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git diff
+diff --git a/fecture_c b/fecture_c
+index d2ad9d8..6cc1c52 <span class="m">100644</span>
+--- a/fecture_c
++++ b/fecture_c
+@@ -1 +1,2 @@
+In this file, I will tell you some message about the new fecture. Actually, you can think of it as a new README.MD at fecture-c.
++  Will you see me?
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>这段代码还可以通过 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">difftool</span></code> 来实现可视化的查看更改。</p>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git difftool
+
+This message is displayed because <span class="s1">&#39;diff.tool&#39;</span> is not configured.
+See <span class="s1">&#39;git difftool --tool-help&#39;</span> or <span class="s1">&#39;git help config&#39;</span> <span class="k">for</span> more details.
+<span class="s1">&#39;git difftool&#39;</span> will now attempt to use one of the following tools:
+opendiff kdiff3 tkdiff xxdiff meld kompare gvimdiff diffuse diffmerge ecmerge p4merge araxis bc codecompare smerge emerge vimdiff nvimdiff
+
+Viewing <span class="o">(</span><span class="m">1</span>/1<span class="o">)</span>: <span class="s1">&#39;fecture_c&#39;</span>
+Launch <span class="s1">&#39;vimdiff&#39;</span> <span class="o">[</span>Y/n<span class="o">]</span>? y
+<span class="m">2</span> files to edit
+</pre></div>
+</div>
+<p>以下是运行结果：</p>
+<img alt="git-difftool" src="../../../_images/git-difftool.png" />
+<p>其次，比对已暂存文件与最后一次提交的文件差异。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git add .
+$ git diff --staged
+diff --git a/fecture_c b/fecture_c
+index d2ad9d8..6cc1c52 <span class="m">100644</span>
+--- a/fecture_c
++++ b/fecture_c
+@@ -1 +1,2 @@
+In this file, I will tell you some message about the new fecture. Actually, you can think of it as a new README.MD at fecture-c.
++  Will you see me?
+</pre></div>
+</div>
 </div>
 </div>
 

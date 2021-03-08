@@ -135,3 +135,56 @@ git diff
 
 如果 git status 命令的输出对于你来说过于简略，而你想知道具体修改了什么地方，可以用 git diff 命令。
 
+#. 查看已暂存和未暂存的修改。( ``git diff``)
+#. 比对已暂存文件与最后一次提交的文件差异。( ``git diff --staged`` )
+
+   首先，查看已暂存和未暂存的修改：
+
+.. code-block:: shell
+
+   $ git diff
+   diff --git a/fecture_c b/fecture_c
+   index d2ad9d8..6cc1c52 100644
+   --- a/fecture_c
+   +++ b/fecture_c
+   @@ -1 +1,2 @@
+   In this file, I will tell you some message about the new fecture. Actually, you can think of it as a new README.MD at fecture-c.
+   +  Will you see me?
+
+.. note:: 
+   这段代码还可以通过 ``git difftool`` 来实现可视化的查看更改。
+
+.. code-block:: shell
+
+   $ git difftool
+
+   This message is displayed because 'diff.tool' is not configured.
+   See 'git difftool --tool-help' or 'git help config' for more details.
+   'git difftool' will now attempt to use one of the following tools:
+   opendiff kdiff3 tkdiff xxdiff meld kompare gvimdiff diffuse diffmerge ecmerge p4merge araxis bc codecompare smerge emerge vimdiff nvimdiff
+
+   Viewing (1/1): 'fecture_c'
+   Launch 'vimdiff' [Y/n]? y
+   2 files to edit
+
+
+以下是运行结果：
+
+.. image:: ../../../img/git-difftool.png
+   :alt: git-difftool
+
+
+其次，比对已暂存文件与最后一次提交的文件差异。
+
+.. code-block:: shell
+
+   $ git add .
+   $ git diff --staged
+   diff --git a/fecture_c b/fecture_c
+   index d2ad9d8..6cc1c52 100644
+   --- a/fecture_c
+   +++ b/fecture_c
+   @@ -1 +1,2 @@
+   In this file, I will tell you some message about the new fecture. Actually, you can think of it as a new README.MD at fecture-c.
+   +  Will you see me?
+
