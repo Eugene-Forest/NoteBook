@@ -1,0 +1,255 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>分支（branch） 二 &mdash; NoteBook 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> NoteBook
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">主目录</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">笔记记录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/index.html">软件/工具安装配置记录</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../project/index.html">项目学习笔记</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">NoteBook</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>分支（branch） 二</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/knowledge/git/github/commit.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="branch">
+<h1>分支（branch） 二<a class="headerlink" href="#branch" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span></code> 回溯历史版本</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">--amend</span></code> 修改提交信息</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rebase</span> <span class="pre">-i</span></code> 压缩历史</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reflog</span></code> 查看所有提交，分支变换以及合并等等的操作。</p></li>
+</ul>
+<hr class="docutils" />
+<div class="section" id="git-reset">
+<h2>git reset<a class="headerlink" href="#git-reset" title="Permalink to this headline">¶</a></h2>
+<p>回溯历史版本。</p>
+<p>我们再通过 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span> <span class="pre">--graph</span></code> 查看可知，我们每次提交commit都对应一个哈希值，只要通过命令 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span> <span class="pre">哈希值</span></code> 即可回溯历史版本。</p>
+</div>
+<div class="section" id="git-reflog">
+<h2>git reflog<a class="headerlink" href="#git-reflog" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git reset --hard fd0cbf0d4a25f747230694d95cac1be72d33441d
+HEAD is now at fd0cbf0 Add index
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>需要注意的是，当返回到该历史版本之后，在该版本之后的记录会消失，但是可以通过 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reflog</span></code> 命令来查看日志，在其中我们可以看到 commit、checkout、reset、merge 等 Git 命令的执行记录。</p>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git reflog
+fd9a51f <span class="o">(</span>HEAD -&gt; main, origin/main<span class="o">)</span> HEAD@<span class="o">{</span><span class="m">0</span><span class="o">}</span>: reset: moving to HEAD
+fd9a51f <span class="o">(</span>HEAD -&gt; main, origin/main<span class="o">)</span> HEAD@<span class="o">{</span><span class="m">1</span><span class="o">}</span>: checkout: moving from feature-A to main
+8c80e0b <span class="o">(</span>feature-A<span class="o">)</span> HEAD@<span class="o">{</span><span class="m">2</span><span class="o">}</span>: checkout: moving from main to feature-A
+fd9a51f <span class="o">(</span>HEAD -&gt; main, origin/main<span class="o">)</span> HEAD@<span class="o">{</span><span class="m">3</span><span class="o">}</span>: reset: moving to fd9a51fcf9ed0bdfbaa77cbe8f2f4de8ffcff0b5
+6f42ad3 HEAD@<span class="o">{</span><span class="m">4</span><span class="o">}</span>: reset: moving to 6f42ad36a86cf2b3774c10f8d96852594258e184
+ecc4532 HEAD@<span class="o">{</span><span class="m">5</span><span class="o">}</span>: merge feature-A: Merge made by the <span class="s1">&#39;recursive&#39;</span> strategy.
+6f42ad3 HEAD@<span class="o">{</span><span class="m">6</span><span class="o">}</span>: commit: commit a file whose name is date.txt
+fd9a51f <span class="o">(</span>HEAD -&gt; main, origin/main<span class="o">)</span> HEAD@<span class="o">{</span><span class="m">7</span><span class="o">}</span>: checkout: moving from feature-A to main
+8c80e0b <span class="o">(</span>feature-A<span class="o">)</span> HEAD@<span class="o">{</span><span class="m">8</span><span class="o">}</span>: commit: modify README.md <span class="k">in</span> new branch fecture-A.
+fd9a51f <span class="o">(</span>HEAD -&gt; main, origin/main<span class="o">)</span> HEAD@<span class="o">{</span><span class="m">9</span><span class="o">}</span>: checkout: moving from main to feature-A
+fd9a51f <span class="o">(</span>HEAD -&gt; main, origin/main<span class="o">)</span> HEAD@<span class="o">{</span><span class="m">10</span><span class="o">}</span>: Branch: renamed refs/heads/main to refs/heads/main
+fd9a51f <span class="o">(</span>HEAD -&gt; main, origin/main<span class="o">)</span> HEAD@<span class="o">{</span><span class="m">12</span><span class="o">}</span>: reset: moving to HEAD
+fd9a51f <span class="o">(</span>HEAD -&gt; main, origin/main<span class="o">)</span> HEAD@<span class="o">{</span><span class="m">13</span><span class="o">}</span>: commit <span class="o">(</span>initial<span class="o">)</span>: rename a file whose name is eugene.txt to forest.txt
+</pre></div>
+</div>
+<p>通过该日志，可以使用git reset 命令来指定某个哈希值以回到过去的某个状态。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git reset --hard ecc4532
+HEAD is now at ecc4532 Merge branch <span class="s1">&#39;feature-A&#39;</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>git</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Eugene Forest.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

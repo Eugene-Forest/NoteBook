@@ -38,7 +38,7 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="4.3. Git/Github/Gitee疑问集" href="../question/index.html" />
+    <link rel="next" title="4.2.3. 分支(branch)篇 一" href="branch.html" />
     <link rel="prev" title="4.2.1. 准备" href="start.html" /> 
 </head>
 
@@ -99,6 +99,8 @@
 <li class="toctree-l3 current"><a class="reference internal" href="index.html">4.2. Github</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="start.html">4.2.1. 准备</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">4.2.2. 基本操作</a></li>
+<li class="toctree-l4"><a class="reference internal" href="branch.html">4.2.3. 分支</a></li>
+<li class="toctree-l4"><a class="reference internal" href="remote_repository.html">4.2.4. 远程仓库的交互</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../question/index.html">4.3. Question</a></li>
@@ -183,7 +185,16 @@
             
   <div class="section" id="git-basic">
 <h1><span class="section-number">4.2.2. </span>git basic<a class="headerlink" href="#git-basic" title="Permalink to this headline">¶</a></h1>
-<img alt="git-command" src="../../../_images/git-command1.jpg" />
+<div class="section" id="git">
+<h2><span class="section-number">4.2.2.1. </span>获取 Git 仓库<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h2>
+<p>获取 Git 仓库通常有两种获取 Git 项目仓库的方式：</p>
+<ul class="simple">
+<li><p>1.将尚未进行版本控制的本地目录转换为 Git 仓库；( <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code>)</p></li>
+<li><p>2.从其它服务器 克隆 一个已存在的 Git 仓库。（ <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code>）</p></li>
+</ul>
+<p>两种方式都会在你的本地机器上得到一个工作就绪的 Git 仓库。</p>
+<hr class="docutils" />
+<img alt="git-command" src="../../../_images/git-command.jpg" />
 <ul class="simple">
 <li><p>workspace：工作区</p></li>
 <li><p>staging area：暂存区/缓存区</p></li>
@@ -209,9 +220,10 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> 查看提交历史</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> 查看更改前后的差异</p></li>
 </ul>
+</div>
 <hr class="docutils" />
-<div class="section" id="git-status">
-<h2><span class="section-number">4.2.2.1. </span>初始化仓库–git status<a class="headerlink" href="#git-status" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="git-init">
+<h2><span class="section-number">4.2.2.2. </span>初始化仓库–git init<a class="headerlink" href="#git-init" title="Permalink to this headline">¶</a></h2>
 <p>实际建立一个目录并初始化仓库</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mkdir GitRepositoryManual
 $ <span class="nb">cd</span> GitRepositoryManual
@@ -225,8 +237,8 @@ Initialized empty Git repository <span class="k">in</span> /c/Users/qaz22/GitRep
 <p>在 Git 中，我们将 <code class="docutils literal notranslate"><span class="pre">.git</span></code> 这个目录的内容称为“附属于该仓库的工作树”。文件的编辑等操作在工作树中进行，然后记录到仓库中，以此管理文件的历史快照。( <strong>.git</strong> 文件夹内的文件可以认为是对仓库操作的日志文件)</p>
 </div>
 </div>
-<div class="section" id="id1">
-<h2><span class="section-number">4.2.2.2. </span>查看仓库状态–git status<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="git-status">
+<h2><span class="section-number">4.2.2.3. </span>查看仓库状态–git status<a class="headerlink" href="#git-status" title="Permalink to this headline">¶</a></h2>
 <p>工作树和仓库在被操作的过程中，状态会不断发生变化。在 Git 操作过程中时常用 git status命令查看当前状态。(<em>会显示当前分支</em>)</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git status
 On branch main
@@ -236,9 +248,27 @@ No commits yet
 nothing to commit <span class="o">(</span>create/copy files and use <span class="s2">&quot;git add&quot;</span> to track<span class="o">)</span>
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span> <span class="pre">-s</span></code> 命令可查看精简的文件状态。</p>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git status -s
+M README
+MM Rakefile
+A lib/git.rb
+M lib/simplegit.rb
+?? LICENSE.txt
+</pre></div>
+</div>
+<ul>
+<li><p>输出中有两栏，左栏指明了暂存区的状态，右栏指明了工作区的状态。</p></li>
+<li><p>新添加的未跟踪文件前面有 ?? 标记，新添加到暂存区中的文件前面有 A 标记，修改过的文件前面有 M 标记。</p>
+<p>例如，上面的状态报告显示： README 文件在工作区已修改但尚未暂存，而 lib/simplegit.rb 文件已修改且已暂存。 Rakefile 文件已修，暂存后又作了修改，因此该文件的修改中既有已暂存的部分，又有未暂存的部分。</p>
+</li>
+</ul>
 </div>
 <div class="section" id="git-add-git-add">
-<h2><span class="section-number">4.2.2.3. </span>向暂存区中添加文件–git add ( <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code> :将工作区的所有变动的文件提交到暂存区)<a class="headerlink" href="#git-add-git-add" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2.2.4. </span>向暂存区中添加文件–git add ( <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code> :将工作区的所有变动的文件提交到暂存区)<a class="headerlink" href="#git-add-git-add" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git add README.md
 $ git status
 <span class="c1"># On branch main</span>
@@ -253,10 +283,23 @@ $ git status
 </pre></div>
 </div>
 </div>
-<div class="section" id="git-commit">
-<h2><span class="section-number">4.2.2.4. </span>保存到仓库—-git commit<a class="headerlink" href="#git-commit" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="git-commit-m-message">
+<h2><span class="section-number">4.2.2.5. </span>保存到仓库—-git commit -m ‘message’<a class="headerlink" href="#git-commit-m-message" title="Permalink to this headline">¶</a></h2>
 <p>git commit命令可以将当前暂存区中的文件实际保存到仓库的历史记录中。通过这些记录，我们就可以在工作树中复原文件。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git commit -m <span class="s1">&#39;A new commit at feature-c&#39;</span>
+<span class="o">[</span>featrue-c 50ad61b<span class="o">]</span> A new commit at feature-c
+<span class="m">2</span> files changed, <span class="m">3</span> insertions<span class="o">(</span>+<span class="o">)</span>
+create mode <span class="m">100644</span> fecture_c
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>不妨养成这样一个好习惯：在执行 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> 命令之前先执行 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">HEAD</span></code> 命令，查看本次提交与上次提交之间有什么差别，等确认完毕后再进行提交。</p>
+</div>
+</div>
+<div class="section" id="git-diff">
+<h2><span class="section-number">4.2.2.6. </span>git diff<a class="headerlink" href="#git-diff" title="Permalink to this headline">¶</a></h2>
+<p>如果 git status 命令的输出对于你来说过于简略，而你想知道具体修改了什么地方，可以用 git diff 命令。</p>
 </div>
 </div>
 
@@ -266,7 +309,7 @@ $ git status
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../question/index.html" class="btn btn-neutral float-right" title="4.3. Git/Github/Gitee疑问集" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="branch.html" class="btn btn-neutral float-right" title="4.2.3. 分支(branch)篇 一" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="start.html" class="btn btn-neutral float-left" title="4.2.1. 准备" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

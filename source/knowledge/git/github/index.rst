@@ -11,3 +11,5 @@
 
    准备 <start>
    基本操作 <basic>
+   分支 <branch>
+   远程仓库的交互 <remote_repository>

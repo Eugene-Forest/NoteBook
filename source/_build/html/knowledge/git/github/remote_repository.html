@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>4.3. Git/Github/Gitee疑问集 &mdash; NoteBook 1.0 documentation</title>
+  <title>4.2.4. 与远程仓库*remote repository* 的交互 &mdash; NoteBook 1.0 documentation</title>
   
 
   
@@ -38,8 +38,8 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="4.3.1. Q: windows平台下使用git add，git deploy 文件时经常出现“warning: LF will be replaced by CRLF” 的提示" href="LF_and_CRLF.html" />
-    <link rel="prev" title="4.2.4. 与远程仓库*remote repository* 的交互" href="../github/remote_repository.html" /> 
+    <link rel="next" title="4.3. Git/Github/Gitee疑问集" href="../question/index.html" />
+    <link rel="prev" title="4.2.3. 分支(branch)篇 一" href="branch.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -96,12 +96,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../../linux/index.html">3. linux笔记记录</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">4. git笔记记录</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../gitee/index.html">4.1. Gitee</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../github/index.html">4.2. Github</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">4.3. Question</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="LF_and_CRLF.html">4.3.1. “warning: LF will be replaced by CRLF”</a></li>
-<li class="toctree-l4"><a class="reference internal" href="instructions.html">4.3.2. 关于工作区、暂存区、版本区等名词的了解</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">4.2. Github</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="start.html">4.2.1. 准备</a></li>
+<li class="toctree-l4"><a class="reference internal" href="basic.html">4.2.2. 基本操作</a></li>
+<li class="toctree-l4"><a class="reference internal" href="branch.html">4.2.3. 分支</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">4.2.4. 远程仓库的交互</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../question/index.html">4.3. Question</a></li>
 </ul>
 </li>
 </ul>
@@ -160,13 +162,15 @@
         
           <li><a href="../index.html"><span class="section-number">4. </span>Git , gitee , and github</a> &raquo;</li>
         
-      <li><span class="section-number">4.3. </span>Git/Github/Gitee疑问集</li>
+          <li><a href="index.html"><span class="section-number">4.2. </span>Github</a> &raquo;</li>
+        
+      <li><span class="section-number">4.2.4. </span>与远程仓库*remote repository* 的交互</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../../_sources/knowledge/git/question/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../_sources/knowledge/git/github/remote_repository.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -179,24 +183,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="git-github-gitee">
-<h1><span class="section-number">4.3. </span>Git/Github/Gitee疑问集<a class="headerlink" href="#git-github-gitee" title="Permalink to this headline">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>关于在使用Git/Github/Gitee的时候遇到的问题以及解答。</p>
-</div>
-<hr class="docutils" />
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="LF_and_CRLF.html">4.3.1. “warning: LF will be replaced by CRLF”</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="LF_and_CRLF.html#cr-and-crlf">4.3.1.1. 分析了解CR and CRLF</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LF_and_CRLF.html#id1">4.3.1.2. 此问题的负面影响</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LF_and_CRLF.html#id2">4.3.1.3. 解决此问题的方案</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="instructions.html">4.3.2. 关于工作区、暂存区、版本区等名词的了解</a></li>
-</ul>
-</div>
+  <div class="section" id="remote-repository">
+<h1><span class="section-number">4.2.4. </span>与远程仓库*remote repository* 的交互<a class="headerlink" href="#remote-repository" title="Permalink to this headline">¶</a></h1>
+<p>首先，在github中创建一个空的同名仓库，然后获得远程仓库的链接后，再通过命令将本地的仓库内容添加到远程仓库中。</p>
 </div>
 
 
@@ -205,8 +194,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="LF_and_CRLF.html" class="btn btn-neutral float-right" title="4.3.1. Q: windows平台下使用git add，git deploy 文件时经常出现“warning: LF will be replaced by CRLF” 的提示" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="../github/remote_repository.html" class="btn btn-neutral float-left" title="4.2.4. 与远程仓库*remote repository* 的交互" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../question/index.html" class="btn btn-neutral float-right" title="4.3. Git/Github/Gitee疑问集" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="branch.html" class="btn btn-neutral float-left" title="4.2.3. 分支(branch)篇 一" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

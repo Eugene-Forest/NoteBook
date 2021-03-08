@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.1. 关于配置vscode的终端问题 &mdash; NoteBook 1.0 documentation</title>
+  <title>4.1. wireshark start &mdash; NoteBook 1.0 documentation</title>
   
 
   
@@ -38,8 +38,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4. wireshark 网络嗅探工具" href="../wireshark/index.html" />
-    <link rel="prev" title="3. vscode" href="index.html" /> 
+    <link rel="next" title="project" href="../../project/index.html" />
+    <link rel="prev" title="4. wireshark 网络嗅探工具" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,11 +94,11 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">软件/工具安装配置记录</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../sphinx/index.html">1. sphinx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../idea/index.html">2. idea</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">3. vscode</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">3.1. 终端的配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vs_code/index.html">3. vscode</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">4. wireshark</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.1. 开始</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../wireshark/index.html">4. wireshark</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../project/index.html">项目学习笔记</a></li>
@@ -152,15 +152,15 @@
         
           <li><a href="../index.html">software</a> &raquo;</li>
         
-          <li><a href="index.html"><span class="section-number">3. </span>vscode</a> &raquo;</li>
+          <li><a href="index.html"><span class="section-number">4. </span>wireshark 网络嗅探工具</a> &raquo;</li>
         
-      <li><span class="section-number">3.1. </span>关于配置vscode的终端问题</li>
+      <li><span class="section-number">4.1. </span>wireshark start</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/software/vs_code/terminal.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/software/wireshark/start.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -173,30 +173,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="vscode">
-<h1><span class="section-number">3.1. </span>关于配置vscode的终端问题<a class="headerlink" href="#vscode" title="Permalink to this headline">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>最基本的方法是通过修改.vscode文件夹下的setting.json文件的 <code class="docutils literal notranslate"><span class="pre">&quot;terminal.integrated.shell.windows&quot;:</span></code> 属性来修改。</p>
-</div>
-<div class="line-block">
-<div class="line">具体路径具体分析更改</div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Command</span> <span class="n">Prompt</span>
-<span class="s2">&quot;terminal.integrated.shell.windows&quot;</span><span class="p">:</span> <span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Windows</span><span class="se">\\</span><span class="s2">System32</span><span class="se">\\</span><span class="s2">cmd.exe&quot;</span>
-
-<span class="o">//</span> <span class="n">PowerShell</span>
-<span class="s2">&quot;terminal.integrated.shell.windows&quot;</span><span class="p">:</span> <span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Windows</span><span class="se">\\</span><span class="s2">System32</span><span class="se">\\</span><span class="s2">WindowsPowerShell</span><span class="se">\\</span><span class="s2">v1.0</span><span class="se">\\</span><span class="s2">powershell.exe&quot;</span>
-
-<span class="o">//</span> <span class="n">Git</span> <span class="n">Bash</span>
-<span class="s2">&quot;terminal.integrated.shell.windows&quot;</span><span class="p">:</span> <span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">Program Files</span><span class="se">\\</span><span class="s2">Git</span><span class="se">\\</span><span class="s2">bin</span><span class="se">\\</span><span class="s2">bash.exe&quot;</span>
-</pre></div>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>这种方法更改后的shell终端只能开启一种类型（cmd,powershell,bash其中一种）；如果我要在vscode中新建多个类型终端如cmd,powershell,bash，这个如何实现？</p>
-</div>
-<img alt="vscode的新建终端" src="../../_images/shell.png" />
+  <div class="section" id="wireshark-start">
+<h1><span class="section-number">4.1. </span>wireshark start<a class="headerlink" href="#wireshark-start" title="Permalink to this headline">¶</a></h1>
 </div>
 
 
@@ -205,8 +183,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../wireshark/index.html" class="btn btn-neutral float-right" title="4. wireshark 网络嗅探工具" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="index.html" class="btn btn-neutral float-left" title="3. vscode" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../project/index.html" class="btn btn-neutral float-right" title="project" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="4. wireshark 网络嗅探工具" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
