@@ -9,7 +9,9 @@
 
 .. toctree::
 
-   准备 <start>
-   基本操作 <basic>
-   分支 <branch>
+   Github和Git准备 <start>
+   基础操作 <basic>
+   基础强化 <plus>
+   分支与合并 <branch>
+   回溯历史版本 <reset>
    远程仓库的交互 <remote_repository>
