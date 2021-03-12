@@ -13,5 +13,6 @@
    基础操作 <basic>
    基础强化 <plus>
    分支与合并 <branch>
-   回溯历史版本 <reset>
+   回溯历史版本 <recall>
    远程仓库的交互 <remote_repository>
+   数据恢复 <recover>

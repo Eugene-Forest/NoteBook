@@ -4,18 +4,10 @@
 
 * ``git reset`` 回溯历史版本
 * ``git commit --amend`` 修改提交信息
-* ``git rebase -i`` 压缩历史
 * ``git reflog`` 查看所有提交，分支变换以及合并等等的操作。
 * ``git restore``
 
 ----
-
-git reset
---------------
-
-回溯历史版本。
-
-我们再通过 ``git log --graph`` 查看可知，我们每次提交commit都对应一个哈希值，只要通过命令 ``git reset --hard 哈希值`` 即可回溯历史版本。
 
 git reflog
 ---------------
@@ -45,7 +37,16 @@ git reflog
    fd9a51f (HEAD -> main, origin/main) HEAD@{12}: reset: moving to HEAD
    fd9a51f (HEAD -> main, origin/main) HEAD@{13}: commit (initial): rename a file whose name is eugene.txt to forest.txt
 
-通过该日志，可以使用git reset 命令来指定某个哈希值以回到过去的某个状态。
+
+git reset
+--------------
+
+回溯历史版本。
+
+我们在之前通过 ``git log --graph`` 查看可知，我们每次提交commit都对应一个哈希值，只要通过命令 ``git reset --hard 哈希值`` 即可回溯历史版本。
+
+
+通过 ``git reflog`` 以及 ``git log`` 或者 ``git log --graph`` 获得的日志，可以使用 ``git reset`` 命令来指定某个哈希值以回到过去的某个状态。
 
 .. code-block:: shell
 
@@ -54,4 +55,40 @@ git reflog
 
 ----
 
-git 
+git restore
+----------------
+
+restore命令专门用来恢复staged和worktree的文件。
+
+:ref:`点击查看相关笔记 <git-restore>` 
+
+
+----
+
+git commit --amend 撤销操作
+--------------------------------
+
+该命令默认撤销的是最新的一次的提交。
+
+.. code-block:: shell
+
+   $ git commit --amend
+   hint: Waiting for your editor to close the file...
+
+   [featrue-c 1c8eae6] Rename fecture_c to feature_c, and add a file .gitignore.
+   Date: Fri Mar 12 15:30:28 2021 +0800
+   2 files changed, 15 insertions(+)
+   create mode 100644 .gitignore
+   rename fecture_c => feature_c (100%)
+
+
+这个命令会将暂存区中的文件提交。 如果自上次提交以来你还未做任何修改（例如，在上次提交后马上执行了
+此命令）， 那么快照会保持不变，而你所修改的只是提交信息。
+文本编辑器启动后，可以看到之前的提交信息。 **编辑后保存会覆盖原来的提交信息**。
+
+
+----
+
+.. warning:: 
+
+   记住，在 Git 中任何 已提交 的东西几乎总是可以恢复的。 甚至那些被删除的分支中的提交或使用 --amend 选项覆盖的提交也可以恢复。 然而，任何你未提交的东西丢失后很可能再也找不到了。

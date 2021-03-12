@@ -128,6 +128,11 @@ git rm 删除文件有以下几种形式：
    (use "git add <file>..." to include in what will be committed)
          fecture_c
 
+
+.. warning:: 
+
+   记住，在 Git 中任何 **已提交** 的东西几乎总是可以恢复的。 甚至那些被删除的分支中的提交或使用 --amend 选项覆盖的提交也可以恢复。 然而，任何你未提交的东西丢失后很可能再也找不到了。
+
 ----
 
 关于移动(重命名)文件的操作
