@@ -45,6 +45,7 @@
 
 在这里，需要了解一下 ``git rm`` 以及 ``git restore`` 这两个命令。
 
+.. _git-restore: 
 
 其中， ``git restore --staged <file>`` 命令的效果是将暂存区的某个/某些文件还原到现有的提交(commit)的文件的状态， ``git restore <file>`` 命令的效果是将工作区的某个/某些文件还原到现有的暂存区(staged)的文件的状态。
 

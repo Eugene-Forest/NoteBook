@@ -100,3 +100,13 @@ git log --graph
    Author: hirocaster <hohtsuka@gmail.com>
    Date: Sun May 5 16:06:49 2013 +0900
    First commit
+
+
+
+----
+
+关于 ``git checkout`` 与 ``git switch`` 和 ``git restore``
+------------------------------------------------------------
+
+关于 ``git restore``, :ref:`点击查看相关笔记 <git-restore>` 。
+
