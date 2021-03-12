@@ -6,7 +6,7 @@
 * ``git commit --amend`` 修改提交信息
 * ``git rebase -i`` 压缩历史
 * ``git reflog`` 查看所有提交，分支变换以及合并等等的操作。
-
+* ``git restore``
 
 ----
 

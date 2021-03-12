@@ -32,6 +32,12 @@ git branch
 .. note:: 
    通过git branch命令还可以删除指定分支， 只需要添加参数 -d；如： ``git branch -d BRANCH_NAME``
 
+   .. code-block:: shell
+   
+      $ git branch # 查看当前所在分支
+      $ git branch aaa # 新建分支aaa
+      $ git branch -d aaa # 删除分支aaa
+
 git checkout -b
 --------------------------------
 
@@ -108,5 +114,16 @@ git log --graph
 关于 ``git checkout`` 与 ``git switch`` 和 ``git restore``
 ------------------------------------------------------------
 
-关于 ``git restore``, :ref:`点击查看相关笔记 <git-restore>` 。
+关于 ``git restore``,是用来恢复暂存区或工作区文件的， :ref:`点击查看相关笔记 <git-restore>` 。
 
+关于 ``git switch``,是用来切换分支的。
+
+.. code-block:: shell
+
+   $ git switch aaa # 切换到 aaa分支
+   $ git switch -c aaa # 创建aaa，然后切换到 aaa分支
+
+.. code-block:: shell
+
+   $ git checkout aaa # 切换到 aaa分支
+   $ git checkout -b aaa # 创建aaa，然后切换到 aaa分支
