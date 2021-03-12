@@ -7,7 +7,7 @@
 
 以下是.git文件夹下的内容
 
-.. image:: ../../../img/.git.png
+.. image:: ../../../img/git/.git.png
    :alt: .git文件夹
 
 
@@ -19,7 +19,7 @@
 
 **暂存区**：英文叫 stage 或 index。一般存放在 .git 目录下的 index 文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。
 
-.. image:: ../../../img/git-operation.png
+.. image:: ../../../img/git/git-operation.png
    :alt: git-operation
 
 图中左侧为工作区，右侧为版本库。在版本库中标记为 "index" 的区域是暂存区（stage/index），标记为 "master" 的是 master 分支所代表的目录树。
@@ -45,7 +45,7 @@
 
 ----
 
-.. image:: ../../../img/git-command.jpg
+.. image:: ../../../img/git/git-command.jpg
    :alt: git-command
 
 

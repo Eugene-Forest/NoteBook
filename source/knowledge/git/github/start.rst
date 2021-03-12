@@ -37,7 +37,7 @@
    略
 
 
-.. image:: ../../../img/hello_key.png
+.. image:: ../../../img/git/hello_key.png
    :alt: hello_key
 
 id_rsa 文件是私有密钥，id_rsa.pub 是公开密钥。

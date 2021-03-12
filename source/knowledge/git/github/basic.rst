@@ -14,7 +14,7 @@ Git·· 基础操作
 ----
 
 
-.. image:: ../../../img/git-command.jpg
+.. image:: ../../../img/git/git-command.jpg
    :alt: git-command
 
 * workspace：工作区
@@ -170,7 +170,7 @@ git diff
 
 以下是运行结果：
 
-.. image:: ../../../img/git-difftool.png
+.. image:: ../../../img/git/git-difftool.png
    :alt: git-difftool
 
 

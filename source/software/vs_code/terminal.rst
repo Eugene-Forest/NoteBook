@@ -20,6 +20,6 @@
 .. warning:: 
    这种方法更改后的shell终端只能开启一种类型（cmd,powershell,bash其中一种）；如果我要在vscode中新建多个类型终端如cmd,powershell,bash，这个如何实现？
 
-.. image:: ../../img/shell.png
+.. image:: ../../img/vs_code/shell.png
    :alt: vscode的新建终端
 
