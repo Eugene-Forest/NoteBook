@@ -15,3 +15,4 @@
    linux笔记记录 <linux/index>
    git笔记记录 <git/index>
    sphinx笔记记录 <sphinx/index>
+   vue笔记记录 <vue/index>

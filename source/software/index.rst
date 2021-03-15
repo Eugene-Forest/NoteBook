@@ -9,6 +9,6 @@ software
    :caption: 软件或工具包安装以及配置记录
    :numbered:
 
-   idea <idea/index>
+   jetbrains <jetbrains/index>
    vscode <vs_code/index>
    wireshark <wireshark/index>
