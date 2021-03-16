@@ -4,4 +4,4 @@ netbeans12.3
 
 
 .. toctree::
-   编码问题 <encoding>
+   netbeans编辑器中文乱码问题 <encoding>
