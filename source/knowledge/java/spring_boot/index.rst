@@ -1,8 +1,8 @@
 =========================
-spring_boot
+spring boot
 =========================
 
 .. toctree::
-   :caption: jpa
+   :caption: spring boot
 
    part1

@@ -4,7 +4,7 @@ java
 ===================
 
 .. toctree::
-   :caption: java编程思想篇
 
    spring boot <spring_boot/index>
-   part1
+   java网络编程 <network_programming/index>
+   Java编程思想 <think_in_java/index>

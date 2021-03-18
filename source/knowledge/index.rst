@@ -16,3 +16,4 @@
    git笔记记录 <git/index>
    sphinx笔记记录 <sphinx/index>
    vue笔记记录 <vue/index>
+   云平台布置记录 <server-management/index>
