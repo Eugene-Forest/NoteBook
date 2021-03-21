@@ -35,7 +35,7 @@ GitHub登录/访问难问题
 
 在系统中找到 hosts 文件
 
-Window：C:\Windows\System32\drivers\etc\hosts 或 Linux：/etc/hosts
+Window：C:\\Windows\\System32\\drivers\\etc\\hosts 或 Linux：/etc/hosts
 
 之前为了能进入Github放置过一些 IP 地址则全部删除。
 
