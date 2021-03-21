@@ -35,11 +35,9 @@ GitHub登录/访问难问题
 
 在系统中找到 hosts 文件
 
-Window：C:\\Windows\\System32\\drivers\\etc\\hosts 或 Linux：/etc/hosts
+Window：C:\\Windows\\System32\\drivers\\etc\\hosts （或 Linux：/etc/hosts）
 
-之前为了能进入Github放置过一些 IP 地址则全部删除。
-
-然放入一下两个 IP 地址：
+向hosts文件放入一下两个 IP 地址的代码，代码如下：
 
 .. code-block:: word
 
@@ -51,7 +49,7 @@ Window：C:\\Windows\\System32\\drivers\\etc\\hosts 或 Linux：/etc/hosts
 保存退出。
 
 
-在 CMD 命令行中执行 ipconfig/flushdns
+在 CMD 命令行中执行 ``ipconfig/flushdns``
 
 .. code-block:: cmd
 
@@ -63,7 +61,7 @@ Window：C:\\Windows\\System32\\drivers\\etc\\hosts 或 Linux：/etc/hosts
 
 
 .. note:: 
-   通过修改hosts文件的效果目前 [#]_ 良好。使用个人网络的效果会更好。
+   通过修改hosts文件的效果目前 [#]_ 良好。使用个人移动网络的效果会更好。
 
 
 
