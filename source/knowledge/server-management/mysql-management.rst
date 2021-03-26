@@ -5,6 +5,8 @@ MySQL管理
 .. note:: 
    对mysql操作的一些记录。操作于centos7。使用 :ref:`阿里yum源 <config-ali-yum>` 安装软件。
 
+.. _install-mysql-at-linux:
+
 安装mysql server
 -------------------------
 
