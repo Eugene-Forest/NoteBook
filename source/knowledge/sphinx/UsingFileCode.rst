@@ -89,17 +89,17 @@
 
 .. code-block:: word
 
-   .. literalinclude:: ../../conf.py
+   .. literalinclude:: ./example/Not_regular_expression.py
       :language: python
       :linenos:
-      :lines: 1-3,5,220-
+      :lines: 1-2,30-
 
-运行结果如下；显示配置文件的第1到3行，第5行，以及220行之后的代码：
+运行结果如下；显示文件的第1到2行，以及30行之后的代码：
 
-.. literalinclude:: ../../conf.py
+.. literalinclude:: ./example/Not_regular_expression.py
    :language: python
    :linenos:
-   :lines: 1-3,5,220-
+   :lines: 1-2,30-
 
 
 指定引用文件的方法，或类
