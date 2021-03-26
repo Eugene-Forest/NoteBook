@@ -3,7 +3,82 @@ MySQL管理
 ========================
 
 .. note:: 
-   对mysql操作的一些记录。
+   对mysql操作的一些记录。操作于centos7。使用 :ref:`阿里yum源 <config-ali-yum>` 安装软件。
+
+安装mysql server
+-------------------------
+
+使用yum命令安装：``yum install -y mysql-community-server``
+
+.. code-block:: shell
+
+   # 安装之后运行命令rpm -qa | grep mysql可见已经安装的mysql相关软件
+   [root@eugene-forest ~]# rpm -qa | grep mysql
+   mysql-community-common-5.7.30-1.el7.x86_64
+   mysql57-community-release-el7-8.noarch
+   mysql-community-server-5.7.30-1.el7.x86_64
+   php70w-mysqlnd-7.0.33-1.w7.x86_64
+   mysql-community-client-5.7.30-1.el7.x86_64
+   mysql-community-libs-compat-5.7.30-1.el7.x86_64
+   mysql-community-libs-5.7.30-1.el7.x86_64
+
+
+对mysql的系统配置
+-----------------
+
+systemctl命令：
+
+* ``systemctl start mysqld`` 
+* ``systemctl status mysqld``
+* ``systemctl enabled mysqld`` 自启动mysql，可以与重新加载服务配置文件命令配合使用 ``systemctl daemon-reload``
+* ``systemctl restart mysqld``
+
+-------------
+启动mysql
+-------------
+
+.. code-block:: shell
+
+   systemctl start mysqld
+   # 查看mysql状态
+   systemctl status mysqld
+
+-----------------
+开机自启动mysql
+-----------------
+
+.. code-block:: shell
+
+   systemctl enabled mysqld
+   # 重新加载服务配置文件
+   systemctl restart mysqld
+
+
+修改MySQL server 的默认密码（第一次启动）
+---------------------------------------------
+
+mysql安装完成之后，在 **/var/log/mysqld.log** 文件中给root生成了一个默认密码。
+
+
+通过下面的方式找到root默认密码，然后登录mysql进行修改登陆密码：
+
+.. code-block:: shell
+
+   shell> grep 'temporary password' /var/log/mysqld.log
+   shell> mysql -u root -p 
+
+.. image:: ../../img/mysqld/first-login.png
+   :alt: first login 
+
+.. code-block:: mysql
+
+   mysql> set password for 'root'@'localhost'=password('MyNewPass4!');
+
+.. image:: ../../img/mysqld/reset-first-password.png
+   :alt: reset first password
+
+.. note:: 
+   mysql5.7默认安装了密码安全检查插件（validate_password），**默认密码检查策略要求密码必须包含：大小写字母、数字和特殊符号，并且长度不能少于8位**。否则会提示ERROR 1819 (HY000): Your password does not satisfy the current policy requirements错误
 
 
 ----
@@ -137,10 +212,9 @@ mysql添加一个用户并为其添加某个数据库的某些权限
 数据库连接数达到上限导致应用服务出现错误
 ---------------------------------------------
 
-.. code-block:: sql
 
-   Can not connect to MySQL server
-   Error: Too many connections
+| Can not connect to MySQL server
+| Error: Too many connections
 
 
 对于这种情况，需要对数据库的默认连接数限制进行修改，或者是修改每次连接的有效时长。
@@ -160,7 +234,7 @@ mysql添加一个用户并为其添加某个数据库的某些权限
 
 .. code-block:: sql
 
-   set GLOBAL max_connections=1000;
+   mysql> set global max_connections=1000;
 
 与此同时，还可以通过修改每次连接的最大时长。
 
@@ -174,7 +248,7 @@ mysql添加一个用户并为其添加某个数据库的某些权限
    +---------------+-------+
    1 row in set (0.14 sec)
 
-   set global wait_timeout=300;
+   mysql> set global wait_timeout=300;
 
 .. note:: 
    以上的配置是临时修改，重启mysql会失效。要想要配置完全修改，需要对脚本文件（/etc/my.cnf这个文件）进行修改（在[mysqld] 中新增max_connections=N）。

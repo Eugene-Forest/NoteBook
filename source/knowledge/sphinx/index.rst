@@ -7,4 +7,5 @@ Sphinx 是一种文档工具，它可以令人轻松的撰写出清晰且优美�
 
 .. toctree::
    索引 <indexs>
+   表格 <GridTable>
 
