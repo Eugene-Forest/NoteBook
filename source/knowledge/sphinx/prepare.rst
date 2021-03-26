@@ -86,3 +86,18 @@
    html_theme = 'sphinx_rtd_theme'
 
 
+通过vscode的git插件创建存储库
+-------------------------------
+
+创建完之后，添加.gitignore文件以及README.md文件
+
+
+本项目的.gitignore文件代码如下：
+
+.. literalinclude:: ../../../.gitignore
+   :language: git
+
+本项目的README.md文件代码如下：
+
+.. literalinclude:: ../../../README.md
+   :language: markdown
