@@ -23,6 +23,8 @@ fatal: unable to access 'https://github.com/Eugene-Forest/NoteBook.git/': OpenSS
    $ git remote -v
    # don't have result
 
+   $ git remote add origin git@github.com:Eugene-Forest/NoteBook.git
+   
    $ git push -u origin main
    Warning: Permanently added the RSA host key for IP address '140.82.114.4' to the list of known hosts.
    Enter passphrase for key '/c/Users/qaz22/.ssh/id_rsa':
