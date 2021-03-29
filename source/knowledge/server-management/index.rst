@@ -11,4 +11,5 @@
    :caption: 目录
 
    MySQL管理 <mysql-management>
+   Redis管理 <redis-management>
    
