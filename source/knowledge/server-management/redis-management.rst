@@ -49,10 +49,12 @@ yum安装
    redis      884     1  0 Mar22 ?        00:12:26 /usr/bin/redis-server *:6379
    root     15861 15829  0 16:56 pts/1    00:00:00 grep --color=auto redis
 
+.. note:: 
+   由查看进程信息我们就知道，redis有服务端和客户端之分。而且redis server是通过服务器的6379来提供服务的。所以如果想要在本地之外访问redis服务就需要通过防火墙把6379端口打开。
+
+
 登录redis客户端
 ===============
-
-由查看进程信息我们就知道，redis有服务端和客户端之分。
 
 添加redis-client登录密码：
 

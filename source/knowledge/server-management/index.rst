@@ -7,9 +7,12 @@
 
 ----
 
+
 .. toctree::
    :caption: 目录
+   :maxdepth: 2
 
+   软件及其服务管理篇 <software-management>
    MySQL管理 <mysql-management>
    Redis管理 <redis-management>
    
