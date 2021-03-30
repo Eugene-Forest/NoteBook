@@ -8,7 +8,7 @@ mysql社区
 
 `点击前往mysql社区 <https://dev.mysql.com/>`_ 。
 
-----
+
 
 
 安装
@@ -23,6 +23,7 @@ window下安装mysql5.7最新版本可以通过官方的 `mysql installer <https
 详细安装过程参考菜鸟教程 `Windows10 MYSQL Installer 安装 <https://www.runoob.com/w3cnote/windows10-mysql-installer.html>`_  。
 
 
+
 ----------------------
 Linux下的mysql5.7安装
 ----------------------
@@ -33,6 +34,13 @@ Linux下的mysql5.7安装
 .. note:: 
    更多其他与mysql相关的软件可以通过官方 `mysql社区下载 <https://dev.mysql.com/downloads/>`_  获得。
 
+
+
+
+window可供参考的下载以及安装配置教程
+------------------------------------
+
+C语言中文网的 `mysql教程 <http://c.biancheng.net/view/2391.html>`_ 
 
 
 ----
