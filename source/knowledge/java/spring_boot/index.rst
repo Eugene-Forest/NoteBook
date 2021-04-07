@@ -1,5 +1,5 @@
 =========================
-spring boot
+spring boot and spring
 =========================
 
 .. toctree::
