@@ -9,3 +9,4 @@ vscode
    :caption: vs code
 
    终端的配置 <terminal>
+   run code插件的运行配置 <run_code>
