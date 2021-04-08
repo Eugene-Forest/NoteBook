@@ -71,6 +71,7 @@ synchronized关键字的使用
       
       @Override
       public void run() {
+      //以下两行语句分别注释，其对应语句的执行结果与如下行注释对应
          PrintMessage(); //result 1
    //		HoldIt(); //result 2
       }
