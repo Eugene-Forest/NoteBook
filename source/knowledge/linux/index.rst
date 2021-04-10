@@ -7,6 +7,7 @@ linux
 
 .. toctree::
    :caption: linux
+   :maxdepth: 3
 
    运维篇 <ops/index>
    基础篇（理论知识点篇） <basic/index>

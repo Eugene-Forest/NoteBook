@@ -7,6 +7,7 @@ Sphinx 是一种文档工具，它可以令人轻松的撰写出清晰且优美�
 
 .. toctree::
    :caption: sphinx笔记目录
+   :maxdepth: 3
    
    准备 <prepare>
    索引 <indexs>

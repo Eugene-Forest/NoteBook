@@ -4,6 +4,8 @@ java
 ===================
 
 .. toctree::
+   :caption: catalog
+   :maxdepth: 3
 
    spring boot <spring_boot/index>
    java多线程设计模式 <multithreading/index>
