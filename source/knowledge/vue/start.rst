@@ -38,9 +38,4 @@ vue
 
 直接下载并用 <script> 标签引入，Vue 会被注册为一个全局变量。
 
-:download:`开发版本 <./../../../download/vue/vue.js>` 
-
-:download:`生产版本 <./../../../download/vue/vue.min.js>` 
-
-.. note:: 
-   文件仅供参考，最新的文件请到官网下载。 `>>点击前往官网>> <https://cn.vuejs.org/v2/guide/installation.html>`_ 
+最新的文件请到官网下载。 `>>点击前往官网>> <https://cn.vuejs.org/v2/guide/installation.html>`_ 
