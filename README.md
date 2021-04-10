@@ -11,5 +11,5 @@ Sphinx 是一种文档工具，它可以令人轻松的撰写出清晰且优美�
 
 ### 项目对应的电子书在线查看
 
-在Read The Docs中查看电子书。链接如下：
+本项目已经挂载在Read The Docs中，点击下方链接即可在线查看项目的实现即电子书。链接如下：
 https://studynotes.readthedocs.io/zh/latest/
