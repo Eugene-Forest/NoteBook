@@ -5,4 +5,8 @@
 以第十版核心技术基础篇为参考书的笔记记录。
 
 
-
+.. toctree::
+   :caption: catalog
+   
+   java的基本程序设计结构 <basic_prepare>
+   
