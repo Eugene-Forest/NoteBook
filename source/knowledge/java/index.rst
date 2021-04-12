@@ -7,7 +7,7 @@ java
    :caption: catalog
    :maxdepth: 3
 
-   spring boot <spring_boot/index>
+   spring <spring/index>
    java多线程设计模式 <multithreading/index>
    java 核心技术 基础篇 <core_technology_basic/index>
    java网络编程 <network_programming/index>
