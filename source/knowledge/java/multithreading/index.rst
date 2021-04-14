@@ -26,3 +26,4 @@
    :maxdepth: 2
 
    single threaded execution mode <SingleThreadedExecution>
+   Guarded suspension mode and Balking mode <GuardedSuspensionAndBalking>
