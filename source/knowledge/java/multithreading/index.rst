@@ -4,6 +4,14 @@
 
 参考书籍：图解Java多线程设计模式 [结城浩]
 
+
+.. toctree::
+   :caption: catalog
+   :maxdepth: 2
+
+   single threaded execution mode <SingleThreadedExecution>
+   Guarded suspension mode and Balking mode <GuardedSuspensionAndBalking>
+
 ----
 
 序
@@ -18,12 +26,3 @@
 守护线程是执行后台作业的线程，通过ThreadObject.setDaemon()来将用户线程设置为守护线程，需要注意的是，要在线程对象执行start前设置才有用。
 
 
-
-
-
-.. toctree::
-   :caption: catalog
-   :maxdepth: 2
-
-   single threaded execution mode <SingleThreadedExecution>
-   Guarded suspension mode and Balking mode <GuardedSuspensionAndBalking>
