@@ -15,3 +15,4 @@ software
    eclipse <eclipse/index>
    netbeans <netbeans/index>
    wireshark <wireshark/index>
+   xshell以及xftp的教育版下载 <xshell>
