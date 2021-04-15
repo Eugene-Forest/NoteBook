@@ -11,10 +11,11 @@
    :numbered:
 
    java笔记记录 <java/index>
-   python笔记记录 <python/index>
-   linux笔记记录 <linux/index>
    git笔记记录 <git/index>
    sphinx笔记记录 <sphinx/index>
    vue笔记记录 <vue/index>
    mysql笔记记录 <mysql57/index>
    云平台布置记录 <server-management/index>
+   linux笔记记录 <linux/index>
+   计算机网络 <network/index>
+   python笔记记录 <python/index>
