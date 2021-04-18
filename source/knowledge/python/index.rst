@@ -10,6 +10,7 @@ python
 .. toctree::
    :caption: python
    :maxdepth: 3
+   :numbered:
 
    自动化 <auto/index>
    基础篇 <basic/index>

@@ -6,6 +6,7 @@ java
 .. toctree::
    :caption: catalog
    :maxdepth: 3
+   :numbered:
 
    spring <spring/index>
    java多线程设计模式 <multithreading/index>

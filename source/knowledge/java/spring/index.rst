@@ -11,5 +11,5 @@
    :maxdepth: 2
 
    序 <prepare>
-   装配 Bean <WireBean>
+   装配 Bean <WiringBean>
    问题集 <question/index>

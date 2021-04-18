@@ -8,12 +8,11 @@
 .. toctree::
    :caption:knowledge
    :maxdepth: 3
-   :numbered:
 
    java笔记记录 <java/index>
    git笔记记录 <git/index>
    sphinx笔记记录 <sphinx/index>
-   vue笔记记录 <vue/index>
+   vue 以及 element-ui 笔记记录 <vue/index>
    mysql笔记记录 <mysql57/index>
    云平台布置记录 <server-management/index>
    linux笔记记录 <linux/index>
