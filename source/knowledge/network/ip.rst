@@ -71,3 +71,23 @@ IP 地址由32位标识符（二进制数）组成；它可分为五类，分别
 
 子网的划分
 ====================
+
+子网掩码
+---------------
+
+设置三级 IP 地址的目的:
+
+* 提高 IP 地址空间的利用率
+* 避免因为给每个物理网络分配一个网络号导致路由表变得太大而使得网络性能变坏
+* 提高 IP 地址的灵活性
+
+三级 IP 地址 ： **IP=网络号+子网号+主机号**
+
+.. image:: ../../img/internet/subnet_instance.png
+   :alt: 子网划分实例
+
+.. image:: ../../img/internet/subnet_default.png
+   :alt: A、B、C类网络的默认子网掩码
+
+.. image:: ../../img/internet/B_subnet.png
+   :alt: B 类网络的子网划分
