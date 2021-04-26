@@ -1,3 +1,4 @@
+=================
 python
 =================
 
@@ -13,4 +14,5 @@ python
    :numbered:
 
    自动化 <auto/index>
-   基础篇 <basic/index>
+   扩展篇 <extend/index>
+.. 基础篇 <basic/index>
