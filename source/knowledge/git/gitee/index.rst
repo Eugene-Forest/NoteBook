@@ -10,3 +10,4 @@ Gitee
 
 .. toctree:: 
    问题集1 <Q1>
+   gitee 远程仓库协作 <organization>
