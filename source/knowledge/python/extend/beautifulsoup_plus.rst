@@ -72,8 +72,7 @@ BeautifulSoup 的 find() 以及 find_all()
 
 同样的，对于任何标签属性的特定值，我们通过此类方法获取 ``content=bs.find_all('',{'class':'green'})``，通过该方法我们可以获取 class 值为 green 的标签组，这些标签甚至可以是不同的标签类型。
 
-为不产生歧义，统一写法为 ``object.find_all('',{'属性',{'属性值','...'}})``。
-之所以这般写是因为对于关键字参数 class 而言，若使用 ``object.find(class='green')`` 形式的代码会出现语法错误，因为 class 在 python 中是一个关键字。
+基本写法为 ``object.find_all(属性="属性值")``。但是对于对于关键字参数 class 而言，若使用 ``object.find(class='green')`` 形式的代码会出现语法错误，因为 class 在 python 中是一个关键字，所以如果关键字参数为 class，它的替代写法为类如 ``object.find(class_='green')``。
 
 
 

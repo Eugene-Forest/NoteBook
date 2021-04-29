@@ -11,4 +11,7 @@
    HTML 文本获取 <urlopen>
    HTML 文本解析（一） <beautifulsoup>
    HTML 文本解析（二） <beautifulsoup_plus>
+   网络爬虫模型 <crawler_model>
+   存储数据 <data_storage>
+.. scrapy <scrapy>
 
