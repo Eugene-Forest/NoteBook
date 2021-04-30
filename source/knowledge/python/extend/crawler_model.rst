@@ -6,3 +6,26 @@
 
 之所以叫网络爬虫，是因为它们可以在 Web 上“爬行”。它们 **本质上是一种递归方式**。
 
+
+一个获取惠州学院新闻网要闻的简单爬虫模型
+============================================
+
+
+新闻数据结构
+-----------------------
+
+
+.. literalinclude:: ../example_python/hzu/Image.py
+   :language: python
+
+.. literalinclude:: ../example_python/hzu/NEWS.py
+   :language: python
+
+新闻的爬虫模型
+-----------------
+
+.. literalinclude:: ../example_python/hzu/GetNewsFromHzu.py
+   :language: python
+
+
+
