@@ -21,11 +21,14 @@
 .. literalinclude:: ../example_python/hzu/NEWS.py
    :language: python
 
-新闻的爬虫模型
------------------
+新闻的爬虫模型 [#]_
+----------------------
 
 .. literalinclude:: ../example_python/hzu/GetNewsFromHzu.py
    :language: python
 
 
 
+----
+
+.. [#] 2021年4月30日 测试正常
