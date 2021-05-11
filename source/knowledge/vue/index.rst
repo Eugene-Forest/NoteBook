@@ -45,6 +45,8 @@ vue
 
    起步 <start>
    指令 <instruction>
+   过滤器 <filter>
+   组件 <component>
 
 
 element-ui
