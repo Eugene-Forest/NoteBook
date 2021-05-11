@@ -28,7 +28,7 @@ Class与Style绑定
 ------------------
 
 在开发过程中，我们经常会遇到动态添加类名或直接修改内联样式（例如 tab 切换）。
-class 和 style 都是 DOM 元素的 attribute，我们当然可以直接使用 v-bind 对这两个属性进行数据绑定，例如 <p v-bind:style='style'><p>，然后通过修改 vm.style 的值对元素样式进行修改。但这样未免过于繁琐而且容易出错，所以 Vue.js 为这两个属性单独做了增强处理，表达式的结果类型除了字符串之外，还可以是对象和数组。本小节就会对这两个属性具体的用法进行说明。
+class 和 style 都是 DOM 元素的 attribute，我们当然可以直接使用 v-bind 对这两个属性进行数据绑定，例如 <p v-bind:style='style'><p>，然后通过修改 vm.style 的值对元素样式进行修改。但这样未免过于繁琐而且容易出错，所以 Vue.js 为这两个属性单独做了增强处理，表达式的结果类型除了字符串之外，还可以是对象和数组。
 
 .. literalinclude:: ./example/instruction.html
    :language: html
@@ -40,6 +40,62 @@ class 和 style 都是 DOM 元素的 attribute，我们当然可以直接使用 
    :language: javascript
    :linenos:
    :lines: 173-180
+
+.. _computation_attrs:
+
+计算属性
+------------------
+
+在项目开发中，我们展示的数据往往需要经过一些处理。除了在模板中绑定表达式或者利用过滤器外，Vue.js 还提供了计算属性这种方法，避免在模板中加入过重的业务逻辑，保证模板的结构清晰和可维护性。
+
+模板内的表达式非常便利，但是设计它们的初衷是用于简单运算的。在模板中放入太多的逻辑会让模板过重且难以维护。
+
+.. code-block:: html
+
+      <div id="app">
+			<p>{{ firstName }}</p> 
+			<p>{{ lastName }}</p> 
+			<p>{{ fullName }}</p> 
+		</div>
+		<div id="app-2">
+			<p>&yen;{{price}}</p>
+			<input type="text" v-model="cents" />
+		</div>
+
+.. code-block:: javascript
+
+			var vm2=new Vue({
+				el:'#app-2',
+				data:{
+					cents: 100
+				},
+				computed:{
+					price : {
+						set : function(newValue){
+							this.cents=newValue*100;
+						},
+						get : function(){
+							return (this.cents/100).toFixed(2);
+						}
+					}
+				}
+			});
+			var vm = new Vue({
+			 el: '#app',
+			 data: {
+			　　 firstName: 'Gavin',
+			　　 lastName:'CLY'
+			 },
+			 computed : {
+			　　 fullName : function() {
+			　　　 // this 指向 vm 实例
+			　　　 return this.firstName + ' ' + this.lastName
+			　　 }
+			　 }
+			});
+
+
+
 
 
 v-model
