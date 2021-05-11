@@ -182,3 +182,68 @@ v-cloak 指令相当于在元素上添加了一个 ``[v-cloak]`` 的属性，直
 
 自定义指令
 ================
+
+指令的注册
+------------
+
+--------------
+全局注册
+--------------
+
+可以通过 Vue.directive(id, definition) 方法注册一个全局自定义指令，接收参数 id 和定义对象。
+
+
+.. code-block:: html
+
+	<body>
+		<h2>指令的注册</h2>
+		<div id="basic">
+			<span>全局指令注册</span>
+			<div v-if="isExist" v-consloe-show="param"></div>
+		</div>
+	</body>
+
+.. code-block:: javascript
+
+		Vue.directive('consloe-show',{
+			bind : function(){
+				console.log('bind',arguments)
+			},
+			update:function(value,oldValue){
+				console.log('update',value,oldValue)
+			},
+			unbind:function(){
+				console.log('unbind',arguments)
+			}
+		})
+		var consloe_show=new Vue({
+			el:'#basic',
+			data:{
+				param:'first',
+				isExist:true
+			}
+		})
+
+--------------
+组件局部注册
+--------------
+
+也可以通过在组件的 directives 选项注册一个局部的自定义指令。
+
+.. code-block:: javascript
+
+		var comp=Vue.extend({
+			directives:{
+				'localDirective':{} //
+			}
+		})
+
+.. // todo : add 指令在组件局部注册的实例
+
+.. 指令实例属性
+   ---------------
+
+.. //todo : add 指令实例属性,指令的高级选项
+
+.. 指令的高级选项
+   ------------------
