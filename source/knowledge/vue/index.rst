@@ -6,6 +6,8 @@ vue 以及 element-ui
 .. note:: 
    记录在学习vue以及element-ui过程中的心得以及知识点。
 
+
+
 vue
 =============
 
@@ -13,6 +15,16 @@ vue
 * 官方学习文档 `vue 2.x教程 <https://cn.vuejs.org/v2/guide/>`_
 * 官方API `vue 2.x API <https://cn.vuejs.org/v2/api/>`_ 
 * 官方cookbook `cookbook <https://cn.vuejs.org/v2/cookbook/>`_ 
+
+.. toctree::
+   :caption: vue目录
+   :numbered:
+   :maxdepth: 2
+
+   起步 <start>
+   指令 <instruction>
+   过滤器 <filter>
+   组件 <component>
 
 ---------------------
 通过网络引入——CDN引入
@@ -38,19 +50,18 @@ vue
 
 最新的文件请到官网下载。 `>>点击前往官网>> <https://cn.vuejs.org/v2/guide/installation.html>`_ 
 
-.. toctree::
-   :caption: vue目录
-   :numbered:
-   :maxdepth: 2
-
-   起步 <start>
-   指令 <instruction>
-   过滤器 <filter>
-   组件 <component>
-
 
 element-ui
 =================
+
+
+.. toctree::
+   :caption: element-ui 目录
+   :numbered:
+   :maxdepth:2
+
+   起步 <element-ui/start>
+
 
 ---------
 CDN引入
@@ -96,11 +107,5 @@ CDN引入
    # develop
    npm run dev
 
-.. toctree::
-   :caption: element-ui 目录
-   :numbered:
-   :maxdepth:2
-
-   起步 <element-ui/start>
 
 
