@@ -250,7 +250,208 @@ HTML 中的 attribute 名是大小写不敏感的，所以浏览器会把所有�
 额外的，每次父级组件发生变更时，子组件中所有的 prop 都将会刷新为最新的值。这意味着你不应该在一个子组件内部改变 prop。如果你这样做了，Vue 会在浏览器的控制台中发出警告。
 
 
+但是，由于功能需要，我们的子组件往往需要对从 props 中获取的数据进行修改。
+
+以下有两种常见的试图变更一个 prop 的情形：
+
+* 用来传递一个初始值
+* 以一种原始的值传入且需要进行转换
+
+---------------------------------------------------------------------
+ 通过 prop 用来给子组件传递一个初始值
+---------------------------------------------------------------------
+
+这个 prop 用来传递一个初始值；这个子组件接下来希望将其作为一个本地的 prop 数据来使用。在这种情况下，最好定义一个本地的 data property 并将这个 prop 用作其初始值：子组件从父组件中获取数据并在自己组件内独立创建一个数据空间。
+
+.. code-block:: html
+
+		<div id="once-affect">
+			<p>数据的单向单次流动</p>
+			<p v-text="message"></p>
+			<input type="text" name="" id="" value="" v-model="message"/>
+			<hr >
+			<once-affect-child :message="message"></once-affect-child>
+		</div>
+
+
+.. code-block:: javascript
+
+		Vue.component('once-affect-child',{
+			props:{
+				message:String
+			},
+			data:function(){
+				return{
+					info:this.message
+				}
+			},
+			template:'<div> \
+			<input type="text" name="" id="" value="" v-model="info" /> \
+			<p v-text="info"></p> \
+			</div>'
+		});
+		var affect_parent=new Vue({
+			el:'#once-affect',
+			data:{
+				message:"hello world!!"
+			}
+		})
+
+
+----------------------------------------
+prop 以一种原始的值传入且需要进行转换
+----------------------------------------
+
+这个 prop 以一种原始的值传入且需要进行转换。在这种情况下，最好使用这个 prop 的值来定义一个计算属性：
+
+.. code-block:: javascript
+
+	props: ['size'],
+	computed: {
+	normalizedSize: function () {
+		return this.size.trim().toLowerCase()
+		}
+	}
+
 .. warning:: 
 
 	注意在 JavaScript 中对象和数组是通过引用传入的，所以对于一个数组或对象类型的 prop 来说，在子组件中改变变更这个对象或数组本身将会影响到父组件的状态。
 
+非 prop 的 attribute
+--------------------------
+
+在组件的非 prop 的 attribute的传递方法有以下三种：
+
+* 传递给组件模板的根标签
+* 禁用 Attribute 继承
+* 替换/合并已有的 Attribute
+
+那么，接下来针对以下通用 HTML/JavaScript 文本通过与使用不同类型的传递方法组件的 javascript 代码的运行结果来查看区别：
+
+通用 html 文本：
+
+.. code-block:: html
+
+		<div id="not-prop-attr">
+			<p>{{title}}</p>
+			<p>{{content}}</p>
+			<input type="text" name="" id="" value="" v-model="title"/>
+			<input type="text" name="" id="" value="" v-model="content"/>
+			<my-component class="describe" style="background-color: antiquewhite;" id="deal-it" message="hello vue" :title="title" :content="content"></my-component>
+		</div>
+
+通用 javascript 文本:
+
+.. code-block:: javascript
+
+		var not_prop_attr=new Vue({
+			el:'#not-prop-attr',
+			data:{
+				title:'',
+				content:''
+			},
+			components:{
+				'my-component':MyComponent
+			}
+		})
+
+默认情况下在组件中非 prop 的 attribute的传递情况：传递给组件模板的根标签
+--------------------------------------------------------------------------
+
+显式定义的 prop 适用于向一个子组件传入信息，然而组件库的作者并不总能预见组件会被用于怎样的场景。这也是为什么组件可以接受任意的 attribute，而 **这些 attribute(非 prop 的 attribute) 会被添加到这个组件的根元素上**。
+
+.. code-block:: javascript
+
+		var MyComponent=Vue.extend({
+			props : {
+				title:String,
+				content:String
+			},
+			template:'<div> \
+			<p>{{title}}</p> \
+			<span>{{content}}</span> \
+			</div>'
+		});
+
+.. image:: ../../img/vue/components/default-transmit-attrs.png
+	:alt: default-transmit-attrs
+
+
+
+在使用了禁止传递非 prop 的 attribute属性：在组件的选项中设置 ``inheritAttrs: false``
+---------------------------------------------------------------------------------------
+
+如果你不希望组件的根元素继承 attribute，你可以在组件的选项中设置 ``inheritAttrs: false``。
+
+.. code-block:: javascript
+
+	Vue.component('my-component', {
+	inheritAttrs: false,
+	// ...
+	})
+
+.. note:: 
+
+	注意 ``inheritAttrs: false`` 选项不会影响 style 和 class 的绑定。
+	
+同时，与该方法配合使用的 $attrs property 使用，该 property 包含了传递给一个组件的 attribute 名和 attribute。
+
+有了 ``inheritAttrs: false`` 和 ``$attrs``，你就可以手动决定这些 attribute 会被赋予哪个元素。
+
+示例如下：
+
+.. code-block:: javascript
+
+		var MyComponent=Vue.extend({
+			inheritAttrs:false,
+			props : {
+				title:String,
+				content:String
+			},
+			template:'<div> \
+			<p v-bind="$attrs">{{title}}</p> \
+			<span>{{content}}</span> \
+			</div>'
+		});
+
+.. image:: ../../img/vue/components/forbid-transmit-attrs.png
+	:alt: forbid-transmit-attrs
+
+替换/合并已有的 Attribute
+---------------------------
+
+**对于绝大多数 attribute 来说，从外部提供给组件的值会替换掉组件内部设置好的值。**
+
+所以对于以下例子中，传入 message="hello vue" 就会替换掉 message="hello template" 并把它破坏！
+
+庆幸的是，**class 和 style attribute 会稍微智能一些，即两边的值会被合并起来，从而得到最终的值。**
+
+.. code-block:: javascript
+
+		var MyComponent=Vue.extend({
+			props : {
+				title:String,
+				content:String
+			},
+			template:'<div class="root-template" message="hello template" style="border: aqua;"> \
+			<p v-bind="$attrs">{{title}}</p> \
+			<span>{{content}}</span> \
+			</div>'
+		});
+
+.. image:: ../../img/vue/components/change-by-transmit-attrs.png
+	:alt: change-by-transmit-attrs
+
+.. warning:: 
+
+	我们发现，如果没有使用 	``inheritAttrs: false`` 的情况下使用 ``$attrs`` 的话，会出现入上运行中的以下出现两个有相同 id 的标签。最好避免在没有使用	``inheritAttrs: false`` 的情况下使用 ``$attrs`` 。
+
+
+.. 自定义事件	
+	===================
+	插槽
+	=====================
+	动态组件 和 异步组件
+	=====================
+	处理边界
+	=================
