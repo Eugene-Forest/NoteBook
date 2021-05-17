@@ -12,7 +12,8 @@
    java笔记记录 <java/index>
    git笔记记录 <git/index>
    云平台布置记录 <server-management/index>
-   vue 以及 element-ui 笔记记录 <vue/index>
+   vue 笔记记录 <vue/index>
+   element-ui 笔记记录 <element/index>
    计算机网络 <network/index>
    python笔记记录 <python/index>
    mysql笔记记录 <mysql57/index>
