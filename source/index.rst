@@ -8,7 +8,7 @@ Eugene forest's notebook
 
 .. toctree::
    :caption: 主目录
-   :maxdepth: 3
+   :maxdepth: 4
 
    笔记记录 <knowledge/index>
    软件/工具安装配置记录 <software/index>
