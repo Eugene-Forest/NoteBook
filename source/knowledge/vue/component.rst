@@ -447,11 +447,183 @@ prop 以一种原始的值传入且需要进行转换
 	我们发现，如果没有使用 	``inheritAttrs: false`` 的情况下使用 ``$attrs`` 的话，会出现入上运行中的以下出现两个有相同 id 的标签。最好避免在没有使用	``inheritAttrs: false`` 的情况下使用 ``$attrs`` 。
 
 
-.. 自定义事件	
-	===================
-	插槽
-	=====================
-	动态组件 和 异步组件
-	=====================
+自定义事件	
+===================
+
+监听子组件的事件
+-----------------
+
+在我们开发组件时，它的一些功能可能要求我们和父级组件进行沟通。
+
+子组件可以通过调用内建的 $emit 方法并传入事件名称来触发一个事件(即 **子组件可以通过 $emit 向父组件抛出事件**)：
+
+.. code-block:: html
+
+	<button v-on:click="$emit('enlarge-text')">
+	Enlarge text
+	</button>
+
+父级组件可以像处理 native DOM 事件一样**通过 v-on 监听子组件实例的任意事件并执行事件的具体操作**：
+
+.. code-block:: html
+
+	<blog-post
+	...
+	v-on:enlarge-text="postFontSize += 0.1"
+	></blog-post>
+
+子组件中使用 v-model
+--------------------------
+
+一般来说，我们如果要在子组件中的 input 使用 v-model 指令，那么通常是写成如下形式。
+
+.. code-block:: html
+
+	<custom-input v-model="number"></custom-input>
+
+.. code-block:: javascript
+
+		var MyComponent3=Vue.extend({
+			props:{
+				size_number:Number
+			},
+			template:'<input type="number" v-on:input="$emit(\'input\',$event.target.value)" v-bind:value="size_number"/>'
+		});
+
+为了让它正常工作，这个子组件内的 <input> 必须：
+
+* 将其 value attribute 绑定到一个名叫 size_number 的 prop 上
+* 在其 input 事件被触发时，将新的值通过自定义的 input 事件抛出
+
+
+一个组件上的 v-model 默认会利用名为 value 的 prop 和名为 input 的事件，但是像单选框、复选框等类型的输入控件可能会将 value attribute 用于不同的目的。
+
+.. code-block:: html
+
+	<base-checkbox v-model="lovingVue"></base-checkbox>
+
+.. code-block:: javascript
+
+	Vue.component('base-checkbox', {
+	model: {
+		prop: 'checked',
+		event: 'change'
+	},
+	props: {
+		checked: Boolean
+	},
+	template: '<input  \
+			type="checkbox" \
+			v-bind:checked="checked" \
+			v-on:change="$emit(\'change\', $event.target.checked)" \
+		>'
+	})
+
+这里的 lovingVue 的值将会传入这个名为 checked 的 prop。同时当 <base-checkbox> 触发一个 change 事件并附带一个新的值的时候，这个 lovingVue 的 property 将会被更新。
+
+.. note:: 
+
+	需要注意的是，你仍然需要在组件的 props 选项里声明 checked 这个 prop。
+
+
+插槽
+====================
+
+和 HTML 元素一样，我们经常需要向一个组件传递内容，像这样：
+
+.. code-block:: html
+
+	<alert-box>
+		Something bad happened.
+	</alert-box>
+
+可能会渲染出这样的东西：
+
+.. image:: ../../img/vue/components/slot.png
+	:alt: slot
+
+Vue 自定义的 <slot> 元素让这变得非常简单, 我们向子组件传递的内容被传入 slot 标签中被处理。
+
+.. code-block:: javascript
+
+	Vue.component('alert-box', {
+	template: ' \
+		<div class="demo-alert-box"> \
+			<strong>Error!</strong> \
+			<slot></slot> \
+		</div>'
+	})
+
+
+动态组件
+=====================
+
+有的时候，在不同组件之间进行动态切换是非常有用的，比如我们常常见到的 tab 面板切换。
+
+.. code-block:: html
+
+		<div id="dynamic-component-demo" class="demo">
+			<button v-for="tab in tabs" v-bind:key="tab" v-bind:class="['tab-button', { active: currentTab === tab }]"
+				v-on:click="currentTab = tab">
+				{{ tab }}
+			</button>
+			<component v-bind:is="currentTabComponent" class="tab"></component>
+		</div>
+
+.. code-block:: javascript
+
+			Vue.component("tab-home", {
+				template: '\
+				<div> \
+					<p>Home component</p> \
+					<input type="text"> \
+				</div>'
+			});
+			Vue.component("tab-posts", {
+				template: "<div>Posts component</div>"
+			});
+			Vue.component("tab-archive", {
+				template: "<div>Archive component</div>"
+			});
+
+			new Vue({
+				el: "#dynamic-component-demo",
+				data: {
+					currentTab: "Home",
+					tabs: ["Home", "Posts", "Archive"]
+				},
+				computed: {
+					currentTabComponent: function() {
+						return "tab-" + this.currentTab.toLowerCase();
+					}
+				}
+			});
+
+
+.. image:: ../../img/vue/components/active_components.png
+	:alt: active component
+
+当在这些组件之间切换的时候，你有时会想保持这些组件的状态，以避免反复重渲染导致的性能问题。
+
+你会注意到，如果你选择了一个 tab 面板，切换到 Archive 标签，然后再切换回 Home，是不会继续展示你之前输入的内容的。这是因为你每次切换新标签的时候，Vue 都创建了一个新的 currentTabComponent 实例。
+
+重新创建动态组件的行为通常是非常有用的，但是在这个案例中，我们更希望那些标签的组件实例能够被在它们第一次被创建的时候缓存下来。为了解决这个问题，我们可以用一个 <keep-alive> 元素将其动态组件包裹起来。
+
+.. code-block:: html
+
+	<!-- 失活的组件将会被缓存！-->
+	<keep-alive>
+		<component v-bind:is="currentTabComponent"></component>
+	</keep-alive>
+
+完整样例
+-----------
+
+:download:`dynamic_components.html <./example/dynamic_components.html>` 
+
+异步组件
+================
+
+.. 
 	处理边界
 	=================
