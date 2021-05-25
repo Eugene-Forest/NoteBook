@@ -13,3 +13,4 @@
    对IO流的多重封装 <IO_stream_group>
    IO 流缓存区 <IO_buffer_zone>
    Java 中 char 和 String 的细节和使用注意 <char_and_String>
+   StreamCorruptedException: invalid type code: AC  <InvalidTypeCode-AC>
