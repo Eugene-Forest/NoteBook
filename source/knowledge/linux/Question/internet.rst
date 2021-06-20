@@ -10,6 +10,8 @@
 
 首先，直接进入正题，我们将采用 NAT 模式的网络适配器来通过 本机 [#]_ 的网络来连接Internet。
 
+.. _NAT模式上网配置:
+
 NAT 模式下使用本机校园网
 =============================
 
@@ -48,7 +50,11 @@ NAT 模式下使用本机校园网
 .. image:: ../../../img/linux/question/network_pane.png
    :alt: 网络连接控制面板
 
-对 VMware Network Adapter VMnet8 的 Ipv4 进行修改,需要修改的信息有 ip地址，子网掩码，网关地址；其值参考之前获取的数值。
+对 VMware Network Adapter VMnet8 的 Ipv4 进行修改,需要修改的信息有 ip地址(该ip地址在子网192.168.223.0内，但是不要于192.169.223.128~192.168.223.254范围内，且不与网关192.168.223.2相同)，子网掩码255.255.255.0，网关地址192.168.223.2；其值参考之前获取的数值。
+
+.. note:: 
+
+   以我的理解，VMware Network Adapter VMnet8 设置的地址是作为与虚拟机通信的本机ip地址（这与路由器一样，跨域的路由器是有多个ip地址的）；
 
 .. image:: ../../../img/linux/question/VMnet8_setting.png
    :alt: VMware Network Adapter VMnet8
@@ -64,6 +70,9 @@ NAT 模式下使用本机校园网
 
 .. image:: ../../../img/linux/question/ping.png
    :alt: ping
+
+
+----
 
 .. [#] VMware：指的是 VMware Workstation Pro
 .. [#] 本机：指的是安装了 VMware 工作台的电脑。

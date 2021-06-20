@@ -8,4 +8,5 @@ Linux 配置以及使用问题集等等
 
    安装yum源 <config_yum>
    java1.8.0安装 <java_environment>
-   网络配置 <internet>
+   网络配置(虚拟机直接使用校园网上网) <internet>
+   “远程”连接虚拟机 <remote-connect>
