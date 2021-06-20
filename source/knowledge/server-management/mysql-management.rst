@@ -12,6 +12,10 @@ MySQL管理
 
 使用yum命令安装：``yum install -y mysql-community-server``
 
+.. note:: 
+
+   如果出现mysql的yum源缺失，需重新下载，可前往 :ref:`安装mysql-server的yum源笔记记录 <install-mysql-server-yum>` 查看。
+
 .. code-block:: shell
 
    # 安装之后运行命令rpm -qa | grep mysql可见已经安装的mysql相关软件

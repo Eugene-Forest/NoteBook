@@ -55,3 +55,16 @@
 ---------------------------------------
 
 运行 ``yum clean all`` 清空缓存，然后运行 ``yum makecache`` 生成缓存。
+
+.. _install-mysql-server-yum:
+
+安装mysql-server的yum源
+-----------------------------------
+
+配置YUM源 : ``wget http://dev.mysql.com/get/mysql57-community-release-el7-8.noarch.rpm``
+
+安装/重加载mysql源 : ``yum search mysql``
+
+.. note:: 
+
+   关于安装mysql请前往 ::ref:`安装mysql server 笔记记录 <install-mysql-at-linux>` 
