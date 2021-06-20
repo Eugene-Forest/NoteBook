@@ -11,7 +11,6 @@
 
    java笔记记录 <java/index>
    git笔记记录 <git/index>
-   云平台布置记录 <server-management/index>
    vue 笔记记录 <vue/index>
    element-ui 笔记记录 <element/index>
    计算机网络 <network/index>

@@ -13,3 +13,4 @@ linux
    运维篇 <ops/index>
    基础篇（理论知识点篇） <basic/index>
    问题篇 <Question/index>
+   云平台布置记录 <server-management/index>
