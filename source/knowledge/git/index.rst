@@ -10,6 +10,7 @@ Git , gitee , and github
    :caption: catalog
    :maxdepth: 3
 
+   Git <git/index>
    Gitee <gitee/index>
    Github <github/index>
    Question <question/index>
