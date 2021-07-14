@@ -9,13 +9,14 @@
 
 .. toctree::
 
+   Git 预备知识 <prepare>
    Github和Git准备 <start>
    基础操作 <basic>
-   基础强化 <plus>
+   忽略文件以及文件控制系统的特殊操作 <plus>
    分支与合并 <branch>
-   回溯历史版本 <recall>
+   数据恢复以及返回机制 <recall>
    远程仓库的交互 <remote_repository>
-   数据恢复 <recover>
+
 
 ----
 

@@ -1,6 +1,6 @@
-=============
-基础强化
-=============
+==================================
+忽略文件以及文件控制系统的特殊操作
+==================================
 
 
 关于忽略文件(.gitignore)
@@ -45,7 +45,6 @@
 
 在这里，需要了解一下 ``git rm`` 以及 ``git restore`` 这两个命令。
 
-.. _git-restore: 
 
 其中， ``git restore --staged <file>`` 命令的效果是将暂存区的某个/某些文件还原到现有的提交(commit)的文件的状态， ``git restore <file>`` 命令的效果是将工作区的某个/某些文件还原到现有的暂存区(staged)的文件的状态。
 
@@ -143,6 +142,9 @@ git rm 删除文件有以下几种形式：
 
 使用 ``git mv FILENAME_FORM FILENAME_TO`` 命令。
 
+.. warning:: 
+   需要注意的是，``git mv`` 命令是同时对暂存区以及工作区的文件进行修改，这意味着当被重命名的文件没有被追踪， *不需要也不要使用该命令*，只需要使用 ``mv`` 命令即可。
+
 .. code-block:: shell
 
    $ git status
@@ -178,6 +180,3 @@ git rm 删除文件有以下几种形式：
    (use "git restore --staged <file>..." to unstage)
          new file:   .gitignore
          renamed:    fecture_c -> feature_c
-
-.. note:: 
-   需要注意的是，``git mv`` 命令是同时对暂存区以及工作区的文件进行修改，这意味着当被重命名的文件没有被追踪是，不需要也不能使用该命令，只需要使用 ``mv`` 命令即可。

@@ -9,6 +9,9 @@
 添加远程仓库之一：create a new repository on the command line
 ------------------------------------------------------------------
 
+添加一个新的远程 Git 仓库 ``git remote add <shortname> <url>``
+
+
 .. code-block:: shell
 
    echo "# Forest" >> README.md
@@ -19,7 +22,8 @@
    git remote add origin git@github.com:Eugene-Forest/Forest.git
    git push -u origin master
 
-.. note:: 运行 ``git remote add <shortname> <url>`` 添加一个新的远程 Git 仓库，同时指定一个方便使用的简写。如上代码所示，即可使用origin来代替 *git@github.com:Eugene-Forest/Forest.git* 这个URL。
+.. note:: 
+   运行 ``git remote add <shortname> <url>`` 添加一个新的远程 Git 仓库，同时指定一个方便使用的简写。如上代码所示，即可使用origin来代替 *git@github.com:Eugene-Forest/Forest.git* 这个URL。
 
 添加远程仓库之二：push an existing repository from the command line
 ----------------------------------------------------------------------
