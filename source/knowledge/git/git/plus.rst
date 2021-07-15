@@ -38,6 +38,12 @@
    doc/**/*.pdf
 
 
+.. note:: 
+
+   .gitignore文件通用模板
+
+   .. literalinclude:: ./.gitignore
+
 ----
 
 关于移除文件的操作
