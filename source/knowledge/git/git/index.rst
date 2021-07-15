@@ -16,7 +16,8 @@
    分支与合并 <branch>
    数据恢复以及返回机制 <recall>
    远程仓库的交互 <remote_repository>
-
+   标签的使用 <tag>
+   扩展 <extend>
 
 ----
 
