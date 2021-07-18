@@ -5,8 +5,7 @@ java
 
 .. toctree::
    :caption: catalog
-   :maxdepth: 3
-   :numbered:
+   :maxdepth: 2
 
    java 核心技术 基础篇 <core_technology_basic/index>
    Effective Java <effective_java/index>

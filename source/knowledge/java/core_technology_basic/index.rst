@@ -7,6 +7,7 @@
 
 .. toctree::
    :caption: catalog
+   :numbered:
    
    java的基本程序设计结构 <basic_prepare>
    类与对象 <Class_and_Object>

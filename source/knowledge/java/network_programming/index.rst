@@ -8,6 +8,7 @@ java网络编程
 
 .. toctree::
    :caption: 目录
+   :numbered:
    
    知识准备 <prepare>
    UDP <UDP>

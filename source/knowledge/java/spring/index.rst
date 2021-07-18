@@ -9,7 +9,8 @@
 .. toctree::
    :caption: spring 
    :maxdepth: 2
-
+   :numbered:
+   
    序 <prepare>
    装配 Bean <WiringBean>
    高级装配 <WiringBeanPlus>

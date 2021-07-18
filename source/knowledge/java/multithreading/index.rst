@@ -19,6 +19,7 @@
 .. toctree::
    :caption: catalog
    :maxdepth: 2
+   :numbered:
 
    single threaded execution mode <SingleThreadedExecution>
    Guarded suspension mode and Balking mode <GuardedSuspensionAndBalking>

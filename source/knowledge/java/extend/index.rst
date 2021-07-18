@@ -6,6 +6,7 @@
 .. toctree::
    :caption: catalog
    :maxdepth: 1
+   :numbered:
 
    Java 内存模型 <JavaMemoryModel>
    修饰词 final <final>
