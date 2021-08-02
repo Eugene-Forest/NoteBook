@@ -40,6 +40,10 @@ java命名规范 [#]_
 * 第 3 种注释可以用来自动地生成文档。这种注释以 /\*\* 开始， 以 \*/ 结束。
 
 
+.. _java-basic-datatypes:
+
+
+
 数据类型
 ===========
 
@@ -76,7 +80,9 @@ java命名规范 [#]_
 
 .. warning:: 
 
-   不建议在 Java 程序中使用 char 数据类型。 :ref:`参见 Java 中 char 和 String 的细节和使用注意 <not-using-char>` 
+   不建议在 Java 程序中使用 char 数据类型。 :ref:`参见 Java 中 char 和 String 的细节和使用注意 <not-using-char>` 。 
+
+   注意基本数据类型的封装类的使用方法。 :ref:`参见 Java 的基本数据类型及其封装类 <java-basic-datatype-and-class>` 
 
 
 枚举类型
