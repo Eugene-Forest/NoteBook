@@ -8,6 +8,15 @@ Java语言提供了八种基本类型。六种数字类型（四个整数型，�
 
 在 Java 中，每个基本数据类型都有其对应的封装类。在此篇章中，将学习 Java 的基本数据类型和它们对应的分装类。
 
++------------+---------+------+-----------+-------+---------+------+-------+--------+------+
+| 简单类型   | boolean | byte | char      | short | Int     | long | float | double | void |
++------------+---------+------+-----------+-------+---------+------+-------+--------+------+
+| 二进制位数 | 1       | 8    | 16        | 16    | 32      | 64   | 32    | 64     | --   |
++------------+---------+------+-----------+-------+---------+------+-------+--------+------+
+| 封装器类   | Boolean | Byte | Character | Short | Integer | Long | Float | Double | Void |
++------------+---------+------+-----------+-------+---------+------+-------+--------+------+
+
+
 对于 Java 数据类型的详细讲解 :ref:`点击前往笔记 <java-basic-datatypes>` .
 
 boolean and Boolean
@@ -116,9 +125,25 @@ Byte类
 
 Byte类在一个对象中包含一个基本类型byte的值。 类型为Byte的对象包含一个单一字段，其类型为byte 。 此外，该类还提供了一些将byte转换为String和String转换为byte ，以及在处理byte时有用的其他常量和方法。
 
+Byte 类的定义：
 
 .. code-block:: java
 
    public final class Byte
       extends Number
       implements Comparable<Byte>
+
+构造方法：
+
+   ``Byte(byte value)`` 
+   构造一个新分配的 Byte对象，该对象表示指定的 byte值。 
+    
+   ``Byte(String s)``  **Deprecated** 
+
+   构造一个新分配 Byte对象，表示 byte由指示值 String参数。  
+
+   *使用 Byte.parseByte(String) 将字符串转换为字节原语，或使用 Byte.valueOf(String) 将字符串转换为byte对象。*
+
+.. important:: 
+
+   需要注意的是，通过 Byte 对象将字符串转化为 byte 类型的方法，其允许的字符串被限定为 -128~127
