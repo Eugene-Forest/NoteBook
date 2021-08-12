@@ -13,6 +13,7 @@
    git笔记记录 <git/index>
    vue 笔记记录 <vue/index>
    element-ui 笔记记录 <element/index>
+   JavaScript 笔记记录 <js/index>
    计算机网络 <network/index>
    python笔记记录 <python/index>
    mysql笔记记录 <mysql57/index>
