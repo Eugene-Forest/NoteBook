@@ -20,6 +20,12 @@ vue
    过滤器 <filter>
    组件 <component>
    单文件组件 <single-file-component>
-   插件之路由 <vue-router>
    问题集 <./other/index>
+   插件之路由 <vue-router>
+   插件之数据交互 <vue-resource>
+   vue-cli/脚手架 <./vue-cli/index>
+
+..
+   vuex <./vuex/index>
+   avue <./avue/index>
 
