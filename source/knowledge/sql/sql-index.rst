@@ -16,6 +16,7 @@ sql 笔记集
    T-sql <T-SQL/T-sql-index>
    sql 函数 <sql-function>
    sql isnull() <isnull>
+   sql insert into select <insert-into-select>
 
 
 
