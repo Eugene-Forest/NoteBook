@@ -13,6 +13,7 @@ sql 笔记集
 
    mysql-5.7 笔记记录 <mysql57/mysql57-index>
    sql server 2019 学习笔记 <sqlserver2019/sqlserver2019-index>
+   T-sql <T-SQL/T-sql-index>
    sql 函数 <sql-function>
    sql isnull() <isnull>
 
