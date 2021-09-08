@@ -54,8 +54,6 @@ Linux 下安装sql server 时 2G内存限制的解决方案
 
 离线下载路径： ``wget   https://packages.microsoft.com/rhel/7/mssql-server-2017/mssql-server-14.0.3030.27-1.x86_64.rpm`` 
 
-下载完之后，进入下载目录后 执行 ``yum install mssql-server-14.0.3030.27-1.x86_64.rpm`` 
-
 -------------------------
 添加MSSQL的中文支持
 -------------------------
@@ -65,6 +63,9 @@ Linux 下安装sql server 时 2G内存限制的解决方案
    export MSSQL_COLLATION='Chinese_PRC_CI_AS'
    export MSSQL_LCID='2052'
    # 这里的两句export增加的环境变量，是为了添加MSSQL的中文支持，否则安装好后再去添加会十分困难。
+
+
+下载完之后，进入下载目录后 执行 ``yum install mssql-server-14.0.3030.27-1.x86_64.rpm`` 
 
 -------------------
 修改内存限制
@@ -85,9 +86,13 @@ Linux 下安装sql server 时 2G内存限制的解决方案
 安装配置
 ----------------
 
-进行 sql server 安装配置 ``sudo /opt/mssql/bin/mssql-conf setup``   
+进行 sql server 安装配置 
 
 .. code-block:: shell
+
+   export MSSQL_COLLATION='Chinese_PRC_CI_AS'
+   export MSSQL_LCID='2052'
+   sudo /opt/mssql/bin/mssql-conf setup
 
    #  然后选择版本(免费的推荐选择Developer)设置密码即可。学习使用推荐使用开发者版本。
    Choose an edition of SQL Server:
@@ -99,6 +104,8 @@ Linux 下安装sql server 时 2G内存限制的解决方案
       6) Enterprise (PAID) - CPU Core utilization restricted to 20 physical/40 hyperthreaded
       7) Enterprise Core (PAID) - CPU Core utilization up to Operating System Maximum
       8) I bought a license through a retail sales channel and have a product key to enter.
+   
+   ......
 
 .. note:: 
 
@@ -120,6 +127,17 @@ Linux 下安装sql server 时 2G内存限制的解决方案
 .. attention:: 
    
    需要注意的是，通过以上命令卸载 mssql 后，最好重启一次 linux , 因为一些配置还存在：比如 还能执行 systemctl status mssql-server 。
+
+
+重置系统管理 (SA) 密码
+-----------------------
+
+.. code-block:: shell
+
+   sudo systemctl stop mssql-server
+   export MSSQL_COLLATION='Chinese_PRC_CI_AS'
+   export MSSQL_LCID='2052'
+   sudo /opt/mssql/bin/mssql-conf setup
 
 ----
 
