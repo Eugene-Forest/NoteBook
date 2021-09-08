@@ -9,4 +9,4 @@ sqlserver 2019 学习笔记集
    :maxdepth: 2
 
    sql server 安装 <install>
-   question <question>
+   windows mssql 问题集 <question>
