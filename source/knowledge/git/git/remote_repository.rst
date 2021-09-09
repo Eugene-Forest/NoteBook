@@ -1,5 +1,5 @@
 ========================================
-与远程仓库*remote repository* 的交互
+与远程仓库 *remote repository* 的交互
 ========================================
 
 
@@ -94,6 +94,47 @@
    git remote rename BRANCH_NAME_FROM BRANCH_NAME_TO
 
 值得注意的是这同样也会修改你所有远程跟踪的分支名字。
+
+远程仓库链接的修改
+----------------------------
+
+``git remote set-url <repo_name> <new_url>``
+
+
+.. code-block:: Git
+
+   > git remote -v
+   gitee   https://gitee.com/eugene-forest/NoteBook.git (fetch)
+   gitee   https://gitee.com/eugene-forest/NoteBook.git (push)
+   origin  git@github.com:Eugene-Forest/NoteBook.git (fetch)
+   origin  git@github.com:Eugene-Forest/NoteBook.git (push)
+   > git remote set-url gitee git@github.com:Eugene-Forest/NoteBook.git
+   > git remote -v
+   gitee   git@github.com:Eugene-Forest/NoteBook.git (fetch)
+   gitee   git@github.com:Eugene-Forest/NoteBook.git (push)
+   origin  git@github.com:Eugene-Forest/NoteBook.git (fetch)
+   origin  git@github.com:Eugene-Forest/NoteBook.git (push)
+
+远程仓库链接的附加
+--------------------------
+
+如果我们由两个远程仓库，而且在推送时都想同时向这两个远程仓库推送，那么这个时候，可以使用 ``git remote set-url --add <repo_name> <other-url>`` 命令。
+
+.. code-block:: shell
+
+   > git remote -v
+   origin  git@github.com:Eugene-Forest/NoteBook.git (fetch)
+   origin  git@github.com:Eugene-Forest/NoteBook.git (push)
+   > git remote set-url --add origin https://gitee.com/eugene-forest/NoteBook.git
+   > git remote -v
+   origin  git@github.com:Eugene-Forest/NoteBook.git (fetch)
+   origin  git@github.com:Eugene-Forest/NoteBook.git (push)
+   origin  https://gitee.com/eugene-forest/NoteBook.git (push)
+
+.. note:: 
+
+   从运行结果来看，通过 ``git remote set-url --add <repo_name> <other-url>`` 命令添加的远程仓库只有被推送的权利，当我们向远程拉取的时候还是一开始的远程仓库。
+
 
 远程仓库的移除
 --------------------
