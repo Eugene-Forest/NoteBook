@@ -94,7 +94,7 @@ Linux 下安装sql server 时 2G内存限制的解决方案
    export MSSQL_LCID='2052'
    sudo /opt/mssql/bin/mssql-conf setup
 
-   #  然后选择版本(免费的推荐选择Developer)设置密码即可。学习使用推荐使用开发者版本。
+   #  然后选择版本(免费的推荐选择Developer)设置密码即可。学习使用推荐使用开发者版本,小型应用开发使用推荐 Express 版本。
    Choose an edition of SQL Server:
       1) Evaluation (free, no production use rights, 180-day limit)
       2) Developer (free, no production use rights)

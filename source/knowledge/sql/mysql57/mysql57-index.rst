@@ -9,6 +9,5 @@ mysql 5.7
    :maxdepth: 3
    :numbered:
 
-   准备 <prepare>
-   基础增删改查回顾 <basic>
+   安装 <install>
 
