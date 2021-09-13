@@ -7,10 +7,14 @@ Sphinx 是一种文档工具，它可以令人轻松的撰写出清晰且优美�
 
 .. important:: 
 
-   1) `sphinx 的 2.2.0版本文档 <https://www.sphinx.org.cn/contents.html>`_ 
-   2) `sphinx 的 3.3.0 版文档 <https://www.osgeo.cn/sphinx/contents.html>`_ 
-   3) `reStructureText 学习文档 <https://www.sphinx-doc.org/zh_CN/master/usage/restructuredtext/basics.html>`_ 
-   4) `reStructureText 学习文档 <https://self-contained.github.io/reStructuredText/index.html>`_ 
+   1) `sphinx 的 4.1.2 版文档 (OSGeo) <https://www.osgeo.cn/sphinx/contents.html>`_ 
+   2) `sphinx 的官方文档 （Created using Sphinx 5.0.0+） <https://www.sphinx-doc.org/zh_CN/master/index.html>`_ 
+   3) `reStructureText 学习文档（Created using Sphinx 5.0.0+） <https://www.sphinx-doc.org/zh_CN/master/usage/restructuredtext/basics.html>`_ 
+
+
+.. warning:: 
+
+   需要注意的是，在本篇章笔记中记录的知识部分语法；更多详细全面的语法请前往上文提供的官方文档中学习。
 
 
 .. toctree::
@@ -19,8 +23,11 @@ Sphinx 是一种文档工具，它可以令人轻松的撰写出清晰且优美�
    :numbered:
    
    准备 <prepare>
+   基础杂糅 <basic>
    索引 <indexs>
    表格 <GridTable>
    尾注 <endnote>
    标题学习 <title>
    代码显示 <UsingFileCode>
+   指令 <order>
+
