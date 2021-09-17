@@ -2,12 +2,15 @@
 Grid Table
 ====================
 
-**using plugin -- VSCode Table Formatter**
+.. attention:: 
+
+   using plugin -- VSCode Table Formatter
+
 
 basic usage
 ===========
 
-.. code-block:: word
+.. code-block:: rest
 
    +
    ||Mon|Tue|Wed|Thu|Fri|
@@ -17,10 +20,11 @@ basic usage
    |鈴木|(^^)|(^^)|('')|(xx)|(^^)|
    +
 
-//Enter command in the command palette (Ctrl-Shift-P or Cmd-Shift-P) with cursor position in table syntax. 通过命令面板运行 ``Table: Format current`` 命令
- =>
+.. important:: 
+   
+   Enter command in the command palette (**Ctrl-Shift-P** or **Cmd-Shift-P**) with cursor position in table syntax. 通过命令面板运行 ``Table: Format current`` 命令  =>
 
-.. code-block:: word
+.. code-block:: rest
 
    +------+------+------+------+------+------+
    |      | Mon  | Tue  | Wed  | Thu  | Fri  |
@@ -33,7 +37,7 @@ basic usage
 usage --plus
 ==============
 
-.. code-block:: word
+.. code-block:: rest
 
    +------------+------------+-----------+ 
    | Header 1   | Header 2   | Header 3  | 
@@ -70,7 +74,7 @@ usage --plus
 
 对于以上形式的表格，较好的实现方法是先通过正常方法编写。
 
-.. code-block:: word
+.. code-block:: rest
 
    +
    |类别|类型| 存储需求| 取值范围|
@@ -92,7 +96,7 @@ usage --plus
 
 然后通过命令生成表格：
 
-.. code-block:: word
+.. code-block:: rest
 
    +--------+--------+----------+---------------------------------------------------------+
    |  类别  |  类型  | 存储需求 |                        取值范围                         |
@@ -133,7 +137,7 @@ usage --plus
 
 直接编辑生成后的表格为预期的表格（注意要对齐节点）：
 
-.. code-block:: word
+.. code-block:: rest
 
    +--------+--------+----------+---------------------------------------------------------+
    |  类别  |  类型  | 存储需求 |                        取值范围                         |

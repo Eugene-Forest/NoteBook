@@ -7,7 +7,7 @@
 使用codeblock
 ===========================
 
-.. code-block:: word
+.. code-block:: rest
 
    .. code-block:: java
 
@@ -31,7 +31,7 @@
 显示行号
 =========================
 
-.. code-block:: word
+.. code-block:: rest
 
    .. code-block:: java
       :linenos:
@@ -58,7 +58,7 @@
 突出特定行
 ========================
 
-.. code-block:: word
+.. code-block:: rest
 
    .. code-block:: java
       :emphasize-lines: 1,3-5
@@ -87,7 +87,7 @@
 引用一个文件
 ==================================
 
-.. code-block:: word
+.. code-block:: rest
 
    .. literalinclude:: ./example/Not_regular_expression.py
       :language: python
@@ -107,7 +107,7 @@
 
 指令支持包含文件的一部分. 例如 Python模块, 可以选择类，函数或方法，使用 pyobject 选项。
 
-.. code-block:: word
+.. code-block:: rest
 
    .. literalinclude:: ./example/Not_regular_expression.py
       :pyobject: isPhoneNumber
@@ -123,7 +123,7 @@
 diff2个文件
 ===================
 
-.. code-block:: word
+.. code-block:: rest
 
    .. literalinclude:: ./example/Not_regular_expression.py
       :diff: ./example/Not_regular_expression2.py

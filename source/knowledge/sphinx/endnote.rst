@@ -3,7 +3,7 @@
 ==============
 
 
-.. code-block:: sphinx
+.. code-block:: rest
 
    脚注参考 [5]_
 

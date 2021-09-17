@@ -16,7 +16,7 @@ example
 
 ----
 
-.. code-block:: word
+.. code-block:: rest
 
    :fieldname: Field content
    
@@ -50,7 +50,9 @@ This is a normal text paragraph again.
 
 ----
 
-.. code-block:: word
+上文的语法格式如下：
+
+.. code-block:: rest
 
    This is a normal text paragraph. The next paragraph is a code sample::
 
@@ -60,4 +62,38 @@ This is a normal text paragraph again.
       It can span multiple lines.
 
    This is a normal text paragraph again.
+
+
+注释
+=====================
+
+.. 这是注释
+
+.. 
+   这是注释
+
+.. code-block:: rest
+
+   .. 这是注释
+
+   .. 
+      这是注释
+
+topic / 主题 or 总论
+==========================
+
+.. topic:: Topic Title
+
+   Subsequent indented lines comprise
+   the body of the topic, and are
+   interpreted as body elements.
+
+.. code-block:: rest
+
+   .. topic:: Topic Title
+
+      Subsequent indented lines comprise
+      the body of the topic, and are
+      interpreted as body elements.
+
 
