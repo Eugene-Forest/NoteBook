@@ -6,6 +6,9 @@
 字段列表
 =================
 
+.. epigraph::
+
+   通常在文章的名词解释中使用。
 
 example
 ---------------
@@ -25,7 +28,7 @@ example
 
 
 
-文字块
+文字块 ``::``
 ======================
 
 文字代码块 (ref）以特殊标记结束段落 :: . 文本块必须缩进（和所有段落一样，用空行与周围段落分隔）：：
@@ -35,6 +38,7 @@ example
 * 如果它是以自己的段落出现的，则该段落完全不在文档中。
 * 如果前面有空白，则删除标记。
 * 如果前面有非空白，则标记将被单个冒号替换。
+
 
 example
 ------------
@@ -78,22 +82,3 @@ This is a normal text paragraph again.
 
    .. 
       这是注释
-
-topic / 主题 or 总论
-==========================
-
-.. topic:: Topic Title
-
-   Subsequent indented lines comprise
-   the body of the topic, and are
-   interpreted as body elements.
-
-.. code-block:: rest
-
-   .. topic:: Topic Title
-
-      Subsequent indented lines comprise
-      the body of the topic, and are
-      interpreted as body elements.
-
-
