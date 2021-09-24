@@ -32,3 +32,8 @@ Eugene forest's notebook
 ..
    项目学习笔记 <project/index>
 
+
+.. meta::
+   :description: The reStructuredText plaintext markup language
+   :keywords: plaintext, markup language
+   :author: 彭炜权
