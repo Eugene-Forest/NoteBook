@@ -23,11 +23,12 @@ Sphinx 是一种文档工具，它可以令人轻松的撰写出清晰且优美�
    :numbered:
    
    准备 <prepare>
+   标题学习 <title>
    基础杂糅 <basic>
    索引 <indexs>
-   表格 <GridTable>
+   表格 <Table>
+   表格指令 <table-directive>
    尾注 <endnote>
-   标题学习 <title>
    代码显示 <UsingFileCode>
    指令 <order>
 

@@ -2,6 +2,15 @@
 显示代码
 ========================
 
+总得来说，codeblock代码块指令有两种形式，一种是直接将代码放入代码块中，另一种是引用已有的文件的代码将其放入代码块中。
+
+
+代码形式：
+
+* 前者： ``.. code-block:: code_language_type``
+* 后者： ``.. code-block:: code_file_path(local or internet)``
+
+
 
 
 使用codeblock

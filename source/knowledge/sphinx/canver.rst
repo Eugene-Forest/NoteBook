@@ -1,19 +1,13 @@
-This is a normal text paragraph. The next paragraph is a code sample::
-
-   It is not processed in any way, except
-   that the indentation is removed.
-
-   It can span multiple lines.
-
-This is a normal text paragraph again.
+.. csv-table:: 使用本地csv文件
+   :file: ./example/csv_table_example.csv 
 
 
-:fieldname: Field content
+.. csv-table:: Frozen Delights!
+   :header: Treat, Quantity, Description
+   :widths: 15, 10, 30
+   :quote: ·
 
-----
-
-.. topic:: Topic Title
-
-    Subsequent indented lines comprise
-    the body of the topic, and are
-    interpreted as body elements.
+   ·Albatross·, 2.99, ·On a stick!·
+   ·Crunchy Frog·, 1.49, ·If we took the bones out, it wouldn't be
+   crunchy, now would it?·
+   ·Gannet Ripple·, 1.99, ·"On a stick!"·
