@@ -185,5 +185,51 @@ List Table
 
 一个统一的两级项目符号列表。
 
+.. list-table:: Frozen Delights!
+   :widths: 15 10 30
+   :header-rows: 1
+
+   * - Treat
+     - Quantity
+     - Description
+   * - Albatross
+     - 2.99
+     - On a stick!
+   * - Crunchy Frog
+     - 1.49
+     - If we took the bones out, it wouldn't be
+       crunchy, now would it?
+   * - Gannet Ripple
+     - 1.99
+     - On a stick!
+
+代码如下：
+
+.. code-block:: rest
+
+   .. list-table:: Frozen Delights!
+      :widths: 15 10 30
+      :header-rows: 1
+
+      * - Treat
+        - Quantity
+        - Description
+      * - Albatross
+        - 2.99
+        - On a stick!
+      * - Crunchy Frog
+        - 1.49
+        - If we took the bones out, it wouldn't be
+         crunchy, now would it?
+      * - Gannet Ripple
+        - 1.99
+        - On a stick!
 
 
+list-table 指令有以下属性：
+
+* ``align`` : "left", "center", or "right" ； 用来调整表格在页面中的水平位置。
+* ``widths`` : "auto", "grid", or *a list of integers* (如果对于一个有两列n行的表格，那么它的属性值可为 **1,2**) ； 用来调整表格的每个列的占比。
+* ``width`` : 长度或百分比 ； 用来调整表格的宽度。
+* ``header-rows`` : 要在表头中使用的数据行数。默认值为0。
+* ``stub-columns`` : 要在表头中使用的数据列数。默认值为0。
