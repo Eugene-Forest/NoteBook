@@ -32,3 +32,9 @@ Sphinx 是一种文档工具，它可以令人轻松的撰写出清晰且优美�
    代码显示 <UsingFileCode>
    指令 <order>
 
+.. meta:: 
+   :keyword: 尤金森林笔记
+   :description lang=en: An amusing story
+   :description lang=fr: Une histoire amusante
+   :description lang=zh_CN: 尤金森林
+   :http-equiv=Content-Type: text/html; charset=utf-8
