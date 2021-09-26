@@ -182,5 +182,81 @@ figure
    
 
 
-other ?
+HTML细节
 =====================
+
+meta 指令
+----------
+
+生成HTML <meta> 标签。
+
+.. meta:: 
+   :keyword: 尤金森林笔记
+   :description lang=en: An amusing story
+   :description lang=fr: Une histoire amusante
+   :description lang=zh_CN: 尤金森林
+   :http-equiv=Content-Type: text/html; charset=utf-8
+
+代码如下：
+
+.. code-block:: rest
+
+   .. meta:: 
+      :keyword: 尤金森林笔记
+      :description lang=en: An amusing story
+      :description lang=fr: Une histoire amusante
+      :description lang=zh_CN: 尤金森林
+      :http-equiv=Content-Type: text/html; charset=utf-8
+
+指令参数值对照HTML
+
+.. code-block:: rest
+
+   .. meta::
+      :description: The reStructuredText plaintext markup language
+      :keywords: plaintext, markup language
+      :http-equiv=Content-Type: text/html; charset=ISO-8859-1
+
+   
+   .. This would be converted to the following HTML:
+
+   <meta name="description" content="The reStructuredText plaintext markup language">
+   <meta name="keywords" content="plaintext, markup language">
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+.. code-block:: rest
+
+   .. meta::
+      :description lang=en: An amusing story
+      :description lang=fr: Une histoire amusante
+
+   .. This would be converted to the following HTML:
+
+   <meta name="description" lang="en" content="An amusing story">
+   <meta name="description" lang="fr" content="Une histoire amusante">
+
+title 指令
+------------------
+
+
+title-directive / title指令
+=================================
+
+"title"指令将文档标题指定为元数据，它不会成为文档主体的一部分。 **它覆盖文档提供的文档标题和“title”配置设置。** 例如，在HTML输出中，元数据文档标题出现在浏览器窗口的标题栏中。
+
+
+.. title:: 指令学习
+
+
+.. code-block:: rest
+
+   .. 在此代码块上的代码为：
+
+   .. title::  指令学习
+
+
+
+自定义指令
+===========
+
+
