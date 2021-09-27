@@ -8,7 +8,7 @@
 代码形式：
 
 * 前者： ``.. code-block:: code_language_type``
-* 后者： ``.. code-block:: code_file_path(local or internet)``
+* 后者： ``.. literalinclude:: code_file_path(local or internet)``
 
 
 
@@ -92,20 +92,23 @@
       }
    }
 
+.. _literalinclude-directive:
 
-引用一个文件
+
+
+引用一个文件 literalinclude
 ==================================
 
 .. code-block:: rest
 
-   .. literalinclude:: ./example/Not_regular_expression.py
+   .. literalinclude:: ../example/Not_regular_expression.py
       :language: python
       :linenos:
       :lines: 1-2,30-
 
 运行结果如下；显示文件的第1到2行，以及30行之后的代码：
 
-.. literalinclude:: ./example/Not_regular_expression.py
+.. literalinclude:: ../example/Not_regular_expression.py
    :language: python
    :linenos:
    :lines: 1-2,30-
@@ -118,12 +121,12 @@
 
 .. code-block:: rest
 
-   .. literalinclude:: ./example/Not_regular_expression.py
+   .. literalinclude:: ../example/Not_regular_expression.py
       :pyobject: isPhoneNumber
 
 运行效果如下：
 
-.. literalinclude:: ./example/Not_regular_expression.py
+.. literalinclude:: ../example/Not_regular_expression.py
    :pyobject: isPhoneNumber
 
 
@@ -134,11 +137,11 @@ diff2个文件
 
 .. code-block:: rest
 
-   .. literalinclude:: ./example/Not_regular_expression.py
-      :diff: ./example/Not_regular_expression2.py
+   .. literalinclude:: ../example/Not_regular_expression.py
+      :diff: ../example/Not_regular_expression2.py
 
 
 运行效果如下：
 
-.. literalinclude:: ./example/Not_regular_expression.py
-   :diff: ./example/Not_regular_expression2.py
+.. literalinclude:: ../example/Not_regular_expression.py
+   :diff: ../example/Not_regular_expression2.py

@@ -29,9 +29,7 @@ epigraph 题词
 topic / 主题 or 总论
 ==========================
 
-.. epigraph::
-
-   带有标题的段落。
+带有标题的段落。
 
 .. topic:: Topic Title
 
@@ -51,6 +49,8 @@ topic / 主题 or 总论
 
 image 与 figure 
 ========================
+
+.. _image-directive:
 
 image
 -----------
@@ -72,7 +72,7 @@ For example ::
 
 ----
 
-.. image:: ./img/grapefruit.jfif
+.. image:: ../img/grapefruit.jfif
    :alt: hzw
    :scale: 50%
    :align: right
@@ -85,7 +85,7 @@ For example ::
 
 代码 ::
 
-   .. image:: ./img/grapefruit.jfif
+   .. image:: ../img/grapefruit.jfif
       :alt: hzw
       :scale: 50%
       :align: right
@@ -93,12 +93,12 @@ For example ::
    ... 文字文章 ...
 
 
+.. _figure-directive:
+
 figure 
 ==================
 
-.. epigraph::
-
-   带标题和可选图例的图像
+带标题和可选图例的图像
 
 代码样例 ::
 
@@ -124,7 +124,7 @@ figure
 
 ----
 
-.. figure:: ./img/grapefruit.jfif
+.. figure:: ../img/grapefruit.jfif
    :alt: 柚子
    :height: 100px
    :width: 200 px
@@ -140,13 +140,13 @@ figure
    +----------------------------------+------------+
    | Symbol                           | Meaning    |
    +==================================+============+
-   | .. image:: ./img/grapefruit.jfif |            |
+   | .. image:: ../img/grapefruit.jfif |            |
    |    :scale: 20%                   | Campground |
    +----------------------------------+------------+
-   | .. image:: ./img/grapefruit.jfif |            |
+   | .. image:: ../img/grapefruit.jfif |            |
    |    :scale: 20%                   | Campground |
    +----------------------------------+------------+
-   | .. image:: ./img/grapefruit.jfif |            |
+   | .. image:: ../img/grapefruit.jfif |            |
    |    :scale: 20%                   | Campground |
    +----------------------------------+------------+
 
@@ -154,7 +154,7 @@ figure
 
 实例代码 ::
 
-   .. figure:: ./img/grapefruit.jfif
+   .. figure:: ../img/grapefruit.jfif
       :alt: 柚子
       :height: 100px
       :width: 200 px
@@ -170,13 +170,13 @@ figure
       +----------------------------------+------------+
       | Symbol                           | Meaning    |
       +==================================+============+
-      | .. image:: ./img/grapefruit.jfif |            |
+      | .. image:: ../img/grapefruit.jfif |            |
       |    :scale: 20%                   | Campground |
       +----------------------------------+------------+
-      | .. image:: ./img/grapefruit.jfif |            |
+      | .. image:: ../img/grapefruit.jfif |            |
       |    :scale: 20%                   | Campground |
       +----------------------------------+------------+
-      | .. image:: ./img/grapefruit.jfif |            |
+      | .. image:: ../img/grapefruit.jfif |            |
       |    :scale: 20%                   | Campground |
       +----------------------------------+------------+
    
@@ -238,10 +238,6 @@ meta 指令
 title 指令
 ------------------
 
-
-title-directive / title指令
-=================================
-
 "title"指令将文档标题指定为元数据，它不会成为文档主体的一部分。 **它覆盖文档提供的文档标题和“title”配置设置。** 例如，在HTML输出中，元数据文档标题出现在浏览器窗口的标题栏中。
 
 
@@ -253,6 +249,65 @@ title-directive / title指令
    .. 在此代码块上的代码为：
 
    .. title::  指令学习
+
+
+raw 指令
+--------------------
+
+包括原始目标格式标记。
+
+“raw”指令指示非restructuredtext数据，该数据将不受影响地传递给Writer。输出格式的名称在指令参数中给出。对原始数据的解释取决于作者。Writer可以忽略任何不匹配其格式的原始输出。
+
+.. raw:: html
+
+   <hr width=200 size=10>
+
+
+.. code-block:: rest
+
+   .. 上方分隔线代码如下所示：
+
+   .. raw:: html
+
+      <hr width=200 size=10>
+
+
+替代指令 replace
+==================
+
+my |name| is |caution|
+
+
+.. |name| replace:: replacement *text*
+
+
+.. |caution| image:: warning.png
+             :alt: Warning!
+
+
+.. raw:: html
+
+   <hr width=400 size=10>
+
+.. code-block:: rest
+
+   my |name| is |caution|
+
+   .. |name| replace:: replacement *text*
+
+   .. |caution| image:: warning.png
+               :alt: Warning!
+
+.. important:: 
+
+   **如果要对所有文档使用某些替换，请将它们放入 rst_prolog 或 rst_epilog 或者将它们放在单独的文件中，并将其包含到所有要在其中使用它们的文档中，使用 include 指令。** （确保为include文件提供与其他源文件不同的文件扩展名，以避免sphinx将其作为独立文档查找。）
+
+   **文档系统提供三个默认定义的替换。** 它们在构建配置文件中设置。
+
+   * ``|release|`` 由项目发布替代，文件参考。这是一个完整的版本字符串，包括alpha/beta/release候选标记，例如 2.5.2b3 . 通过设置 release .
+   * ``|version|`` 替换为文档引用的项目版本。这意味着只包含主要和次要版本的部分，例如 2.5 ，即使是2.5.1版。通过设置 version .
+   * ``|today|`` 替换为今天的日期（文档的读取日期）或生成配置文件中设置的日期。通常有格式 April 14, 2007 . 通过设置 today_fmt 和 today .
+
 
 
 

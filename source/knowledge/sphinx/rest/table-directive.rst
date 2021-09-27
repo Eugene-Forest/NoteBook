@@ -86,14 +86,14 @@ csv table
 
 
 .. csv-table:: 使用本地csv文件
-   :file: ./example/csv_table_example.csv 
+   :file: ../example/csv_table_example.csv 
 
 .. csv-table:: 将前行csv数据作为 header
-   :file: ./example/csv_table_example.csv
+   :file: ../example/csv_table_example.csv
    :header-rows: 2
    
 .. csv-table:: 将前两列csv数据作为 header
-   :file: ./example/csv_table_example.csv
+   :file: ../example/csv_table_example.csv
    :stub-columns: 2
    
 .. csv-table:: 需要双倍使用分隔符才能将分隔符显示
@@ -130,14 +130,14 @@ csv table
 
 
    .. csv-table:: 使用本地csv文件
-      :file: ./example/csv_table_example.csv 
+      :file: ../example/csv_table_example.csv 
 
    .. csv-table:: 将前行csv数据作为 header
-      :file: ./example/csv_table_example.csv
+      :file: ../example/csv_table_example.csv
       :header-rows: 2
       
    .. csv-table:: 将前两列csv数据作为 header
-      :file: ./example/csv_table_example.csv
+      :file: ../example/csv_table_example.csv
       :stub-columns: 2
       
    .. csv-table:: 需要双倍使用分隔符才能将分隔符显示
