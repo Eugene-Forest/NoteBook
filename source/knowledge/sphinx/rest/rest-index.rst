@@ -20,7 +20,6 @@ RestructuredText是Sphinx使用的默认纯文本标记语言。本节简要介�
    :maxdepth: 3
    :numbered:
    
-   准备 <prepare>
    标题学习 <title>
    基础杂糅 <basic>
    索引 <indexs>
