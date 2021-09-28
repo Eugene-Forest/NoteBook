@@ -4,6 +4,16 @@ markdown 支持
 
 .. _markdown-support:
 
+MyST Markdown
+====================
+
+.. note:: 
+
+   MyST Markdown 是 Markdown 的超集。
+
+.. important:: 
+
+   更多关于 MyST Markdown 的信息前往官网 `MyST - Markedly Structured Tex <https://myst-parser.readthedocs.io/en/latest/index.html>`_ 
 
 要配置您的Sphinx项目以支持 Markdown ，请按以下步骤进行：
 
