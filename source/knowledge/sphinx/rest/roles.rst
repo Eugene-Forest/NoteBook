@@ -3,3 +3,168 @@
 =======================
 
 
+sphinx使用解释文本角色将语义标记插入到文档中。它们被写为 ``:rolename:`content '``.
+
+
+
+交叉引用任意位置 / 锚
+=======================
+
+添加锚的步骤：
+
+#. 添加 label
+#. 适用 ref 角色 链接 label
+
+
+为了支持对任何文档中任意位置的交叉引用，使用标准的REST标签。为此，在整个文档中，工作标签名称必须是唯一的。有两种方法可以引用标签：
+
+* ``:ref:`Label``` 
+   * 如果将标签直接放置在节标题之前，可以使用 ``:ref:`label-name``` .例如: 
+   .. code-block:: rest
+
+      .. _my-reference-label:
+
+      Section to cross-reference
+      --------------------------
+
+      This is the text of the section.
+
+      It refers to the section itself, see :ref:`my-reference-label`.
+
+      .. 当节和引用位于不同的源文件中时，这也同样有效。
+
+   * 自动标签同样适用于图像
+   .. code-block:: rest
+
+      .. _my-figure:
+
+      .. figure:: whatever
+
+         Figure caption
+   
+   
+* ``:ref:`description _<Label>``` 
+   * 如果不是以上情况，仍可以引用节标题之前未放置的标签，但必须使用以下语法为链接指定明确的标题： ``:ref:`Link title <label-name>```.
+
+.. attention:: 
+
+   引用标签(label)必须以下划线开头。引用标签时，必须省略下划线（请参见上面的示例）。
+
+.. sidebar:: Optional Sidebar Title
+   :subtitle: Optional Sidebar Subtitle
+
+   Subsequent indented lines comprise
+   the body of the sidebar, and are
+   interpreted as body elements.
+
+引用可下载文件 
+========================
+
+``:download:`Title <path>``` 
+
+此角色允许您链接到源树中的文件，这些文件不是可以查看的REST文档，而是可以下载的文件。
+
+当您使用此角色时，被引用的文件将在生成时自动标记为包含在输出中（显然，仅用于HTML输出）。所有可下载的文件都放在 ``_downloads/<unique hash>/`` 输出目录的子目录；处理重复的文件名。
+
+See :download:`this example rst file <../example/title1.rst>`.
+
+
+.. code-block:: rest
+
+   .. 上文下载功能代码如下所示：
+   See :download:`this example script <../example/title1.rst>`.
+
+
+
+交叉引用文档
+==================
+
+
+链接到指定的文档；可以绝对或相对方式指定文档名。如果没有给出明确的链接文本（与通常一样：  ``:doc:`Monty Python members </people>``` 链接标题将是给定文档的标题。
+
+:doc:`./basic` 
+
+:doc:`./basic <./basic>` 
+
+.. code-block:: rest
+
+   .. 上方文档链接的实现代码如下：
+
+   :doc:`./basic` 
+
+   :doc:`./basic <./basic>` 
+
+
+
+数学
+===============
+
+
+math
+-------------------
+
+.. math:: e^{i\pi} + 1 = 0
+   :label: euler
+
+Since Pythagoras, we know that :math:`a^2 + b^2 = c^2`.
+
+.. math::
+
+    α_t(i) = P(O_1, O_2, … O_t, q_t = S_i λ)
+
+
+:math:`α_t(i) = P(O_1 × O_2 × … O_t × q_t = S_i λ)` 
+
+The area of a circle is :math:`A_\text{c} = (\pi/4) d^2`.
+
+Euler's identity, equation :math:numref:`euler`, was elected one of the
+most beautiful mathematical formulas.
+
+.. code-block:: rest
+
+   .. 上方数学公式的代码为：
+
+   .. math:: e^{i\pi} + 1 = 0
+      :label: euler
+
+   Since Pythagoras, we know that :math:`a^2 + b^2 = c^2`.
+
+   .. math::
+
+      α_t(i) = P(O_1, O_2, … O_t, q_t = S_i λ)
+
+
+   :math:`α_t(i) = P(O_1 × O_2 × … O_t × q_t = S_i λ)` 
+
+   The area of a circle is :math:`A_\text{c} = (\pi/4) d^2`.
+
+   Euler's identity, equation :math:numref:`euler`, was elected one of the
+   most beautiful mathematical formulas.
+
+
+raw 
+=======================
+
+包括原始目标格式标记。
+
+“raw” 指示非restructuredtext数据，该数据将不受影响地传递给Writer。输出格式的名称在指令参数中给出。对原始数据的解释取决于作者。Writer可以忽略任何不匹配其格式的原始输出。
+
+.. raw:: html
+
+   <hr width=200 size=10>
+
+
+.. code-block:: rest
+
+   .. 上方分隔线代码如下所示：
+
+   .. raw:: html
+
+      <hr width=200 size=10>
+
+
+其他语义标记
+=================
+
+
+
