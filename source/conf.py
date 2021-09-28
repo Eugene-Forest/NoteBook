@@ -28,15 +28,21 @@ import sphinx_rtd_theme
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
+# 在这里以字符串的形式添加任何Sphinx扩展模块名。
 extensions = [
     "sphinx_rtd_theme",
+    'myst_parser',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
 # The suffix of source filenames.
-source_suffix = '.rst'
+# old config : source_suffix = '.rst'
+# Here is new configuration
+source_suffix = {
+    '.rst': 'restructuredtext',
+}
 
 # The encoding of source files.
 #source_encoding = 'utf-8-sig'

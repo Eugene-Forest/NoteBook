@@ -19,3 +19,4 @@
    sql笔记记录 <sql/sql-index>
    linux笔记记录 <linux/linux-index>
    sphinx笔记记录 <sphinx/sphinx-index>
+   markdown <markdown/md-index>
