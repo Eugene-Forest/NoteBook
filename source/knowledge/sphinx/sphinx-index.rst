@@ -22,4 +22,5 @@ Sphinx 是一种文档工具，它可以令人轻松的撰写出清晰且优美�
    
    准备 <prepare>
    reStructureText 语法学习 <./rest/rest-index.rst>
+   markdown 支持 <markdown-support>
    配置 <config>
