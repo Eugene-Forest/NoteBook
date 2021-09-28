@@ -79,6 +79,7 @@ See :download:`this example rst file <../example/title1.rst>`.
 交叉引用文档
 ==================
 
+``:doc:`/text```
 
 链接到指定的文档；可以绝对或相对方式指定文档名。如果没有给出明确的链接文本（与通常一样：  ``:doc:`Monty Python members </people>``` 链接标题将是给定文档的标题。
 
@@ -141,6 +142,9 @@ most beautiful mathematical formulas.
    Euler's identity, equation :math:numref:`euler`, was elected one of the
    most beautiful mathematical formulas.
 
+.. note:: 
+
+   ``:eq:`` 等同于 ``math:numref`` .
 
 raw 
 =======================
@@ -166,5 +170,92 @@ raw
 其他语义标记
 =================
 
+**以下角色除了以不同的样式格式化文本外，不执行任何特殊操作：**
+
+strong
+------------
+
+strong 角色标记的效果等同于双星号的字体加粗效果。
+
+**text**  
+:strong:`text`
+
+.. code-block:: rest
+
+   .. 上方 text 的代码如下所示：
+   **text**
+   :strong:`text`
+   
+
+sub / subscript  / 下标
+------------------------
+
+The chemical formula for pure water is |H2O|.
+
+.. |H2O| replace:: H\ :sub:`2`\ O
+
+The chemical formula for pure Hydrogen Peroxide is |H2O2|.
+
+.. |H2O2| replace:: :math:`H_2 O_2`
+
+.. code-block:: rest
+
+   .. 上方化学公式的代码表示方式如下：
+
+   The chemical formula for pure water is |H2O|.
+
+   .. |H2O| replace:: H\ :sub:`2`\ O
+
+   The chemical formula for pure Hydrogen Peroxide is |H2O2|.
+
+   .. |H2O2| replace:: :math:`H_2 O_2`
+
+sup / superscript / 上标
+--------------------------
+
+|X2Y2| (|X2Y25|).
+
+.. |X2Y2| replace:: X\ :sup:`2`\ + Y\ :sup:`2`\ = 25
 
 
+.. |X2Y25| replace:: :math:`X^2 + Y^2 = 25` 
+
+
+.. code-block:: rest
+
+   .. 上方公式的代码表示方式如下：
+   |X2Y2| (|X2Y25|).
+
+   .. |X2Y2| replace:: X\ :sup:`2`\ + Y\ :sup:`2`\ = 25
+
+
+   .. |X2Y25| replace:: :math:`X^2 + Y^2 = 25` 
+
+
+
+abbr 文字提示
+------------------
+
+缩写。如果角色内容包含一个带括号的解释，它将被特殊处理：它将以HTML的形式显示在工具提示中，并且在LaTex中只输出一次。
+
+:abbr:`LIFO (last-in, first-out)`.
+
+
+.. code-block:: rest
+
+   .. 文字提示的实现方式：
+
+   :abbr:`LIFO (last-in, first-out)`.
+
+menuselection 菜单选项
+-------------------------
+
+菜单选项应使用 menuselection 角色。这用于标记菜单选择的完整序列，包括选择子菜单和选择特定操作，或此类序列的任何子序列。个别选择的名称应以分隔 --> .
+
+例如，要标记选择“开始>程序”，请使用以下标记：
+
+:menuselection:`Start --> Programs`
+
+.. code-block:: rest
+
+   :menuselection:`Start --> Programs`
