@@ -10,8 +10,7 @@ epigraph 题词
 
 .. epigraph::
 
-   No matter where you go, there you are.
-
+   No matter where you go, there you are.          
    -- Buckaroo Banzai
 
 
@@ -20,9 +19,9 @@ epigraph 题词
 
    .. epigraph::
 
-   No matter where you go, there you are.
+      No matter where you go, there you are.
 
-   -- Buckaroo Banzai
+      -- Buckaroo Banzai
 
 
 
@@ -46,6 +45,35 @@ topic / 主题 or 总论
       Subsequent indented lines comprise
       the body of the topic, and are
       interpreted as body elements.
+
+
+sidebar 边注栏
+====================
+
+
+侧边栏的可选选项只有 subtitle 子标题。
+
+
+.. sidebar:: Optional Sidebar Title
+   :subtitle: Optional Sidebar Subtitle
+
+   Subsequent indented lines comprise
+   the body of the sidebar, and are
+   interpreted as body elements.
+
+
+.. code-block:: rest
+
+   .. 侧边栏代码如下所示：
+
+   .. sidebar:: Optional Sidebar Title
+      :subtitle: Optional Sidebar Subtitle
+
+      Subsequent indented lines comprise
+      the body of the sidebar, and are
+      interpreted as body elements.
+
+
 
 image 与 figure 
 ========================
@@ -251,27 +279,6 @@ title 指令
    .. title::  指令学习
 
 
-raw 指令
---------------------
-
-包括原始目标格式标记。
-
-“raw”指令指示非restructuredtext数据，该数据将不受影响地传递给Writer。输出格式的名称在指令参数中给出。对原始数据的解释取决于作者。Writer可以忽略任何不匹配其格式的原始输出。
-
-.. raw:: html
-
-   <hr width=200 size=10>
-
-
-.. code-block:: rest
-
-   .. 上方分隔线代码如下所示：
-
-   .. raw:: html
-
-      <hr width=200 size=10>
-
-
 替代指令 replace
 ==================
 
@@ -307,7 +314,6 @@ my |name| is |caution|
    * ``|release|`` 由项目发布替代，文件参考。这是一个完整的版本字符串，包括alpha/beta/release候选标记，例如 2.5.2b3 . 通过设置 release .
    * ``|version|`` 替换为文档引用的项目版本。这意味着只包含主要和次要版本的部分，例如 2.5 ，即使是2.5.1版。通过设置 version .
    * ``|today|`` 替换为今天的日期（文档的读取日期）或生成配置文件中设置的日期。通常有格式 April 14, 2007 . 通过设置 today_fmt 和 today .
-
 
 
 

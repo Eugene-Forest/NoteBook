@@ -6,9 +6,7 @@
 字段列表
 =================
 
-.. epigraph::
-
-   通常在文章的名词解释中使用。
+通常在文章的名词解释中使用。
 
 example
 ---------------
@@ -17,7 +15,9 @@ example
 
 :othername: othername field content
 
-----
+.. raw:: html
+
+   <hr width=400 size=10>
 
 .. code-block:: rest
 
@@ -52,7 +52,9 @@ This is a normal text paragraph. The next paragraph is a code sample::
 
 This is a normal text paragraph again.
 
-----
+.. raw:: html
+
+   <hr width=400 size=10>
 
 上文的语法格式如下：
 
@@ -82,3 +84,72 @@ This is a normal text paragraph again.
 
    .. 
       这是注释
+
+
+脚注/尾注
+===============
+
+使用 [#name]_ 标记脚注位置，并将脚注正文添加到文档底部的“footnotes”标题后面，
+
+.. code-block:: rest
+
+   脚注参考 [5]_
+
+   ..  [5] 这是对应的注记信息
+
+   自动脚注
+
+   脚注参考 [#]_，这是第二个脚注 [#]_。
+
+   ..  [#] 这是第一个注记的信息
+   ..  [#] 这是第二个注记的信息
+
+.. note:: 
+   运行效果如下方所示。
+
+.. raw:: html
+
+   <hr width=400 size=10>
+
+
+脚注参考 [5]_
+
+..  [5] 这是对应的注记信息
+
+自动脚注
+
+脚注参考 [#]_，这是第二个脚注 [#]_。
+
+..  [#] 这是第一个注记的信息
+..  [#] 这是第二个注记的信息
+
+
+索引
+============
+
+超链接
+-----------
+.. code-block:: rest
+
+   `Title <http://link>`_ 
+
+.. raw:: html
+
+   <hr width=400 size=10>
+
+文档内部链接（锚）
+-------------------
+
+在这里，只介绍其中一种方法。
+
+.. code-block:: rest
+
+   //在目标位置添加标签
+   .. _label-name:
+
+.. code-block:: rest
+
+   //在起始位置添加指向链接
+   :ref:`link title <label-name>` 
+
+

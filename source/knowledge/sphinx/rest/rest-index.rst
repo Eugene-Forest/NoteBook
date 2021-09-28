@@ -22,10 +22,10 @@ RestructuredText是Sphinx使用的默认纯文本标记语言。本节简要介�
    
    标题学习 <title>
    基础杂糅 <basic>
-   索引 <indexs>
+   指令 <order>
    表格 <Table>
    表格指令 <table-directive>
-   尾注 <endnote>
    使用文件 <usingFile>
    代码显示 <UsingFileCode>
-   指令 <order>
+   角色 <roles>
+   域 <domains>
