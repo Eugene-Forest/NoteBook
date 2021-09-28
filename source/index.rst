@@ -10,24 +10,24 @@ Eugene forest's notebook
    :caption: 主目录
    :maxdepth: 3
 
-   笔记记录 <knowledge/index>
-   软件/工具安装配置记录 <software/index>
+   笔记记录 <knowledge/k-index>
+   软件/工具安装配置记录 <software/software-index>
 
 .. 项目学习笔记 <project/index>
 
 .. 
-.. toctree::
-   :numbered:
-   :caption: 软件/工具安装配置记录
-   :maxdepth: 3
+   .. toctree::
+      :numbered:
+      :caption: 软件/工具安装配置记录
+      :maxdepth: 3
 ..
    vs code <software/vs_code/index>
    idea <software/idea/index>
    sphinx <software/sphinx/index>
 ..
-.. toctree::
-   :numbered:
-   :caption: 项目学习笔记
-   :maxdepth: 3
+   .. toctree::
+      :numbered:
+      :caption: 项目学习笔记
+      :maxdepth: 3
 ..
    项目学习笔记 <project/index>
