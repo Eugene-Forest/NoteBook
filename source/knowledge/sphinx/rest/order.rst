@@ -46,6 +46,35 @@ topic / 主题 or 总论
       the body of the topic, and are
       interpreted as body elements.
 
+目录
+================
+
+由于REST没有连接多个文档或将文档拆分为多个输出文件的功能，因此Sphinx使用自定义指令在文档所组成的单个文件和目录之间添加关系。这个 toctree 指令是中心元素。
+
+.. note:: 
+
+   一个文件在另一个文件中的简单“包含”可以通过 |include| 指令。
+
+.. |include| replace:: :ref:`include-directive`
+
+
+文档标题 toctree 将自动从引用文档的标题中读取。如果这不是您想要的，您可以使用类似的语法来指定一个显式的标题和目标来放置超链接（和sphinx的 cross-referencing syntax ）这看起来像：
+
+.. code-block:: rest
+
+   .. toctree::
+      :maxdepth: 2
+      
+
+      ./intro
+      this is strings theme <./strings>
+      datatypes
+      ../../numeric
+      (many more documents listed here)
+
+.. note:: 
+
+   更多关于目录的语法点击 `前往官网查看。 <https://www.osgeo.cn/sphinx/usage/restructuredtext/directives.html#table-of-contents>`_ 
 
 sidebar 边注栏
 ====================
@@ -72,7 +101,6 @@ sidebar 边注栏
       Subsequent indented lines comprise
       the body of the sidebar, and are
       interpreted as body elements.
-
 
 
 image 与 figure 
@@ -315,9 +343,5 @@ my |name| is |caution|
    * ``|version|`` 替换为文档引用的项目版本。这意味着只包含主要和次要版本的部分，例如 2.5 ，即使是2.5.1版。通过设置 version .
    * ``|today|`` 替换为今天的日期（文档的读取日期）或生成配置文件中设置的日期。通常有格式 April 14, 2007 . 通过设置 today_fmt 和 today .
 
-
-
-自定义指令
-===========
 
 

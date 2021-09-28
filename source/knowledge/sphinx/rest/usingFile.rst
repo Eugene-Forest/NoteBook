@@ -10,6 +10,7 @@
 
    点击查看 ``literalinclude`` |代码块指令| 、 ``image`` |image指令| 以及 ``figure`` |figure指令| 指令的笔记。
 
+.. _include-directive: 
 
 include 指令
 ===============
