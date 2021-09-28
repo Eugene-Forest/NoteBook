@@ -193,18 +193,15 @@ figure
    case, the legend consists of this paragraph and the following
    table:
 
-   +----------------------------------+------------+
-   | Symbol                           | Meaning    |
-   +==================================+============+
-   | .. image:: ../img/grapefruit.jfif |            |
-   |    :scale: 20%                   | Campground |
-   +----------------------------------+------------+
-   | .. image:: ../img/grapefruit.jfif |            |
-   |    :scale: 20%                   | Campground |
-   +----------------------------------+------------+
-   | .. image:: ../img/grapefruit.jfif |            |
-   |    :scale: 20%                   | Campground |
-   +----------------------------------+------------+
+   +-----------------------------------+------------+
+   | Symbol                            | Meaning    |
+   +===================================+============+
+   | .. image:: ../img/grapefruit.jfif | Campground |
+   +-----------------------------------+------------+
+   | .. image:: ../img/grapefruit.jfif | Campground |
+   +-----------------------------------+------------+
+   | .. image:: ../img/grapefruit.jfif | Campground |
+   +-----------------------------------+------------+
 
 ----
 
@@ -223,18 +220,15 @@ figure
       case, the legend consists of this paragraph and the following
       table:
 
-      +----------------------------------+------------+
-      | Symbol                           | Meaning    |
-      +==================================+============+
-      | .. image:: ../img/grapefruit.jfif |            |
-      |    :scale: 20%                   | Campground |
-      +----------------------------------+------------+
-      | .. image:: ../img/grapefruit.jfif |            |
-      |    :scale: 20%                   | Campground |
-      +----------------------------------+------------+
-      | .. image:: ../img/grapefruit.jfif |            |
-      |    :scale: 20%                   | Campground |
-      +----------------------------------+------------+
+      +-----------------------------------+------------+
+      | Symbol                            | Meaning    |
+      +===================================+============+
+      | .. image:: ../img/grapefruit.jfif | Campground |
+      +-----------------------------------+------------+
+      | .. image:: ../img/grapefruit.jfif | Campground |
+      +-----------------------------------+------------+
+      | .. image:: ../img/grapefruit.jfif | Campground |
+      +-----------------------------------+------------+
    
 
 
