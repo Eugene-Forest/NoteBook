@@ -32,6 +32,7 @@ import sphinx_rtd_theme
 extensions = [
     "sphinx_rtd_theme",
     'myst_parser',
+    'sphinx.ext.autosectionlabel',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -44,11 +45,14 @@ source_suffix = {
     '.rst': 'restructuredtext',
 }
 
+# Make sure the target is unique
+autosectionlabel_prefix_document = True
+
 # The encoding of source files.
 #source_encoding = 'utf-8-sig'
 
 # The master toctree document.
-# master_doc = 'index'
+master_doc = 'index'
 
 # General information about the project.
 project = u'NoteBook'

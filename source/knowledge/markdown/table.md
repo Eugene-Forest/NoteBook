@@ -13,11 +13,3 @@ https://www.tablesgenerator.com/markdown_tables
 
 
 
-
-
-
-
-/home/docs/checkouts/readthedocs.org/user_builds/studynotes/checkouts/latest/source/index.rst:: WARNING: rST localisation for language "zh" not found. 
-
-
-

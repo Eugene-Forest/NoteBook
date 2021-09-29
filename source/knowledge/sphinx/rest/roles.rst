@@ -16,6 +16,10 @@ sphinx使用解释文本角色将语义标记插入到文档中。它们被写�
 #. 适用 ref 角色 链接 label
 
 
+:ref:`引用可下载文件 <knowledge/sphinx/rest/roles:引用可下载文件>` 
+:ref:`menuselection <knowledge/sphinx/rest/roles:交叉引用任意位置 / 锚>` 
+
+
 为了支持对任何文档中任意位置的交叉引用，使用标准的REST标签。为此，在整个文档中，工作标签名称必须是唯一的。有两种方法可以引用标签：
 
 * ``:ref:`Label``` 
@@ -52,14 +56,35 @@ sphinx使用解释文本角色将语义标记插入到文档中。它们被写�
 
    引用标签(label)必须以下划线开头。引用标签时，必须省略下划线（请参见上面的示例）。
 
-.. sidebar:: Optional Sidebar Title
-   :subtitle: Optional Sidebar Subtitle
 
-   Subsequent indented lines comprise
-   the body of the sidebar, and are
-   interpreted as body elements.
+.. important:: 
 
-引用可下载文件 
+   手动为每个部分添加一个明确的目标并确保其唯一性是一项艰巨的任务！幸运的是，Sphinx 包含一个扩展来帮助我们解决这个问题， ``autosectionlabel``。
+
+   要激活autosectionlabel扩展，请将其添加到您的conf.py文件中：
+
+   .. code-block:: python
+
+      # Add the extension
+      extensions = [
+         'sphinx.ext.autosectionlabel',
+      ]
+
+      # Make sure the target is unique
+      autosectionlabel_prefix_document = True
+
+   Sphinx 将为您的所有部分创建明确的目标，目标名称的形式为 ``{path/to/page}:{title-of-section}``.
+
+   .. code-block:: rest
+
+     - :ref:`guides/cross-referencing-with-sphinx:explicit targets`.
+
+     - :ref:`Custom title <guides/cross-referencing-with-sphinx:explicit targets>`.
+
+
+
+
+引用可下载文件
 ========================
 
 ``:download:`Title <path>``` 
@@ -96,8 +121,6 @@ See :download:`this example rst file <../example/title1.rst>`.
    :doc:`./basic` 
 
    :doc:`./basic <./basic>` 
-
-
 
 数学
 ===============
@@ -234,7 +257,6 @@ sup / superscript / 上标
    .. |X2Y25| replace:: :math:`X^2 + Y^2 = 25` 
 
 
-
 abbr 文字提示
 ------------------
 
@@ -242,14 +264,16 @@ abbr 文字提示
 
 :abbr:`LIFO (last-in, first-out)`.
 
-
 .. code-block:: rest
 
    .. 文字提示的实现方式：
 
    :abbr:`LIFO (last-in, first-out)`.
 
-menuselection 菜单选项
+
+
+
+menuselection
 -------------------------
 
 菜单选项应使用 menuselection 角色。这用于标记菜单选择的完整序列，包括选择子菜单和选择特定操作，或此类序列的任何子序列。个别选择的名称应以分隔 --> .
