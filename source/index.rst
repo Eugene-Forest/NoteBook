@@ -11,7 +11,3 @@ Eugene forest's notebook
 
    笔记记录 <knowledge/k-index>
    软件/工具安装配置记录 <software/software-index>
-
-.. warning:: 
-
-   this is inside box index
