@@ -9,9 +9,9 @@ Eugene forest's notebook
    :caption: 主目录
    :maxdepth: 3
 
-   笔记记录 <knowledge/k-index>
-   软件/工具安装配置记录 <software/software-index>
+   笔记记录 <./source/knowledge/k-index>
+   软件/工具安装配置记录 <./source/software/software-index>
 
 .. warning:: 
 
-   this is inside box contents
+   this is outside box
