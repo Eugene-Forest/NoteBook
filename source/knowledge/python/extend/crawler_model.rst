@@ -18,7 +18,7 @@
 .. literalinclude:: ../example_python/hzu/Image.py
    :language: python
 
-.. literalinclude:: ../example_python/hzu/NEWS.py
+.. literalinclude:: ../example_python/hzu/News.py
    :language: python
 
 新闻的爬虫模型 [#]_

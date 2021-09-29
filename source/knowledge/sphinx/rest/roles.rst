@@ -20,6 +20,7 @@ sphinx使用解释文本角色将语义标记插入到文档中。它们被写�
 
 * ``:ref:`Label``` 
    * 如果将标签直接放置在节标题之前，可以使用 ``:ref:`label-name``` .例如: 
+
    .. code-block:: rest
 
       .. _my-reference-label:
@@ -34,6 +35,7 @@ sphinx使用解释文本角色将语义标记插入到文档中。它们被写�
       .. 当节和引用位于不同的源文件中时，这也同样有效。
 
    * 自动标签同样适用于图像
+   
    .. code-block:: rest
 
       .. _my-figure:

@@ -20,4 +20,4 @@ Markdown 是一种轻量级的标记语言，可用于在纯文本文档中添�
    :caption: 目录
    :maxdepth: 2
 
-   table <table.md>
+   table <table>

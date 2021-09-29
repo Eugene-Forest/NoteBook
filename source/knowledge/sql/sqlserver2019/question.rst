@@ -17,5 +17,5 @@ window mssql 问题集
 *打开SQLServer 配置管理器------->SQLServer for MSQLSERVER------->TCP/IP------->如果没有启动，则启动*
 
 
-.. image:: ../../img/sqlserver/sqlserver-tcp-config.png
+.. image:: ../../../img/sqlserver/sqlserver-tcp-config.png
    :alt: sqlserver-tcp-config

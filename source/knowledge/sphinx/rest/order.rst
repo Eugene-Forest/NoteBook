@@ -310,8 +310,9 @@ my |name| is |caution|
 .. |name| replace:: replacement *text*
 
 
-.. |caution| image:: warning.png
-             :alt: Warning!
+.. |caution| image:: ../img/grapefruit.jfif
+            :alt: hzw
+            :scale: 50%
 
 
 .. raw:: html
@@ -324,8 +325,9 @@ my |name| is |caution|
 
    .. |name| replace:: replacement *text*
 
-   .. |caution| image:: warning.png
-               :alt: Warning!
+   .. |caution| image:: ../img/grapefruit.jfif
+               :alt: hzw
+               :scale: 50%
 
 .. important:: 
 

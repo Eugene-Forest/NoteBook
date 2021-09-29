@@ -19,6 +19,5 @@ https://www.tablesgenerator.com/markdown_tables
 
 /home/docs/checkouts/readthedocs.org/user_builds/studynotes/checkouts/latest/source/index.rst:: WARNING: rST localisation for language "zh" not found. 
 
-***/home/docs/checkouts/readthedocs.org/user_builds/studynotes/checkouts/latest/source/knowledge/git/github/index.rst:8: WARNING: Document may not end with a transition. ***
 
-***/home/docs/checkouts/readthedocs.org/user_builds/studynotes/checkouts/latest/source/knowledge/git/question/index.rst:12: WARNING: toctree contains reference to nonexisting document 'source/knowledge/git/question/git问题集' /home/docs/checkouts/readthedocs.org/user_builds/studynotes/checkouts/latest/source/knowledge/java/core_technology_basic/genericity.rst.rst:81: WARNING: line number spec is out of range(1-32): '3-4,9-22,26-33' /home/docs/checkouts/readthedocs.org/user_builds/studynotes/checkouts/latest/source/knowledge/java/extend/stream.rst:272: WARNING: Inline literal start-string without end-string. ***/home/docs/checkouts/readthedocs.org/user_builds/studynotes/checkouts/latest/source/knowledge/k-index.rst:8: WARNING: toctree contains reference to nonexisting document 'source/knowledge/element/el-index' /home/docs/checkouts/readthedocs.org/user_builds/studynotes/checkouts/latest/source/knowledge/linux/Question/internet.rst:32: WARNING: Title underline too short.
+
