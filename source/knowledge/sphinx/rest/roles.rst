@@ -16,10 +16,6 @@ sphinx使用解释文本角色将语义标记插入到文档中。它们被写�
 #. 适用 ref 角色 链接 label
 
 
-:ref:`引用可下载文件 <knowledge/sphinx/rest/roles:引用可下载文件>` 
-:ref:`menuselection <knowledge/sphinx/rest/roles:交叉引用任意位置 / 锚>` 
-
-
 为了支持对任何文档中任意位置的交叉引用，使用标准的REST标签。为此，在整个文档中，工作标签名称必须是唯一的。有两种方法可以引用标签：
 
 * ``:ref:`Label``` 
@@ -55,6 +51,18 @@ sphinx使用解释文本角色将语义标记插入到文档中。它们被写�
 .. attention:: 
 
    引用标签(label)必须以下划线开头。引用标签时，必须省略下划线（请参见上面的示例）。
+
+
+:ref:`引用可下载文件 <knowledge/sphinx/rest/roles:引用可下载文件>` 
+:ref:`menuselection <knowledge/sphinx/rest/roles:交叉引用任意位置 / 锚>` 
+
+
+.. code-block:: rest
+
+   .. 上方两个锚点的代码如下：
+   
+   :ref:`引用可下载文件 <knowledge/sphinx/rest/roles:引用可下载文件>` 
+   :ref:`menuselection <knowledge/sphinx/rest/roles:交叉引用任意位置 / 锚>` 
 
 
 .. important:: 
