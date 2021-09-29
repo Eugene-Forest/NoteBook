@@ -269,7 +269,7 @@ count
 ``boolean anyMatch(Predicate<? super T> predicate)``
 返回此流的任何元素是否与提供的谓词匹配。  
 
-``noneMatch(Predicate<? super T> predicate) ``
+``noneMatch(Predicate<? super T> predicate)``
 返回此流的元素是否与提供的谓词匹配。 
 
 

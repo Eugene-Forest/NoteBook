@@ -81,7 +81,7 @@
 .. literalinclude:: ../example_java/basic/genericity/ArrayAlg.java
    :language: Java
    :linenos:
-   :lines: 3-4,9-22,26-33
+   :lines: 3-4,9-22,26-32
 
 **一个类型变量或通配符可以有多个限定**， 例如： ``< T extends Comparable & Serializable>``
 

@@ -12,7 +12,7 @@
    java笔记记录 <java/java-index>
    git笔记记录 <git/git-index>
    vue 笔记记录 <vue/vue-index>
-   element-ui 笔记记录 <element/el-index>
+   element-ui 笔记记录 <element-ui/el-index>
    JavaScript 笔记记录 <js/js-index>
    计算机网络 <network/net-index>
    python笔记记录 <python/python-index>
