@@ -30,17 +30,44 @@ MyST Markdown
 
       extensions = ['myst_parser']
 
+#. 在项目根目录下添加 requirement.txt 文件，并写入以下字段，以支持额外的Python环境。
+
+   .. code-block:: default
+
+      myst_parser
+   
+.. important:: 
+   
+   `Requirements File Format <https://pip.pypa.io/en/latest/reference/requirements-file-format/#requirements-file-format>`_ 
+
+   Requirements File 样板如下所示：
+
+   .. code-block:: default
+
+      ###### Requirements without Version Specifiers ######
+      pytest
+      pytest-cov
+      beautifulsoup4
+
+      ###### Requirements with Version Specifiers ######
+      #   See https://www.python.org/dev/peps/pep-0440/#version-specifiers
+      docopt == 0.6.1             # Version Matching. Must be version 0.6.1
+      keyring >= 4.1.1            # Minimum version 4.1.1
+      coverage != 3.5             # Version Exclusion. Anything except version 3.5
+      Mopidy-Dirble ~= 1.1        # Compatible release. Same as >= 1.1, == 1.*
+
+      ###### Refer to other requirements files ######
+      -r other-requirements.txt
+
+      ###### A particular file ######
+      ./downloads/numpy-1.9.2-cp34-none-win32.whl
+      http://wxpython.org/Phoenix/snapshot-builds/wxPython_Phoenix-3.0.3.dev1820+49a8884-cp34-none-win_amd64.whl
+
+      ###### Additional Requirements without Version Specifiers ######
+      #   Same as 1st section, just here to show that you can put things in any order.
+      rejected
+      green
+
+   
 
 
-在 Sphinx 项目的“主文档”（Sphinx 文档的登录页面）中，包含myfile.md一个toctree指令，以便将其包含在您的文档中：
-
-.. code-block:: rest
-
-   .. toctree::
-
-      myfile.md
-
-
-.. attention:: 
-
-   需要注意的是，如果是在.rst文件中的目录使用.md文件，需要指明文件的尾缀。
