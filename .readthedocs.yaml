@@ -6,6 +6,7 @@
 version: 2
 
 # Build documentation in the docs/ directory with Sphinx
+# sphinx 的构建器配置等
 sphinx:
   builder: html
   configuration: source/conf.py
@@ -13,13 +14,15 @@ sphinx:
 #  fail_on_warning: true
 
 # Optionally build your docs in additional formats such as PDF
+# 需要预先构建的文件类型，用于下载使用
 formats:
    - htmlzip
    - pdf
    - epub
 
 # Optionally set the version of Python and requirements required to build your docs
+# 环境配置，如python版本，需额外下载的(第三方) python 包。
 python:
    version: "3.7"
    install:
-   - requirements: requirements.txt
+   - requirements: requirements/requirements.txt
