@@ -1,5 +1,5 @@
 ===============================
-准备
+解释
 ===============================
 
 该篇章将解释 sql server 的数据库结构，以及其对应结构的意义，同时解释一些常用名词。
@@ -8,4 +8,6 @@
 
 .. attention:: 
 
-   .. //todo : what is sys and dbo ?
+   //todo : what is sys?
+
+   such as sys.tables or sys.databases .
