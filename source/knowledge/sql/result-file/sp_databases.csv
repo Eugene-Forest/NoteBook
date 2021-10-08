@@ -1,0 +1,10 @@
+DATABASE_NAME,DATABASE_SIZE,REMARKS
+bladex_boot,16384,NULL
+bladex_boot_copy,4472832,NULL
+bladexbootbak,1654784,NULL
+cbbs,16384,NULL
+learning_sql_server,16384,NULL
+master,7552,NULL
+model,16384,NULL
+msdb,21824,NULL
+tempdb,73728,NULL

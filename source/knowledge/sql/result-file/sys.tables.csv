@@ -1,0 +1,7 @@
+name,type,type_desc
+books,"U ",USER_TABLE
+Customers,"U ",USER_TABLE
+OrderItems,"U ",USER_TABLE
+Orders,"U ",USER_TABLE
+Products,"U ",USER_TABLE
+Vendors,"U ",USER_TABLE
