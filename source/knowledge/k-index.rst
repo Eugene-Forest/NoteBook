@@ -18,5 +18,6 @@
    python笔记记录 <python/python-index>
    sql笔记记录 <sql/sql-index>
    linux笔记记录 <linux/linux-index>
+   Redis 笔记记录 <redis/redis-index>
    sphinx笔记记录 <sphinx/sphinx-index>
    markdown <markdown/md-index>

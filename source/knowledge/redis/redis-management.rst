@@ -1,9 +1,14 @@
 ======================
-Linux 下的 Redis 
+ Redis 管理
 ======================
 
-yum安装
-===========
+
+CentOS 7 下的 Redis
+================================
+
+
+yum 安装
+-----------------
 
 #. 查看需要安装的相关软件 ``yum list redis``
 #. 安装 ``yum install redis -y``
@@ -28,7 +33,7 @@ yum安装
 
 
 运行初始化
-============
+------------------
 
 .. code-block:: shell
 
@@ -39,7 +44,7 @@ yum安装
 
 
 查看redis进程信息
-==================
+----------------------
 
 查看redis进程信息 ``ps -ef | grep redis``
 
@@ -54,7 +59,7 @@ yum安装
 
 
 登录redis客户端
-===============
+---------------------
 
 添加redis-client登录密码：
 
@@ -69,3 +74,36 @@ yum安装
    [root@eugene-forest ~]# redis-cli
    127.0.0.1:6379> auth password
    OK
+
+.. raw:: html
+
+   <hr width=400 size=10>
+
+Windows 下的 Redis [#]_
+==========================
+
+下载地址: `redis for windows <https://github.com/tporadowski/redis/releases>`_ 
+
+.. image:: ../../img/redis/github-redis.png
+   :alt: redis for windows
+   
+
+.. code-block:: cmd
+
+   # 打开一个 cmd 窗口 使用 cd 命令切换目录到 C:\<path-to-redis> 运行：
+   redis-server.exe <redis.windows.conf>
+
+.. note:: 
+
+   如果只是运行 redis-server.exe 而没有后面的 conf 文件名参数，那么配置文件的变动就不会生效（无密码和其他配置）。
+
+
+.. raw:: html
+
+   <hr width=400 size=10>
+
+.. [#] 参考菜鸟教程——Redis安装 https://www.runoob.com/redis/redis-install.html
+
+
+
+

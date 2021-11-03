@@ -14,6 +14,6 @@
 
    软件及其服务管理篇 <software-management>
    防火墙管理 <firewall-management>
-   MySQL管理 <mysql-management>
-   Redis管理 <redis-management>
+   MySQL管理 <../../sql/mysql57/mysql-management>
+   Redis管理 <../../redis/redis-management>
    

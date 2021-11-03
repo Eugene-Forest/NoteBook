@@ -172,13 +172,10 @@
 
    .. code-block:: java
 
-   Pair<String> stringPair = . .
-   Pair<Employee〉employeePair = . .
-   if (stringPair.getClass() == employeePair.getClass()) // they are equal
-   //其比较的结果是 true, 这是因为两次调用 getClass 都将返回 Pair.class
-
-
-
+      Pair<String> stringPair = . .
+      Pair<Employee〉employeePair = . .
+      if (stringPair.getClass() == employeePair.getClass()) // they are equal
+      //其比较的结果是 true, 这是因为两次调用 getClass 都将返回 Pair.class
 
 
 继承规则
