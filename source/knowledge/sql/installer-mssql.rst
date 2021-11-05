@@ -1,8 +1,8 @@
 ===============================
-sql server 的安装
+ SQL Server 的安装
 ===============================
 
-在 windows 中安装
+在 Windows 中安装
 ==================
 
 .. attention:: 
@@ -19,7 +19,7 @@ sql server 的安装
 
 
 
-在 linux -- centos 7.x 中安装
+在 Linux -- CentOS 7.x 中安装
 ====================================
 
 .. attention:: 
@@ -35,10 +35,10 @@ sql server 的安装
 * 如需远程登录，请开启防火墙的 1433 端口
 
 
-Linux 下安装sql server 时 2G内存限制的解决方案
+Linux 下安装 SQL Server 时 2G内存限制的解决方案
 ======================================================
 
-**通过官方指南安装 sql server ， 可能会出现2G内存限制问题而导致 sql server 无法运行。**
+**通过官方指南安装 SQL Server ， 可能会出现2G内存限制问题而导致 SQL Server 无法运行。**
 
 笔者的实际服务器基本配置：
 
@@ -47,7 +47,7 @@ Linux 下安装sql server 时 2G内存限制的解决方案
 * 云盘/系统盘 40G
 
 
-在阿里云学生机中安装 sql server 2017
+在阿里云学生机中安装 SQL Server 2017
 --------------------------------------------
 
 需要注意的是：不能使用最新版本！！！  不能在线下载！！！
@@ -86,7 +86,7 @@ Linux 下安装sql server 时 2G内存限制的解决方案
 安装配置
 ----------------
 
-进行 sql server 安装配置 
+进行 SQL Server 安装配置 
 
 .. code-block:: shell
 
@@ -113,7 +113,7 @@ Linux 下安装sql server 时 2G内存限制的解决方案
 
 
 
-卸载 sql server 
+卸载 SQL Server 
 --------------------
 
 .. code-block:: shell
@@ -144,5 +144,5 @@ Linux 下安装sql server 时 2G内存限制的解决方案
 参考文章：
 
 * `SQL Server 2017 Linux安装说明以及避坑指南 <https://www.jianshu.com/p/6acb714e37be>`_ 
-* `Linux 下安装sql server 时 2G内存限制的最新（2019-08-15） 解决方案 <https://www.cnblogs.com/xtdhb/p/11357702.html>`_ 
+* `Linux 下安装SQL Server 时 2G内存限制的最新（2019-08-15） 解决方案 <https://www.cnblogs.com/xtdhb/p/11357702.html>`_ 
 * `卸载 SQL Server <https://blog.csdn.net/cangyuemis/article/details/92830712>`_ 

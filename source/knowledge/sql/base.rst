@@ -1,9 +1,18 @@
 ===========================
-sql server 基础
+数据库和表的基本操作
 ===========================
+
 
 查看数据库系统的所有数据库
 =================================
+
+
+.. note:: 
+   
+   对于 SQL Server 来说，获取一些基本信息常常需要使用系统定义的存储过程。
+
+SQL Server 下查看数据库系统的所有数据库
+````````````````````````````````````````````
 
 查看数据库(系统)的所有数据库有以下方法：
 
@@ -40,14 +49,9 @@ sp_databases
    GO
 
 .. csv-table:: sp_databases 运行结果
-   :file: ../result-file/sp_databases.csv
+   :file: ./result-file/sp_databases.csv
    :header-rows: 1
    :align: center
-
-
-.. raw:: html
-
-   <hr width='50%'>
 
 查询 sys.databases
 --------------------
@@ -55,9 +59,30 @@ sp_databases
 通过执行查询命令 ``SELECT name AS database_name,database_id,collation_name FROM sys.databases`` 来查看所有数据库。
 
 .. csv-table::  查询 sys.databases 的运行结果
-   :file: ../result-file/sys.databases.csv
+   :file: ./result-file/sys.databases.csv
    :header-rows: 1
    :align: center
+
+
+MySQL 下查看数据库系统的所有数据库
+``````````````````````````````````````````
+
+MySQL 下的查看方法为： ``show databases``
+
+.. code-block:: mysql
+
+   mysql> show databases;
+   +---------------------+
+   | Database            |
+   +---------------------+
+   | information_schema  |
+   | ...                 |
+   | yggl                |
+   +---------------------+
+   20 rows in set (0.00 sec)
+
+
+
 
 .. raw:: html
 
@@ -75,9 +100,16 @@ sp_databases
 
    <hr width='50%'>
 
+.. note:: 
+
+   这个方法通用于 SQL Server 和 MySQL 。
 
 查看数据库的全部表
 ============================
+
+
+SQL Server 下查看数据库的全部表
+``````````````````````````````````````
 
 有以下方法
 
@@ -87,7 +119,7 @@ sp_databases
 
 .. note:: 
 
-   由于 sp_tables 的实现代码长且复杂，同时如果不带参数地执行该存储过程，那么其结果将包含该库的所有表（一般来说我们只需要看 dbo 部分的表）。同时为节省篇幅，所以不将其展示。:download:`sp_tables 存储过程 <../result-file/sp_tables.sql>` [#]_
+   由于 sp_tables 的实现代码长且复杂，同时如果不带参数地执行该存储过程，那么其结果将包含该库的所有表（一般来说我们只需要看 dbo 部分的表）。同时为节省篇幅，所以不将其展示。:download:`sp_tables 存储过程 <./result-file/sp_tables.sql>` [#]_
 
 
 使用带有参数的 sp_tables
@@ -122,14 +154,9 @@ sp_tables 的参数:
    GO
 
 .. csv-table::  执行带参数的 sp_tables 的运行结果
-   :file: ../result-file/sp_tables.csv
+   :file: ./result-file/sp_tables.csv
    :header-rows: 1
    :align: center
-
-.. raw:: html
-
-   <hr width='50%'>
-
 
 查询 sys.tables
 ------------------------
@@ -143,7 +170,7 @@ sp_tables 的参数:
 
 
 .. csv-table::  查询 sys.tables 的运行结果
-   :file: ../result-file/sys.tables.csv
+   :file: ./result-file/sys.tables.csv
    :header-rows: 1
    :align: center
 
@@ -152,8 +179,41 @@ sp_tables 的参数:
    <hr width='50%'>
 
 
+MySQL 下查看数据库的全部表
+````````````````````````````````````````````
+
+* use target_database;
+* show tables;
+
+.. code-block:: mysql
+
+   mysql> use employees;
+   Database changed
+   mysql> show tables;
+   +----------------------+
+   | Tables_in_employees  |
+   +----------------------+
+   | current_dept_emp     |
+   | departments          |
+   | dept_emp             |
+   | dept_emp_latest_date |
+   | dept_manager         |
+   | employees            |
+   | salaries             |
+   | titles               |
+   +----------------------+
+   8 rows in set (0.00 sec)
+
+
+
+
 查看表结构
 =============================
+
+
+ SQL Server 下查看表结构
+````````````````````````````````````
+
 
 让我们通过定义看看 sp_tables 的参数有哪些：
 
@@ -182,6 +242,36 @@ sp_tables 的参数有:
    GO
 
 
+MySQL　下查看表结构
+``````````````````````````````````````
+
+``show create table table_name;``
+
+.. code-block:: mysql
+
+   mysql> show create table departments;
+   +-------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Table       | Create Table                                                                                                                                                                                            |
+   +-------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | departments | CREATE TABLE `departments` (
+   `dept_no` char(4) NOT NULL,
+   `dept_name` varchar(40) NOT NULL,
+   PRIMARY KEY (`dept_no`),
+   UNIQUE KEY `dept_name` (`dept_name`)
+   ) ENGINE=InnoDB DEFAULT CHARSET=latin1 |
+   +-------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   1 row in set (0.00 sec)
+
+
+
+.. note:: 
+
+   ``show create database database_name;``
+
+
+
+
+
 ----
 
-.. [#] 所有的系统级存储过程都可以在 sql server 的系统数据库的系统存储过程中找到。
+.. [#] 所有的系统级存储过程都可以在 SQL Server  的系统数据库的系统存储过程中找到。
