@@ -10,7 +10,6 @@ T-SQL 即 Transact-SQL，是 SQL 在 Microsoft SQL Server 上的增强版，它�
    :caption: T-SQL
    :maxdepth: 2
 
-   存储过程 <proc>
    日期函数 <date-function>
 
 

@@ -12,6 +12,7 @@ sql 通用技术笔记集
    :maxdepth: 3
    :numbered:
 
+   数据库和表的基本操作 <base>
    sql 常用关键字集 <keyword>
    注释 <annotation>
    sql 函数 <sql-function>
