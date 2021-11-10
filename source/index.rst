@@ -10,4 +10,5 @@ Eugene forest's notebook
    :maxdepth: 3
 
    笔记记录 <knowledge/k-index>
+   项目以及常见业务实现 <project/project-index>
    软件/工具安装配置记录 <software/software-index>
