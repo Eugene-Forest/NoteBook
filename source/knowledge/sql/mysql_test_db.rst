@@ -28,6 +28,32 @@
 
     直接参考项目的 README.MD 文件即可，在此只需要注意命令的运行格式以及文件位置。
 
+.. important:: 
+
+    **为防止在将来会使用到中文字符，最好在创建数据库的时候就指定编码格式，以免再将来使用时要大量修改已有的表和表的字段的编码。**
+
+    由于该数据库在创建时没有指定编码格式，所以可能会受到数据库管理系统的默认编码格式的影响变成拉丁格式的编码，解决的方法时将 ``employees.sql`` 文件中的每个创建语句都指定编码格式 （ ``utf8mb4`` ）; 
+    
+    :download:`指定utf8mb4编码的 employees.sql <./result-file/employees.sql>` 
+
+    .. code-block:: mysql
+
+        -- 参考指定编码的语句格式
+        CREATE DATABASE IF NOT EXISTS employees character set utf8mb4;
+
+        CREATE TABLE employees (
+            emp_no      INT             NOT NULL,
+            birth_date  DATE            NOT NULL,
+            first_name  VARCHAR(14)     NOT NULL,
+            last_name   VARCHAR(16)     NOT NULL,
+            gender      ENUM ('M','F')  NOT NULL,    
+            hire_date   DATE            NOT NULL,
+            PRIMARY KEY (emp_no)
+        ) character set utf8mb4;
+    
+
+
+
 如在 Linux 下安装：
 
 .. code-block:: bash
