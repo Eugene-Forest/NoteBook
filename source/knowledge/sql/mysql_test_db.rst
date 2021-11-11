@@ -140,3 +140,26 @@
 ----
 
 .. [#] 2021年11月10日测试未成功。 ERROR 1271 (HY000) at line 60: Illegal mix of collations for operation 'concat_ws' 。
+
+
+
+
+安装 SQL in 10 Minutes 的测试库
+===================================
+
+
+`官网下载 SQL in 10 Minutes 的测试库 <https://forta.com/books/0135182794/>`_ 
+
+
+:download:`SQL in 10 Minutes 的测试库 <./result-file/TYSQL5_MySQL.zip>` 
+
+
+包结构
+
+* create.txt
+* populate.txt
+* README.pdf
+
+先运行 ``create.txt`` 中的 SQL 语句 , 再运行 ``populate.txt`` 中的 SQL 语句。
+
+
