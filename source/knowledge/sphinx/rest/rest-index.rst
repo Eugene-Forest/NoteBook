@@ -29,3 +29,5 @@ RestructuredText是Sphinx使用的默认纯文本标记语言。本节简要介�
    代码显示 <UsingFileCode>
    角色 <roles>
    域 <domains>
+   推荐文章形式 <recommend-format>
+   文章类笔记推荐写法 <recommend-format-txt>
