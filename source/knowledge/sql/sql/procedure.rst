@@ -2,43 +2,19 @@
 存储过程、函数
 ===============================
 
+.. sidebar:: 测试库
+
+    在笔者编写笔记的过程中，使用的测试库和测试表源于 MySQL 的 test_db 以及 书籍 SQL in 10 Minutes 的测试表，其测试库和表的下载前往测试库安装笔记:
+
+    * :ref:`MySQL 测试库/表 安装笔记 <mssql_test_db_installer>` 
+    * :ref:`SQL Server 测试库/表 安装笔记 <mysql_test_db_installer>` 
+
+
 存储过程和存储函数类似于面向对象程序设计语言中的方法，可以简化代码，提高代码的重用性。
 
+.. raw:: html
 
-SQL Server 存储过程与存储函数
-================================
-
-SQL Server中的存储过程是使用T-SQL编写的代码段。它的目的在于能够方便的从系统表中查询信息，或者完成与更新数据库表相关的管理任务和其他的系统管理任务.T-SQL语句是SQL Server数据库与应用程序之间的编程接口。在很多情况下，一些代码会被开发者重复编写多次，如果每次都编写相同功能的代码，不但繁琐，而且容易出错，而且由于SQL Server逐条的执行语句会降低系统的运行效率。
-
-简而言之，存储过程就是SQL Server为了实现特定任务，而将一些需要多次调用的固定操作语句编写成程序段，这些程序段存储在服务器上，有数据库服务器通过程序来调用。
-
-.. //todo 添加详细的官方说明，比较
-
-
-SQL Server 存储过程
-============================
-
-.. code-block:: sql
-
-   Create procedure <procedure_Name> 
-   As 
-   Begin 
-   <SQL Statement> 
-   End 
-   Go
-
-样例
---------------------------
-
-.. literalinclude:: ../result-file/drop_all_tables.sql
-    :language: sql
-    
-
-.. attention:: 
-
-    SQL Server 有许多定义好的变量，如 @@FETCH_STATUS 是在游标遍历时判断是否获取下一个数据的状态变量。
-
-
+    <hr width='50%'>
 
 MySQL 存储过程与存储函数
 ===============================
@@ -47,45 +23,16 @@ MySQL中提供存储过程与存储函数机制，我们姑且将存储过程和
 
 存储程序就是一条或者多条SQL语句和控制语句的集合，我们可以将其看作MySQL的批处理文件，当然，其作用不仅限于批处理。当想要在不同的应用程序或平台上执行相同的功能一段程序或者封装特定功能时，存储程序是非常有用的。数据库中的存储程序可以看做是面向对编程中面向对象方法，它允许控制数据的访问方式。
 
-两者比较 [#]_
----------------
+.. raw:: html
 
-
-存储函数与存储过程有如下区别：
-
-　　1) 存储函数的限制比较多,例如不能用临时表,只能用表变量,而存储过程的限制较少，存储过程的实现功能要复杂些,而函数的实现功能针对性比较强。
-
-　　2) 返回值不同。存储函数必须有返回值,且仅返回一个结果值；存储过程可以没有返回值,但是能返回结果集(out,inout)。
-
-　　3) 调用时的不同。存储函数嵌入在SQL中使用,可以在select 存储函数名(变量值)；存储过程通过call语句调用 call 存储过程名。
-
-　　4) 参数的不同。存储函数的参数类型类似于IN参数，没有类似于OUT和INOUT的参数。存储过程的参数类型有三种，IN、OUT和INOUT：
-
-　　　　a. in：数据只是从外部传入内部使用(值传递),可以是数值也可以是变量
-
-　　　　b. out：只允许过程内部使用(不用外部数据),给外部使用的(引用传递:外部的数据会被先清空才会进入到内部),只能是变量
-
-　　　　c. inout：外部可以在内部使用,内部修改的也可以给外部使用,典型的引用 传递,只能传递变量。
-
-总的来说，存储过程和函数的区别在于函数必须有返回值，而存储过程没有，存储过程的参数可以使用 **IN、OUT、INOUT** 类型，而函数的参数只能是 **“IN”** 类型的。如果有函数从其他类型的数据库迁移到 MySQL，那么就可能因此需要将函数改造成存储过程。
-
-.. important:: 
-
-    在对存储过程或函数进行操作时，需要首先确认用户是否具有相应的权限。例如，创建存储过程或者函数需要 ``CREATE ROUTINE`` 权限，修改或者删除存储过程或者函数需要 ``ALTER ROUTINE`` 权限，执行存储过程或者函数需要 ``EXECUTE`` 权限。
-
-    *在实际项目使用时，一定要确定项目配置中的MySQL用户拥有执行存储过程的权限。*
-
-
+    <hr width='50%'>
 
 MySQL 存储过程
-================================
+--------------------------
 
 .. note:: 
     由于语法原因，一般我们通过查询或命令行来创建 MySQL 存储过程需要将 SQL 结束符号变为非 ``;`` 字符。（即 ``delimiter $$``）
 
-
-样例
---------------
 
 .. literalinclude:: ../result-file/show_description_all_tables.sql
     :language: mysql
@@ -94,10 +41,12 @@ MySQL 存储过程
 
     在 MySQL 中一般的SQL语句需要先编译然后立即执行，所以在存储过程中如果需要使用拼接SQL语句时需要先预处理在执行并且最终要释放资源。
 
+.. raw:: html
 
+    <hr width='50%'>
 
-MySQL 存储函数
-===========================
+MySQL 存储函数 [#]_
+--------------------------
 
 存储的函数是返回单个值的特殊类型的存储程序。您使用存储的函数来封装在SQL语句或存储的程序中可重用的常用公式或业务规则。
 
@@ -118,33 +67,17 @@ MySQL 存储函数
 5) 第五，将代码写入存储函数的主体中。 它可以是单个语句或复合语句。 在主体部分中，必须至少指定一个 ``RETURN`` 语句。 ``RETURN`` 语句用于返回一个值给调用者。 每当到达 ``RETURN`` 语句时，存储的函数的执行将立即终止。
 
 
-.. code-block:: mysql
+.. literalinclude:: ../result-file/mysql_function_ex.sql
+    :language: mysql
+    :lines: 1-19
 
-    -- 函数的简单应用
-    delimiter $$
-    create function get_dept_name(dept_no char(4))
-        returns varchar(40)
-        deterministic
-    begin
-        declare d_name varchar(40);
-        select dept_name into d_name
-        from departments as A
-        where A.dept_no=dept_no;
-        return d_name;
-    end $$
-    delimiter ;
-
-    -- 查询中使用函数
-    select emp_no, get_dept_name(dept_no) as dept_name, from_date, to_date 
-    from dept_emp
-    order by emp_no limit 2;
 
 .. csv-table:: 查询的运行结果
     :header-rows: 1
     :stub-columns: 1
     :file: ../result-file/get_dept_name.csv
 
-.. note:: 
+.. note::
 
     通过该方法可以实现与表连接的相同的效果。（以上示例代码的运行结果同样可以 employees 表和 departments 表连接生成）
 
@@ -160,45 +93,259 @@ MySQL 存储函数
 
 .. important:: 
 
-    存储函数较为重要的应用领域是简化 select 查询。
+    存储函数较为重要的应用领域是简化 select 查询，使得代码更易读懂。
 
     例如 
 
-    .. code-block:: mysql
-
-        -- 创建格式化字段的函数
-        delimiter $$
-        create function format_date(origin_date date)
-            returns varchar(60)
-            deterministic
-        begin
-            return date_format(origin_date ,'%Y 年 %m 月 %d 日');
-        end $$
-        delimiter ;
-
-        -- 使用自定义函数的查询
-        select emp_no, get_dept_name(dept_no) as dept_name,
-            format_date(from_date) as from_date,
-            format_date(to_date) as to_date
-        from dept_emp
-        order by emp_no limit 2;
-
-        -- 直接使用系统的格式化函数的查询
-        select emp_no, get_dept_name(dept_no) as dept_name,
-            date_format(from_date ,'%Y 年 %m 月 %d 日') as from_date,
-            date_format(to_date ,'%Y 年 %m 月 %d 日') as to_date
-        from dept_emp
-        order by emp_no limit 2;
-
+    .. literalinclude:: ../result-file/mysql_function_ex.sql
+        :language: mysql
+        :lines: 20-
+    
     .. csv-table:: 查询的运行结果
         :header-rows: 1
         :stub-columns: 1
         :file: ../result-file/format_function.csv
 
+.. raw:: html
+
+    <hr width='50%'>
+
+两者比较 [#]_
+---------------
+
+
+存储函数与存储过程有如下区别：
+
+1) **存储函数的限制比较多**,例如不能用临时表,只能用表变量, **而存储过程的限制较少**，存储过程的实现功能要复杂些,而函数的实现功能针对性比较强。
+2) **返回值不同。** 存储函数必须有返回值,且仅返回一个结果值；存储过程可以没有返回值,但是能返回结果集(out,inout)。
+3) **调用时的不同。** 存储函数嵌入在SQL中使用,可以在 select 存储函数名(变量值)；存储过程通过call语句调用 call 存储过程名。
+4) **参数的不同。** 存储函数的参数类型类似于IN参数，没有类似于OUT和INOUT的参数。存储过程的参数类型有三种，IN、OUT和INOUT：
+  a. in：数据只是从外部传入内部使用(值传递),可以是数值也可以是变量
+  b. out：只允许过程内部使用(不用外部数据),给外部使用的(引用传递:外部的数据会被先清空才会进入到内部),只能是变量。
+  c. inout：外部可以在内部使用,内部修改的也可以给外部使用,典型的引用 传递,只能传递变量。
+
+总的来说，存储过程和函数的区别在于函数必须有返回值，而存储过程没有，存储过程的参数可以使用 **IN、OUT、INOUT** 类型，而函数的参数只能是 **“IN”** 类型的。如果有函数从其他类型的数据库迁移到 MySQL，那么就可能因此需要将函数改造成存储过程。
+
+.. important:: 
+
+    在对存储过程或函数进行操作时，需要首先确认用户是否具有相应的权限。例如，创建存储过程或者函数需要 ``CREATE ROUTINE`` 权限，修改或者删除存储过程或者函数需要 ``ALTER ROUTINE`` 权限，执行存储过程或者函数需要 ``EXECUTE`` 权限。
+
+    *在实际项目使用时，一定要确定项目配置中的MySQL用户拥有执行存储过程的权限。*
+
+.. raw:: html
+
+    <hr width='75%'>
+
+SQL Server 存储过程与存储函数 
+====================================
+
+.. raw:: html
+
+    <hr width='50%'>
+
+SQL Server 存储过程 [#]_
+-----------------------------
+
+SQL Server 中的存储过程是由一个或多个 Transact-SQL 语句或对 Microsoft .NET Framework 公共语言运行时 (CLR) 方法的引用所构成的一个组。 过程与其他编程语言中的构造相似，这是因为它们都可以：
+
+* 接受输入参数并以输出参数的格式向调用程序返回多个值。
+* 包含用于在数据库中执行操作的编程语句。 这包括调用其他过程。
+* 向调用程序返回状态值，以指明成功或失败（以及失败的原因）。
+
+简而言之，存储过程就是SQL Server为了实现特定任务，而将一些需要多次调用的固定操作语句编写成程序段，这些程序段存储在服务器上，有数据库服务器通过程序来调用。
+
+.. literalinclude:: ../result-file/drop_all_tables.sql
+    :language: sql
+    
+.. attention:: 
+
+    SQL Server 有许多定义好的全局变量，如 @@FETCH_STATUS 是在游标遍历时判断是否获取下一个数据的状态变量。
+
+.. raw:: html
+
+    <hr width='30%'>
+
+存储过程的类型
+````````````````````````
+
+* **用户定义** : 用户定义的过程可在用户定义的数据库中创建，或者在除了 Resource 数据库之外的所有系统数据库中创建。 该过程可在 Transact-SQL 中开发，或者作为对 Microsoft .NET Framework 公共语言运行时 (CLR) 方法的引用开发。
+  
+* **临时** : 临时过程是用户定义过程的一种形式。 临时过程与永久过程相似，只是临时过程存储于 tempdb 中。 临时过程有两种类型：本地过程和全局过程。 它们在名称、可见性以及可用性上有区别。 本地临时过程的名称以单个数字符号 (#) 开头；它们仅对当前的用户连接是可见的；当用户关闭连接时被删除。 全局临时过程的名称以两个数字符号 (##) 开头，创建后对任何用户都是可见的，并且在使用该过程的最后一个会话结束时被删除。
+
+* **系统** : 系统过程是 SQL Server随附的。 它们物理上存储在内部隐藏的 Resource 数据库中，但逻辑上出现在每个系统定义数据库和用户定义数据库的 sys 架构中。 此外， msdb 数据库还在 dbo 架构中包含用于计划警报和作业的系统存储过程。 因为系统过程以前缀 sp_ 开头，所以，我们建议你在命名用户定义过程时不要使用此前缀。 同时，SQL Server 支持在 SQL Server 和外部程序之间提供一个接口以实现各种维护活动的系统过程。 这些扩展过程使用 xp_ 前缀。 
+
+* **扩展的用户定义** : 扩展过程允许你使用编程语言（例如 C）创建外部例程。这些过程是指 SQL Server 的实例可以动态加载和运行的 DLL。 *SQL Server的未来版本中将删除扩展存储过程*。
+
+
+.. note:: 
+
+    Transact-SQL 用户定义函数中可以使用部分 具有不确定性的（系统）内置函数 ，`点击前往官网查看哪些（系统）内置函数可以在用户定义函数使用 <https://docs.microsoft.com/zh-cn/sql/relational-databases/user-defined-functions/user-defined-functions?view=sql-server-ver15#valid-statements-in-a-function>`_ 。
+
+.. raw:: html
+
+    <hr width='30%'>
+
+参数
+````````````````
+
+通过指定过程参数，调用程序可以将值传递给过程的主体。 在执行过程期间，这些值可以用于各种目的。 如果将参数标记为 OUTPUT 参数，则过程参数还可以将值返回给调用程序。
+
+一个过程最多可以有 2100 个参数，每个参数都有名称、数据类型和方向。 还可以为参数指定默认值（可选）。
+
+------------------
+参数的默认值
+------------------
+
+如果在声明参数时指定了默认值，则参数被视为可选的。 在过程调用中不需要为可选参数提供值。
+
+在以下情况下使用参数的默认值：
+
+* 在过程调用中未指定参数值。
+* 在过程调用中将 DEFAULT 关键字指定为值。
+
+如果没有合适的值可以指定为参数的默认值，则指定 NULL 为默认值。 如果在未提供参数值的情况下执行过程，最好让过程返回自定义的消息。
+
+.. code-block:: mysql
+
+
+    CREATE PROCEDURE Sales.uspGetSalesYTD  
+    @SalesPerson nvarchar(50) = NULL  -- NULL default value  
+    AS       
+    BEGIN  
+        -- Validate the @SalesPerson parameter.  
+        IF @SalesPerson IS NULL  
+        BEGIN  
+            PRINT 'ERROR: You must specify the last name of the sales person.'  
+            RETURN(500)
+        END  
+        RETURN(0)
+    END  
+    GO
+
+------------------
+指定参数方向
+------------------
+
+参数的方向可以为输入（表明将值传递给过程的主体），也可以为输出（表明过程将值返回给调用程序）。 默认为输入参数。
+
+若要指定输出参数，必须在 CREATE PROCEDURE 语句的参数定义中指定 OUTPUT 关键字。 当过程退出时，它向调用程序返回输出参数的当前值。 **执行过程时，调用程序也必须使用 OUTPUT 关键字**，才能将该参数值保存到可以在调用程序中使用的变量中。
+
+
+.. literalinclude:: ../result-file/proc_param_out.sql
+    :language: mysql
+
+
+
+.. note:: 
+
+    过程可以返回一个整数值（称为“返回代码”），以指示过程的执行状态。 使用 RETURN 语句指定过程的返回代码。 默认情况下，成功执行存储过程会返回整数0。而其他情况返回的数据可以通过逻辑判断语句和 return 语句来自定义。 
+
+.. raw:: html
+
+    <hr width='30%'>
+
+在 OUTPUT 参数中使用 cursor 数据类型
+``````````````````````````````````````````
+
+在 SQL Server 中有将游标作为输出参数的存储过程。同时，Transact-SQL 过程只能将 cursor 数据类型用于 OUTPUT 参数。 如果为某个参数指定了 cursor 数据类型，在过程定义中必须为该参数指定 VARYING 和 OUTPUT 关键字。 可以将参数指定为仅限 OUTPUT，但是如果在参数声明中指定了 VARYING 关键字，则数据类型必须为 cursor 并且也必须指定 OUTPUT 关键字。
+
+在执行过程时，以下规则适用于 cursor 输出参数：
+
+* 对于只进游标，游标的结果集中返回的行只是那些过程执行结束时处于或超出游标位置的行，例如：
+
+  * 在过程中的名为 RS 的 100 行结果集上打开一个非滚动游标。
+  * 过程提取结果集 RS 的头 5 行。
+  * 过程返回到其调用者。
+  * 返回到调用者的结果集 RS 由 RS 的第 6 到 100 行组成，调用者中的游标处于 RS 的第一行之前。
+
+* 对于只进游标，如果过程退出时游标位于第一行的前面，则整个结果集将返回给调用批处理、过程或触发器。 返回时，游标将位于第一行的前面。
+
+* 对于只进游标，如果过程退出时游标的位置超出最后一行的结尾，则为调用批处理、过程或触发器返回空结果集。【空结果集与空值不同】
+
+* 对于可滚动游标，在过程退出时，结果集中的所有行均会返回给调用批处理、过程或触发器。 返回时，游标保留在过程中最后一次执行提取时的位置。
+
+* 对于任意类型的游标，如果游标关闭，则将 Null 值传递回调用批处理、过程或触发器。 如果将游标指派给一个参数，但该游标从未打开过，也会出现这种情况。
+
+.. note:: 
+
+    关闭状态只有在返回时才有影响。 例如，可以在过程中关闭游标，稍后再打开游标，然后将该游标的结果集返回给调用批处理、过程或触发器。
+
+
+
+
+
+.. important:: 
+
+    *cursor 数据类型不能通过数据库 API（例如 OLE DB、ODBC、ADO 和 DB-Library）绑定到应用程序变量上。* (即在 OUTPUT 参数中使用 cursor 数据类型存储过程不能作为对数据库外的接口程序，如 Spring Boot 项目中的不能成功调用 OUTPUT 参数中使用 cursor 作为数据类型的存储过程 ) 因为必须先绑定 OUTPUT 参数，应用程序才可以执行过程，所以 **带有 cursor OUTPUT 参数的过程不能通过数据库 API 调用。** 只有将 ``Transact-SQL`` cursor OUTPUT 变量分配给 局部 ``Transact-SQL`` cursor 变量时，才可以通过 **批处理、过程或触发器** 调用这些过程。
+
+    cursor OUTPUT 参数的过程对游标的操作会影响到返回后的 cursor 参数，因为在这个过程中以及返回后的游标参数都是没有关闭的。
+    
+    更多相关信息 `点击前往官网查看 <https://docs.microsoft.com/zh-cn/sql/relational-databases/stored-procedures/return-data-from-a-stored-procedure?view=sql-server-ver15#returning-data-using-an-output-parameter>`_  。
+
+.. raw:: html
+
+    <hr width='50%'>
+
+
+SQL Server 用户定义函数 [#]_
+-------------------------------
+
+与编程语言中的函数类似，SQL Server 用户定义函数是接受参数、执行操作（例如复杂计算）并将操作结果以值的形式返回的例程。 **返回值可以是单个标量值或结果集。**
+
+.. raw:: html
+
+    <hr width='30%'>
+
+函数类型
+``````````````````
+
+* 标量函数 : 用户定义标量函数返回在 RETURNS 子句中定义的类型的单个数据值。 对于内联标量函数，返回的标量值是单个语句的结果。 对于多语句标量函数，函数体可以包含一系列返回单个值的 Transact-SQL 语句。 返回类型可以是除 text、 ntext、 image、 cursor 和 timestamp 外的任何数据类型。 
+* 表值函数 : 用户定义的表值函数返回 table 数据类型。 对于内联表值函数，没有函数主体；表是单个 SELECT 语句的结果集。 
+* 系统函数 : SQL Server 提供了许多系统函数，可用于执行各种操作。 这些函数不能修改。 
+
+.. raw:: html
+
+    <hr width='30%'>
+
+函数准则和有效语句
+``````````````````````
+
+``BEGIN...END`` 块中的语句不能有任何副作用。 函数副作用是指对具有函数外作用域（例如数据库表的修改）的资源状态的任何永久性更改。 函数中的语句唯一能做的更改是对函数上的局部对象（如局部游标或局部变量）的更改。 **不能在函数中执行的操作包括：对数据库表的修改，对不在函数上的局部游标进行操作，发送电子邮件，尝试修改目录，以及生成返回至用户的结果集。**
+
+函数中的有效语句的类型包括：
+
+* ``DECLARE`` 语句，该语句可用于定义函数局部的数据变量和游标。
+* 为函数局部对象的赋值，如使用 ``SET`` 为标量和表局部变量赋值。
+* 游标操作，该操作引用在函数中声明、打开、关闭和释放的局部游标。 不允许使用 ``FETCH`` 语句将数据返回到客户端。 仅允许使用 ``FETCH`` 语句通过 ``INTO`` 子句给局部变量赋值。
+* ``TRY...CATCH`` 语句 **以外** 的控制流语句。
+* ``SELECT`` 语句，该语句包含具有为函数的局部变量赋值的表达式的选择列表。
+* ``UPDATE``、 ``INSERT`` 和 ``DELETE`` 语句，这些语句修改函数的局部表变量。
+* ``EXECUTE`` 语句，该语句调用扩展存储过程。（扩展存储过程在未来版本中将会抛弃）
+
+.. raw:: html
+
+    <hr width='30%'>
+
+指定参数
+````````````````````
+
+用户定义函数采用零个或多个输入参数并返回标量值或表。 一个函数最多可以有 1024 个输入参数。 如果函数的参数有默认值，则调用该函数时必须指定 DEFAULT 关键字，才能获取默认值。 此行为与在用户定义存储过程中具有默认值的参数不同，在后一种情况下，忽略参数同样意味着使用默认值。 **用户定义函数不支持输出参数**。
+
+.. raw:: html
+
+    <hr width='50%'>
+
+两者比较
+-------------
+
+.. //todo between function and procedure for sql server
 
 
 ----
 
+.. [#] 易百教程——MySQL存储函数,原文链接：https://www.yiibai.com/mysql/stored-function.html
 
 .. [#] 引用自 MySQL数据库之存储过程与存储函数 https://www.cnblogs.com/chenhuabin/p/10142190.html
-.. [#] 易百教程——MySQL存储函数,原文链接：https://www.yiibai.com/mysql/stored-function.html
+
+.. [#] 参考 SQL Server 文档： 用户定义函数 https://docs.microsoft.com/zh-cn/sql/relational-databases/user-defined-functions/user-defined-functions?view=sql-server-ver15    
+.. [#] 参考 SQL Server 文档： 存储过程（数据库引擎） https://docs.microsoft.com/zh-cn/sql/relational-databases/stored-procedures/stored-procedures-database-engine?view=sql-server-ver15
