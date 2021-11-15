@@ -270,6 +270,8 @@ SQL Server 中的存储过程是由一个或多个 Transact-SQL 语句或对 Mic
 
     关闭状态只有在返回时才有影响。 例如，可以在过程中关闭游标，稍后再打开游标，然后将该游标的结果集返回给调用批处理、过程或触发器。
 
+.. literalinclude:: ../result-file/mssql_cursor_proc.sql
+    :language: mysql
 
 
 
@@ -287,8 +289,8 @@ SQL Server 中的存储过程是由一个或多个 Transact-SQL 语句或对 Mic
     <hr width='50%'>
 
 
-SQL Server 用户定义函数 [#]_
--------------------------------
+SQL Server 用户定义函数 (UDF) [#]_
+------------------------------------------
 
 与编程语言中的函数类似，SQL Server 用户定义函数是接受参数、执行操作（例如复杂计算）并将操作结果以值的形式返回的例程。 **返回值可以是单个标量值或结果集。**
 
@@ -322,6 +324,37 @@ SQL Server 用户定义函数 [#]_
 * ``UPDATE``、 ``INSERT`` 和 ``DELETE`` 语句，这些语句修改函数的局部表变量。
 * ``EXECUTE`` 语句，该语句调用扩展存储过程。（扩展存储过程在未来版本中将会抛弃）
 
+.. note:: 
+
+    其他局限和限制：
+
+    1. 用户定义函数 **不能用于执行修改数据库状态的操作**。
+
+    2. 用户定义函数不能包含将表作为其目标的 ``OUTPUT INTO`` 子句。
+
+    3. 用户定义函数 **不能返回多个结果集**。 如果您需要返回多个结果集，请使用存储过程。
+
+    4. 在用户定义函数中， **错误处理受限制**。 UDF 不支持 ``TRY...CATCH``、 ``@ERROR`` 或 ``RAISERROR``。
+
+    5. 用户定义函数 **不能调用存储过程**，但是可调用扩展存储过程(但是扩展存储过程的使用并不被官方所建议，同时它也将在未来版本中抛弃)。
+
+    6. 用户定义函数 **不能使用动态 SQL 或临时表**。 **但是允许表变量**。
+
+    7. 在用户定义函数中 **不允许 SET 语句**。（此 SET 语句并不是赋值临时变量的 SET 语句,  `更多详情点击前往官网 <https://docs.microsoft.com/zh-cn/sql/t-sql/statements/set-statements-transact-sql?view=sql-server-ver15>`_ ）
+
+    8. 不允许使用 ``FOR XML`` 子句。
+
+    9. 用户定义函数可以嵌套；也就是说，用户定义函数可相互调用。 被调用函数开始执行时，嵌套级别将增加；被调用函数执行结束后，嵌套级别将减少。 用户定义函数的嵌套级别最多可达 32 级。 如果超出最大嵌套级别数，整个调用函数链将失败。 从 ``Transact-SQL`` 用户定义函数对托管代码的任何引用都将根据 32 级嵌套限制计入一个级别。 从托管代码内部调用的方法不根据此限制进行计数。
+
+    10. 下列 Service Broker 语句不能包含在 ``Transact-SQL`` 用户定义函数的定义中：
+
+        * ``BEGIN DIALOG CONVERSATION``
+        * ``END CONVERSATION``
+        * ``GET CONVERSATION GROUP``
+        * ``MOVE CONVERSATION``
+        * ``RECEIVE``
+        * ``SEND``
+
 .. raw:: html
 
     <hr width='30%'>
@@ -335,10 +368,31 @@ SQL Server 用户定义函数 [#]_
 
     <hr width='50%'>
 
-两者比较
--------------
 
-.. //todo between function and procedure for sql server
+创建 UDF 
+````````````````````````````````````
+
+**如果用户定义函数 (UDF) 不是使用 SCHEMABINDING 子句创建的，则对基础对象进行的任何更改可能会影响函数定义并在调用函数时可能导致意外结果。** 我们建议您实现以下方法之一，以便确保函数不会由于对于其基础对象的更改而过期：
+
+    1. 创建 UDF 时指定 ``WITH SCHEMABINDING`` 子句。 这确保除非也修改了函数，否则无法修改在函数定义中引用的对象。
+
+    2. 在修改在 UDF 定义中指定的任何对象后执行 `sp_refreshsqlmodule <https://docs.microsoft.com/zh-cn/sql/relational-databases/system-stored-procedures/sp-refreshsqlmodule-transact-sql?view=sql-server-ver15>`_  存储过程。
+
+如果要创建不访问数据的 UDF，请指定 ``SCHEMABINDING`` 选项。 这将阻止查询优化器为涉及这些 UDF 的查询计划生成不必要的 ``spool`` 运算符。 
+
+可以在 ``FROM`` 子句中加入 ``MSTVF``，但是会降低性能。 SQL Server 无法对可以加入 MSTVF 的某些语句使用所有优化技术，导致生成的查询计划不佳。 **若要获得最佳的性能，尽可能在基表之间使用联接而不是函数。**
+
+
+.. literalinclude:: ../result-file/mssql_function.sql
+    :language: mysql
+
+
+
+.. warning:: 
+
+    在视图和UDF中一般建议指定 ``SCHEMABINDING`` 选项， 因为其可以避免在修改基表时导致引用此基表的函数或视图出现意想不到的错误；同时，对于不访问数据的 UDF 来说， 指定 ``SCHEMABINDING`` 选项可以提升其性能。
+    
+    所以如果在创建视图和函数需要指定 ``SCHEMABINDING`` 选项，那么需要确定基表的设计是否已经十分完善，如果仍然需要变动基表，那么就不建议在创建涉及这个基表的视图或函数时指定 ``SCHEMABINDING`` 选项，或者说不要创建涉及这个基表的视图或函数。
 
 
 ----
