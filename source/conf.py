@@ -265,3 +265,9 @@ texinfo_documents = [
 
 # How to display URL addresses: 'footnote', 'no', or 'inline'.
 #texinfo_show_urls = 'footnote'
+
+
+# -- 一些显示格式的设置 --
+
+
+epub_cover = ('_static/question-mark.png')
