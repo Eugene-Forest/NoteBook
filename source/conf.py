@@ -268,6 +268,3 @@ texinfo_documents = [
 
 
 # -- 一些显示格式的设置 --
-
-
-epub_cover = ('_static/question-mark.png')

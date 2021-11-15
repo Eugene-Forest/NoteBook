@@ -18,6 +18,10 @@ sql 通用技术笔记集
    sql 函数 <sql-function>
    sql isnull() <isnull>
    sql insert into select <insert-into-select>
+   动态语句/拼接语句 <dynamic_statement>
+   视图 <views>
+   游标 <cursor>
+   存储过程以及存储函数 <procedure>
 
 
 
