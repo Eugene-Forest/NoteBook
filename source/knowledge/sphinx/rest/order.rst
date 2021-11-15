@@ -329,6 +329,21 @@ my |name| is |caution|
                :alt: hzw
                :scale: 50%
 
+|hr15|
+
+.. note:: 
+
+   根据图片替换的语法，同理可得其他的语法，例如上方的短水平分隔线的代码实现为：
+
+   .. code-block:: rest
+
+      |hr15|
+
+      .. |hr15| raw:: html
+            
+            <hr width='15%'>
+   
+
 .. important:: 
 
    **如果要对所有文档使用某些替换，请将它们放入 rst_prolog 或 rst_epilog 或者将它们放在单独的文件中，并将其包含到所有要在其中使用它们的文档中，使用 include 指令。** （确保为include文件提供与其他源文件不同的文件扩展名，以避免sphinx将其作为独立文档查找。）

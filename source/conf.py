@@ -267,4 +267,39 @@ texinfo_documents = [
 #texinfo_show_urls = 'footnote'
 
 
-# -- 一些显示格式的设置 --
+# 全局字符串替换指令
+# 需要注意的是，全局加入替换的功能要谨慎使用，要酌情使用；因为在这里添加后会影响到项目所有的 rst 文件（在所有 rst 文件中添加定义的替换指令）
+# 一串 reStructuredText，它将包含在每个读取的源文件的末尾。 这是一个可以添加应该在每个文件中可用的替换的地方
+rst_prolog = """
+.. |mysql| replace:: **MySQL**
+
+.. |mssql| replace:: **SQL Server**
+
+.. |hr15| raw:: html
+      
+      <hr width='15%'>
+
+.. |hr30| raw:: html
+      
+      <hr width='30%'>
+      
+.. |hr50| raw:: html
+      
+      <hr width='50%'>
+
+.. |hr75| raw:: html
+      
+      <hr width='75%'>
+
+"""
+
+# 图片编号功能
+# 表格和代码块如果有标题则会自动编号
+numfig = True
+# 数字将是“x.1”。“x.2”，… 与“x”的节号(顶级切片;没有“x”如果没有部分)。只有当通过 toctree 指令的“:numbered:”选项激活了段号时，这才自然适用。
+numfig_secnum_depth = 1
+
+
+# 代码块的行号样式
+# html_codeblock_linenos_style = 'table'
+html_codeblock_linenos_style = 'inline'
