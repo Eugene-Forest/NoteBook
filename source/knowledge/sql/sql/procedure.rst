@@ -12,9 +12,7 @@
 
 存储过程和存储函数类似于面向对象程序设计语言中的方法，可以简化代码，提高代码的重用性。
 
-.. raw:: html
-
-    <hr width='50%'>
+|75|
 
 MySQL 存储过程与存储函数
 ===============================
@@ -23,9 +21,7 @@ MySQL中提供存储过程与存储函数机制，我们姑且将存储过程和
 
 存储程序就是一条或者多条SQL语句和控制语句的集合，我们可以将其看作MySQL的批处理文件，当然，其作用不仅限于批处理。当想要在不同的应用程序或平台上执行相同的功能一段程序或者封装特定功能时，存储程序是非常有用的。数据库中的存储程序可以看做是面向对编程中面向对象方法，它允许控制数据的访问方式。
 
-.. raw:: html
-
-    <hr width='50%'>
+|50|
 
 MySQL 存储过程
 --------------------------
@@ -41,9 +37,7 @@ MySQL 存储过程
 
     在 MySQL 中一般的SQL语句需要先编译然后立即执行，所以在存储过程中如果需要使用拼接SQL语句时需要先预处理在执行并且最终要释放资源。
 
-.. raw:: html
-
-    <hr width='50%'>
+|50|
 
 MySQL 存储函数 [#]_
 --------------------------
@@ -106,9 +100,7 @@ MySQL 存储函数 [#]_
         :stub-columns: 1
         :file: ../result-file/format_function.csv
 
-.. raw:: html
-
-    <hr width='50%'>
+|50|
 
 两者比较 [#]_
 ---------------
@@ -132,16 +124,12 @@ MySQL 存储函数 [#]_
 
     *在实际项目使用时，一定要确定项目配置中的MySQL用户拥有执行存储过程的权限。*
 
-.. raw:: html
-
-    <hr width='75%'>
+|75|
 
 SQL Server 存储过程与存储函数 
 ====================================
 
-.. raw:: html
-
-    <hr width='50%'>
+|50|
 
 SQL Server 存储过程 [#]_
 -----------------------------
@@ -161,9 +149,7 @@ SQL Server 中的存储过程是由一个或多个 Transact-SQL 语句或对 Mic
 
     SQL Server 有许多定义好的全局变量，如 @@FETCH_STATUS 是在游标遍历时判断是否获取下一个数据的状态变量。
 
-.. raw:: html
-
-    <hr width='30%'>
+|30|
 
 存储过程的类型
 ````````````````````````
@@ -181,9 +167,7 @@ SQL Server 中的存储过程是由一个或多个 Transact-SQL 语句或对 Mic
 
     Transact-SQL 用户定义函数中可以使用部分 具有不确定性的（系统）内置函数 ，`点击前往官网查看哪些（系统）内置函数可以在用户定义函数使用 <https://docs.microsoft.com/zh-cn/sql/relational-databases/user-defined-functions/user-defined-functions?view=sql-server-ver15#valid-statements-in-a-function>`_ 。
 
-.. raw:: html
-
-    <hr width='30%'>
+|30|
 
 参数
 ````````````````
@@ -240,9 +224,7 @@ SQL Server 中的存储过程是由一个或多个 Transact-SQL 语句或对 Mic
 
     过程可以返回一个整数值（称为“返回代码”），以指示过程的执行状态。 使用 RETURN 语句指定过程的返回代码。 默认情况下，成功执行存储过程会返回整数0。而其他情况返回的数据可以通过逻辑判断语句和 return 语句来自定义。 
 
-.. raw:: html
-
-    <hr width='30%'>
+|30|
 
 在 OUTPUT 参数中使用 cursor 数据类型
 ``````````````````````````````````````````
@@ -284,9 +266,7 @@ SQL Server 中的存储过程是由一个或多个 Transact-SQL 语句或对 Mic
     
     更多相关信息 `点击前往官网查看 <https://docs.microsoft.com/zh-cn/sql/relational-databases/stored-procedures/return-data-from-a-stored-procedure?view=sql-server-ver15#returning-data-using-an-output-parameter>`_  。
 
-.. raw:: html
-
-    <hr width='50%'>
+|50|
 
 
 SQL Server 用户定义函数 (UDF) [#]_
@@ -294,9 +274,7 @@ SQL Server 用户定义函数 (UDF) [#]_
 
 与编程语言中的函数类似，SQL Server 用户定义函数是接受参数、执行操作（例如复杂计算）并将操作结果以值的形式返回的例程。 **返回值可以是单个标量值或结果集。**
 
-.. raw:: html
-
-    <hr width='30%'>
+|30|
 
 函数类型
 ``````````````````
@@ -305,9 +283,7 @@ SQL Server 用户定义函数 (UDF) [#]_
 * 表值函数 : 用户定义的表值函数返回 table 数据类型。 对于内联表值函数，没有函数主体；表是单个 SELECT 语句的结果集。 
 * 系统函数 : SQL Server 提供了许多系统函数，可用于执行各种操作。 这些函数不能修改。 
 
-.. raw:: html
-
-    <hr width='30%'>
+|30|
 
 函数准则和有效语句
 ``````````````````````
@@ -355,18 +331,14 @@ SQL Server 用户定义函数 (UDF) [#]_
         * ``RECEIVE``
         * ``SEND``
 
-.. raw:: html
-
-    <hr width='30%'>
+|30|
 
 指定参数
 ````````````````````
 
 用户定义函数采用零个或多个输入参数并返回标量值或表。 一个函数最多可以有 1024 个输入参数。 如果函数的参数有默认值，则调用该函数时必须指定 DEFAULT 关键字，才能获取默认值。 此行为与在用户定义存储过程中具有默认值的参数不同，在后一种情况下，忽略参数同样意味着使用默认值。 **用户定义函数不支持输出参数**。
 
-.. raw:: html
-
-    <hr width='50%'>
+|50|
 
 
 创建 UDF 

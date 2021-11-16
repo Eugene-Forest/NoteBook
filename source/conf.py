@@ -271,27 +271,31 @@ texinfo_documents = [
 # 需要注意的是，全局加入替换的功能要谨慎使用，要酌情使用；因为在这里添加后会影响到项目所有的 rst 文件（在所有 rst 文件中添加定义的替换指令）
 # 一串 reStructuredText，它将包含在每个读取的源文件的末尾。 这是一个可以添加应该在每个文件中可用的替换的地方
 rst_prolog = """
+.. |15| raw:: html
+      
+      <hr width='15%'>
+
+.. |30| raw:: html
+      
+      <hr width='30%'>
+      
+.. |50| raw:: html
+      
+      <hr width='50%'>
+
+.. |75| raw:: html
+      
+      <hr width='75%'>
+
 .. |mysql| replace:: **MySQL**
 
 .. |mssql| replace:: **SQL Server**
 
-.. |hr15| raw:: html
-      
-      <hr width='15%'>
-
-.. |hr30| raw:: html
-      
-      <hr width='30%'>
-      
-.. |hr50| raw:: html
-      
-      <hr width='50%'>
-
-.. |hr75| raw:: html
-      
-      <hr width='75%'>
-
 """
+# ".. |java| replace::  **Java**"
+# ".. |centos| replace:: **CentOS 7.x**"
+# ".. |idea| replace:: **IntelliJ IDEA**"
+
 
 # 图片编号功能
 # 表格和代码块如果有标题则会自动编号
@@ -301,5 +305,5 @@ numfig_secnum_depth = 1
 
 
 # 代码块的行号样式
-# html_codeblock_linenos_style = 'table'
-html_codeblock_linenos_style = 'inline'
+html_codeblock_linenos_style = 'table'
+# html_codeblock_linenos_style = 'inline'

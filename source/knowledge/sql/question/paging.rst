@@ -51,9 +51,7 @@ MySQL 中的分页
     :language: MySQL
     :lines: 1-19
 
-.. raw:: html
-
-    <hr width='50%'>
+|50|
 
 查询代码
 
@@ -61,9 +59,7 @@ MySQL 中的分页
     :language: MySQL
     :lines: 19-
 
-.. raw:: html
-
-    <hr width='50%'>
+|50|
 
 .. csv-table:: 查询结果
    :file: ../result-file/show_db_table_clo.csv
