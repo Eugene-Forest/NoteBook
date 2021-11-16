@@ -16,3 +16,4 @@ software
    netbeans <netbeans/index>
    wireshark <wireshark/index>
    xshell以及xftp的教育版下载 <xshell>
+   一些常用软件的快捷键 <shortcut-key>
