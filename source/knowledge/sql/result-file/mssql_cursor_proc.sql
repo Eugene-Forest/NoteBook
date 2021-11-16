@@ -22,10 +22,11 @@ begin
     declare @order_no int;
     declare @order_total_price decimal(8,2);
     execute get_orderitem_cursor @my_cursor = @exec_cursor OUTPUT;
-    while (@@fetch_status=0)
+    fetch next from @exec_cursor into @order_no,@order_total_price;
+    while @@fetch_status=0
     begin
-        fetch next from @exec_cursor into @order_no,@order_total_price;
         print N'订单<' +cast(isnull(@order_no,0) as varchar)+ N'>的总价为 ' +cast(isnull(@order_total_price,0) as varchar);
+        fetch next from @exec_cursor into @order_no,@order_total_price;
     end
     close @exec_cursor;
     deallocate @exec_cursor;
@@ -49,8 +50,6 @@ go
 [2021-11-15 08:48:38] [S0001] 订单<20007>的总价为 1696.00
 [2021-11-15 08:48:38] [S0001] 订单<20008>的总价为 189.60
 [2021-11-15 08:48:38] [S0001] 订单<20009>的总价为 1867.50
-[2021-11-15 08:48:38] [S0001] 订单<20009>的总价为 1867.50
-[2021-11-15 08:48:38] 在 219 ms (execution: 27 ms, fetching: 192 ms) 内检索到从 1 开始的 1 行
 
 */
 

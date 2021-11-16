@@ -30,3 +30,5 @@ MySQL
 MySQL可以使用 COALESCE() 函数。
 
 ``COALESCE(expression,default_result)``
+
+同时还有 IFNULL(expression,default_result)

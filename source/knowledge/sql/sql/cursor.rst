@@ -2,9 +2,30 @@
 游标 （Cursor）
 ===================================
 
+只进游标是 ODBC 中的默认游标类型。
+
+不同的游标具有不同的特征。 最常见的游标类型（称为只进游标）只能通过结果集向前移动。 若要返回到上一行，应用程序必须关闭并重新打开游标，然后从结果集的开头读取行，直到到达所需的行。 只进游标提供了一种快速机制，用于通过结果集进行单一传递。
+
+.. 仅向前游标对于基于屏幕的应用程序不太有用，在这种情况下，用户可以在数据中向后和向前滚动。更好的解决方案是使用可滚动的游标 ，它提供对结果集的随机访问。 此类应用程序还可通过使用所谓的块游标一次提取多行 数据来提高性能。 
+
+还有一种叫 **可滚动的游标** ，它提供对结果集的随机访问。 此类应用程序还可通过使用所谓的块游标一次提取多行数据来提高性能。 
+
+.. //todo 添加 可滚动的游标 笔记记录
+
+.. note:: 
+
+    文章中只提及（只进）游标的基本使用。
+
+|75|
+
+MySQL 中的 游标
+========================
+
+
+MySQL游标只能用于存储过程（和函数）。
 
 .. literalinclude:: ../result-file/show_description_all_tables.sql
-    :language: sql
+    :language: mysql
 
 .. tip:: 
 
@@ -47,3 +68,21 @@
             END WHILE;
             CLOSE cursor_name;
             -- ...
+
+|50|
+
+SQL Server 中的 游标
+============================
+
+SQL Server 中游标的基本使用相较于 MySQL 来说比较简单。
+
+
+
+.. literalinclude:: ../result-file/drop_all_tables.sql 
+    :language: mysql
+    :linenos:
+
+
+.. note:: 
+
+    `更多关于游标 <https://docs.microsoft.com/zh-cn/sql/relational-databases/cursors?view=sql-server-ver15>`_ 
