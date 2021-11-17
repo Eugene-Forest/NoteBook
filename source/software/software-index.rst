@@ -10,6 +10,7 @@ software
    :numbered:
    :maxdepth: 2
 
+   bladex 快速开发平台的使用 <bladex/bladex-index>
    jetbrains <jetbrains/index>
    vscode <vs_code/index>
    eclipse <eclipse/index>
