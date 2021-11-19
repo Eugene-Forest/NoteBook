@@ -15,3 +15,4 @@ bladex 快速开发平台
 .. toctree:: bladex boot 快速开发
 
     安装并初始化原始项目 <init>
+    Swagger 接口文档系统功能的使用 <func-swagger>

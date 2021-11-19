@@ -26,7 +26,7 @@ BladeX Boot
 
     `开发手册网盘链接 <https://pan.baidu.com/s/1j8sQPBlUt9CWROvzqSOnrQ>`_ 提取码：1244
 
-    .. image:: ./bladex_doc.png
+    .. image:: ./file/bladex_doc.png
         :alt: 开发手册
         :scale: 30%
 
