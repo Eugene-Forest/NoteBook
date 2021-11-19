@@ -19,5 +19,4 @@
    Java 日期对象 <date>
    基本数据类型及其封装类 <basic_data_type>
    双冒号 ``::`` 的用法 <double-colon>
-   Java 8 Stream（流） <stream>
    Java 8 函数式编程—— Lambda <lambda>
