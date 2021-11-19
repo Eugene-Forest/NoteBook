@@ -60,7 +60,7 @@ master_doc = 'index'
 # ------ General information about the project. ---------------------
 
 # project name
-project = u'尤金 の 笔记本'
+project = u' 尤金的私房菜 '
 
 # 版权，著作权
 copyright = u'2021, Eugene Forest'

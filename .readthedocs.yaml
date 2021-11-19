@@ -18,7 +18,7 @@ sphinx:
 formats:
    - htmlzip
    - pdf
-   - epub
+   # - epub 
 
 # Optionally set the version of Python and requirements required to build your docs
 # 环境配置，如python版本，需额外下载的(第三方) python 包。
