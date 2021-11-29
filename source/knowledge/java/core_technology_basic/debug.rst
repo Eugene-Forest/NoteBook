@@ -163,7 +163,7 @@ finally 子句
 
 不管是否有异常被捕获，finally 子句中的代码都被执行。在下面的示例中， 程序成功打开文件后，将在所有情况下关闭文件。
 
-.. code-block:: 
+.. code-block:: java
 
     class FileInputStreamStu {
         public static void main(String[] args) {
@@ -295,14 +295,57 @@ try块退出时，会自动调用 res.close()。
 断言
 =======================
 
+在一个具有自我保护能力的程序中， 断言很常用。
+
+
+断言机制允许在测试期间向代码中插入一些检査语句。当代码发布时，这些插人的检测语句将会被自动地移走。
+
+Java 语言引人了关键字 assert。这个关键字有两种形式:
+
+.. code-block:: java
+
+    assert condition;
+    //or
+    assert condition : expression;
+
+
+这两种形式都会对条件进行检测， 如果结果为 false, 则抛出一个 AssertionError 异常。在第二种形式中，表达式将被传人 AssertionError 的构造器， 并转换成一个消息字符串。
+
+.. warning:: 
+
+    **“表达式” 部分的唯一目的是产生一个消息字符串。**
+
+|30|
+
+启用和禁用断言
+------------------
+
+在默认情况下， 断言被禁用。可以在运行程序时用 -enableassertions 或 -ea 选项启用: ``java -enableassertions MyApp``
+
+需要注意的是， 在启用或禁用断言时不必重新编译程序。启用或禁用断言是类加载器(class loader) 的功能。当断言被禁用时， 类加载器将跳过断言代码， 因此，不会降低程序运行的速度。
+
+* 在不指定参数的情况下，选项 -ea 将开启默认包中的所有类的断言
+
+.. attention:: 
+
+    *还有带参数的开启断言，但是未能在 IntelliJ IDEA Community 中验证成功。*
+
+    * 可以在某个类或整个包中使用断言 : ``java -ea:MyClass -ea con.company.lib... MyApp``
+    * 也可以用选项 -disableassertions 或 -da 禁用某个特定类和包的断言 : ``java -ea:... -da:MyClass MyApp``
+
+
+.. note:: 
+
+    然而，有些类不是由类加载器加载， 而是直接由虚拟机加载。启用和禁用所有断言的 -ea 和 -da 开关不能应用到那些没有类加载器的 “系统类” 上。对于这些 “系统类” 来说， 需要使用 -enablesystemassertions/-esa 开关启用断言。
 
 
 
+什么时候应该选择使用断言呢？ 请记住下面几点：
 
+* 断言失败是致命的、 不可恢复的错误。
+* 断言检查只用于开发和测阶段
 
+.. note:: 
 
+    断言是一种测试和调试阶段所使用的战术性工具; 而日志记录是一种在程序的整个生命周期都可以使用的策略性工具。
 
-|50|
-
-Java 日志框架
-================
