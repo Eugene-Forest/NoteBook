@@ -60,7 +60,7 @@ master_doc = 'index'
 # ------ General information about the project. ---------------------
 
 # project name
-project = u' 尤金的私房菜 '
+project = u' 尤金的一己之见 '
 
 # 版权，著作权
 copyright = u'2021, Eugene Forest'
@@ -266,7 +266,7 @@ texinfo_documents = [
 # How to display URL addresses: 'footnote', 'no', or 'inline'.
 #texinfo_show_urls = 'footnote'
 
-
+# -- global replace order configuration are as follows---
 # 全局字符串替换指令
 # 需要注意的是，全局加入替换的功能要谨慎使用，要酌情使用；因为在这里添加后会影响到项目所有的 rst 文件（在所有 rst 文件中添加定义的替换指令）
 # 一串 reStructuredText，它将包含在每个读取的源文件的末尾。 这是一个可以添加应该在每个文件中可用的替换的地方
@@ -298,12 +298,19 @@ rst_prolog = """
 
 
 # 图片编号功能
+# -- numfig configuration are as follows---
 # 表格和代码块如果有标题则会自动编号
 numfig = True
-# 数字将是“x.1”。“x.2”，… 与“x”的节号(顶级切片;没有“x”如果没有部分)。只有当通过 toctree 指令的“:numbered:”选项激活了段号时，这才自然适用。
-numfig_secnum_depth = 1
-
-
+# -- numfig_secnum_depth configuration are as follows---
+# 如果设置为“0”，则数字，表格和代码块从“1”开始连续编号。
+# 如果“1”(默认)，数字将是“x.1”。“x.2”，… 与“x”的节号(顶级切片;没有“x”如果没有部分)。只有当通过 toctree 指令的“:numbered:”选项激活了段号时，这才自然适用。
+# 如果“2”，表示数字将是“x.y.1”，“x.y.2”，…如果位于子区域(但仍然是 x.1 ，x.2 ，… 如果直接位于一个部分和 1 ，2 ， … 如果不在任何顶级部分。)
+numfig_secnum_depth = 2
+# -- numfig_format configuration are as follows---
+# 一个字典将“‘figure’”，“‘table’”，“‘code-block’”和“‘section’”映射到用于图号格式的字符串。作为一个特殊字符，“%s”将被替换为图号。
+# 默认是使用“‘Fig.%s’”为“‘figure’”, “‘Table%s’”为“‘table’”，“‘Listing%s’”为“‘code-block’”和“‘Section’”为 “‘section’”。
+numfig_format = {'code-block': '代码块 %s', }
+# -- html_codeblock_linenos_style configuration are as follows---
 # 代码块的行号样式
 html_codeblock_linenos_style = 'table'
 # html_codeblock_linenos_style = 'inline'
