@@ -10,7 +10,7 @@
 * 前者： ``.. code-block:: code_language_type``
 * 后者： ``.. literalinclude:: code_file_path(local or internet)``
 
-
+|75|
 
 
 使用codeblock
@@ -26,6 +26,8 @@
          }
       }
 
+|15|
+
 运行效果如下：
 
 .. code-block:: java
@@ -36,6 +38,38 @@
       }
    }
 
+|50|
+
+为代码块添加标题和 label 
+============================
+
+
+.. code-block:: java
+   :caption: 代码块添加标题示例
+   :name: HelloWorldExampleCodeBlock
+
+   public class HelloWorld {
+      public static void main(String[] args){
+         System.out.println("Hello World!");
+      }
+   }
+
+|15|
+
+.. code-block:: rest
+   :caption: 代码块添加标题示例代码
+
+   .. code-block:: java
+      :caption: 代码块添加标题
+      :name: HelloWorldExampleCodeBlock
+
+      public class HelloWorld {
+         public static void main(String[] args){
+            System.out.println("Hello World!");
+         }
+      }
+
+|50|
 
 显示行号
 =========================
@@ -51,6 +85,7 @@
          }
       }
 
+|15|
  
 运行效果如下：
 
@@ -63,7 +98,8 @@
       }
    }
 
-
+|50|
+ 
 突出特定行
 ========================
 
@@ -79,6 +115,7 @@
          }
       }
 
+|15|
 
 突出3到5行的运行效果如下：
 
@@ -92,8 +129,9 @@
       }
    }
 
-.. _literalinclude-directive:
+|50|
 
+.. _literalinclude-directive:
 
 
 引用一个文件 literalinclude
@@ -106,6 +144,8 @@
       :linenos:
       :lines: 1-2,30-
 
+|15|
+
 运行结果如下；显示文件的第1到2行，以及30行之后的代码：
 
 .. literalinclude:: ../example/Not_regular_expression.py
@@ -113,6 +153,7 @@
    :linenos:
    :lines: 1-2,30-
 
+|50|
 
 指定引用文件的方法，或类
 ================================
@@ -124,12 +165,14 @@
    .. literalinclude:: ../example/Not_regular_expression.py
       :pyobject: isPhoneNumber
 
+|15|
+
 运行效果如下：
 
 .. literalinclude:: ../example/Not_regular_expression.py
    :pyobject: isPhoneNumber
 
-
+|50|
 
 
 diff2个文件
@@ -140,8 +183,22 @@ diff2个文件
    .. literalinclude:: ../example/Not_regular_expression.py
       :diff: ../example/Not_regular_expression2.py
 
+|15|
 
 运行效果如下：
 
 .. literalinclude:: ../example/Not_regular_expression.py
    :diff: ../example/Not_regular_expression2.py
+
+|50|
+
+锚点小测试
+====================
+
+点击前往 :ref:`代码块添加标题示例 <HelloWorldExampleCodeBlock>` 
+
+|15|
+
+.. code-block:: rest
+
+   点击前往 :ref:`代码块添加标题示例 <HelloWorldExampleCodeBlock>` 
