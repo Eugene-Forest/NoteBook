@@ -10,6 +10,10 @@
 
    使用VSCode的插件 Table Formatter; 同时，Table Formatter 插件还适用于其他类型和格式的 table , 这里并不加以详述。
 
+.. tip:: 
+
+   虽然 rest 有以下基本表格方法，但是根据笔者在使用的过程中的体验来说，可能直接使用  :ref:`csv table <csv-table>`  或 :ref:`list table <list-table>`  指令较好；因为比较有用的 rest 自身表格Grid Table 常常需要插件才能快速生成（但是准备过程也麻烦，而且 rest 自身表格语法需要与 :ref:`table <table-directive>`  指令结合使用才能调整表格和添加标题）,同时，这样生成的表格会使得我们在后期维护时陷入麻烦。
+
 
 Grid Table
 ===================

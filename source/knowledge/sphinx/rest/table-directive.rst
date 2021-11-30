@@ -9,8 +9,8 @@ reST 除了 Grid Table 的无标题表格使用 , 还有 table、csv_table、lis
 
 .. _table-directive:
 
-table
-===============
+table(directive)
+======================
 
 带有标题的一般表格和不带有标题的一般表格
 
@@ -70,8 +70,9 @@ table 指令有以下属性：
 * ``widths`` : "auto", "grid", or *a list of integers* (如果对于一个有两列n行的表格，那么它的属性值可为 **1,2**) ； 用来调整表格的每个列的占比。
 * ``width`` : 长度或百分比 ； 用来调整表格的宽度。
 
+.. _csv-table:
 
-csv table
+csv-table
 ===================
 
 
@@ -178,8 +179,9 @@ csv-table 指令有以下属性：
 
    * 在csv-table的字符串有需要使用双引号或单引号，同时分隔符quote为 ``"``，只需要双倍使用即可，如数据为 **"He said, ""Hi!"""**
 
+.. _list-table:
 
-List Table
+list-table
 ========================
 
 
