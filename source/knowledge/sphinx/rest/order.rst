@@ -2,6 +2,9 @@
 指令
 ==============================
 
+
+`点击前往指令的参考文档 <https://www.sphinx-doc.org/zh_CN/master/usage/restructuredtext/directives.html#code-examples>`_ 
+
 epigraph 题词
 ====================
 
@@ -23,7 +26,38 @@ epigraph 题词
 
       -- Buckaroo Banzai
 
+|50|
 
+hlist
+==================
+
+此指令必须包含项目符号列表。它将通过水平分布多个项目或减少项目之间的间距（取决于构建器）将其转换为一个更紧凑的列表。
+
+对于支持水平分布的构建器，有一个用于指定列数的“columns”选项；它默认为2。
+
+.. hlist::
+   :columns: 3
+
+   * A list of
+   * short items
+   * that should be
+   * displayed
+   * horizontally
+
+|15|
+
+.. code-block:: rest
+
+   .. hlist::
+      :columns: 3
+
+      * A list of
+      * short items
+      * that should be
+      * displayed
+      * horizontally
+
+|50|
 
 topic / 主题 or 总论
 ==========================
@@ -36,7 +70,7 @@ topic / 主题 or 总论
    the body of the topic, and are
    interpreted as body elements.
 
-----
+|15|
 
 .. code-block:: rest
 
@@ -45,6 +79,8 @@ topic / 主题 or 总论
       Subsequent indented lines comprise
       the body of the topic, and are
       interpreted as body elements.
+
+|50|
 
 目录
 ================
@@ -76,6 +112,8 @@ topic / 主题 or 总论
 
    更多关于目录的语法点击 `前往官网查看。 <https://www.osgeo.cn/sphinx/usage/restructuredtext/directives.html#table-of-contents>`_ 
 
+|50|
+
 sidebar 边注栏
 ====================
 
@@ -90,6 +128,7 @@ sidebar 边注栏
    the body of the sidebar, and are
    interpreted as body elements.
 
+|15|
 
 .. code-block:: rest
 
@@ -105,6 +144,8 @@ sidebar 边注栏
 
 image 与 figure 
 ========================
+
+|30|
 
 .. _image-directive:
 
@@ -126,7 +167,7 @@ For example ::
 * ``width`` 图片宽；当“scale”选项也被指定时，它们将被合并。
 * ``scale`` 缩放，整数百分比(“%”符号是可选的)，默认是“100%”，即没有缩放。
 
-----
+|15|
 
 .. image:: ../img/grapefruit.jfif
    :alt: hzw
@@ -137,7 +178,7 @@ For example ::
 原产东南亚，在中国已有3000多年栽培历史。浙江、江西、广东、广西、台湾、福建、湖南、湖北、四川、贵州、云南等省均有栽种。柚性喜温暖、湿润气候，不耐干旱。生长期最适温度23-29℃，能忍受-7℃低温。
 柚的果实表皮、花、叶还可提取优质芳香油，果皮中可提取优质果胶，果肉可以加工成果汁、果酒、柠檬酸、果酱及罐头等。果实综合利用后经济效益可望增长4倍，柚的综合利用还有很大的发掘潜力。果肉含维生素C较高。有消食、解酒毒功效。
 
-----
+|15|
 
 代码 ::
 
@@ -148,6 +189,7 @@ For example ::
    
    ... 文字文章 ...
 
+|50|
 
 .. _figure-directive:
 
@@ -178,7 +220,7 @@ figure
       | .. image:: peak.png   | Mountain              |
       +-----------------------+-----------------------+
 
-----
+|15|
 
 .. figure:: ../img/grapefruit.jfif
    :alt: 柚子
@@ -203,7 +245,7 @@ figure
    | .. image:: ../img/grapefruit.jfif | Campground |
    +-----------------------------------+------------+
 
-----
+|15|
 
 实例代码 ::
 
@@ -230,7 +272,7 @@ figure
       | .. image:: ../img/grapefruit.jfif | Campground |
       +-----------------------------------+------------+
    
-
+|50|
 
 HTML细节
 =====================
@@ -246,6 +288,8 @@ meta 指令
    :description lang=fr: Une histoire amusante
    :description lang=zh_CN: 尤金森林
    :http-equiv=Content-Type: text/html; charset=utf-8
+
+|15|
 
 代码如下：
 
@@ -274,6 +318,8 @@ meta 指令
    <meta name="keywords" content="plaintext, markup language">
    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
+|15|
+
 .. code-block:: rest
 
    .. meta::
@@ -284,6 +330,8 @@ meta 指令
 
    <meta name="description" lang="en" content="An amusing story">
    <meta name="description" lang="fr" content="Une histoire amusante">
+
+|50|
 
 title 指令
 ------------------
@@ -300,6 +348,7 @@ title 指令
 
    .. title::  指令学习
 
+|50|
 
 替代指令 replace
 ==================
