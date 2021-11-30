@@ -13,4 +13,6 @@
    类与对象 <Class_and_Object>
    继承 <inherit>
    反射 <reflection>
+   异常、断言 <debug>
+   日志 <logger>
    泛型程序设计 <genericity>
