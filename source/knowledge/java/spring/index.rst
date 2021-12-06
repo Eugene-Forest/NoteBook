@@ -14,4 +14,5 @@
    序 <prepare>
    装配 Bean <WiringBean>
    高级装配 <WiringBeanPlus>
+   @profile 注解 <note-profile>
    问题集 <question/index>

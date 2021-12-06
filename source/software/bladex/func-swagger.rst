@@ -69,7 +69,7 @@ Swagger 接口文档系统功能
 
 @profile注解是spring提供的一个用来标明当前运行环境的注解。
 
-解读 Spring @Profile 的用法
+:ref:`解读 Spring @Profile 的用法 <note-profile>` 
 
 |30|
 
@@ -107,3 +107,4 @@ Swagger 接口文档系统功能
 关于 swagger api 注解的使用
 ================================
 
+.. // todo 关于 swagger api 注解的使用
