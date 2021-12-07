@@ -1,11 +1,14 @@
-=======================================
-Java 中 char 和 String 的细节和使用注意
-=======================================
+=========================================================
+Java 中 char 和 String 与字符编码的细节和使用注意
+=========================================================
 
 char 数据类型的使用注意 
 =========================
 
 在 Java 中使用 char 数据类型来表示字符，但是 char 类型并不能表示一切字符。
+
+
+|50|
 
 Unicode 字符集
 ==================
@@ -34,6 +37,7 @@ Unicode 字符集的出现就是为了统一编码，消除以上的问题。所
 * 作为保留空间 
 * 没有足够的字符 
 
+|50|
 
 UTF-8 
 =========
@@ -69,6 +73,8 @@ UTF-8 的特点是对不同范围的字符使用不同长度的编码。对于 0
 .. note:: 
 
    Java 字符编码 `了解更多 <https://www.cnblogs.com/binarylei/p/10760233.html>`_ 
+
+|50|
 
 UTF-16
 ===========
@@ -117,6 +123,8 @@ UTF-16 同样使用 16 bit 的编码来表示 Unicode 字符，也就是说 UTF-
 
 通过上面的例子我们可以看到，**任何辅助平面内的字符在 UTF-16 下都会被编码为由两个长度为 16 位的代理编码组成的代理对，在程序中表示这个字符时，需要占用的就不再是 16 位的空间，而是 32 位。**
 
+|50|
+
 .. _not-using-char:
 
 不建议在 Java 程序中使用 char 数据类型
@@ -127,6 +135,7 @@ UTF-16 同样使用 16 bit 的编码来表示 Unicode 字符，也就是说 UTF-
 **由于 Java 采用的是 16 位的 Unicode 字符集，即 UTF-16，所以在 Java 中 char 数据类型是定长的，其长度永远只有 16 位，char 数据类型永远只能表示代码点在 U+0000 ~ U+FFFF 之间的字符，也就是在 BMP 内的字符。如果代码点超过了这个范围，即使用了增补字符，那么 char 数据类型将无法支持，因为增补字符需要 32 位的长度来存储，我们只能转而使用 String 来存储这个字符。**
 
 .. code-block:: java
+   :caption: 编译器将会报错——字符文字中的字符数过多
 
    char c1 = '��';    
    char c2 = '\u64321';
@@ -139,6 +148,7 @@ UTF-16 同样使用 16 bit 的编码来表示 Unicode 字符，也就是说 UTF-
 
    char 数据类型永远只能表示代码点在 U+0000 ~ U+FFFF 之间的字符，也就是在 BMP 内的字符。如果代码点超过了这个范围，即使用了增补字符，那么 char 数据类型将无法支持，因为增补字符需要 32 位的长度来存储。
 
+|50|
 
 String 的细节 
 ==============
@@ -149,13 +159,20 @@ String 的细节
 String 是我们在编程时使用的非常多的数据类型，它用来表示一个字符串。查看 String 的源码，我们可以看到其底层实际是使用一个 char 类型数组在存储我们的字符。
 
 .. code-block:: java
+   :caption: String 的存储是由 char 类型数组实现的
 
-   /** The value is used for character storage. */
+   public final class String 
+            implements java.io.Serializable, Comparable<String>, CharSequence {
+      /** The value is used for character storage. */
       private final char value[];
+      
+      //...
+   }
 
 我们也知道调用其 length() 方法可以得到字符串的长度，即字符串中字符的数量。其实现是直接返回底层 value 数组的长度，代码如下：
 
 .. code-block:: java
+   :caption: String.length()的实现
 
    /**
       * Returns the length of this string.
@@ -170,6 +187,7 @@ String 是我们在编程时使用的非常多的数据类型，它用来表示�
 结合我们上面对于字符编码的知识，我们知道 Java 中 char 的长度永远是 16 位，如果我们在字符串中使用了增补字符，那就意味着需要 2 个 char 类型的长度才能存储，对于 String 底层存储字符的数组 value 来说，就需要 2 个数组元素的位置。所以下面的这个程序我们将得到一个意料之外的结果：
 
 .. code-block:: java
+   :caption: �� 字符的测试
 
    String tt = "我喜欢��这个字符";
    System.out.println(tt.length()); // 9
