@@ -220,7 +220,9 @@ hashCode 方法
 
 散列码（ hash code ） 是由对象导出的一个整型值。散列码是没有规律的。如果 x 和 y 是两个不同的对象， x.hashCode( ) 与 y.hashCode( ) 基本上不会相同。
 
-由于 hashCode方法定义在 Object 类中， 因此每个对象都有一个默认的散列码，其值为对象的存储地址。
+由于 hashCode方法定义在 Object 类中， 因此每个对象都有一个默认的散列码，其值为对象的存储地址。 [#]_
+
+.. // todo 验证对错！！： 由于 hashCode方法定义在 Object 类中， 因此每个对象都有一个默认的散列码，其值为对象的存储地址。
 
 Equals 与 hashCode 的定义必须一致：如果 x.equals(y) 返回 true, 那么 x.hashCode( ) 就必须与 y.hashCode( ) 具有相同的值。
 
@@ -263,3 +265,4 @@ Object 类定义了 toString 方法， 用来打印输出对象所属的类名�
 ----
 
 .. [#] Java instanceof 关键字详解 : http://c.biancheng.net/view/6346.html
+.. [#] 此观点需要验证！！笔者对此有疑惑。
