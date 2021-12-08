@@ -13,12 +13,9 @@
 Java中的“传值”和“传引用”问题
 =====================================
 
-对于Java 函数中的参数究竟是“传值”还是“传引用”，有以下两点定论：
-
-* 在Java中，当 :ref:`基本类型 <java-basic-datatype-and-class>`  作为参数传入方法时，无论该参数在方法内怎样被改变，外部的变量原型总是不变的，这就叫做“值传递”，即方法操作的是参数变量（也就是原型变量的一个值的拷贝）改变的也只是原型变量的一个拷贝而已，而非变量本身。所以变量原型并不会随之改变。
-
-* 当方法传入的参数为非基本类型时（也就是说是一个对象类型的变量）， 方法里面改变参数变量的同时变量原型也会随之改变。这种特性就叫做“引用传递”，也叫做传址，即方法操作参数变量时是拷贝了变量的引用。
-
+对于 Java 函数中的参数究竟是“传值”还是“传引用”，有以下两点定论：
+    * 在Java中，当 :ref:`基本类型 <java-basic-datatype-and-class>`  作为参数传入方法时，无论该参数在方法内怎样被改变，外部的变量原型总是不变的，这就叫做“值传递”，即方法操作的是参数变量（也就是原型变量的一个值的拷贝）改变的也只是原型变量的一个拷贝而已，而非变量本身。所以变量原型并不会随之改变。
+    * 当方法传入的参数为非基本类型时（也就是说是一个对象类型的变量）， 方法里面改变参数变量的同时变量原型也会随之改变。这种特性就叫做“引用传递”，也叫做 **传址**，即方法操作参数变量时是拷贝了变量的引用。
 
 
 .. literalinclude:: ../example_java/extend/ValueMain.java
@@ -27,6 +24,84 @@ Java中的“传值”和“传引用”问题
     :linenos: 
 
 有人看到上面代码运行结果可能会有疑问，String 字符串对象为什么也可以实现 “值传递” ？其实这和 Java String 类的实现方式有关， 点击查看 :ref:`String 的定义 <realize-string>` 或通过 JDK 文档查看 String 的定义，我们会发现 String 类对象的值是存储在 char 类型数组中的，而且这个数组和类是由 final 修饰的，也就是说， *字符串一旦定义则不可变。*
+
+|30|
+
+Java 中将实参传递给方法（或函数）的方式是值传递 [#]_
+-------------------------------------------------------
+
+如果有学过C++，那么肯定觉得 Java 对引用类型的参数采用的是引用传递。实际上，并不是的，这里传递的还是值，不过，这个值是实参的地址罢了！
+
+程序设计语言将实参传递给方法（或函数）的方式分为两种： 
+    * 值传递 ：方法接收的是实参值的拷贝，会创建副本。 
+    * 引用传递 ：方法接收的直接是实参所引用的对象在堆中的地址，不会创建副本，对形参的修改将影响到实参。 很多程序设计语言（比如 C++、 Pascal )提供了两种参数传递的方式，不过，在 Java 中只有值传递。
+
+.. code-block:: java
+    :caption: 验证 Java 实参传递给方法（或函数）的方式是值传递的测试代码
+    :linenos:
+
+    public static void main(String[] args) {
+        Department department1=new Department(1244,"1244");
+        Department department2=new Department(2399,"2399");
+        swap(department1,department2);
+        System.out.println("--------original after swap-------");
+        swapPrinter(department1,department2);
+
+        String message1="message1";
+        String message2="message2";
+        swap(message1,message2);
+        System.out.println("--------original after swap-------");
+        swapPrinter(message1,message2);
+
+        int i1=12;
+        int i2=13;
+        swap(i1,i2);
+        System.out.println("--------original after swap-------");
+        swapPrinter(i1,i2);
+    }
+
+    public static <T> void swap(T first,T second){
+        System.out.println("-----execute swap function----");
+        T temp=first;
+        first=second;
+        second=temp;
+        swapPrinter(first,second);
+    }
+
+    public static <T> void swapPrinter(T first, T second){
+        System.out.println("first object is: "+first);
+        System.out.println("second object is: "+second);
+    }
+
+.. code-block:: guess
+    :caption: 运行结果
+
+    -----execute swap function----
+    first object is: Department{id=2399, name='2399'}
+    second object is: Department{id=1244, name='1244'}
+    --------original after swap-------
+    first object is: Department{id=1244, name='1244'}
+    second object is: Department{id=2399, name='2399'}
+    -----execute swap function----
+    first object is: message2
+    second object is: message1
+    --------original after swap-------
+    first object is: message1
+    second object is: message2
+    -----execute swap function----
+    first object is: 13
+    second object is: 12
+    --------original after swap-------
+    first object is: 12
+    second object is: 13
+
+
+Java 中将实参传递给方法（或函数）的方式是值传递 ： 
+    简单来说，如果参数是基本类型的话，很简单，传递的就是基本类型的字面量值的拷贝，会创建副本。 如果参数是引用类型，传递的就是实参所引用的对象在堆中地址值的拷贝，同样也会创建副本。
+
+.. note:: 
+    
+    理解这些需要了解 Java 的栈和堆。JVM里的堆（heap）特指用于存放Java对象的内存区域。所以根据这个定义，Java对象全部都在堆上。而栈中保存的是基本类型或自定义对象的引用（地址），而自定义对象的引用则指向堆。Java 中传递给方法（或函数）的实参是将拷贝后的栈中的值。
 
 
 |50|
@@ -309,5 +384,6 @@ Java 将内存空间分为堆和栈。基本类型直接在栈中存储数值，
 
 ----
 
-.. [#] 原文链接 `Java的深拷贝和浅拷贝 <https://www.cnblogs.com/ysocean/p/8482979.html>`_ 
+.. [#] 引用自 JavaGuide 文章： `为什么 Java 只有值传递？ <https://javaguide.cn/java/basis/why-there-only-value-passing-in-java/#%E4%B8%BA%E4%BB%80%E4%B9%88-java-%E5%8F%AA%E6%9C%89%E5%80%BC%E4%BC%A0%E9%80%92>`_ 
+.. [#] 引用自 博客园 文章： `Java的深拷贝和浅拷贝 <https://www.cnblogs.com/ysocean/p/8482979.html>`_ 
 
