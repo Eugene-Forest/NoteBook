@@ -77,12 +77,18 @@ java命名规范 [#]_
    * 负无穷大
    * NaN (不是一个数字）
 
+.. attention:: 
+
+   * 不同于 C++， Java 没有任何无符号（unsigned) 形式的 int、 long、short 或 byte 类型。
+
+   * Java 有一个能够表示任意精度的算术包， 通常称为“大数值”（ big number。) 虽然被称为大数值，但它并不是一种新的 Java 类型，而是一个 Java 对象。
 
 .. warning:: 
 
-   不建议在 Java 程序中使用 char 数据类型。 :ref:`参见 Java 中 char 和 String 的细节和使用注意 <not-using-char>` 。 
+   * 不建议在 Java 程序中使用 char 数据类型。 :ref:`参见 Java 中 char 和 String 的细节和使用注意 <not-using-char>` 。 
 
-   注意基本数据类型的封装类的使用方法。 :ref:`参见 Java 的基本数据类型及其封装类 <java-basic-datatype-and-class>` 
+   * 注意基本数据类型的封装类的使用方法。 :ref:`参见 Java 的基本数据类型及其封装类 <java-basic-datatype-and-class>` 。
+
 
 
 枚举类型
