@@ -4,10 +4,13 @@
 
 
 
-| Syntax      | Description |
-| ----------- | ----------- |
-| Header      | Title       |
-| Paragraph   | Text        |
+|  Syntax   | Description |      |      |
+| :-------: | ----------- | ---- | ---- |
+|  Header   | Title       |      |      |
+| Paragraph | Text        |      |      |
+|           |             |      |      |
+|           |             |      |      |
+|           |             |      |      |
 
 https://www.tablesgenerator.com/markdown_tables
 
