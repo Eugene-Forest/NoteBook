@@ -4,7 +4,7 @@
 
 在写文档时，特别是写计算机类的文档，经常要使用外部文件的文本或代码。
 
-在笔者学习 Sphinx 的过程中，主要以 ``literalinclude`` 指令引用代码文件，以 ``include`` 指令引用文本文件或其他特殊文件如 .rst 文件，以 ``image`` 或 ``figure`` 引用图片文件。
+在笔者学习 Sphinx 的过程中，主要以 ``literalinclude`` 指令引用代码文件，以 ``include`` 指令引用文本文件或其他特殊文件如 *.rst* 文件，以 ``image`` 或 ``figure`` 引用图片文件。
 
 .. note:: 
 
@@ -33,6 +33,7 @@ include 指令
    <hr width=300 size=10>
 
 .. code-block:: rest
+   :caption: 分界线以上的三个代码块的源码
 
    .. 上文代码如下：
 
@@ -53,6 +54,11 @@ include 指令
 .. note:: 
 
    一般来说，可以通过 literalinclude-directive 来创建代码块，但是 include-directive 也可以完成相同的功能，区别在于后者没有前者的大多数选项。
+
+.. attention:: 
+
+   通过代码运行的结果可以知道，通过 include 指令时不附带 ``code`` 或 ``literal`` 选项，那么会向使用该命令的文件中导入目标文件中的内容并以 rest 语法被解析显示。
+
 
 include-directive 有以下选项：
 

@@ -42,7 +42,7 @@ templates_path = ['_templates']
 # old config : source_suffix = '.rst'
 # Here is new configuration
 source_suffix = {
-    '.rst': 'restructuredtext',
+    '.rst': 'restructuredtext'
 }
 
 # Make sure the target is unique

@@ -133,7 +133,7 @@ csv-table
    .. csv-table:: 使用本地csv文件
       :file: ../example/csv_table_example.csv 
 
-   .. csv-table:: 将前行csv数据作为 header
+   .. csv-table:: 将前2行csv数据作为 header
       :file: ../example/csv_table_example.csv
       :header-rows: 2
       
