@@ -8,7 +8,7 @@
 
 安装sphinx库以及sphinx-rtd-theme主题库。
 
-.. code-block:: cmd
+.. code-block:: guess
 
    pip install sphinx
    pip install sphinx-rtd-theme  

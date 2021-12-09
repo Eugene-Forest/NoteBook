@@ -39,7 +39,7 @@ Window：C:\\Windows\\System32\\drivers\\etc\\hosts （或 Linux：/etc/hosts）
 
 向hosts文件放入一下两个 IP 地址的代码，代码如下：
 
-.. code-block:: word
+.. code-block:: guess
 
    # GitHub Start 
    140.82.114.4 github.com
@@ -51,7 +51,7 @@ Window：C:\\Windows\\System32\\drivers\\etc\\hosts （或 Linux：/etc/hosts）
 
 在 CMD 命令行中执行 ``ipconfig/flushdns``
 
-.. code-block:: cmd
+.. code-block:: guess
 
    C:\>ipconfig/flushdns
 

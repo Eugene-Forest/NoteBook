@@ -75,5 +75,5 @@ Collection 子接口之 List
 
 ----
 
-.. [#] 考虑到讲到 Java 集合框架就不可避免地要涉及数据结构，所以在本章节中就不对 Java 集合进行详细讲解。同时本文章参考 JavaGuide :ref:`容器 <https://javaguide.cn/java/collection/java%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86&%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/>` 
+.. [#] 考虑到讲到 Java 集合框架就不可避免地要涉及数据结构，所以在本章节中就不对 Java 集合进行详细讲解。同时本文章参考 JavaGuide :ref:`容器 <https://javaguide.cn/home/>` 
 .. [#] 图中只列举了主要的继承派生关系，并没有列举所有关系。比方省略了AbstractList, NavigableSet等抽象类以及其他的一些辅助类。

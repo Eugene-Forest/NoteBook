@@ -5,7 +5,7 @@ java 命令
 
 文章使用的测试用 Java 环境为 1.8.0_311
 
-.. code-block:: cmd
+.. code-block:: guess
    :caption: 测试用 Java 环境
 
    C:\Users\qaz22>java -version

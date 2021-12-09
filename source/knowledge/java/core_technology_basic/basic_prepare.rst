@@ -163,7 +163,7 @@ String 类没有提供用于修改字符串的方法。由于不能修改 Java �
 
 运行截图：
 
-.. code-block:: word
+.. code-block:: guess
 
    Please inter your name?
    Eugene Forest
@@ -225,7 +225,7 @@ String 类没有提供用于修改字符串的方法。由于不能修改 Java �
       }
    }
 
-.. code-block:: word
+.. code-block:: guess
 
    Please inter your name:
    Eugene forest
@@ -300,7 +300,7 @@ for each 循环语句的循环变量将会遍历数组中的每个元素， 而�
    }
 
 
-.. code-block:: word
+.. code-block:: guess
 
    falsefalse
    *******
@@ -344,7 +344,7 @@ int[] b=a;``
 
    }
 
-.. code-block:: word
+.. code-block:: guess
 
    [127, 2, 3, 4]
    **********

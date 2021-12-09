@@ -106,7 +106,7 @@
    }
 
 
-.. code-block:: word
+.. code-block:: guess
 
    eugene
    forest
@@ -161,7 +161,7 @@
       }
    }
 
-.. code-block:: word
+.. code-block:: guess
 
    eugene
    forest
@@ -292,5 +292,5 @@ Java 一个类中可以嵌套另外一个类，语法格式如下：
 ----
 
 
-.. [#] 文章引用自菜鸟教程——抽象类； `点击链接前往查看原文 <https://www.runoob.com/java/java-abstraction.html>`_ 
-.. [#] 文章引用博客园——Java内部类详解； `点击链接前往查看原文 <https://www.cnblogs.com/dolphin0520/p/3811445.html>`_ 
+.. [#] 文章引用自菜鸟教程——抽象类； `抽象类 <https://www.runoob.com/java/java-abstraction.html>`_ 
+.. [#] 文章引用博客园——Java内部类详解； `Java内部类详解 <https://www.cnblogs.com/dolphin0520/p/3811445.html>`_ 

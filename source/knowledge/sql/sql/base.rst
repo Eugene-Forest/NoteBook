@@ -49,7 +49,7 @@ sp_databases
    GO
 
 .. csv-table:: sp_databases 运行结果
-   :file: ./result-file/sp_databases.csv
+   :file: ../result-file/sp_databases.csv
    :header-rows: 1
    :align: center
 
@@ -59,7 +59,7 @@ sp_databases
 通过执行查询命令 ``SELECT name AS database_name,database_id,collation_name FROM sys.databases`` 来查看所有数据库。
 
 .. csv-table::  查询 sys.databases 的运行结果
-   :file: ./result-file/sys.databases.csv
+   :file: ../result-file/sys.databases.csv
    :header-rows: 1
    :align: center
 
@@ -119,7 +119,7 @@ SQL Server 下查看数据库的全部表
 
 .. note:: 
 
-   由于 sp_tables 的实现代码长且复杂，同时如果不带参数地执行该存储过程，那么其结果将包含该库的所有表（一般来说我们只需要看 dbo 部分的表）。同时为节省篇幅，所以不将其展示。:download:`sp_tables 存储过程 <./result-file/sp_tables.sql>` [#]_
+   由于 sp_tables 的实现代码长且复杂，同时如果不带参数地执行该存储过程，那么其结果将包含该库的所有表（一般来说我们只需要看 dbo 部分的表）。同时为节省篇幅，所以不将其展示。:download:`sp_tables 存储过程 <../result-file/sp_tables.sql>` [#]_
 
 
 使用带有参数的 sp_tables
@@ -154,7 +154,7 @@ sp_tables 的参数:
    GO
 
 .. csv-table::  执行带参数的 sp_tables 的运行结果
-   :file: ./result-file/sp_tables.csv
+   :file: ../result-file/sp_tables.csv
    :header-rows: 1
    :align: center
 
@@ -170,7 +170,7 @@ sp_tables 的参数:
 
 
 .. csv-table::  查询 sys.tables 的运行结果
-   :file: ./result-file/sys.tables.csv
+   :file: ../result-file/sys.tables.csv
    :header-rows: 1
    :align: center
 
@@ -211,7 +211,7 @@ MySQL 下查看数据库的全部表
 =============================
 
 
- SQL Server 下查看表结构
+SQL Server 下查看表结构
 ````````````````````````````````````
 
 

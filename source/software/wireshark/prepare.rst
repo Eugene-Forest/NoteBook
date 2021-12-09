@@ -31,7 +31,7 @@ BPF限定词
 
 
 
-.. code-block:: word
+.. code-block:: guess
 
    //样例,包含了主机过滤、端口过滤以及协议过滤
    dst host 192.168.0.10 && tcp port 80

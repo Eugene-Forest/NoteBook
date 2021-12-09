@@ -46,7 +46,7 @@ create a regex and using it matches character string 【Basic】
     result = phone_number_regex.search('My phone number is 4414-555-0192')
     print("The result is ", result)
 
-.. code-block:: word
+.. code-block:: guess
 
    # screenshot
    The result is  <re.Match object; span=(20, 32), match='414-555-0192'>
@@ -76,7 +76,7 @@ Group by brackets -()-
    print("The phone number is "+result.group(0))
    print("The phone number is "+result.group())
 
-.. code-block:: word
+.. code-block:: guess
 
    The result is  ('414', '555-0192')
    The areaCode is 414, the mainCode is 555-0192
@@ -105,7 +105,7 @@ Group by pipeline(|)
    print(mo.group())
    print(mo)
 
-.. code-block:: word
+.. code-block:: guess
 
    Batmobile
    mobile
@@ -131,7 +131,7 @@ Group by question mark (?)
    mo = batRegex.search('The Adventures of Batwowoman')
    print(mo)
 
-.. code-block:: word
+.. code-block:: guess
 
    Batman
       **********     
@@ -156,7 +156,7 @@ Group by asterisk(*)
    mo = batRegex.search('The Adventures of Batwowoman')
    print(mo.group())
 
-.. code-block:: word
+.. code-block:: guess
 
    Batman
       **********     
@@ -181,7 +181,7 @@ Group by plus sign (+)
    mo = batRegex.search('The Adventures of Batwowoman')
    print(mo.group())
 
-.. code-block:: word
+.. code-block:: guess
 
    None
       **********     
@@ -206,7 +206,7 @@ Group by brace -{}-
    mo = batRegex.search('The Adventures of Batwowoman')
    print(mo)
 
-.. code-block:: word
+.. code-block:: guess
 
    Batman
       **********     
@@ -231,7 +231,7 @@ Group by brace -{}-
    print(mo)
    print("**********".center(20))
 
-.. code-block:: word
+.. code-block:: guess
 
    <re.Match object; span=(18, 24), match='Batman'>
       **********     

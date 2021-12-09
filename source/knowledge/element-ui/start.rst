@@ -33,7 +33,7 @@ CDN引入
 #. 安装webpack ``cnpm install -g webpack``。
 
 
-.. code-block:: cmd
+.. code-block:: guess
 
    # clone the project
    git clone https://github.com/PanJiaChen/vue-element-admin.git

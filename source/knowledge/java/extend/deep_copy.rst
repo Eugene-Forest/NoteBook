@@ -266,7 +266,7 @@ Java 将内存空间分为堆和栈。基本类型直接在栈中存储数值，
 
 .. code-block:: java
     :caption: 深拷贝示例2（同浅拷贝示例）
-    :name: java-extend-shallow-copy-example
+    :name: java-extend-deep-copy-example
     :linenos: 
 
     public static void main(String[] args) throws CloneNotSupportedException {

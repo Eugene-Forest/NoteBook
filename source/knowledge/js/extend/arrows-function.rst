@@ -7,7 +7,7 @@
 **箭头函数表达式更适用于那些本来需要匿名函数的地方，并且它不能用作构造函数。**
 
 
-.. code-block:: javascript
+.. code-block:: guess
 
    (param1, param2, …, paramN) => { statements }
    (param1, param2, …, paramN) => expression

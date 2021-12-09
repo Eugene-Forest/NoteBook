@@ -32,7 +32,7 @@ python的正则表达式默认是‘贪心’的，在有二义性的情况下�
    print(mo.group())
 
 
-.. code-block:: word
+.. code-block:: guess
 
    lalalalala
    la

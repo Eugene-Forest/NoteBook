@@ -27,7 +27,7 @@ java.util.concurrent包中提供了表示计数信号量的Semaphore类。
 
 运行结果：
 
-.. code-block:: word
+.. code-block:: guess
 
    Thread-6: BEGIN: used = 3
    Thread-3: BEGIN: used = 3

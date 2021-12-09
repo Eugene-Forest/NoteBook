@@ -58,7 +58,7 @@ ServerThread
 .. literalinclude:: ../example_java/multithreading/GuardedSuspension/ServerThread.java
    :language: java
 
-Main
+Main类
 -------
 
 .. literalinclude:: ../example_java/multithreading/GuardedSuspension/Main.java
@@ -69,7 +69,7 @@ Main
 
 通过运行可知，无论服务线程和客户线程的开启先后，其第一个打印的线程必定为客户线程。
 
-.. code-block:: word
+.. code-block:: guess
 
    Alice requests [ Request No.0 ]
    Bobby handles  [ Request No.0 ]
@@ -138,7 +138,7 @@ Main
 运行（实例）
 ---------------
 
-.. code-block:: word
+.. code-block:: guess
 
    SaverThread calls doSave, content = No.0
    SaverThread calls doSave, content = No.1

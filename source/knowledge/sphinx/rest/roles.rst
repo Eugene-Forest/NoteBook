@@ -101,13 +101,13 @@ sphinx使用解释文本角色将语义标记插入到文档中。它们被写�
 
 当您使用此角色时，被引用的文件将在生成时自动标记为包含在输出中（显然，仅用于HTML输出）。所有可下载的文件都放在 ``_downloads/<unique hash>/`` 输出目录的子目录；处理重复的文件名。
 
-See :download:`this example rst file <../example/title1.rst>`.
+See :download:`this example xml file <../example/test.xml>`.
 
 
 .. code-block:: rest
 
    .. 上文下载功能代码如下所示：
-   See :download:`this example script <../example/title1.rst>`.
+   See :download:`this example xml file <../example/test.xml>`.
 
 
 

@@ -88,7 +88,7 @@ Windows 下的 Redis [#]_
    :alt: redis for windows
    
 
-.. code-block:: cmd
+.. code-block:: guess
 
    # 打开一个 cmd 窗口 使用 cd 命令切换目录到 C:\<path-to-redis> 运行：
    redis-server.exe <redis.windows.conf>

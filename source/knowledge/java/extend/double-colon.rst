@@ -15,7 +15,7 @@ JDK 8 中有双冒号的用法，就是把方法当做参数传到 stream 内部
    :linenos:
 
 
-.. code-block:: word
+.. code-block:: guess
 
    输出一和输出二均为：
    

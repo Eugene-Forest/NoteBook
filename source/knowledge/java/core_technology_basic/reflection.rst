@@ -92,11 +92,11 @@ Class 类的 ``getDeclareFields`` 、 ``getDeclareMethods`` 和 ``getDeclaredCon
 
 除了以上大范围的分析，还能针对修饰符、返回值以及参数等等的详细分析。
 
-.. figure:: ../../img/java/core_tech/base/reflect.fmc.png
+.. figure:: ../../../img/java/core_tech/base/reflect.fmc.png
 
     获取域、方法、构造函数的信息
 
-.. figure:: ../../img/java/core_tech/base/reflect.modifier.png
+.. figure:: ../../../img/java/core_tech/base/reflect.modifier.png
 
     获取和比较修饰符信息
 
@@ -112,7 +112,6 @@ Class 类的 ``getDeclareFields`` 、 ``getDeclareMethods`` 和 ``getDeclaredCon
 
     * :download:`Employee.java <../example_java/basic/inherit/Employee.java>` 
     * :download:`Manager.java <../example_java/basic/inherit/Manager.java>`
-    .. * :download:`Staff.java <../example_java/basic/inherit/Staff.java>` 
 
 我们在分析对象时，不仅仅需要分析对象的类的结构，分析对象的属性值也是十分必要的，但是这就出现了一个问题，针对对象中的私有域，除非拥有访问权限，否则 Java 安全机制只允许査看任意对象有哪些域， 而不允许读取它们的值；不然会抛出以下代码的 ``java.lang.IllegalAccessException`` 错误。
 

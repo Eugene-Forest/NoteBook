@@ -88,7 +88,7 @@ synchronized关键字的使用
    }
 
 
-.. code-block:: word
+.. code-block:: guess
 
    //result 1
    1 2 3 4 1 2 3 5 6 4 5 6 7 8 9 10 7 
@@ -112,7 +112,7 @@ synchronized关键字的使用
    81 82 83 84 85 86 87 88 89 90 
    91 92 93 94 95 96 97 98 99 
 
-.. code-block:: word
+.. code-block:: guess
 
    //result 2
    1 2 3 4 5 6 7 8 9 10 

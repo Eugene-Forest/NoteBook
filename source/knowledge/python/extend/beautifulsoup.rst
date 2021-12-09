@@ -39,7 +39,7 @@ BeautifulSoup(一)
    bs = BeautifulSoup(content, 'html.parser')
    print(bs.title)
 
-.. code-block:: word
+.. code-block:: guess
 
    # code run result
    <title>惠州学院Huizhou University</title>

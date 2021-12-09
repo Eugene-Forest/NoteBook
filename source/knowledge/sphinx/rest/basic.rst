@@ -8,8 +8,8 @@
 
 通常在文章的名词解释中使用。
 
-example
----------------
+字段列表 example
+-----------------------
 
 :fieldname: Field content
 
@@ -40,8 +40,8 @@ example
 * 如果前面有非空白，则标记将被单个冒号替换。
 
 
-example
-------------
+文字块 example
+----------------------
 
 This is a normal text paragraph. The next paragraph is a code sample::
 
@@ -235,22 +235,22 @@ This is a normal text paragraph again.
 .. code-block:: rest
    :caption: 嵌套列表的源码表示
 
-  * this is
-  * a list
+   * this is
+   * a list
 
-    * with a nested list
-    * and some subitems
+      * with a nested list
+      * and some subitems
 
-  * and here the parent list continues
-  * This is a bulleted list.
+   * and here the parent list continues
+   * This is a bulleted list.
 
-    * This is a bulleted list.
-    * It has two items, the second item uses two lines.
+      * This is a bulleted list.
+      * It has two items, the second item uses two lines.
 
-  * 第一级列表第一句
+   * 第一级列表第一句
 
-    * 这是两级列表第一句
-    * 两级列表第二句
+      * 这是两级列表第一句
+      * 两级列表第二句
 
 |30|
 
@@ -299,12 +299,12 @@ This is a normal text paragraph again.
 .. code-block:: rest
    :caption: 定义列表与两级符号列表混合使用
 
-  * 定义列表 term (up to a line of text)
-     * Definition of the term, which must be indented
-     * and can even consist of multiple paragraphs
+   * 定义列表 term (up to a line of text)
+      * Definition of the term, which must be indented
+      * and can even consist of multiple paragraphs
 
-  * 定义列表 next term
-     * Description.
+   * 定义列表 next term
+      * Description.
 
 .. warning:: 
 

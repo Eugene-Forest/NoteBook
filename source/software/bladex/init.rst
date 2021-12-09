@@ -47,7 +47,7 @@ Saber
 
 以下命令前提为安装了 ``nodejs`` 和 ``npm`` 。
 
-.. code-block:: cmd
+.. code-block:: guess
 
     Microsoft Windows [版本 10.0.19043.1348]
     (c) Microsoft Corporation。保留所有权利。

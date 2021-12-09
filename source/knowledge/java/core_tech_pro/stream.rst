@@ -13,7 +13,7 @@ Stream API 可以极大提高 Java 程序员的生产力，让程序员写出高
 元素流在管道中经过中间操作（intermediate operation）的处理，最后由最终操作(terminal operation)得到前面处理的结果。
 
 
-.. code-block:: word
+.. code-block:: guess
 
    +--------------------+       +------+   +------+   +---+   +-------+
    | stream of elements +-----> |filter+-> |sorted+-> |map+-> |collect|
@@ -136,7 +136,7 @@ map 方法用于映射每个元素到对应的结果，以下代码片段使用 
    :linenos:
 
 
-.. code-block:: word
+.. code-block:: guess
 
    9
    4
@@ -155,7 +155,7 @@ sorted 方法用于对流进行排序
    :linenos:
 
 
-.. code-block:: word
+.. code-block:: guess
 
    4
    9
@@ -218,7 +218,7 @@ Collectors 类实现了很多归约操作，例如将流转换成集合和聚合
    :language: Java
    :linenos:
 
-.. code-block:: word
+.. code-block:: guess
 
    筛选列表: [abc, bc, efg, abcd, jkl]
    合并字符串: abc, bc, efg, abcd, jkl
@@ -232,7 +232,7 @@ Collectors 类实现了很多归约操作，例如将流转换成集合和聚合
    :language: Java
    :linenos:
 
-.. code-block:: word
+.. code-block:: guess
 
    列表中最大的数 : 7
    列表中最小的数 : 2
