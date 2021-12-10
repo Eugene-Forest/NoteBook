@@ -14,13 +14,12 @@ Markdown 是一种轻量级的标记语言，可用于在纯文本文档中添�
 
 .. important:: 
 
-   :ref:`sphinx中的markdown支持 <markdown-support>`  
+   :ref:`sphinx中的 Markdown支持 <markdown-support>`  
 
 .. toctree::
    :caption: 目录
    :maxdepth: 2
 
-   table <table>
-   base <base>
-   sql <sql>
+   Markdown 基础语法 <base>
+   Markdown 扩展语法 <extend>
 
