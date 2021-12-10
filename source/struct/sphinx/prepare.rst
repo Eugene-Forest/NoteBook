@@ -63,7 +63,7 @@
 
 最后生成的项目结构如下：
 
-.. image:: ../../img/sphinx/sphinx-project-tree.png
+.. image:: ./img/sphinx-project-tree.png
    :alt: sphinx project tree
 
 
