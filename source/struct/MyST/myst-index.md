@@ -14,4 +14,5 @@ MyST 是一种丰富且可扩展的 Markdown 风格，用于技术文档和发�
 :caption: MyST 语法学习
 
 example <./example/example>
+exam <./example/exam>
 ```
