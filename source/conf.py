@@ -13,8 +13,8 @@
 
 import sys
 import os
-import sphinx_rtd_theme
-
+# import sphinx_rtd_theme
+import sphinx_book_theme
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -30,7 +30,8 @@ import sphinx_rtd_theme
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 # 在这里以字符串的形式添加任何Sphinx扩展模块名。
 extensions = [
-    "sphinx_rtd_theme",
+    "sphinx_book_theme",
+    "sphinx_thebe",
     'myst_parser',
     'sphinx.ext.autosectionlabel',
 ]
@@ -117,12 +118,58 @@ pygments_style = 'sphinx'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 # html_theme = 'default'
-html_theme = 'sphinx_rtd_theme'
+# html_theme = 'sphinx_rtd_theme'
+html_theme = "sphinx_book_theme"
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-#html_theme_options = {}
+# html_theme_options = {}
+
+# 以下为 sphinx_book_theme 的主题配置/定制（sphinx_book_theme）
+html_theme_options = {
+    # ----------------主题内容中导航栏的功能按钮配置--------
+    # 添加存储库链接
+    "repository_url": "https://github.com/Eugene-Forest/NoteBook",
+    # 添加按钮以链接到存储库
+    "use_repository_button": True,
+    # 要添加按钮以打开有关当前页面的问题
+    "use_issues_button": True,
+    # 添加一个按钮来建议编辑
+    "use_edit_page_button": True,
+    # 默认情况下，编辑按钮将指向master分支，但如果您想更改此设置，请使用以下配置
+    "repository_branch": "main",
+    # 默认情况下，编辑按钮将指向存储库的根目录；而我们 sphinx项目的 doc文件其实是在 source 文件夹下的，包括 conf.py 和 index(.rst) 主目录
+    "path_to_docs": "source",
+    # 您可以添加 use_download_button 按钮，允许用户以多种格式下载当前查看的页面
+    "use_download_button": True,
+
+    # --------------------------右侧辅助栏配置---------
+    # 重命名右侧边栏页内目录名，标题的默认值为Contents。
+    "toc_title": "页内目录",
+    # 通常，右侧边栏页内目录中仅显示页面的第 2 级标题，只有当它们是活动部分的一部分时（在屏幕上滚动时），才会显示更深的级别。可以使用以下配置显示更深的级别，指示应显示多少级别
+    "show_toc_level": 2,
+
+    # --------------------------左侧边栏配置--------------
+    # logo 配置
+    "logo_only": True,
+    # 控制左侧边栏列表的深度展开,默认值为1，它仅显示文档的顶级部分
+    "show_navbar_depth": 1,
+    # 自定义侧边栏页脚,默认为 Theme by the Executable Book Project
+    # "extra_navbar": "<p>Your HTML</p>",
+    "home_page_in_toc": True,
+    # ------------------------- 单页模式 -----------------
+    # 如果您的文档只有一个页面，并且您不需要左侧导航栏，那么您可以 使用以下配置将其配置sphinx-book-theme 为以单页模式运行
+    # "single_page": True,
+
+    # 用于交互的启动按钮
+    # Thebe将您的静态代码块转换 为由 Jupyter 内核提供支持的交互式代码块。它通过要求一个BinderHub内核做到这一点 的引擎盖下，您的所有代码细胞转换成互动码单元。这允许用户在不离开页面的情况下在您的页面上运行代码。
+    "launch_buttons": {
+        "thebe": True,
+        # 控制打开的用户界面
+        # "notebook_interface": "jupyterlab",
+    },
+}
 
 # Add any paths that contain custom themes here, relative to this directory.
 #html_theme_path = []
@@ -143,10 +190,18 @@ html_theme = 'sphinx_rtd_theme'
 # pixels large.
 #html_favicon = None
 
+# 自定义徽标、和网站图标
+html_logo = "./_static/notebook.svg"
+html_favicon = "./_static/notebook.svg"
+
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
+# html_static_path = ['_static']
+
+# 添加你自己的 CSS 规则
 html_static_path = ['_static']
+html_css_files = ["custom.css"]
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.

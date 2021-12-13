@@ -12,3 +12,11 @@ Eugene forest's notebook
    笔记记录 <knowledge/k-index>
    项目以及常见业务实现 <project/project-index>
    软件/工具安装配置记录 <software/software-index>
+
+.. toctree:: 
+   :caption: 用以构建文档的工具和标记语言
+   :hidden:
+
+   Sphinx 工具和 reST 标记语言 <struct/sphinx/sphinx-index>
+   Markdown 标记语言 <struct/markdown/md-index>
+   MyST <struct/MyST/myst-index>

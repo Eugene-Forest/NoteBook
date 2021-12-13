@@ -2,18 +2,25 @@
 准备部分
 ===============
 
+.. note:: 
 
-安装python并下载必要的包
+   Sphinx 项目需要 Python 环境来支持,在此不对如何安装 Python 进行说明. 有需要的可以通过 `Python官网 <https://www.python.org/>`_ 单独下载.
+
+
+安装 Sphinx 并下载必要的包
 ------------------------------
 
-安装sphinx库以及sphinx-rtd-theme主题库。
+安装 Sphinx 库以及 ``sphinx-rtd-theme`` 主题库。
 
 .. code-block:: guess
 
    pip install sphinx
    pip install sphinx-rtd-theme  
 
-在项目根目录生成文档命令 ``sphinx-quickstart``
+
+|30|
+
+在项目根目录运行生成文档命令 ``sphinx-quickstart``
 ---------------------------------------------------
 
 
@@ -72,6 +79,7 @@
 * conf.py: Sphinx的配置文件
 * index.rst: 主文档
 
+|30|
 
 配置主题
 -----------------
@@ -85,6 +93,12 @@
    # 找到主题属性更改如下
    html_theme = 'sphinx_rtd_theme'
 
+.. note:: 
+
+   更多主题配置点击查看  :ref:`HTML Theme <sphinx-html-theme>`  笔记.
+
+
+|30|
 
 通过vscode的git插件创建存储库
 -------------------------------
@@ -102,6 +116,7 @@
 .. literalinclude:: ../../../README.md
    :language: markdown
 
+|30|
 
 推送
 -------------------------

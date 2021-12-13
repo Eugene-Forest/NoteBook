@@ -2,8 +2,14 @@
 指令
 ==============================
 
+.. note:: 
 
-`点击前往指令的参考文档 <https://www.sphinx-doc.org/zh_CN/master/usage/restructuredtext/directives.html#code-examples>`_ 
+   本章介绍 reStructuredText 的指令，可以 `点击前往指令的参考文档 <https://www.sphinx-doc.org/zh_CN/master/usage/restructuredtext/directives.html#code-examples>`_ 。
+
+   需要注意的是，我们在使用指令时大多会遇到 指令和内容分开，而且还有指令的可选项的情况。根据语法，这些指令的内容和可选项都需要缩进 **3个空格**。
+   
+   由于笔者使用 VsCode 编写笔记，然后发现通过分别设置 用户、工作区、文件夹的 ``settings.json`` 文件中的  ``"editor.tabSize": 3`` 属性都没有很好的设置到 tab 的空格数。所以笔者索性通过插件 *EditorConfig for Visual Studio Code* 使用 ``.editorconfig`` 文件来格式化不同文件下的 tab 键。
+
 
 epigraph 题词
 ====================
@@ -158,6 +164,10 @@ topic / 主题 or 总论
 .. note:: 
 
    更多关于目录的语法点击 `前往官网查看。 <https://www.osgeo.cn/sphinx/usage/restructuredtext/directives.html#table-of-contents>`_ 
+
+.. important:: 
+
+   目录选项中有两个重要的选项，分别为 caption 和 hidden 属性，caption 用作目录的主标题，而 hidden 用来表示是否显示在页面中，这个属性对于构成左侧边栏的标题列表有用。
 
 |50|
 

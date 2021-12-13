@@ -1,8 +1,8 @@
 ==========
-sphinx
+Sphinx
 ==========
 
-RestructuredText是Sphinx使用的默认纯文本标记语言。本节简要介绍 reStructuredText（REST）的概念和语法，旨在为作者提供足够的信息，以便高效地编写文档。
+RestructuredText是Sphinx使用的默认纯文本标记语言。本节简要介绍 reStructuredText（reST）的概念和语法，旨在为作者提供足够的信息，以便高效地编写文档。
 
 
 .. important:: 
@@ -13,7 +13,6 @@ RestructuredText是Sphinx使用的默认纯文本标记语言。本节简要介�
 .. warning:: 
 
    需要注意的是，在本篇章笔记中记录的知识部分语法；更多详细全面的语法请前往上文提供的官方文档中学习。
-
 
 .. toctree::
    :caption: reStructureText 笔记目录

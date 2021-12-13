@@ -19,6 +19,8 @@
    SQL 笔记记录 <sql/sql-index>
    Linux 笔记记录 <linux/linux-index>
    Redis 笔记记录 <redis/redis-index>
-   Sphinx 笔记记录 <../struct/sphinx/sphinx-index>
-   Markdown <../struct/markdown/md-index>
-   MyST 语法学习 <../struct/MyST/myST-index>
+
+
+.. Sphinx 笔记记录 <../struct/sphinx/sphinx-index>
+.. Markdown <../struct/markdown/md-index>
+.. MyST 语法学习 <../struct/MyST/myST-index>
