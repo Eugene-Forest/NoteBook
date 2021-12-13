@@ -37,6 +37,15 @@ extensions = [
     'sphinx.ext.autosectionlabel',
 ]
 
+thebe_config = {
+    "always_load": False,
+    "repository_url": "https://github.com/Eugene-Forest/NoteBook",
+    "repository_branch": "main",
+    # "selector": "<selector-for-code-cells>",
+    # "selector_input": "<selector-for-cell-input>",
+    # "selector_output": "<selector-for-cell-output>",
+}
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
