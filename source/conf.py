@@ -15,6 +15,7 @@ import sys
 import os
 # import sphinx_rtd_theme
 import sphinx_book_theme
+import sphinx_thebe
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -42,10 +43,11 @@ templates_path = ['_templates']
 # The suffix of source filenames.
 # old config : source_suffix = '.rst'
 # Here is new configuration
-source_suffix = {
-    '.rst': 'restructuredtext',
-    '.md': 'markdown'
-}
+# source_suffix = {
+#     '.rst': 'restructuredtext',
+#     '.md': 'markdown'
+# }
+source_suffix = '.rst'
 
 # Make sure the target is unique
 autosectionlabel_prefix_document = True
@@ -128,6 +130,8 @@ html_theme = "sphinx_book_theme"
 
 # 以下为 sphinx_book_theme 的主题配置/定制（sphinx_book_theme）
 html_theme_options = {
+    "theme_dev_mode": True,
+
     # ----------------主题内容中导航栏的功能按钮配置--------
     # 添加存储库链接
     "repository_url": "https://github.com/Eugene-Forest/NoteBook",
@@ -165,9 +169,12 @@ html_theme_options = {
     # 用于交互的启动按钮
     # Thebe将您的静态代码块转换 为由 Jupyter 内核提供支持的交互式代码块。它通过要求一个BinderHub内核做到这一点 的引擎盖下，您的所有代码细胞转换成互动码单元。这允许用户在不离开页面的情况下在您的页面上运行代码。
     "launch_buttons": {
-        "thebe": True,
+        "binderhub_url": "https://mybinder.org",
+        # "jupyterhub_url": "https://datahub.berkeley.edu",  # For testing
+        "colab_url": "https://colab.research.google.com/",
         # 控制打开的用户界面
-        # "notebook_interface": "jupyterlab",
+        "notebook_interface": "jupyterlab",
+        "thebe": True,
     },
 }
 
