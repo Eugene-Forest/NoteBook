@@ -13,9 +13,6 @@
 
 import sys
 import os
-# import sphinx_rtd_theme
-import sphinx_book_theme
-import sphinx_thebe
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -32,19 +29,46 @@ import sphinx_thebe
 # 在这里以字符串的形式添加任何Sphinx扩展模块名。
 extensions = [
     "sphinx_book_theme",
+    # myst 解析器
+    # 'myst_parser',
+    # 默认情况下，MyST-NB 会同时解析 markdown(.md) 和 notebooks(.ipynb)。如果您在文档中使用 MyST-NB，请不要激活myst-parser. 它将被自动激活myst-nb。
+    "myst_nb",
     "sphinx_thebe",
-    'myst_parser',
+    # 代码块复制按钮扩展
+    "sphinx_copybutton",
+    "sphinx.ext.viewcode",
+    # 评论区
+    # "sphinx_comments",
+    # 美人鱼，通过代码生成时序图等
+    # "sphinxcontrib.mermaid",
+    # label 标签自动选中确保唯一性,并允许引用节使用其标题
     'sphinx.ext.autosectionlabel',
+    # ablog ——https://daobook.github.io/ablog/zh-CN
+    # 'ablog',
+    # 'sphinx.ext.intersphinx',
+    # tab 面板插件
+    'sphinx_tabs.tabs',
 ]
 
+
+# Make sure the target is unique
+autosectionlabel_prefix_document = True
+
+
 thebe_config = {
-    "always_load": False,
-    "repository_url": "https://github.com/Eugene-Forest/NoteBook",
-    "repository_branch": "main",
-    # "selector": "<selector-for-code-cells>",
-    # "selector_input": "<selector-for-cell-input>",
-    # "selector_output": "<selector-for-cell-output>",
+    "repository_url": "https://github.com/binder-examples/jupyter-stacks-datascience",
+    "repository_branch": "master",
 }
+
+# 评论区扩展功能配置样例
+# comments_config = {
+#     "hypothesis": True,
+#     "dokieli": False,
+#     "utterances": {
+#         "repo": "xinetzone/sphinx-demo",
+#         "optional": "config",
+#     }
+# }
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -52,14 +76,7 @@ templates_path = ['_templates']
 # The suffix of source filenames.
 # old config : source_suffix = '.rst'
 # Here is new configuration
-# source_suffix = {
-#     '.rst': 'restructuredtext',
-#     '.md': 'markdown'
-# }
-source_suffix = '.rst'
-
-# Make sure the target is unique
-autosectionlabel_prefix_document = True
+source_suffix = ['.rst', '.md']
 
 # The encoding of source files.
 # 建议的编码和默认值是 'utf-8-sig' .
@@ -139,7 +156,8 @@ html_theme = "sphinx_book_theme"
 
 # 以下为 sphinx_book_theme 的主题配置/定制（sphinx_book_theme）
 html_theme_options = {
-    "theme_dev_mode": True,
+    # （仅限开发人员）触发一些功能，使开发主题更容易。默认 `False`
+    # "theme_dev_mode": False,
 
     # ----------------主题内容中导航栏的功能按钮配置--------
     # 添加存储库链接
@@ -150,6 +168,8 @@ html_theme_options = {
     "use_issues_button": True,
     # 添加一个按钮来建议编辑
     "use_edit_page_button": True,
+    # 在导航栏添加一个按钮来切换全屏的模式。
+    "use_fullscreen_button": True,  # 默认 `True`
     # 默认情况下，编辑按钮将指向master分支，但如果您想更改此设置，请使用以下配置
     "repository_branch": "main",
     # 默认情况下，编辑按钮将指向存储库的根目录；而我们 sphinx项目的 doc文件其实是在 source 文件夹下的，包括 conf.py 和 index(.rst) 主目录
@@ -159,18 +179,17 @@ html_theme_options = {
 
     # --------------------------右侧辅助栏配置---------
     # 重命名右侧边栏页内目录名，标题的默认值为Contents。
-    "toc_title": "页内目录",
-    # 通常，右侧边栏页内目录中仅显示页面的第 2 级标题，只有当它们是活动部分的一部分时（在屏幕上滚动时），才会显示更深的级别。可以使用以下配置显示更深的级别，指示应显示多少级别
+    "toc_title": "导航",
+    # -- 在导航栏中显示子目录，向下到这里列出的深度。 ----
     "show_toc_level": 2,
-
     # --------------------------左侧边栏配置--------------
-    # logo 配置
+    # -- 只显示标识，不显示 `html_title`，如果它存在的话。-----
     "logo_only": True,
     # 控制左侧边栏列表的深度展开,默认值为1，它仅显示文档的顶级部分
     "show_navbar_depth": 1,
     # 自定义侧边栏页脚,默认为 Theme by the Executable Book Project
     # "extra_navbar": "<p>Your HTML</p>",
-    "home_page_in_toc": True,
+    "home_page_in_toc": False,  # 是否将主页放在导航栏（顶部）
     # ------------------------- 单页模式 -----------------
     # 如果您的文档只有一个页面，并且您不需要左侧导航栏，那么您可以 使用以下配置将其配置sphinx-book-theme 为以单页模式运行
     # "single_page": True,
@@ -180,11 +199,13 @@ html_theme_options = {
     "launch_buttons": {
         "binderhub_url": "https://mybinder.org",
         # "jupyterhub_url": "https://datahub.berkeley.edu",  # For testing
-        "colab_url": "https://colab.research.google.com/",
+        # "colab_url": "https://colab.research.google.com/",
         # 控制打开的用户界面
         "notebook_interface": "jupyterlab",
         "thebe": True,
     },
+    # -- 在每个页面的页脚添加额外的 HTML。---
+    # "extra_footer": '',
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
@@ -228,6 +249,7 @@ html_css_files = ["custom.css"]
 #html_use_smartypants = True
 
 # Custom sidebar templates, maps document names to template names.
+# 通过html文件定制主侧栏
 #html_sidebars = {}
 
 # Additional templates that should be rendered to pages, maps page names to

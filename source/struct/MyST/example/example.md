@@ -100,6 +100,19 @@ import matplotlib.pyplot as plt
 plt.scatter(*data, c=data[0], s=200)
 ```
 
+
+```{code-block}
+:class: thebe
+public class main {
+    public static void main(String[] args) {
+        System.out.println("hello world");
+    }
+}
+```
+
+
+
+
 ## Interactive outputs
 
 Interactive outputs work with `sphinx-thebe` **if their web dependencies are loaded**.

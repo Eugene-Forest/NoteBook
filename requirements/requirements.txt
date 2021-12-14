@@ -1,3 +1,9 @@
-myst-parser
+# myst-parser
+myst_nb
 sphinx-book-theme
 sphinx_thebe
+sphinx_copybutton
+sphinx-tabs
+
+# sphinx_comments
+# sphinxcontrib.mermaid

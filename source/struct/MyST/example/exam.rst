@@ -1,159 +1,117 @@
+=====
+Thebe
+=====
 
 
-.. _minimal_example:
+`Thebe <https://github.com/executablebooks/thebe>`_ turns your static HTML pages
+into interactive ones, powered by a kernel. It is the evolution of the
+`original Thebe project <https://github.com/oreillymedia/thebe>`_ with javascript
+APIs provided by `JupyterLab <https://github.com/jupyterlab/jupyterlab>`_.
 
-=================
-A minimal example
-=================
-
-This page illustrates a minimal setup to get Thebe running, using
-`mybinder <http://mybinder.org/>`_ as a
-kernel (i.e. computation backend) provider. This guide will go step-by-step
-in loading Thebe and activating it so that your code cells become active.
-
-Loading and configuring Thebe
-=============================
-
-In order to use Thebe, we must first set its configuration. This must be
-done **before** Thebe is loaded from a CDN or a local script.
-
-There are many ways you can activate Thebe. In this case, we'll add a
-button to our page, using the built in UI widgets, this will **bootstrap**
-Thebe once clicked. We'll do this with a little bit of Javascript.
-
-Here's a sample configuration for Thebe
+For example, see the following code cell:
 
 .. raw:: html
+
 
    <!-- Configure and load Thebe !-->
    <script type="text/x-thebe-config">
      {
        requestKernel: true,
        mountActivateWidget: true,
-       mountStatusWidget: true,
        binderOptions: {
          repo: "binder-examples/requirements",
        },
      }
    </script>
 
-.. code:: html
-
-   <!-- Configure and load Thebe !-->
-   <script type="text/x-thebe-config">
-     {
-         requestKernel: true,
-         mountActivateWidget: true,
-         mountStatusWidget: true,
-         binderOptions: {
-         repo: "binder-examples/requirements",
-         },
-     }
-   </script>
-
-In this case, ``requestKernel: true`` asks Thebe to request a kernel
-immediately upon being loaded, and ``binderOptions`` provides the repository
-that Binder will use to give us a Kernel.
-
-Next, we'll load Thebe from a CDN:
-
-.. raw:: html
-
-   <script src="../_static/lib/index.js"></script>
-
-.. code:: html
-
-   <script src="https://unpkg.com/thebe@latest/lib/index.js"></script>
-
-
-Adding a Thebe UI widgets to your page
-======================================
-
-When the configuration options are set to mount the activate button and status field, you will need
-to include mount points in your page which will be used to place the widgets.
-
-We can do this by adding the following `div` elements:
-
-.. code:: html
-
-   <div class="thebe-activate"></div>
-   <div class="thebe-status"></div>
-
-The following UI widgets are then mounted on the page.
-
-.. raw:: html
-
-   <style>
-      .thebe-activate, .thebe-status {
-         margin-bottom: 10px;
-      }
-   </style>
-   <div class="thebe-activate"></div>
-   <div class="thebe-status"></div>
-
-These widgets are minimally styled, but can be modified by overrriding or extending the following classes; `thebe-status`, `thebe-status-mounted`, `thebe-status-stub`, `thebe-status-field`, `thebe-status-message`, `thebe-status-building`, `thebe-status-launching`, `thebe-status-starting`, `thebe-status-ready`, `thebe-status-failed`, `thebe-status-busy`.
-
-Adding code cells
-=================
-
-Finally, we'll add code cells that Thebe can activate. By default, Thebe
-will look for any HTML elements with ``data-executable="true"``. We'll also add
-a ``data-language="python"`` attribute to enable syntax highlighting with CodeMirror.
-
-
-.. raw:: html
-
-   <pre data-executable="true" data-language="python">print("Hello!")</pre>
-
-Here's the code that created the cell above:
-
-.. code:: html
-
-   <pre data-executable="true" data-language="python">print("Hello!")</pre>
-
-Press the Thebe button above to activate this cell, then press the "Run" button,
-or "Shift-Enter" to execute this cell.
-
-.. note::
-
-   When Thebe is activated in this example, it must first ask Binder for a kernel.
-   This may take several seconds.
-
-Now let's try another cell that generates a Matplotlib plot. Because we've
-configured Thebe to use Binder with an environment that has Numpy and
-Matplotlib, this works as expected. Try modifying the cell contents and
-re-running!
-
-This is another cell, with plotting. Shift-Enter again!
-
-.. raw:: html
-
    <pre data-executable="true" data-language="python">
    %matplotlib inline
    import numpy as np
    import matplotlib.pyplot as plt
-   x = np.linspace(0,10)
-   plt.plot(x, np.sin(x))
-   plt.plot(x, np.cos(x))
+   plt.ion()
+   fig, ax = plt.subplots()
+   ax.scatter(*np.random.randn(2, 100), c=np.random.randn(100))
+   ax.set(title="Wow, an interactive plot!")
    </pre>
 
-Here's the HTML for the cell above:
+It is static for now. You can activate Thebe by pressing the button below.
+This will ask `mybinder.org <https://mybinder.org>`_ for a Python kernel, and
+turn the code cell into an interactive one with outputs!
 
-.. code:: html
-
-   <pre data-executable="true" data-language="python">
-   %matplotlib inline
-   import numpy as np
-   import matplotlib.pyplot as plt
-   x = np.linspace(0,10)
-   plt.plot(x, np.sin(x))
-   plt.plot(x, np.cos(x))
-   </pre>
-
-And here's an example where the contents cannot be modified once instantiated:
+Try clicking the button. The cell will be come active!
 
 .. raw:: html
 
-   <pre data-executable="true" data-language="python" data-readonly>print("My contents cannot be changed!")</pre>
+   <div class="thebe-activate"></div>
+   <script src="./_static/lib/index.js"></script>
 
-For more examples, check out :ref:`more_examples`.
+
+You can press "run" in order to run the contents of the cell and display the
+result (be patient, it will take a few moments for Binder to start the kernel).
+
+
+Getting Started
+===============
+
+To get started, check out :doc:`start`.
+
+.. admonition:: References to `thebelab` will be removed in version 0.9.0
+  :class: warning
+
+  As part of the library migration to an executable books project (`#230 <https://github.com/executablebooks/thebe/issues/230>`_), `thebe` has been added as an alias for `thebelab` and all css classes beginning with `thebelab-` duplicated as `thebe-`. The `thebelab` global object, exposed functions and user code reliant on css classes `thebelab-*`, will continue to work and any DOM elements created during operation will be decorated with `thebelab-` classes as expected, until removed in version 0.9.0.
+
+.. _more_examples:
+
+Examples
+========
+
+For more examples showing how to configure, use, and activate Thebe, see
+the list below. We recommend browsing the raw HTML of each one in order to
+see how Thebe is used.
+
+
+
+
+HTML based examples
+-------------------
+
+* `Built in status field and styling <_static/html_examples/demo-status-widget.html>`_
+* `Built in activate button <_static/html_examples/demo-activate-button.html>`_
+* `Step-by-step demo <_static/html_examples/demo.html>`_
+* `Making use of Jupyter interactive widgets <_static/html_examples/widgets.html>`_
+* `Alternative computational environments; code cells with prompts and outputs <_static/html_examples/prompts.html>`_
+* `Using a local Jupyter server as kernel provider <_static/html_examples/local.html>`_
+* `Setting predefined output for cells <_static/html_examples/demo-preview.html>`_
+* `Example of a custom launch button, loading from unpgk.com <_static/html_examples/demo-launch-button.html>`_
+
+Source code for these examples can be found in `thebe/docs/_static/html_examples folder <https://github.com/executablebooks/thebe/tree/master/examples>`_
+
+.. IMPORTANT::
+  All examples build a _local_ version of `thebe` in order to show off the latest features.
+  If you'd like to instead load the latest _release_ of Thebe, replace the `<script>` elements with the following:
+
+  ```html
+  <script type="text/javascript" src="https://unpkg.com/thebe@latest"></script>
+  ```
+
+.. IMPORTANT::
+
+  Serve the HTML examples indepenently by running `yarn serve:examples` in your local development environment.
+
+External Examples
+-----------------
+
+* `Thebe in use for SageMath documentation <http://sage-package.readthedocs.io/en/latest/sage_package/sphinx-demo.html>`_
+  (`about <http://sage-package.readthedocs.io/en/latest/sage_package/thebe.html>`_)
+  Showcases a fancy activate button, and fetching thebe and running computations locally when possible. Relevant files:
+
+  * `thebe.html <https://github.com/sagemath/sage-package/blob/master/sage_package/themes/sage/thebe.html>`_
+  * `thebe_status_field.js <https://github.com/sagemath/sage-package/tree/master/sage_package/themes/sage/static/thebe_status_field.js>`_
+  * `thebe_status_field.js <https://github.com/sagemath/sage-package/tree/master/sage_package/themes/sage/static/thebe_status_field.js>`_
+* `Thebe in use for GAP documentation <https://sebasguts.github.io/thebelab_test_gap/chap42>`_
+
+Acknowledgements
+================
+
+``thebe`` was originally developed as a part of `OpenDreamKit <http://opendreamkit.org/>`_ -
+Horizon 2020 European Research Infrastructure project (676541).

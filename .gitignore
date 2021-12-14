@@ -1,6 +1,6 @@
 /.vscode
 
-/source/_build/html
+/source/_build/*
 
 /build/*
 
