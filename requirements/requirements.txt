@@ -9,10 +9,10 @@ sphinx_thebe
 sphinx_copybutton
 sphinx-tabs
 sphinx_design
-sphinx_tabs.tabs
+sphinx-tabs
 sphinx_togglebutton
 sphinx_comments
-sphinxcontrib.mermaid
+sphinxcontrib-mermaid
 
 ablog
 
