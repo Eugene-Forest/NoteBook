@@ -16,7 +16,6 @@ sphinx:
 # Set the version of Python and other tools you might need
 build:
   tools:
-    python: "3.7"
     # You can also specify other tool versions:
     nodejs: "16"
     npm : "6.0"
