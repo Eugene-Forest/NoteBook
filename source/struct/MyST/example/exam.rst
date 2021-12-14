@@ -21,17 +21,18 @@ For example, see the following code cell:
        binderOptions: {
          repo: "binder-examples/requirements",
        },
+       kernelOptions: {
+         kernelName: "java",
+       },
      }
    </script>
 
-   <pre data-executable="true" data-language="python">
-   %matplotlib inline
-   import numpy as np
-   import matplotlib.pyplot as plt
-   plt.ion()
-   fig, ax = plt.subplots()
-   ax.scatter(*np.random.randn(2, 100), c=np.random.randn(100))
-   ax.set(title="Wow, an interactive plot!")
+   <pre data-executable="true" data-language="java">
+   public class main {
+      public static void main(String[] args) {
+         System.out.println("hello world");
+      }
+   }
    </pre>
 
 It is static for now. You can activate Thebe by pressing the button below.
