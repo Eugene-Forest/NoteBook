@@ -18,7 +18,7 @@ HTML Theme
 
 |75|
 
-sphinx_rtd_theme
+sphinx_rtd_theme 主题配置
 ===========================
 
 .. code-block:: python
@@ -32,7 +32,7 @@ sphinx_rtd_theme
 
 对于 sphinx_rtd_theme 主题，笔者并没有深入了解其配置，如果读者需要了解可 `点击链接前往官方文档学习 sphinx_rtd_theme 主题配置 <https://sphinx-rtd-theme.readthedocs.io/en/stable/index.html>`_ 。
 
-sphinx_book_theme
+sphinx_book_theme 主题配置
 ==============================
 
 对于 sphinx_book_theme 主题，如果读者有需要，可 `点击链接前往官方文档学习 sphinx_book_theme 主题配置 <https://sphinx-book-theme.readthedocs.io/en/latest/index.html>`_ 。
