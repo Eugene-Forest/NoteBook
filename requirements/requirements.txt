@@ -1,5 +1,5 @@
-myst-parser
-# myst_nb
+# myst-parser
+myst_nb
 
 
 sphinx-book-theme
@@ -16,8 +16,8 @@ sphinxcontrib-mermaid
 
 ablog
 
-sphinx.ext.autodoc
-sphinx.ext.intersphinx
-sphinx.ext.viewcode
-sphinx.ext.autosectionlabel
+# sphinx.ext.autodoc
+# sphinx.ext.intersphinx
+# sphinx.ext.viewcode
+# sphinx.ext.autosectionlabel
 
