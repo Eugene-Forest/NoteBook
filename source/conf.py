@@ -64,6 +64,8 @@ thebe_config = {
     "repository_branch": "master",
 }
 
+myst_enable_extensions = ["colon_fence"]
+
 # 评论区扩展功能配置样例
 # comments_config = {
 #     "hypothesis": True,

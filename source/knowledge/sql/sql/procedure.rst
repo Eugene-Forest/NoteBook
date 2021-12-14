@@ -112,6 +112,7 @@ MySQL 存储函数 [#]_
 2) **返回值不同。** 存储函数必须有返回值,且仅返回一个结果值；存储过程可以没有返回值,但是能返回结果集(out,inout)。
 3) **调用时的不同。** 存储函数嵌入在SQL中使用,可以在 select 存储函数名(变量值)；存储过程通过call语句调用 call 存储过程名。
 4) **参数的不同。** 存储函数的参数类型类似于IN参数，没有类似于OUT和INOUT的参数。存储过程的参数类型有三种，IN、OUT和INOUT：
+
   a. in：数据只是从外部传入内部使用(值传递),可以是数值也可以是变量
   b. out：只允许过程内部使用(不用外部数据),给外部使用的(引用传递:外部的数据会被先清空才会进入到内部),只能是变量。
   c. inout：外部可以在内部使用,内部修改的也可以给外部使用,典型的引用 传递,只能传递变量。
@@ -215,7 +216,7 @@ SQL Server 中的存储过程是由一个或多个 Transact-SQL 语句或对 Mic
 若要指定输出参数，必须在 CREATE PROCEDURE 语句的参数定义中指定 OUTPUT 关键字。 当过程退出时，它向调用程序返回输出参数的当前值。 **执行过程时，调用程序也必须使用 OUTPUT 关键字**，才能将该参数值保存到可以在调用程序中使用的变量中。
 
 
-.. literalinclude:: ../result-file/proc_param_out.sql
+.. literalinclude:: ../result-file/mssql_proc_param_out.sql
     :language: mysql
 
 
