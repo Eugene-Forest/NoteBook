@@ -47,17 +47,19 @@ extensions = [
     'sphinx_tabs.tabs',
     # 折叠警告（注释、警告等）的功能按钮
     "sphinx_togglebutton",
-    # 评论区
-    # "sphinx_comments",
     # 美人鱼，通过代码生成时序图等
     "sphinxcontrib.mermaid",
-    # ablog ——https://daobook.github.io/ablog/zh-CN
+    # 博客 ——https://daobook.github.io/ablog/zh-CN
     # 'ablog',
+    # 评论区
+    # "sphinx_comments",
 ]
 
 # Make sure the target is unique
 autosectionlabel_prefix_document = True
 
+# 控制切换按钮悬停文本
+togglebutton_hint = "展示隐藏内容"
 
 thebe_config = {
     "repository_url": "https://github.com/binder-examples/jupyter-stacks-datascience",

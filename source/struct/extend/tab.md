@@ -52,7 +52,7 @@ extensions = ['sphinx_tabs.tabs']
 
 ```{admonition} 更多指令
 
-sphinx-tabs.tabs 插件还有 group-tab 指令 和 code-tab 指令与 tabs 指令嵌套使用的语法，在这里就不加以详述，若有学习意向可 [前往 sphinx-tabs 官方文档查看](https://sphinx-tabs.readthedocs.io/en/latest/) 。
+sphinx-tabs.tabs 插件还有 group-tab 指令 和 [code-tab](./example/tab/tab-code.rst) 指令与 tabs 指令嵌套使用的语法，在这里就不加以详述，若有学习意向可 [前往 sphinx-tabs 官方文档查看](https://sphinx-tabs.readthedocs.io/en/latest/) 。
 ```
 
 :::{admonition} 在 rst 文件中使用 Sphinx Design 插件实现选项卡功能
@@ -79,8 +79,6 @@ sphinx-tabs.tabs 插件还有 group-tab 指令 和 code-tab 指令与 tabs 指�
 建议使用另一个功能更加强大的插件 [Sphinx Design](./design/design-index.md) 。
 
 :::
-
-
 
 ## 在 Markdown 语法使用
 
