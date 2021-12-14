@@ -15,7 +15,7 @@ sphinx:
 
 # Optionally build your docs in additional formats such as PDF
 # 需要预先构建的文件类型，用于下载使用
-formats:
+# formats:
    # - htmlzip
    # - pdf
    # - epub 
