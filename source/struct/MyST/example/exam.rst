@@ -22,7 +22,9 @@ For example, see the following code cell:
          repo: "binder-examples/requirements",
        },
        kernelOptions: {
+         name : "java",
          kernelName: "java",
+         path: "."
        },
      }
    </script>

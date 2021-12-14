@@ -4,6 +4,7 @@ sphinx-book-theme
 sphinx_thebe
 sphinx_copybutton
 sphinx-tabs
+sphinx_design
 
 # sphinx_comments
 # sphinxcontrib.mermaid
