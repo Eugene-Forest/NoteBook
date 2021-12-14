@@ -5,6 +5,15 @@ sphinx_thebe
 sphinx_copybutton
 sphinx-tabs
 sphinx_design
+sphinx_tabs.tabs
+sphinx_togglebutton
+ablog
+
+
+sphinx.ext.autodoc
+sphinx.ext.intersphinx
+sphinx.ext.viewcode
+sphinx.ext.autosectionlabel
 
 # sphinx_comments
 # sphinxcontrib.mermaid

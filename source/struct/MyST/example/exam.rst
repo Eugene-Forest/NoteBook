@@ -1,120 +1,171 @@
-=====
-Thebe
-=====
+===============
+Configure Thebe
+===============
+
+You control Thebe's behavior with a configuration block that is placed somewhere
+in a page's HTML. The block has the following structure:
+
+.. note::
+    :class: dropdown, toggle-shown
+
+    This is my note.
+
+.. code-block:: html
+
+   <script type="text/x-thebe-config">
+      {
+          a: collection
+          of: key
+          val: pairs
+      }
+   </script>
+
+For example, the following configuration tells Thebe to use a BinderHub for its
+sessions, as well as the repository to use with Binder:
+
+.. code-block:: html
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/requirements",
+            ref: "master",
+        },
+    }
+    </script>
+
+When Thebe is launched on a page, this configuration is used to control
+its behavior.
+
+See the sections below for things that you can control with Thebe configuration.
 
 
-`Thebe <https://github.com/executablebooks/thebe>`_ turns your static HTML pages
-into interactive ones, powered by a kernel. It is the evolution of the
-`original Thebe project <https://github.com/oreillymedia/thebe>`_ with javascript
-APIs provided by `JupyterLab <https://github.com/jupyterlab/jupyterlab>`_.
+Configure the kernel that will be launched
+==========================================
 
-For example, see the following code cell:
+To configure the kernel that Thebe requests when it launches, use the
+following section in the Thebe configuration:
+
+.. code-block:: javascript
+
+   kernelOptions: {
+     kernelName: "python3",
+   },
+
+When Thebe is launched, it will request a kernel of this name for the page.
+Note that currently there can be only one kernel per page.
+
+.. note::
+
+   You must ensure that the value of ``kernelName`` exists in the environment that
+   Thebe tries to launch. Some short-hands for certain languages (like ``python``)
+   may also work.
+
+
+Configure the working directory of the launched kernel
+======================================================
+
+In addition to choosing the kernel, you may also choose the *path* where the
+kernel is launched. This will be relative to the root of the launched Jupyter server
+(e.g., if using a BinderHub, this will be relative to the root of the repository).
+
+To configure the path of the working directory, use the following configuration:
+
+.. code-block:: javascript
+
+   kernelOptions: {
+     kernelName: "python3",
+     path: "path/to/directory"
+   }
+
+
+Customize CodeMirror
+====================
+
+CodeMirror is the tool used to convert your code cells into editable cells.
+It has a number of configuration options, such as theming and syntax highlighting.
+You can edit all of these attributes in a cell with the following thebe configuration:
+
+.. code:: javascript
+
+
+   // Additional options to pass to CodeMirror instances
+   codeMirrorConfig: {},
+
+You can use any of `the available CodeMirror configurations <https://codemirror.net/doc/manual.html#config>`_.
+For example, the following configuration changes the `CodeMirror theme <https://codemirror.net/theme/>`_:
+
+.. code:: javascript
+
+   codeMirrorConfig: {
+       theme: "abcdef"
+   }
+
+The below code cell demonstrates this theme:
 
 .. raw:: html
-
 
    <!-- Configure and load Thebe !-->
    <script type="text/x-thebe-config">
      {
        requestKernel: true,
-       mountActivateWidget: true,
        binderOptions: {
          repo: "binder-examples/requirements",
        },
-       kernelOptions: {
-         name : "java",
-         kernelName: "java",
-         path: "."
+       codeMirrorConfig: {
+           theme: "abcdef"
        },
      }
    </script>
+   <script src="_static/lib/index.js"></script>
 
-   <pre data-executable="true" data-language="java">
-   public class main {
-      public static void main(String[] args) {
-         System.out.println("hello world");
-      }
-   }
+   <pre data-executable="true" data-language="python">
+   %matplotlib inline
+   import numpy as np
+   import matplotlib.pyplot as plt
+   plt.ion()
+   fig, ax = plt.subplots()
+   ax.scatter(*np.random.randn(2, 100), c=np.random.randn(100))
+   ax.set(title="Wow, an interactive plot!")
    </pre>
-
-It is static for now. You can activate Thebe by pressing the button below.
-This will ask `mybinder.org <https://mybinder.org>`_ for a Python kernel, and
-turn the code cell into an interactive one with outputs!
-
-Try clicking the button. The cell will be come active!
 
 .. raw:: html
 
-   <div class="thebe-activate"></div>
-   <script src="./_static/lib/index.js"></script>
+   <button id="activateButton" style="width: 120px; height: 40px; font-size: 1.5em;">Activate</button>
+   <script>
+   document.querySelector("#activateButton").addEventListener('click', thebelab.bootstrap)
+   </script>
+
+The above code should be styled according to the
+`CodeMirror abcdef theme <https://codemirror.net/demo/theme.html#abcdef>`_.
 
 
-You can press "run" in order to run the contents of the cell and display the
-result (be patient, it will take a few moments for Binder to start the kernel).
+Mark a code cell as read-only
+=============================
 
+If you would like a code cell to be runnable by Thebe, but not *editable* by the user, you
+may mark it as "read-only" with the following syntax:
 
-Getting Started
-===============
+.. code-block:: html
 
-To get started, check out :doc:`start`.
+   <pre data-executable data-readonly>print("I cannot be modified")</pre>
 
-.. admonition:: References to `thebelab` will be removed in version 0.9.0
-  :class: warning
+Users will not be able to modify the code once Thebe is activated, though they can still
+press the "run" button to see the outputs.
 
-  As part of the library migration to an executable books project (`#230 <https://github.com/executablebooks/thebe/issues/230>`_), `thebe` has been added as an alias for `thebelab` and all css classes beginning with `thebelab-` duplicated as `thebe-`. The `thebelab` global object, exposed functions and user code reliant on css classes `thebelab-*`, will continue to work and any DOM elements created during operation will be decorated with `thebelab-` classes as expected, until removed in version 0.9.0.
+**To set all cells as read-only by default**, use the following `thebe` configuration:
 
-.. _more_examples:
+.. code:: javascript
 
-Examples
-========
+   codeMirrorConfig: {
+       readOnly: true
+   }
 
-For more examples showing how to configure, use, and activate Thebe, see
-the list below. We recommend browsing the raw HTML of each one in order to
-see how Thebe is used.
+This uses codeMirror to mark all cells as read-only. If you are using this setting and would like to
+manually mark individual cells as editable, you can override the codeMirror configuration for a cell using ``data-readonly="false"``. For example:
 
+.. code-block:: html
 
-
-
-HTML based examples
--------------------
-
-* `Built in status field and styling <_static/html_examples/demo-status-widget.html>`_
-* `Built in activate button <_static/html_examples/demo-activate-button.html>`_
-* `Step-by-step demo <_static/html_examples/demo.html>`_
-* `Making use of Jupyter interactive widgets <_static/html_examples/widgets.html>`_
-* `Alternative computational environments; code cells with prompts and outputs <_static/html_examples/prompts.html>`_
-* `Using a local Jupyter server as kernel provider <_static/html_examples/local.html>`_
-* `Setting predefined output for cells <_static/html_examples/demo-preview.html>`_
-* `Example of a custom launch button, loading from unpgk.com <_static/html_examples/demo-launch-button.html>`_
-
-Source code for these examples can be found in `thebe/docs/_static/html_examples folder <https://github.com/executablebooks/thebe/tree/master/examples>`_
-
-.. IMPORTANT::
-  All examples build a _local_ version of `thebe` in order to show off the latest features.
-  If you'd like to instead load the latest _release_ of Thebe, replace the `<script>` elements with the following:
-
-  ```html
-  <script type="text/javascript" src="https://unpkg.com/thebe@latest"></script>
-  ```
-
-.. IMPORTANT::
-
-  Serve the HTML examples indepenently by running `yarn serve:examples` in your local development environment.
-
-External Examples
------------------
-
-* `Thebe in use for SageMath documentation <http://sage-package.readthedocs.io/en/latest/sage_package/sphinx-demo.html>`_
-  (`about <http://sage-package.readthedocs.io/en/latest/sage_package/thebe.html>`_)
-  Showcases a fancy activate button, and fetching thebe and running computations locally when possible. Relevant files:
-
-  * `thebe.html <https://github.com/sagemath/sage-package/blob/master/sage_package/themes/sage/thebe.html>`_
-  * `thebe_status_field.js <https://github.com/sagemath/sage-package/tree/master/sage_package/themes/sage/static/thebe_status_field.js>`_
-  * `thebe_status_field.js <https://github.com/sagemath/sage-package/tree/master/sage_package/themes/sage/static/thebe_status_field.js>`_
-* `Thebe in use for GAP documentation <https://sebasguts.github.io/thebelab_test_gap/chap42>`_
-
-Acknowledgements
-================
-
-``thebe`` was originally developed as a part of `OpenDreamKit <http://opendreamkit.org/>`_ -
-Horizon 2020 European Research Infrastructure project (676541).
+   <pre data-executable data-readonly="false">print("I still can be modified")</pre>
+   <pre data-executable>print("Due to codeMirrorConfig, I cannot be modified")</pre>

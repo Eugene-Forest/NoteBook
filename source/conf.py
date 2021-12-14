@@ -27,41 +27,33 @@ import os
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 # 在这里以字符串的形式添加任何Sphinx扩展模块名。
-# extensions = [
-#     "sphinx_book_theme",
-#     # myst 解析器
-#     # 'myst_parser',
-#     # 默认情况下，MyST-NB 会同时解析 markdown(.md) 和 notebooks(.ipynb)。如果您在文档中使用 MyST-NB，请不要激活myst-parser. 它将被自动激活myst-nb。
-#     "myst_nb",
-#     "sphinx_thebe",
-#     "sphinx_design",
-#     # 代码块复制按钮扩展
-#     "sphinx_copybutton",
-#     "sphinx.ext.viewcode",
-#     # 评论区
-#     # "sphinx_comments",
-#     # 美人鱼，通过代码生成时序图等
-#     # "sphinxcontrib.mermaid",
-#     # label 标签自动选中确保唯一性,并允许引用节使用其标题
-#     'sphinx.ext.autosectionlabel',
-#     # ablog ——https://daobook.github.io/ablog/zh-CN
-#     # 'ablog',
-#     # 'sphinx.ext.intersphinx',
-#     # tab 面板插件
-#     'sphinx_tabs.tabs',
-# ]
-
 extensions = [
-    "myst_nb",
     "sphinx.ext.autodoc",
     "sphinx.ext.intersphinx",
     "sphinx.ext.viewcode",
-    "sphinx_copybutton",
-    "sphinx_design",
+    # label 标签自动选中确保唯一性,并允许引用节使用其标题
+    'sphinx.ext.autosectionlabel',
+    # myst 解析器
+    # 'myst_parser',
+    # 默认情况下，MyST-NB 会同时解析 markdown(.md) 和 notebooks(.ipynb)。如果您在文档中使用 MyST-NB，请不要激活myst-parser. 它将被自动激活myst-nb。
+    "myst_nb",
+    # 使您的代码单元与Thebe和Binder提供的内核进行交互。
     "sphinx_thebe",
+    # 用于设计美观、视图大小的响应式 Web 组件。
+    "sphinx_design",
+    # 代码块复制按钮扩展
+    "sphinx_copybutton",
+    # tab 面板插件
+    'sphinx_tabs.tabs',
+    # 折叠警告（注释、警告等）的功能按钮
     "sphinx_togglebutton",
+    # 评论区
+    # "sphinx_comments",
+    # 美人鱼，通过代码生成时序图等
+    # "sphinxcontrib.mermaid",
+    # ablog ——https://daobook.github.io/ablog/zh-CN
+    # 'ablog',
 ]
-
 
 # Make sure the target is unique
 autosectionlabel_prefix_document = True
