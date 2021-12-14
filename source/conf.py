@@ -34,9 +34,9 @@ extensions = [
     # label 标签自动选中确保唯一性,并允许引用节使用其标题
     'sphinx.ext.autosectionlabel',
     # myst 解析器
-    # 'myst_parser',
+    'myst_parser',
     # 默认情况下，MyST-NB 会同时解析 markdown(.md) 和 notebooks(.ipynb)。如果您在文档中使用 MyST-NB，请不要激活myst-parser. 它将被自动激活myst-nb。
-    "myst_nb",
+    # "myst_nb",
     # 使您的代码单元与Thebe和Binder提供的内核进行交互。
     "sphinx_thebe",
     # 用于设计美观、视图大小的响应式 Web 组件。
@@ -50,7 +50,7 @@ extensions = [
     # 评论区
     # "sphinx_comments",
     # 美人鱼，通过代码生成时序图等
-    # "sphinxcontrib.mermaid",
+    "sphinxcontrib.mermaid",
     # ablog ——https://daobook.github.io/ablog/zh-CN
     # 'ablog',
 ]
