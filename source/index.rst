@@ -2,16 +2,54 @@
 Eugene forest's notebook
 ========================
 
-.. note:: 
-   | **这是笔者在学习过程中的一些笔记，可能包括软件的安装配置、技术的知识点、技术的使用技巧、软件的使用方法、以及学习过程当中的感悟、学习过程中出现的疑问以及疑问的解决。**
+
+这是笔者在学习过程中的一些笔记，可能包括软件的安装配置、技术的知识点、技术的使用技巧、软件的使用方法、以及学习过程当中的感悟、学习过程中出现的疑问以及疑问的解决。
+
+.. //todo 主页待更新
+
+关于本项目
+=================
+
+本项目是通过 Sphinx 来实现的，使用了 reStructuredText、Markdown、MyST、MyST-NB 标记语言来编写文档，并托管与 Read The Docs 平台运行。
+
 
 .. toctree::
-   :caption: 主目录
-   :maxdepth: 3
+   :caption: knowledge 笔记记录
+   :hidden:
 
-   笔记记录 <knowledge/k-index>
-   项目以及常见业务实现 <project/project-index>
-   软件/工具安装配置记录 <software/software-index>
+   Java 笔记记录 </knowledge/java/java-index>
+   Git 笔记记录 </knowledge/git/git-index>
+   Vue 笔记记录 </knowledge/vue/vue-index>
+   Element-UI 笔记记录 </knowledge/element-ui/el-index>
+   JavaScript 笔记记录 </knowledge/js/js-index>
+   计算机网络 </knowledge/network/net-index>
+   Python 笔记记录 </knowledge/python/python-index>
+   SQL 笔记记录 </knowledge/sql/sql-index>
+   Linux 笔记记录 </knowledge/linux/linux-index>
+   Redis 笔记记录 </knowledge/redis/redis-index>
+
+
+.. toctree::
+   :caption: 项目以及常见业务实现
+   :hidden:
+
+   常见业务实现 </project/business/b-index>
+   项目：工具箱 </project/toolbox/box-index>
+   毕设：医院住院部护士排班ASP系统-管理者端的构建 </project/nsms/nsms-index>
+
+
+.. toctree::
+   :caption: 软件或工具包安装以及配置记录
+   :hidden:
+
+   bladex 快速开发平台的使用 </software/bladex/bladex-index>
+   jetbrains </software/jetbrains/index>
+   vscode </software/vs_code/index>
+   eclipse </software/eclipse/index>
+   netbeans </software/netbeans/index>
+   wireshark </software/wireshark/index>
+   xshell以及xftp的教育版下载 </software/xshell>
+   一些常用软件的快捷键 </software/shortcut-key>
 
 .. toctree:: 
    :caption: 用以构建文档的工具和标记语言

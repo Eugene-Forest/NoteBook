@@ -9,9 +9,3 @@
 [Eugene forest's notebook](https://studynotes.readthedocs.io/zh/latest/)
 
 
-
-## 关于
-
-[点击了解更多关于本项目的信息...](./About.md)
-
-
