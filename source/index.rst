@@ -12,10 +12,14 @@ Eugene forest's notebook
 
 本项目是通过 Sphinx 来实现的，使用了 reStructuredText、Markdown、MyST、MyST-NB 标记语言来编写文档，并托管与 Read The Docs 平台运行。
 
+|75|
+
+主目录
+=================
 
 .. toctree::
    :caption: knowledge 笔记记录
-   :hidden:
+   :maxdepth: 1
 
    Java 笔记记录 </knowledge/java/java-index>
    Git 笔记记录 </knowledge/git/git-index>
@@ -31,7 +35,7 @@ Eugene forest's notebook
 
 .. toctree::
    :caption: 项目以及常见业务实现
-   :hidden:
+   :maxdepth: 1
 
    常见业务实现 </project/business/b-index>
    项目：工具箱 </project/toolbox/box-index>
@@ -40,7 +44,7 @@ Eugene forest's notebook
 
 .. toctree::
    :caption: 软件或工具包安装以及配置记录
-   :hidden:
+   :maxdepth: 1
 
    bladex 快速开发平台的使用 </software/bladex/bladex-index>
    jetbrains </software/jetbrains/index>
@@ -53,7 +57,7 @@ Eugene forest's notebook
 
 .. toctree:: 
    :caption: 用以构建文档的工具和标记语言
-   :hidden:
+   :maxdepth: 1
 
    Sphinx 工具和 reST 标记语言 <struct/sphinx/sphinx-index>
    Markdown 标记语言 <struct/markdown/md-index>
