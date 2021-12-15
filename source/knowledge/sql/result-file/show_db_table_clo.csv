@@ -1,0 +1,8 @@
+"TABLE_CATALOG","TABLE_SCHEMA","TABLE_NAME","COLUMN_NAME","ORDINAL_POSITION","COLUMN_DEFAULT","IS_NULLABLE","DATA_TYPE","CHARACTER_MAXIMUM_LENGTH","CHARACTER_OCTET_LENGTH","NUMERIC_PRECISION","NUMERIC_SCALE","DATETIME_PRECISION","CHARACTER_SET_NAME","COLLATION_NAME","COLUMN_TYPE","COLUMN_KEY","EXTRA","PRIVILEGES","COLUMN_COMMENT","GENERATION_EXPRESSION"
+"def","employees","current_dept_emp","emp_no","1",,"NO","int",,,"10","0",,,,"int(11)",,,"select,insert,update,references",,
+"def","employees","current_dept_emp","dept_no","2",,"NO","char","4","4",,,,"latin1","latin1_swedish_ci","char(4)",,,"select,insert,update,references",,
+"def","employees","current_dept_emp","from_date","3",,"YES","date",,,,,,,,"date",,,"select,insert,update,references",,
+"def","employees","current_dept_emp","to_date","4",,"YES","date",,,,,,,,"date",,,"select,insert,update,references",,
+"def","employees","departments","dept_no","1",,"NO","char","4","4",,,,"latin1","latin1_swedish_ci","char(4)","PRI",,"select,insert,update,references",,
+
+"31"
