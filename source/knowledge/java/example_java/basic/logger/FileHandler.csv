@@ -1,9 +1,0 @@
-配置属性,描述,默认值
-java.util.logging.FileHandler.level,处理器级别,Level.ALL
-java.util.logging.FileHandler.append,控制处理器应该追加到一个已经存在的文件尾部；还是应该为每个运行的程序打开一个新文件,false
-java.util.logging.FileHandler.limit,在打开另一个文件之前允许写入一个文件的近似最大字节数（0表示无限制）,在FileHandler类中为0(表示无限制）；在默认的日志管理器配置文件中为50000
-java.util.logging.FileHandler.pattern,日志文件名的模式，参看表7-2中的模式变量,%h/java%u.log
-java.util.logging.FileHandler.count,在循环序列中的日志记录数,1(不循环）
-java.util.logging.FileHandler.filter,使用的过滤器类,没有使用过滤器
-java.util.logging.FileHandler.encoding,使用的字符编码,平台的编码
-java.util.logging.FileHandler.formatter,记录格式器,java.util.logging.XMLFormatter

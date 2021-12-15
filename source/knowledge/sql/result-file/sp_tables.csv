@@ -1,7 +1,0 @@
-TABLE_QUALIFIER,TABLE_OWNER,TABLE_NAME,TABLE_TYPE,REMARKS
-learning_sql_server,dbo,books,TABLE,NULL
-learning_sql_server,dbo,Customers,TABLE,NULL
-learning_sql_server,dbo,OrderItems,TABLE,NULL
-learning_sql_server,dbo,Orders,TABLE,NULL
-learning_sql_server,dbo,Products,TABLE,NULL
-learning_sql_server,dbo,Vendors,TABLE,NULL
