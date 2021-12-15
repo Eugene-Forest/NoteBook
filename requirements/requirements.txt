@@ -1,23 +1,18 @@
+# ------解析器--------
 # myst-parser
 myst_nb
 
-
+# --------主题-------------
 sphinx-book-theme
 
-sphinx_thebe
 
+# 功能性插件
+sphinx_thebe
 sphinx_copybutton
-sphinx-tabs
 sphinx_design
 sphinx-tabs
 sphinx_togglebutton
-sphinx_comments
 sphinxcontrib-mermaid
-
 ablog
-
-# sphinx.ext.autodoc
-# sphinx.ext.intersphinx
-# sphinx.ext.viewcode
-# sphinx.ext.autosectionlabel
+sphinx_comments
 
