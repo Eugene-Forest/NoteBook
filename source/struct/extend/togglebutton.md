@@ -1,6 +1,6 @@
-# 切换按钮 sphinx-togglebutton
+# 切换按钮插件 sphinx-togglebutton
 
-## 下载安装
+## 安装
 
 You can install sphinx-togglebutton with pip:
 

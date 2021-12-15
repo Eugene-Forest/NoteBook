@@ -111,3 +111,23 @@ Content 2
 :::
 
 ::::
+
+
+## 实际应用
+
+由于 sphinx tabs 插件的在使用过程中使用到指令的多层嵌套，将其转换为 MyST 语法格式会变得难以阅读，所以采用引用 `.rst` 文件的形式使用在 `.md` 文件中。
+
+:::markdown
+
+```{eval-rst}
+.. include:: ./example/tab/tab-code.rst
+```
+
+:::
+
+> [代码实际运行界面](./example/tab/tab-code.rst) 可点击源码界面的下载按钮查看实现源码, 引用下的代码运行效果如下
+
+```{eval-rst}
+.. include:: ./example/tab/tab-code.rst
+``` 
+

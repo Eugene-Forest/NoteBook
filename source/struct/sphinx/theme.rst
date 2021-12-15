@@ -32,6 +32,8 @@ sphinx_rtd_theme 主题配置
 
 对于 sphinx_rtd_theme 主题，笔者并没有深入了解其配置，如果读者需要了解可 `点击链接前往官方文档学习 sphinx_rtd_theme 主题配置 <https://sphinx-rtd-theme.readthedocs.io/en/stable/index.html>`_ 。
 
+
+
 sphinx_book_theme 主题配置
 ==============================
 
