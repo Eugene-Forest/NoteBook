@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>指令</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+	<div>
+		<p>过滤器</p>
+	</div>
+	<hr />
+	<hr />
+	<div id="img">
+		<p>v-bind指令</p>
+		<img v-bind:src="path" width="200" height="200">
+		<img :src="path2" width="200" height="200">
+	</div>
+	<hr />
+	<hr />
+	<div id="compute">
+		<p>v-model指令（表单控件）</p>
+		<div>
+			<p>text</p>
+			<input type="text" name="" id="" v-model.lazy="text_message" />
+			<span>your input is {{text_message}}</span>
+			<br>
+			<input type="text" name="" id="" value="" v-model.trim="text_message" />
+			<span>your input is {{text_message}}</span>
+			<input type="text" name="" id="" value="" v-model.number.lazy="age" />
+			<span>your input is {{age}}</span>
+		</div>
+		<hr />
+		<hr />
+		<div>
+			<p>redio</p>
+			<label><input type="radio" name="" id="" value="male" v-model="gender" />man</label>
+			<label><input type="radio" name="" id="" value="female" v-model="gender" />female</label>
+			<p>{{gender}}</p>
+		</div>
+		<hr />
+		<div>
+			<p>checkbox</p>
+			<input type="checkbox" name="" id="" value="" v-model="checked" />
+			<span>checked: {{checked}}</span>
+			<hr>
+			<p>multichecked</p>
+			<label><input type="checkbox" value="1" v-model="multiChecked">1</lable>
+				<label><input type="checkbox" value="2" v-model="multiChecked">2</lable>
+					<label><input type="checkbox" value="3" v-model="multiChecked">3</lable>
+						<p>MultiChecked: {{ multiChecked.join('|') }}</p>
+		</div>
+		<hr>
+		<div>
+			<p>select</p>
+			<select v-model="selected">
+				<option selected>A</option>
+				<option>B</option>
+				<option>C</option>
+			</select>
+			<span>Selected: {{ selected }}</span>
+			<hr>
+			<p>multi-select</p>
+			<select v-model="multiSelected" multiple>
+				<option selected>A</option>
+				<option>B</option>
+				<option>C</option>
+			</select>
+			<br>
+			<span>MultiSelected: {{ multiSelected.join('|') }}</span>
+		</div>
+	</div>
+	<hr />
+	<hr />
+	<div id="complex">
+		<span v-text="message"></span>
+		<div v-html="HTML" class="tab"></div>
+		<!-- <div v-el:demo>this is a el mode</div> -->
+		<div v-pre> v-pre 跳过编译这个元素和子元素 {{message}}</div>
+		<div v-cloak> v-cloak 可以隐藏未编译的 Mustache
+			标签直到实例准备完毕 {{message}}</div>
+		<span v-once>{{message}}</span>
+	</div>
+	<hr />
+	<hr />
+	<div id="attr-bind">
+		<p>Class与Style绑定</p>
+		<p>在开发过程中，我们经常会遇到动态添加类名或直接修改内联样式（例如 tab 切换）。</p>
+		<div>
+			<div class="tab" v-bind:class="{'active':active,'unactive':!active}">
+				单个class绑定
+			</div>
+			<div v-bind:class="[classA,classB]">
+				多个class绑定
+			</div>
+		</div>
+	</div>
+	<hr />
+	<hr />
+	<div id="condition">
+		<p>条件渲染</p>
+		<div v-if="show">
+			v-if is true
+		</div>
+		<div v-else>
+			v-if is false
+		</div>
+		<div v-show="show">
+			v-show is true
+		</div>
+	</div>
+	<hr />
+	<hr />
+	<div id="list">
+		<p>列表渲染</p>
+		<ul>
+			<li v-for="(item,index) in items">
+				<h3>{{index}}</h3>
+				<h4>{{item.title}}</h4>
+				<span>{{item.description}}</span>
+			</li>
+		</ul>
+		<p>n in 10</p>
+		<ul>
+			<li v-for="n in 10" v-text="n"></li>
+		</ul>
+	</div>
+
+	<hr />
+	<hr />
+	<div id="event">
+		<p>事件绑定与监听</p>
+		<div>
+			<p>鼠标点击事件</p>
+			<button type="button" v-on:click="say">say</button>
+			<button type="button" @click="showEvent($event)">changing and logging</button>
+			<p>修饰符</p>
+			<div v-on:click="saySelf('click from inner')" v-on:click.self="saySelf('click from self')"
+				style="background-color: aqua;">
+				<button v-on:click="saySelf('button click')">button</button>
+				<button v-on:click.stop="saySelf('just button click')">button</button>
+			</div>
+		</div>
+		<div>
+			<p>键盘事件(可扩展)</p>
+		</div>
+	</div>
+	<hr />
+	<hr />
+
+	<script type="text/javascript">
+		var image = new Vue({
+			el: '#img',
+			data: {
+				path: "../img/China.png",
+				path2: "../img/USA.png"
+			}
+		})
+		var compute = new Vue({
+			el: '#compute',
+			data: {
+				text_message: '',
+				age: 0,
+				gender: '',
+				checked: '',
+				multiChecked: [],
+				selected: '',
+				multiSelected: []
+			}
+		})
+		var attr = new Vue({
+			el: '#attr-bind',
+			data: {
+				active: true,
+				classA: 'active',
+				classB: 'show',
+			}
+		})
+		var condition = new Vue({
+			el: '#condition',
+			data: {
+				show: true,
+			}
+		})
+		var for_list = new Vue({
+			el: '#list',
+			data: {
+				items: [{
+					title: 'title-1',
+					description: 'description-1'
+				},
+				{
+					title: 'title-2',
+					description: 'description-2'
+				},
+				{
+					title: 'title-4',
+					description: 'description-3'
+				},
+				{
+					title: 'title-3',
+					description: 'description-4'
+				}
+				],
+			},
+		})
+
+		var event = new Vue({
+			el: '#event',
+			data: {
+				message: 'hello world!!'
+			},
+			methods: {
+				say: function () {
+					alert(this.message)
+				},
+				showEvent: function (event) {
+					this.message = 'I have print some message on console.',
+						console.log(event)
+				},
+				saySelf(message) {
+					alert(message)
+				}
+			}
+		})
+
+		var complex = new Vue({
+			el: '#complex',
+			data: {
+				message: 'this is vue instance.',
+				HTML: '<p>complex</p>'
+			}
+		})
+	</script>
+</body>
+
+</html>
