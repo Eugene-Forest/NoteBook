@@ -50,14 +50,12 @@ sd_hide_title: true
 
 ::::
 
-
-
 ```{toctree}
 
-网格 <grids>
-卡片 <cards>
-可下拉选项卡 <dropdowns>
-标签选项卡 <tabs>
+网格 —— grid <grids>
+卡片 —— card <cards>
+可下拉选项卡 —— dropdown <dropdowns>
+标签选项卡 —— tab-set <tabs>
 Badges, Buttons & Icons <badges_buttons>
 附加功能 <additional>
 样式 css <styling>

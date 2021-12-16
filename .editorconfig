@@ -6,7 +6,7 @@ root = true
 
 # Matches multiple files with brace expansion notation
 # Set default charset
-[*.{rst,py,md,txt,html,xml,java}]
+[*.{rst,py,md,txt,html,xml,java,yaml,json}]
 charset = utf-8
 
 # Unix-style newlines with a newline ending every file 对于所有的文件 始终在文件末尾插入一个新行

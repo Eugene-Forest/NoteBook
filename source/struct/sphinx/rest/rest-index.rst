@@ -17,7 +17,6 @@ RestructuredText是Sphinx使用的默认纯文本标记语言。本节简要介�
 .. toctree::
    :caption: reStructureText 笔记目录
    :maxdepth: 3
-   :numbered:
    
    标题学习 <title>
    基础杂糅 <basic>

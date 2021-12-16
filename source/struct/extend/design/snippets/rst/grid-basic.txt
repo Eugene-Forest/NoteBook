@@ -1,4 +1,4 @@
-.. grid:: 1 2 3 4
+.. grid:: 4
     :outline:
 
     .. grid-item::

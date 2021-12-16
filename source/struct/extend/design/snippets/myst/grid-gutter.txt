@@ -10,7 +10,7 @@ B
 ::::
 
 ::::{grid} 2
-:gutter: 3 3 4 5
+:gutter: 5
 
 :::{grid-item-card}
 A
