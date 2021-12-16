@@ -1,6 +1,6 @@
 .. tabs::
 
-   .. tab:: markdown
+   .. tab:: MyST Markdown
 
       .. code-block:: markdown
 
@@ -14,7 +14,7 @@
          (sorry)
          ```
 
-   .. tab:: rest
+   .. tab:: RestructuredText
 
       .. code-block:: rest
 

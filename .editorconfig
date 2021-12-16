@@ -3,6 +3,12 @@
 # top-most EditorConfig file 表示是最顶层的配置文件，发现设为true时，才会停止查找.editorconfig文件
 root = true
 
+
+# Matches multiple files with brace expansion notation
+# Set default charset
+[*.{rst,py,md,txt,html,xml,java,yaml,json}]
+charset = utf-8
+
 # Unix-style newlines with a newline ending every file 对于所有的文件 始终在文件末尾插入一个新行
 [*]
 end_of_line = lf
