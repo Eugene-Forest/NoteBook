@@ -5,7 +5,7 @@
 `article-info` 指令用于显示有关文章的信息块，通常位于文章标题的正下方（如下所示，带有非标准大纲）。
 
 ```{article-info}
-:avatar: ../../../_static/notebook.svg
+:avatar: ../../../_static/notebook-logo.svg
 :avatar-link: https://github.com/Eugene-Forest/
 :avatar-outline: muted
 :author: Eugene-Forest

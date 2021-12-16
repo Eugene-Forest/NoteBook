@@ -1,5 +1,5 @@
 .. article-info::
-    :avatar: ../../../_static/notebook.svg
+    :avatar: ../../../_static/notebook-logo.svg
     :avatar-link: https://github.com/Eugene-Forest/
     :avatar-outline: muted
     :author: Eugene-Forest

@@ -237,8 +237,9 @@ html_theme_options = {
 #html_favicon = None
 
 # 自定义徽标、和网站图标
-html_logo = "./_static/notebook.svg"
-html_favicon = "./_static/notebook.svg"
+html_logo = "./_static/notebook-badge.svg"
+# html_logo = "./_static/notebook-logo.svg"
+html_favicon = "./_static/notebook-badge.svg"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
