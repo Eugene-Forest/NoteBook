@@ -80,33 +80,35 @@ sphinx-tabs.tabs 插件还有 group-tab 指令 和 [code-tab](./example/tab/tab-
 
 :::
 
-## 在 Markdown 语法使用
+## 使用 MyST Parser 的 Markdown 语法使用
 
 ```markdown
+::::{tabs}
 
-::::{tab-set}
+:::{tab} Label1
 
-:::{tab-item} Label1
 Content 1
 :::
 
-:::{tab-item} Label2
+:::{tab} Label2
+
 Content 2
 :::
 
 ::::
-
 ```
 
-> 运行结果如下：
+> 运行结果如下：(Markdown形式的语法参考RST形式的,需要注意的是这个指令和内容之间必须要有空行)
 
-::::{tab-set}
+::::{tabs}
 
-:::{tab-item} Label1
+:::{tab} Label1
+
 Content 1
 :::
 
-:::{tab-item} Label2
+:::{tab} Label2
+
 Content 2
 :::
 

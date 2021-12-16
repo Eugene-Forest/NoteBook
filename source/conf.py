@@ -66,6 +66,7 @@ thebe_config = {
     "repository_branch": "master",
 }
 
+# 对于使用 `MyST Parser` (或者基于 `MyST Parser` 的解析器，如 `MyST-NB`)来解析的Markdown文档，使用 `colon_fence` 语法扩展来支持 Sphinx Design
 myst_enable_extensions = ["colon_fence"]
 
 # 评论区扩展功能配置样例

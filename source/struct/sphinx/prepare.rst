@@ -122,3 +122,42 @@
 -------------------------
 
 添加远程仓库，可以通过添加url添加仓库；如果使用了GitHub插件，那么可以直接选择并推送到现存的空仓库。
+
+
+|30|
+
+不同文件下的 tab 键行为控制
+-------------------------------
+
+这个功能配置可选择性添加，如果不使用 rst 文件编写笔记，那么这个功能也没有用；但是如果你打算使用 rst 文件编写笔记，甚至打算使用 rst 和 md 文件混合编写笔记，那么就有必要控制 tab 键的行为，因为 RestructureText 语法中的指令的内容和可选项都需要缩进 **3个空格**。，虽然可以连击三个 space，但是显然直接使用 tab 键更快捷。
+
+由于笔者使用 VsCode 编写笔记，然后发现通过分别设置 用户、工作区、文件夹的 ``settings.json`` 文件中的  ``"editor.tabSize": 3`` 属性都没有很好的设置到 tab 的空格数。所以笔者索性通过插件 *EditorConfig for Visual Studio Code* 使用 ``.editorconfig`` 文件来格式化不同文件下的 tab 键。
+
+.. code-block:: guess
+   :caption: .editorconfig 文件
+   :linenos:
+
+   # EditorConfig is awesome: https://EditorConfig.org
+
+   # top-most EditorConfig file 表示是最顶层的配置文件，发现设为true时，才会停止查找.editorconfig文件
+   root = true
+
+   # Set default charset
+   [*.{rst,py,md,txt,html,xml,java}]
+   charset = utf-8
+
+   # Unix-style newlines with a newline ending every file 对于所有的文件 始终在文件末尾插入一个新行
+   [*]
+   end_of_line = lf
+   insert_final_newline = true
+
+   # 4 space indentation 控制py文件类型的缩进大小
+   [*.{py,md,java}]
+   indent_style = space
+   indent_size = 4
+
+   [*.rst]
+   indent_style = space
+   indent_size = 3
+
+
