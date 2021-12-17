@@ -1,4 +1,6 @@
-# 切换按钮插件 sphinx-togglebutton
+# 下拉框插件 sphinx-togglebutton
+
+如果需要在 MyST 或 MyST-NB 解析下的 `.md` 文件下使用选项卡，那么建议使用另一个功能更加强大的插件 [Sphinx Design](./design/design-index.md) 。当然，如果只是要使用下拉框功能，那么可以直接使用这个插件。
 
 ## 安装
 
@@ -20,7 +22,7 @@ extensions = [
 
 ## 配置：控制切换按钮悬停文本
 
-当切换按钮的内容折叠时，您可以控制其旁边显示的“提示”文本。为此，请在您的 `conf.py` 文件中使用以下配置变量：
+当下拉框的内容折叠时，您可以控制其旁边显示的“提示”文本。为此，请在您的 `conf.py` 文件中使用以下配置变量：
 
 ```python
 # default value is 'click to show'

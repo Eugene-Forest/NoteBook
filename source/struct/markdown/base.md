@@ -378,7 +378,7 @@ In a hole in the ground there lived a hobbit. Not a nasty, dirty, wet hole, fill
 
 要添加图像，请添加感叹号（`!`），然后在括号中添加替代文本，并在括号中添加图像资源的路径或URL。您可以选择在括号中的URL之后添加标题。
 
-> **注意：** 使用Markdown并不意味着您也不能使用HTML。可以将HTML标签添加到任何Markdown文件中。如果您更喜欢某些HTML标记而不是Markdown语法，这将很有帮助。例如，将HTML标签用于图像更容易调整图片。
+> **注意：** 使用Markdown并不意味着您也不能使用HTML。可以将HTML标签添加到任何Markdown文件中。如果您更喜欢某些HTML标记而不是Markdown语法，这将很有帮助。例如，将HTML标签用于图像更容易调整图片。当然，我们需要添加 markdown-it-py 扩展配置，配置方法参考 {ref}`可选的 MyST 扩展语法 <myst-opational-syntax>` 的 {ref}`MyST 提供的几种不同的语法来在文档中包含图像 <myst-optional-syntax-img>`
 
 
 ```markdown

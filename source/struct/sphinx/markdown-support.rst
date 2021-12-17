@@ -15,7 +15,7 @@ MyST Markdown
 
 .. important:: 
 
-   更多关于 MyST Markdown 的信息前往官网 `MyST - Markedly Structured Tex <https://myst-parser.readthedocs.io/en/latest/index.html>`_ 
+   更多关于 MyST Markdown 的信息前往官网 `MyST - Markedly Structured Text <https://myst-parser.readthedocs.io/en/latest/index.html>`_ 
 
 要配置您的Sphinx项目以支持 Markdown ，请按以下步骤进行：
 

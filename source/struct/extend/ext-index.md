@@ -24,14 +24,14 @@ copybutton_prompt_text = "myinputprompt"
 :maxdepth: 2
 
 响应式 Web 组件的 Sphinx 扩展—— Sphinx Design <design/design-index>
-切换按钮—— sphinx-togglebutton <togglebutton>
+下拉框按钮—— sphinx-togglebutton <togglebutton>
 选项卡工具—— Sphinx tabs <./tab>
-sphinx_book_theme 主题配置 <../sphinx/theme>
 ```
 
 ```{dropdown} 其他插件
 :open:
 * [sphinx_copybutton](https://sphinx-copybutton.readthedocs.io/en/latest/)
+* {ref}`sphinx_book_theme 主题配置 <sphinx-sbt-theme-config>`
 ```
 
 [^1]: requirements 相关文件指的是 [pip 要求文件](https://pip.pypa.io/en/latest/user_guide/#requirements-files) , 因为我们在推送到 Read The Docs 平台时，它是不知道我们项目所需要的 Python 依赖模块的，所以需要我们添加 **pip 要求文件** 来构建你的文档；[点击查看pip 要求文件样式要求](https://pip.pypa.io/en/latest/reference/requirements-file-format/#requirements-file-format)。

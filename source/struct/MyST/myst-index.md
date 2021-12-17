@@ -39,6 +39,7 @@ reStructuredText (.rst) --> rst parser ----+
 :caption: MyST 语法学习
 
 入门 MyST <./start>
+MyST 的扩展语法 <./optional-syntax>
 sphinx_book_theme 下的 MyST 扩展语法 <book-theme-ext>
 关于 MyST-NB <MyST-NB>
 ```

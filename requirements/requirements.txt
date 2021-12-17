@@ -16,3 +16,5 @@ sphinxcontrib-mermaid
 ablog
 sphinx_comments
 
+# markdown-it-py 的可扩展插件
+linkify-it-py

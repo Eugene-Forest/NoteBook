@@ -66,37 +66,19 @@ thebe_config = {
     "repository_branch": "master",
 }
 
-# 对于使用 `MyST Parser` (或者基于 `MyST Parser` 的解析器，如 `MyST-NB`)来解析的Markdown文档，使用 `colon_fence` 语法扩展来支持 Sphinx Design
-# myst_enable_extensions = ["colon_fence"]
 myst_enable_extensions = [
-    # 用于解析美元$和$$封装的数学
-    # "dollarmath",
-    # LaTeX 数学公式解析
-    # "amsmath",
-    # 定义列表
-    "deflist",
-    # 冒号的代码围栏
     "colon_fence",
-    # HTML 警告
-    # "html_admonition",
-    # HTML 图像
-    "html_image",
-    # 智能引号
-    "smartquotes",
-    # 替换件
-    "replacements",
-    # 链接
-    "linkify",
-    # 替换
-    "substitution",
-    # 任务列表
+    "deflist",
     "tasklist",
-    # ??
-    "fieldlist",
+    "smartquotes", "replacements",
+    "linkify",
+    "html_image"
 ]
-myst_heading_anchors = 2
-myst_footnote_transition = True
-myst_dmath_double_inline = True
+# 如果为false,只有包含方案（例如http）的链接才会被识别为外部链接
+myst_linkify_fuzzy_links = False
+# myst_heading_anchors = 2
+# myst_footnote_transition = True
+# myst_dmath_double_inline = True
 
 # 评论区扩展功能配置样例
 # comments_config = {
