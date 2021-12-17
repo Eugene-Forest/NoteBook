@@ -33,7 +33,7 @@ extensions = [
     "sphinx.ext.viewcode",
     # label 标签自动选中确保唯一性,并允许引用节使用其标题
     'sphinx.ext.autosectionlabel',
-    # myst 解析器
+    # myst 解析器, 默认情况下，myst_parser 会解析 markdown(.md) ,而 .rst 文件会被 Sphinx 原生解析器 restructureText 解析。
     # 'myst_parser',
     # 默认情况下，MyST-NB 会同时解析 markdown(.md) 和 notebooks(.ipynb)。如果您在文档中使用 MyST-NB，请不要激活myst-parser. 它将被自动激活myst-nb。
     "myst_nb",
@@ -67,7 +67,36 @@ thebe_config = {
 }
 
 # 对于使用 `MyST Parser` (或者基于 `MyST Parser` 的解析器，如 `MyST-NB`)来解析的Markdown文档，使用 `colon_fence` 语法扩展来支持 Sphinx Design
-myst_enable_extensions = ["colon_fence"]
+# myst_enable_extensions = ["colon_fence"]
+myst_enable_extensions = [
+    # 用于解析美元$和$$封装的数学
+    # "dollarmath",
+    # LaTeX 数学公式解析
+    # "amsmath",
+    # 定义列表
+    "deflist",
+    # 冒号的代码围栏
+    "colon_fence",
+    # HTML 警告
+    # "html_admonition",
+    # HTML 图像
+    "html_image",
+    # 智能引号
+    "smartquotes",
+    # 替换件
+    "replacements",
+    # 链接
+    "linkify",
+    # 替换
+    "substitution",
+    # 任务列表
+    "tasklist",
+    # ??
+    "fieldlist",
+]
+myst_heading_anchors = 2
+myst_footnote_transition = True
+myst_dmath_double_inline = True
 
 # 评论区扩展功能配置样例
 # comments_config = {
