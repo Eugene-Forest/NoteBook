@@ -16,7 +16,7 @@ Eugene forest's notebook
 关于本项目
 =================
 
-本项目是通过 Sphinx 来实现的，使用了 reStructuredText、Markdown、MyST、MyST-NB 标记语言来编写文档，并托管与 Read The Docs 平台运行。
+本项目是通过 Sphinx 来实现的，使用了 reStructuredText、Markdown、MyST Markdown 标记语言以及其他基于这些语言的 Sphinx 插件扩展语法来编写文档，并托管与 Read The Docs 平台运行。
 
 |75|
 
