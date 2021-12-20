@@ -1,8 +1,23 @@
+---
+substitutions:
+  key1: "I'm a **substitution**"
+  key2: |
+    ```{note}
+    {{ key1 }}
+    ```
+  key3: |
+    ```{image} img/fun-fish.png
+    :alt: fishy
+    :width: 200px
+    ```
+  key4: example
+---
+
 (myst-opational-syntax)=
 
 # 可选的 MyST 扩展语法
 
-MyST-Parser 是高度可配置的，利用了 [markdown-it-py](https://markdown-it-py.readthedocs.io/en/latest/index.html) 解析器固有的 “可插入性” 。以下语法是可选的（默认禁用），可以通过 Sphinx 启用`conf.py`（另请参阅 [Sphinx 配置选项](../sphinx/config.rst）。他们的目标通常是添加更多 *Markdown 友好的语法*；通常启用和呈现扩展 [CommonMark 规范](https://commonmark.org/) 的 [markdown-it-py](https://markdown-it-py.readthedocs.io/en/latest/plugins.html#md-plugins) 插件。
+MyST-Parser 是高度可配置的，利用了 [markdown-it-py](https://markdown-it-py.readthedocs.io/en/latest/index.html) 解析器固有的 “可插入性” 。以下语法是可选的（默认禁用），可以通过 Sphinx 启用`conf.py`（另请参阅 [Sphinx 配置选项](../sphinx/config.rst)。他们的目标通常是添加更多 *Markdown 友好的语法*；通常启用和呈现扩展 [CommonMark 规范](https://commonmark.org/) 的 [markdown-it-py](https://markdown-it-py.readthedocs.io/en/latest/plugins.html#md-plugins) 插件。
 
 ```{seealso} 查看所有可选的 MyST 扩展
 在 [executablebooks/mdit-py-plugins](https://mdit-py-plugins.readthedocs.io/en/latest/) 中，详细说明了 MyST 支持的所有的扩展以及扩展的使用语法。当然，也可以直接前往 [MyST Parser -- Optional MyST Syntaxes](https://myst-parser.readthedocs.io/en/latest/syntax/optional.html) 的查看 MyST Parser 官网文档语法。
@@ -72,6 +87,7 @@ myst_enable_extensions = [
 
 由于笔者现阶段不需要使用到数学公式，而且同时还考虑到其语法的复杂性，所以展示没有收录。如果读者对数学公式的语法支持感兴趣，那么可以前往官网查看 [数学公式的语法支持](https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#syntax-math) 的文档。
 
+(markdown-ext-syntax-colon)=
 
 ## 使用冒号的代码围栏
 
@@ -233,3 +249,114 @@ This is a caption in **Markdown**
 This is a caption in **Markdown**
 :::
 
+## 替换
+
+该扩展功能类似于 reST 的 {ref}`rest-syntax-replace`。
+
+添加`"substitution"`到`myst_enable_extensions`（在 sphinx `conf.py` 配置文件中）将允许您添加替换功能。
+
+* 全局替换。添加到 `conf.py` 中的 `myst_substitutions`：
+
+    ```python
+    # 全局替换
+    myst_substitutions = {
+    "key1": "I'm a **substitution**"
+    }
+    ```
+
+* 局部替换，文件内替换。在文件的顶部添加替换文本，即在front-matter部分(见本节)。front-matter中的键值将在此文件中覆盖全局替换配置中的相同键的值:
+
+    ```md
+    ---
+    substitutions:
+    key1: "I'm a **substitution**"
+    key2: |
+        ```{note}
+        {{ key1 }}
+        ```
+    key3: |
+        ```{image} img/fun-fish.png
+        :alt: fishy
+        :width: 200px
+        ```
+    key4: example
+    ---
+    ```
+
+::::{tab-set}
+
+:::{tab-item} MyST Markdown
+
+```md
+Inline: {{ key1 }}
+
+Block level:
+
+{{ key2 }}
+
+| col1     | col2     |
+| -------- | -------- |
+| {{key2}} | {{key3}} |
+```
+
+:::
+
+:::{tab-item} 渲染结果
+
+Inline: {{ key1 }}
+
+Block level:
+
+{{ key2 }}
+
+| col1     | col2     |
+| -------- | -------- |
+| {{key2}} | {{key3}} |
+
+:::
+
+::::
+
+### 替换的作用区间
+
+替换只会在你通常使用 Markdown 的地方进行评估，即作用于 `.md` 文件；当然，除了那些代码块中的含有替换符的 `{{key1}}`，例如：
+
+````md
+```
+{{key1}}
+```
+````
+
+```md
+{{key1}}
+```
+
+同时，还应该注意使用不合适的指令进行内联替换。这可能会导致意想不到的结果。
+
+替换引用被评估为Jinja2表达式，该表达式可以使用[过滤器](https://jinja.palletsprojects.com/en/2.11.x/templates/#list-of-builtin-filters)，并且还包含上下文中的[Sphinx环境](https://www.sphinx-doc.org/en/master/extdev/envapi.html)(作为 `env` ,并通过 `env.config.xx variable name` 指向可以获取 `conf.py` 文件中所有的变量值 )。因此，你可以这样做:
+
+```md
+- version: {{ env.config.version }}
+- docname: {{ env.docname}}
+- {{ "a" + "b" }}
+- extensions = {{env.config.extensions | upper}}
+```
+
+- version: {{ env.config.version }}
+- docname: {{ env.docname}}
+- {{ "a" + "b" }}
+- extensions = {{env.config.extensions | upper}}
+
+### 替换和 URL
+
+替换不能直接在url中使用，例如 `[a link](https://{{key4}}.com)` 或 `<https://{{key4}}.com>` 。然而，由于Jinja2的替换允许使用Python方法，你可以使用字符串格式或替换:
+
+```md
+{{ '[a link](https://{}.com)'.format(key4) }}
+
+{{ '<https://studynotes.readthedocs.io/zh/builder-doc/REPLACE.html>'.replace('REPLACE', env.docname) }}
+```
+
+{{ '[a link](https://{}.com)'.format(key4) }}
+
+{{ '<https://studynotes.readthedocs.io/zh/builder-doc/REPLACE.html>'.replace('REPLACE', env.docname) }}

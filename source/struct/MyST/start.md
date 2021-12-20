@@ -26,7 +26,9 @@ pip install myst-parser
 
 要在 Sphinx 中使用 MyST 解析器，只需将以下内容添加到您的conf.py文件中：
 
+```python
 extensions = ["myst_parser"]
+```
 
 这将激活 MyST Parser 扩展，导致所有带有该.md扩展的文档都被解析为 MyST。
 
@@ -86,7 +88,7 @@ MyST Markdown 最重要的功能是编写指令。指令有点像为编写内容
 ```
 ````
 
-<!-- //todo 如果无法激活 myst markdown 侧边栏则取消使用 -->
+<!-- //todo 如果无法激活 myst markdown margin侧边栏则取消使用 -->
 ````{margin}替代选项语法
 如果您的指令有很多选项，或者有一个非常长的值（例如，跨越多行），那么您还可以将选项包装在行中 `---` 并将它们写为 YAML。例如：
 ```yaml
@@ -101,32 +103,10 @@ key2: |
 
 如上所述，编写指令时需要考虑四个主要部分。
 
-* 指令名称有点像函数名称。不同的名称触发不同的功能。它们用{}括号括起来。
+* **指令名称**有点像函数名称。不同的名称触发不同的功能。它们用{}括号括起来。
 
-* 指令参数紧跟在指令名称之后。它们可用于触发指令中的行为。
+* **指令参数**紧跟在指令名称之后。它们可用于触发指令中的行为。
 
-* 指令选项紧跟在指令的第一行之后。它们还控制指令的行为。
+* **指令选项**紧跟在指令的第一行之后。它们还控制指令的行为。
 
-* 指令内容是您放在指令中的降价。该指令通常以特殊方式显示内容。
-
-When you build your documentation, you should see something like this:
-
-```{mermaid}
-sequenceDiagram
-  participant Alice
-  participant Bob
-  Alice->John: Hello John, how are you?
-  loop Healthcheck
-      John->John: Fight against hypochondria
-  end
-  Note right of John: Rational thoughts <br/>prevail...
-  John-->Alice: Great!
-  John->Bob: How about you?
-  Bob-->John: Jolly good!
-```
-
-Term 1
-: Definition
-
-Term 2
-: Definition
+* **指令内容**是您放在指令中的降价。MyST 将指令内容解析为 Markdown。这意味着 MyST markdown 可以写在任何用 MyST markdown 编写的指令的内容区域中。

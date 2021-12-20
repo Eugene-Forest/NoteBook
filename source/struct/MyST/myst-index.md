@@ -1,9 +1,8 @@
 (get-started-with-myst)=
 
-# MyST 语法学习
+# MyST
 
 MyST 是一种丰富且可扩展的 Markdown 风格，用于技术文档和发布。
-
 
 ## 为什么使用 MyST
 
@@ -35,16 +34,28 @@ reStructuredText (.rst) --> rst parser ----+
 激活 MyST 解析器将简单地启用 MyST解析 Markdown 文件，Sphinx 附带的 rST 解析器仍将以相同的方式工作。以 结尾的文件.md将被解析为 MyST，以 结尾的文件.rst将被解析为 reStructuredText。
 ```
 
-```{toctree} 
+## 关于 MyST 语法
+
+作为基础，MyST 建立在 markdown-it 定义的标记之上，所以 MyST 遵守 [CommonMark 规范](https://spec.commonmark.org/)。为此，它使用了[markdown-it-py解析器](https://github.com/executablebooks/markdown-it-py)，这是一个结构良好的 Python 降价解析器，符合 CommonMark 规范且可扩展。
+
+MyST 向 CommonMark 添加了几个新的语法选项，以便与 Sphinx 一起使用，而 Sphinx 是 Python 生态系统中广泛使用的文档生成引擎。
+
+```{seealso} VS Code 扩展
+查看 [MyST-Markdown VS Code](https://marketplace.visualstudio.com/items?itemName=ExecutableBookProject.myst-highlight) 扩展，了解 MyST 扩展语法高亮。
+```
+
+```{toctree}
 :caption: MyST 语法学习
+:numbered:
 
 入门 MyST <./start>
+MyST 语法指南 <./syntax-guide>
 MyST 的扩展语法 <./optional-syntax>
 sphinx_book_theme 下的 MyST 扩展语法 <book-theme-ext>
 关于 MyST-NB <MyST-NB>
 ```
 
-```{toctree} 
+```{toctree}
 :caption: 交互式代码（目前支持 python）
 
 示例1 <./example/example>

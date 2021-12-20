@@ -72,13 +72,21 @@ myst_enable_extensions = [
     "tasklist",
     "smartquotes", "replacements",
     "linkify",
-    "html_image"
+    "html_image",
+    "substitution"
 ]
 # 如果为false,只有包含方案（例如http）的链接才会被识别为外部链接
 myst_linkify_fuzzy_links = False
 # myst_heading_anchors = 2
 # myst_footnote_transition = True
 # myst_dmath_double_inline = True
+
+# substitution 的扩展的全局替换，作用于 .md
+myst_substitutions = {
+    # "key1": "value1"
+}
+# default is "{" "}"，替换指令分隔符，不建议更改
+# myst_sub_delimiters = ["|", "|"]
 
 # 评论区扩展功能配置样例
 # comments_config = {

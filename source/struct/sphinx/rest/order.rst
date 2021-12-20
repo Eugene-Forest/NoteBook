@@ -407,6 +407,8 @@ title 指令
 
 |50|
 
+.. _rest-syntax-replace:
+
 替代指令 replace
 ==================
 
