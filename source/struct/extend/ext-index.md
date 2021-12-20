@@ -26,6 +26,7 @@ copybutton_prompt_text = "myinputprompt"
 响应式 Web 组件的 Sphinx 扩展—— Sphinx Design <design/design-index>
 下拉框按钮—— sphinx-togglebutton <togglebutton>
 选项卡工具—— Sphinx tabs <./tab>
+实时重新加载 Sphinx 文档 <./autobuild>
 ```
 
 ```{dropdown} 其他插件
