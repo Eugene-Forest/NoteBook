@@ -246,6 +246,12 @@ For example ::
    
    ... 文字文章 ...
 
+
+.. note:: 
+
+   ``image`` 指令可以实现文字的填充。
+
+
 |50|
 
 .. _figure-directive:

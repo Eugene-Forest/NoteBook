@@ -26,58 +26,66 @@
 
 .. code-block:: shell
 
-    > sphinx-quickstart
+   Eugene-Forest@DESKTOP-4BMMHQP MINGW64 ~/workspace-vscode/ReadTheDocs/NewDocs
+   $ sphinx-quickstart
+   欢迎使用 Sphinx 4.3.2 快速配置工具。
 
-   Welcome to the Sphinx 3.4.3 quickstart utility.
+   请输入接下来各项设置的值（如果方括号中指定了默认值，直接
+   按回车即可使用默认值）。
 
-   Please enter values for the following settings (just press Enter to
-   accept a default value, if one is given in brackets).
+   已选择根路径：.
 
-   Selected root path: .
+   有两种方式来设置 Sphinx 输出的创建目录：
+   一是在根路径下创建“_build”目录，二是在根路径下创建“source”
+   和“build”两个独立的目录。
+   > 独立的源文件和构建目录（y/n） [n]: 
 
-   # 是否分离source和build目录（输入y,选择分离，方便管理）
-   You have two options for placing the build directory for Sphinx output.
-   Either, you use a directory "_build" within the root path, or you separate
-   "source" and "build" directories within the root path.
-   > Separate source and build directories (y/n) [n]: y
+   项目名称将会出现在文档的许多地方。
+   > 项目名称: newbooks
+   > 作者名称: eugene
+   > 项目发行版本 []: 0.1
 
-   # 配置项目名，作者名，以及项目版本号
-   The project name will occur in several places in the built documentation.
-   > Project name: EnglishWorld
-   > Author name(s): Eugene Forest
-   > Project release []: 1.0   
+   如果用英语以外的语言编写文档，
+   你可以在此按语言代码选择语种。
+   Sphinx 会把内置文本翻译成相应语言的版本。
 
-   If the documents are to be written in a language other than English,
-   you can select a language here by its language code. Sphinx will then
-   translate text that it generates into that language.
+   支持的语言代码列表见：
+   http://sphinx-doc.org/config.html#confval-language。
+   > 项目语种 [en]: zh_CN
 
-   # 配置文档语言,默认为英语
-   For a list of supported codes, see
-   https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language.
-   > Project language [en]: zh_CN
+   创建文件 C:\Users\qaz22\workspace-vscode\ReadTheDocs\NewDocs\conf.py。
+   创建文件 C:\Users\qaz22\workspace-vscode\ReadTheDocs\NewDocs\index.rst。
+   创建文件 C:\Users\qaz22\workspace-vscode\ReadTheDocs\NewDocs\Makefile。
+   创建文件 C:\Users\qaz22\workspace-vscode\ReadTheDocs\NewDocs\make.bat。
 
-   Creating file C:\Users\qaz22\LinuxShare\ReadTheDocs\EnglistWorld\source\conf.py.
-   Creating file C:\Users\qaz22\LinuxShare\ReadTheDocs\EnglistWorld\source\index.rst.
-   Creating file C:\Users\qaz22\LinuxShare\ReadTheDocs\EnglistWorld\Makefile.
-   Creating file C:\Users\qaz22\LinuxShare\ReadTheDocs\EnglistWorld\make.bat.
+   完成：已创建初始目录结构。
 
-   Finished: An initial directory structure has been created.
-
-   You should now populate your master file C:\Users\qaz22\LinuxShare\ReadTheDocs\EnglistWorld\source\index.rst and create other documentation
-   source files. Use the Makefile to build the docs, like so:
-      make builder
-   where "builder" is one of the supported builders, e.g. html, latex or linkcheck.
+   你现在可以填写主文档文件 C:\Users\qaz22\workspace-vscode\ReadTheDocs\NewDocs\index.rst 并创建其他文档源文件了
+   。 用 Makefile 构建文档，例如：
+   make builder
+   此处的“builder”是支持的构建器名，比如 html、latex 或 linkcheck。
 
 最后生成的项目结构如下：
 
-.. image:: ./img/sphinx-project-tree.png
-   :alt: sphinx project tree
+* build 、 _build 文件夹: 用来存放通过make html生成文档网页文件
+* source 文件夹: 存放用于生成文档的源文件
+* conf.py 文件: Sphinx的配置文件
+* index.rst 文件: 主文档
+* _static 、 _template 文件夹: 用来存放静态文件或模板html
 
 
-* build:用来存放通过make html生成文档网页文件的目录
-* source：存放用于生成文档的源文件
-* conf.py: Sphinx的配置文件
-* index.rst: 主文档
+.. figure:: ./img/sphinx-project-tree-1.png
+   :alt: sphinx project tree 1
+   :align: center
+   
+   非独立的源文件和构建目录
+
+.. figure:: ./img/sphinx-project-tree-2.png
+   :alt: sphinx project tree 2
+   :align: center
+   
+   独立的源文件和构建目录
+   
 
 |30|
 
