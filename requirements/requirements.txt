@@ -15,7 +15,7 @@ sphinx_togglebutton
 sphinxcontrib-mermaid
 ablog
 sphinx_comments
-sphinxext.rediraffe
+sphinxext-rediraffe
 
 # markdown-it-py 的可扩展插件
 linkify-it-py
