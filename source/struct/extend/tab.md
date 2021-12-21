@@ -1,7 +1,7 @@
 
 # 选项卡插件 sphinx_tabs.tabs
 
-> **更新时间: {sub-ref}`today` | sphinx-tabs 版本：{{sphinx_tabs}}**
+> **更新时间: 2021-12-21, 11:46:56  | sphinx-tabs 版本：{{sphinx_tabs}}**
 
 构建 HTML 时在 Sphinx 文档中创建选项卡式内容。本文章参考 [Sphinx Tabs 官方文档](https://sphinx-tabs.readthedocs.io/en/latest/) 。
 

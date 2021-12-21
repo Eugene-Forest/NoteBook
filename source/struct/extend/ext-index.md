@@ -1,7 +1,7 @@
 
 # Sphinx 扩展工具使用指南
 
-> **更新时间: {sub-ref}`today` | Sphinx 版本：{{sphinx}}  | markdown-it-py 版本：{{markdown_it_py}}**
+> **更新时间: 2021-12-21, 11:46:56  | Sphinx 版本：{{sphinx}}  | markdown-it-py 版本：{{markdown_it_py}}**
 
 Sphinx 插件还有原生插件和非原生插件之分，原生插件的命名格式以 `sphinx.ext.` 开头，否则就是非原生插件（前提它是 Sphinx 插件），所有 Sphinx 插件都是需要在 `conf.py` 中被配置的。
 

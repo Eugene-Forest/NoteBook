@@ -2,7 +2,7 @@
 
 # MyST
 
-> **更新时间: {sub-ref}`today` | myst_parser 版本：{{myst_parser}}**
+> **更新时间: 2021-12-21, 11:46:56 | myst_parser 版本：{{myst_parser}}**
 
 MyST 是一种丰富且可扩展的 Markdown 风格，用于技术文档和发布。
 

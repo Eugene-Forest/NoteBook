@@ -1,7 +1,7 @@
 
 # Markdown
 
-> **更新时间: {sub-ref}`today` | Markdown 版本：{{markdown}} | markdown-it-py 版本：{{markdown_it_py}}**
+> **更新时间: 2021-12-21, 11:46:56  | Markdown 版本：{{markdown}} | markdown-it-py 版本：{{markdown_it_py}}**
 
 Markdown 是一种轻量级的标记语言，可用于在纯文本文档中添加格式化元素。Markdown 由 John Gruber 于 2004 年创建，如今已成为世界上最受欢迎的标记语言之一。
 

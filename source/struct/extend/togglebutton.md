@@ -1,6 +1,6 @@
 # 下拉框插件 sphinx-togglebutton
 
-> **更新时间: {sub-ref}`today` | sphinx_togglebutton 版本：{{sphinx_togglebutton}}**
+> **更新时间: 2021-12-21, 11:46:56  | sphinx_togglebutton 版本：{{sphinx_togglebutton}}**
 
 如果需要在 MyST 或 MyST-NB 解析下的 `.md` 文件下使用选项卡，那么建议使用另一个功能更加强大的插件 [Sphinx Design](./design/design-index.md) 。当然，如果只是要使用下拉框功能，那么可以直接使用这个插件。
 

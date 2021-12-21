@@ -1,7 +1,7 @@
 
 # Sphinx Design
 
-> **更新时间: {sub-ref}`today` | sphinx_design 版本：{{sphinx_design}}**
+> **更新时间: 2021-12-21, 11:46:56  | sphinx_design 版本：{{sphinx_design}}**
 
 用于设计漂亮的、屏幕大小的响应式 Web 组件的 Sphinx 扩展。
 
