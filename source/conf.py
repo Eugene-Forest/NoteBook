@@ -49,11 +49,19 @@ extensions = [
     "sphinx_togglebutton",
     # 美人鱼，通过代码生成时序图等
     "sphinxcontrib.mermaid",
+    # 重定向
+    "sphinxext.rediraffe",
     # 博客 ——https://daobook.github.io/ablog/zh-CN
     # 'ablog',
     # 评论区
     # "sphinx_comments",
 ]
+
+# 重定向指向文件
+rediraffe_redirects = {
+    "another.rst": "index.md",
+    "another2.rst": "togglebutton-toggle.rst",
+}
 
 # Make sure the target is unique
 # autosectionlabel_prefix_document = True

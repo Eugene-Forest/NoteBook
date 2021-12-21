@@ -55,7 +55,7 @@ xshell以及xftp的教育版下载 </software/xshell>
 ```
 
 ```{toctree}
-:caption: "用以构建文档的工具和标记语言"
+:caption: "构建文档的工具和标记语言"
 :maxdepth: 1
 
 Sphinx 工具和 reST 标记语言 <struct/sphinx/sphinx-index>
