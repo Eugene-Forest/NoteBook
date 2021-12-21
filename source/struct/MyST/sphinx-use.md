@@ -8,7 +8,7 @@ MyST 解析器与 Sphinx 扩展捆绑在一起，允许您完全在 MyST 中（�
 
 如本节所述，所有 MyST 指令都将其内容解析为 Markdown。因此，使用常规 `include` 指令，将文件内容解析为 Markdown：
 
-````md
+````
 ```{include} example/include-md.md
 ```
 ````
@@ -18,7 +18,7 @@ MyST 解析器与 Sphinx 扩展捆绑在一起，允许您完全在 MyST 中（�
 
 要包含 rST，我们必须首先将指令“包装”在 [eval-rst 指令](myst-syntax-guide-eval-rst)中：
 
-````md
+````
 ```{eval-rst}
 .. include:: ./example/include-rst.rst
 ```

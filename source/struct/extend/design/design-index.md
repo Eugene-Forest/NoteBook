@@ -34,7 +34,7 @@ myst_enable_extensions = ["colon_fence"]
 
 :::{tab-item} MyST Markdown
 
-```markdown
+```
 ---
 sd_hide_title: true
 ---

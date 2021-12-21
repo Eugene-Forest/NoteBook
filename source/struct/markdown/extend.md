@@ -11,7 +11,7 @@ Markdown 是可以通过 [`markdown-it-py`](https://markdown-it-py.readthedocs.i
 
 要添加表，请使用三个或多个连字符（`---`）创建每列的标题，并使用管道（`|`）分隔每列。您可以选择在表的任一端添加管道。
 
-```markdown
+```
 | Syntax    | Description |
 | --------- | ----------- |
 | Header    | Title       |
@@ -132,7 +132,7 @@ Here's a simple footnote,[^1] and here's a longer one.[^bignote]
 
 一些Markdown处理器允许您创建*自定义列表*和术语及其相应的定义。要创建定义列表，请在第一行上键入术语。下一行，键入一个冒号后跟一个空格和定义。
 
-```markdown
+```
 First Term
 : This is the definition of the first term.
 
@@ -175,7 +175,7 @@ Second Term
 
 任务列表使您可以创建带有复选框的项目列表。在支持任务列表的Markdown应用程序中，复选框将显示在内容旁边。要创建任务列表，请在任务列表项之前添加破折号（`-`）和方括号，并`[ ]`在其前面加上一个空格（）。要选择一个复选框，请`x`在方括号（`[x]`）之间添加in 。
 
-```markdown
+```
 - [x] Write the press release
 - [ ] Update the website
 - [ ] Contact the media
@@ -199,7 +199,7 @@ Second Term
 
 这个功能需要使用到 Markdown 的扩展 [linkify-it-py](https://github.com/tsutsu3/linkify-it-py)。要么直接 `pip install linkify-it-py` 或通过 `pip install myst-parser[linkify]` 安装 Python 模块。 相关笔记可前往笔记—— {ref}`可选的 MyST 扩展语法中的链接扩展语法的开启和使用 <markdown-ext-syntax-linkify>`
 
-```markdown
+```
 http://www.example.com
 ```
 
@@ -211,7 +211,7 @@ http://www.example.com
 
 如果您不希望自动链接URL，则可以通过[将URL表示为](http://markdown.p2hp.com/basic-syntax/index.html#code)带有刻度线的[代码](http://markdown.p2hp.com/basic-syntax/index.html#code)来删除该链接。
 
-```markdown
+```
 `http://www.example.com`
 ```
 

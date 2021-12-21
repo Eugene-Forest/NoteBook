@@ -93,7 +93,7 @@ myst_enable_extensions = [
 
 通过添加`"colon_fence"`到`myst_enable_extensions`（在 sphinxconf.py 配置文件中），这样一来我们就还可以使用`:::`分隔符来表示代码围栏，而不是 ```` ``` ```` .
 
-```md
+```
 :::{note}
 This text is **standard** _Markdown_
 :::
@@ -129,7 +129,7 @@ This text is **standard** _Markdown_
 
 与 ```` ``` ```` 指令类似，这些指令也可以嵌套：
 
-```md
+```
 ::::{important}
 :::{note}
 This text is **standard** _Markdown_
@@ -141,7 +141,7 @@ This text is **standard** _Markdown_
 
 通过添加 `"deflist"` 到 `myst_enable_extensions`（在 sphinx conf.py 配置文件中），您将能够使用定义列表。定义列表使用 [markdown-it-py deflist](https://markdown-it-py.readthedocs.io/en/latest/plugins.html#md-plugins) 插件，它本身基于 [Pandoc 定义列表规范](http://johnmacfarlane.net/pandoc/README.html#definition-lists)。
 
-```markdown
+```
 First Term
 : This is the definition of the first term.
 : > This is the definition of the first term.
@@ -173,7 +173,7 @@ Second Term
 
 通过添加 `"tasklist"` 到 `myst_enable_extensions`（在 sphinx conf.py 配置文件中），您将能够使用任务列表。任务列表利用 [markdown-it-py tasklists](https://markdown-it-py.readthedocs.io/en/latest/plugins.html#md-plugins) 插件。
 
-```markdown
+```
 - [x] Write the press release
 - [ ] Update the website
 - [ ] Contact the media
@@ -198,7 +198,7 @@ MyST 提供了几种不同的语法来在文档中包含图像:
 * 第一个是标准的 Markdown 语法 `![fishy](img/fun-fish.png)` 。这种方法简单，但是，它在可以应用的配置方面受到限制，例如设置宽度
 * 使用诸如指令 `image` 和 `figure` 
 
-    ````markdown
+    ````
     ```{image} img/fun-fish.png
     :alt: fishy
     :class: bg-primary
@@ -213,7 +213,7 @@ MyST 提供了几种不同的语法来在文档中包含图像:
 
 允许的属性等同于image指令：src、alt、class、width、height 和 name。任何其他属性都将被删除。
 
-```markdown
+```
 <img src="img/fun-fish.png" alt="fishy" width="200px">
 <img src="img/fun-fish.png" alt="fishy" width="200px" class="bg-primary">
 ```
@@ -229,7 +229,7 @@ MyST 提供了几种不同的语法来在文档中包含图像:
 
 通过添加`"colon_fence"`到`myst_enable_extensions`（在 sphinx conf.py 配置文件中），我们可以组合上述两种扩展语法，以创建figure名为figure-md.
 
-```markdown
+```
 :::{figure-md} fig-target
 :class: myclass
 
@@ -266,7 +266,7 @@ This is a caption in **Markdown**
 
 * 局部替换，文件内替换。在文件的顶部添加替换文本，即在front-matter部分(见本节)。front-matter中的键值将在此文件中覆盖全局替换配置中的相同键的值:
 
-    ```md
+    ```
     ---
     substitutions:
     key1: "I'm a **substitution**"
@@ -287,7 +287,7 @@ This is a caption in **Markdown**
 
 :::{tab-item} MyST Markdown
 
-```md
+```
 Inline: {{ key1 }}
 
 Block level:
@@ -321,13 +321,13 @@ Block level:
 
 替换只会在你通常使用 Markdown 的地方进行评估，即作用于 `.md` 文件；当然，除了那些代码块中的含有替换符的 `{{key1}}`，例如：
 
-````md
+````
 ```
 {{key1}}
 ```
 ````
 
-```md
+```
 {{key1}}
 ```
 
@@ -335,7 +335,7 @@ Block level:
 
 替换引用被评估为Jinja2表达式，该表达式可以使用[过滤器](https://jinja.palletsprojects.com/en/2.11.x/templates/#list-of-builtin-filters)，并且还包含上下文中的[Sphinx环境](https://www.sphinx-doc.org/en/master/extdev/envapi.html)(作为 `env` ,并通过 `env.config.xx variable name` 指向可以获取 `conf.py` 文件中所有的变量值 )。因此，你可以这样做:
 
-```md
+```
 - version: {{ env.config.version }}
 - docname: {{ env.docname}}
 - {{ "a" + "b" }}
@@ -351,7 +351,7 @@ Block level:
 
 替换不能直接在url中使用，例如 `[a link](https://{{key4}}.com)` 或 `<https://{{key4}}.com>` 。然而，由于Jinja2的替换允许使用Python方法，你可以使用字符串格式或替换:
 
-```md
+```
 {{ '[a link](https://{}.com)'.format(key4) }}
 
 {{ '<https://studynotes.readthedocs.io/zh/builder-doc/REPLACE.html>'.replace('REPLACE', env.docname) }}

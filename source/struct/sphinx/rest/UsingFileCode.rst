@@ -10,8 +10,12 @@
 * 前者： ``.. code-block:: code_language_type``
 * 后者： ``.. literalinclude:: code_file_path(local or internet)``
 
-|75|
 
+.. seealso::
+   
+   `关于代码高亮 pygments 支持的语言 <https://pygments.org/languages/>`_ 
+
+|75|
 
 使用codeblock
 ===========================
