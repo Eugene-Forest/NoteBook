@@ -39,6 +39,10 @@ Markdown 是可以通过 [`markdown-it-py`](https://markdown-it-py.readthedocs.i
 
 ## 围栏代码块 
 
+```{seealso}
+由于此电子书是基于 MyST Parser 来解析的，所以其代码高亮是适用 pygments 实现的； [点击查看关于代码高亮 pygments 支持的语言](https://pygments.org/languages/)。
+```
+
 Markdown基本语法允许您通过将行缩进四个空格或一个制表符来创建代码块。如果发现不方便，请尝试使用受保护的代码块。根据Markdown处理器或编辑器的不同，您将在代码块之前和之后的行上使用三个刻度线（```` ``` ````）或三个波浪号（~~~）。如果想要包含一个含有三个刻度线（```），可以使用四个刻度： 
 
 :::markdown
