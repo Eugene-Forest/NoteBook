@@ -1,14 +1,19 @@
 
 # 选项卡插件 sphinx_tabs.tabs
 
+> **更新时间: {sub-ref}`today` | sphinx-tabs 版本：{{sphinx_tabs}}**
 
 构建 HTML 时在 Sphinx 文档中创建选项卡式内容。本文章参考 [Sphinx Tabs 官方文档](https://sphinx-tabs.readthedocs.io/en/latest/) 。
 
 需要注意的是， sphinx_tabs.tabs 插件相较于 MyST ，更适合在 `.rst` 文件中被解析，所以如果需要在 MyST 或 MyST-NB 解析下的 `.md` 文件下使用选项卡，那么建议使用另一个功能更加强大的插件 [Sphinx Design](./design/design-index.md) 。
 
+```{warning}
+sphinx-tabs 3.2.0 requires docutils~=0.16.0；但是由于考虑到将来可能要使用 {ref}`myst-rst-include-md` 的功能，而此功能需要依赖 docutils >=0.17，所以此插件版本可能会被笔者作为过时版本。
+```
+
 ## 安装
 
-```{code-block} 
+```{code-block}
 
 pip install sphinx-tabs
 ```

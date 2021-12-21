@@ -1,4 +1,4 @@
-#  Markdown基础语法学习
+# Markdown基础语法学习
 
 ## 标题
 

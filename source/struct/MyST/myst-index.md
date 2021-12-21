@@ -2,6 +2,8 @@
 
 # MyST
 
+> **更新时间: {sub-ref}`today` | myst_parser 版本：{{myst_parser}}**
+
 MyST 是一种丰富且可扩展的 Markdown 风格，用于技术文档和发布。
 
 ## 为什么使用 MyST
@@ -44,6 +46,8 @@ MyST 向 CommonMark 添加了几个新的语法选项，以便与 Sphinx 一起�
 查看 [MyST-Markdown VS Code](https://marketplace.visualstudio.com/items?itemName=ExecutableBookProject.myst-highlight) 扩展，了解 MyST 扩展语法高亮。
 ```
 
+本章节目的是讲解 MyST 的语法以及对应的渲染结果，所以需要频繁变动指令和查看结果。虽然 VS Code 支持 MyST 语法高亮，但是不支持对应的 ``.md`` 文件的预览功能，但是需要主动构建html文件或者通过预览 `rst` 文件来更新 `md` 文件的本地html构建结果，效率十分差；为此，我们可以使用 {ref}`sphinx-autobuild 插件 <sphinx-ext-autobuild>`，它能够支持在浏览器中实时重新加载有关更改的 Sphinx 文档。
+
 ```{toctree}
 :caption: MyST 语法学习
 :numbered:
@@ -51,6 +55,7 @@ MyST 向 CommonMark 添加了几个新的语法选项，以便与 Sphinx 一起�
 入门 MyST <./start>
 MyST 语法指南 <./syntax-guide>
 MyST 的扩展语法 <./optional-syntax>
+MyST 与 Sphinx <sphinx-use>
 sphinx_book_theme 下的 MyST 扩展语法 <book-theme-ext>
 关于 MyST-NB <MyST-NB>
 ```

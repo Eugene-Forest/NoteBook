@@ -2,6 +2,8 @@
 
 # sphinx-autobuild
 
+> **更新时间: {sub-ref}`today` | sphinx_autobuild 版本：{{sphinx_autobuild}}**
+
 在浏览器中实时重新加载有关更改的 Sphinx 文档。关于此项目的更多信息或建议前往 [executablebooks/sphinx-autobuild](https://github.com/executablebooks/sphinx-autobuild#readme) 查看。
 
 ## 安装

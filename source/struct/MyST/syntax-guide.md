@@ -121,6 +121,8 @@ Here is [markdown link syntax](https://jupyter.org)
 ```
 ````
 
+(myst-syntax-guide-eval-rst)=
+
 ### eval-rst 指令
 
 对于特殊情况，MySt 还提供 `eval-rst` 指令。这会将内容解析为 **ReStructuredText**：
@@ -152,6 +154,8 @@ A reference from inside: :ref:`rst-fun-fish`
 A reference from outside: :ref:`syntax/guide/parsing`
 ```
 ````
+
+当然，我们还可以通过 `eval-rst 指令` 实现 {ref}`myst-md-include-rst`。
 
 ## 嵌套指令
 

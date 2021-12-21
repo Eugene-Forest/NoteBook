@@ -31,8 +31,8 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.intersphinx",
     "sphinx.ext.viewcode",
-    # label 标签自动选中确保唯一性,并允许引用节使用其标题
-    'sphinx.ext.autosectionlabel',
+    # label 标签自动选中确保唯一性,并允许引用节使用其标题,同时自动为标题创建label
+    # 'sphinx.ext.autosectionlabel',
     # myst 解析器, 默认情况下，myst_parser 会解析 markdown(.md) ,而 .rst 文件会被 Sphinx 原生解析器 restructureText 解析。
     # 'myst_parser',
     # 默认情况下，MyST-NB 会同时解析 markdown(.md) 和 notebooks(.ipynb)。如果您在文档中使用 MyST-NB，请不要激活myst-parser. 它将被自动激活myst-nb。
@@ -56,7 +56,7 @@ extensions = [
 ]
 
 # Make sure the target is unique
-autosectionlabel_prefix_document = True
+# autosectionlabel_prefix_document = True
 
 # 控制切换按钮悬停文本
 togglebutton_hint = "展示隐藏内容"
@@ -83,7 +83,18 @@ myst_linkify_fuzzy_links = False
 
 # substitution 的扩展的全局替换，作用于 .md
 myst_substitutions = {
-    # "key1": "value1"
+    "Sphinx": "4.3.2",
+    "sphinx-autobuild": "2021.3.14",
+    "sphinx-book-theme": "0.1.7",
+    "myst-parser": "0.15.2",
+    "myst-nb": "0.13.1",
+    "Markdown": "3.3.4",
+    "markdown-it-py": "1.1.0",
+    "sphinx_tabs": "3.2.0",
+    "sphinx-thebe": "0.0.10",
+    "sphinx-togglebutton": "0.2.3",
+    "sphinx_design": "0.0.13",
+    "sphinx-copybutton": "0.4.0",
 }
 # default is "{" "}"，替换指令分隔符，不建议更改
 # myst_sub_delimiters = ["|", "|"]
@@ -142,7 +153,7 @@ language = 'zh_CN'
 # non-false value, then it is used:
 #today = ''
 # Else, today_fmt is used as the format for a strftime call.
-#today_fmt = '%B %d, %Y'
+today_fmt = "%Y-%m-%d, %H:%M:%S"
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
