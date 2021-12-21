@@ -1,9 +1,10 @@
-==========
-Sphinx
-==========
+====================
+reStructuredText
+====================
 
-RestructuredText是Sphinx使用的默认纯文本标记语言。本节简要介绍 reStructuredText（reST）的概念和语法，旨在为作者提供足够的信息，以便高效地编写文档。
+reStructuredText 是Sphinx使用的默认纯文本标记语言。本节简要介绍 reStructuredText（reST）的概念和语法，旨在为作者提供足够的信息，以便高效地编写文档。
 
+本章节目的是讲解 reStructuredText 的语法以及对应的渲染结果，所以需要频繁变动指令和查看结果。虽然 VS Code 支持 reStructuredText 原生语法和 ``.rst`` 文件的预览功能，但是需要等待渲染，所以效率还是比较差的；为此，我们可以使用 :ref:`sphinx-autobuild 插件 <sphinx-ext-autobuild>`，它能够支持在浏览器中实时重新加载有关更改的 Sphinx 文档。
 
 .. important:: 
 

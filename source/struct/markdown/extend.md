@@ -1,5 +1,12 @@
 # Markdown扩展语法学习
 
+```{seealso}
+
+Markdown 是可以通过 [`markdown-it-py`](https://markdown-it-py.readthedocs.io/en/latest/index.html) 来扩展语法。因为本项目的 Markdown 解析器是 MyST-NB (依赖 MyST )，相关的 Markdown 语法扩展的添加可以前往 {ref}`可选的 MyST 扩展语法 <myst-opational-syntax>` 查看。
+
+下文中 {ref}`定义清单 <markdown-deflist-syntax>` 和 {ref}`任务清单 <markdown-tasklist-syntax>` 以及 {ref}`自动识别网址链接 <markdown-url-syntax>` 都是通过 {ref}`可选的 MyST 扩展语法 <myst-opational-syntax>` 实现的。
+```
+
 ## 表格
 
 要添加表，请使用三个或多个连字符（`---`）创建每列的标题，并使用管道（`|`）分隔每列。您可以选择在表的任一端添加管道。
@@ -32,8 +39,13 @@
 
 ## 围栏代码块 
 
+Markdown基本语法允许您通过将行缩进四个空格或一个制表符来创建代码块。如果发现不方便，请尝试使用受保护的代码块。根据Markdown处理器或编辑器的不同，您将在代码块之前和之后的行上使用三个刻度线（```` ``` ````）或三个波浪号（~~~）。如果想要包含一个含有三个刻度线（```），可以使用四个刻度： 
 
-Markdown基本语法允许您通过将行缩进四个空格或一个制表符来创建代码块。如果发现不方便，请尝试使用受保护的代码块。根据Markdown处理器或编辑器的不同，您将在代码块之前和之后的行上使用三个刻度线（```）或三个波浪号（~~~）。
+:::markdown
+
+```` ``` ````
+
+:::
 
     ```
     {
@@ -45,6 +57,8 @@ Markdown基本语法允许您通过将行缩进四个空格或一个制表符来
 
 呈现的输出如下所示：
 
+:::{card}
+
 ```
 {
   "firstName": "John",
@@ -52,6 +66,8 @@ Markdown基本语法允许您通过将行缩进四个空格或一个制表符来
   "age": 25
 }
 ```
+
+:::
 
 ### 语法高亮
 
@@ -69,6 +85,8 @@ Markdown基本语法允许您通过将行缩进四个空格或一个制表符来
 
 呈现的输出如下所示：
 
+:::{card}
+
 ```json
 {
   "firstName": "John",
@@ -77,7 +95,7 @@ Markdown基本语法允许您通过将行缩进四个空格或一个制表符来
 }
 ```
 
----
+:::
 
 ## 脚注
 
@@ -108,6 +126,8 @@ Here's a simple footnote,[^1] and here's a longer one.[^bignote]
 
 ----
 
+(markdown-deflist-syntax)=
+
 ## 定义清单
 
 一些Markdown处理器允许您创建*自定义列表*和术语及其相应的定义。要创建定义列表，请在第一行上键入术语。下一行，键入一个冒号后跟一个空格和定义。
@@ -121,6 +141,10 @@ Second Term
 : This is another definition of the second term.
 ```
 
+> 运行效果：
+
+:::{card}
+
 First Term
 : This is the definition of the first term.
 
@@ -128,7 +152,7 @@ Second Term
 : This is one definition of the second term.
 : This is another definition of the second term.
 
-----
+:::
 
 ## 删除线
 
@@ -145,6 +169,8 @@ Second Term
 
 ----
 
+(markdown-tasklist-syntax)=
+
 ## 任务清单
 
 任务列表使您可以创建带有复选框的项目列表。在支持任务列表的Markdown应用程序中，复选框将显示在内容旁边。要创建任务列表，请在任务列表项之前添加破折号（`-`）和方括号，并`[ ]`在其前面加上一个空格（）。要选择一个复选框，请`x`在方括号（`[x]`）之间添加in 。
@@ -155,17 +181,23 @@ Second Term
 - [ ] Contact the media
 ```
 
-呈现的输出如下所示：
+> 呈现的输出如下所示：
+
+:::{card}
 
 - [x] Write the press release
 - [ ] Update the website
 - [ ] Contact the media
 
------
+:::
 
-## 自动网址链接
+(markdown-url-syntax)=
+
+## 自动识别网址链接
 
 许多Markdown处理器会自动将URL转换为链接。这意味着如果您输入http://www.example.com，即使您没有[使用方括号](http://markdown.p2hp.com/basic-syntax/index.html#links)，您的Markdown处理器也会自动将其转换为链接。
+
+这个功能需要使用到 Markdown 的扩展 [linkify-it-py](https://github.com/tsutsu3/linkify-it-py)。要么直接 `pip install linkify-it-py` 或通过 `pip install myst-parser[linkify]` 安装 Python 模块。 相关笔记可前往笔记—— {ref}`可选的 MyST 扩展语法中的链接扩展语法的开启和使用 <markdown-ext-syntax-linkify>`
 
 ```markdown
 http://www.example.com
@@ -175,7 +207,7 @@ http://www.example.com
 
 http://www.example.com
 
-## 禁用自动URL链接
+### 禁用自动URL链接
 
 如果您不希望自动链接URL，则可以通过[将URL表示为](http://markdown.p2hp.com/basic-syntax/index.html#code)带有刻度线的[代码](http://markdown.p2hp.com/basic-syntax/index.html#code)来删除该链接。
 
@@ -186,9 +218,6 @@ http://www.example.com
 呈现的输出如下所示：
 
 `http://www.example.com`
-
-
-----
 
 
 [^1]: This is the first footnote.
