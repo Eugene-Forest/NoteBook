@@ -1,6 +1,8 @@
 
 # Sphinx 扩展工具使用指南
 
+> **更新时间: {sub-ref}`today` | Sphinx 版本：{{sphinx}}  | markdown-it-py 版本：{{markdown_it_py}}**
+
 Sphinx 插件还有原生插件和非原生插件之分，原生插件的命名格式以 `sphinx.ext.` 开头，否则就是非原生插件（前提它是 Sphinx 插件），所有 Sphinx 插件都是需要在 `conf.py` 中被配置的。
 
 对于原生插件，它是不需要在 ``requirements`` 相关文件中添加的，需要添加到在 requirements[^1] 相关文件的插件是那些非原生插件。
@@ -27,6 +29,7 @@ copybutton_prompt_text = "myinputprompt"
 下拉框按钮—— sphinx-togglebutton <togglebutton>
 选项卡工具—— Sphinx tabs <./tab>
 实时重新加载 Sphinx 文档 <./autobuild>
+RST-to-MyST 转换工具 <rst-to-myst>
 ```
 
 ```{dropdown} 其他插件
