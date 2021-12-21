@@ -84,17 +84,17 @@ myst_linkify_fuzzy_links = False
 # substitution 的扩展的全局替换，作用于 .md
 myst_substitutions = {
     "Sphinx": "4.3.2",
-    "sphinx-autobuild": "2021.3.14",
-    "sphinx-book-theme": "0.1.7",
-    "myst-parser": "0.15.2",
-    "myst-nb": "0.13.1",
+    "sphinx_autobuild": "2021.3.14",
+    "sphinx_book_theme": "0.1.7",
+    "myst_parser": "0.15.2",
+    "myst_nb": "0.13.1",
     "Markdown": "3.3.4",
-    "markdown-it-py": "1.1.0",
+    "markdown_it_py": "1.1.0",
     "sphinx_tabs": "3.2.0",
-    "sphinx-thebe": "0.0.10",
-    "sphinx-togglebutton": "0.2.3",
+    "sphinx_thebe": "0.0.10",
+    "sphinx_togglebutton": "0.2.3",
     "sphinx_design": "0.0.13",
-    "sphinx-copybutton": "0.4.0",
+    "sphinx_copybutton": "0.4.0",
 }
 # default is "{" "}"，替换指令分隔符，不建议更改
 # myst_sub_delimiters = ["|", "|"]
