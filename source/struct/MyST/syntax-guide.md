@@ -225,34 +225,6 @@ But the next block will be parsed as raw text
 ````
 ``````
 
-## margin 侧边栏
-
-sphinx-book-theme 主题支持 Myst Markdown 使用 margin 侧边栏。
-
-margin 侧边栏语法如下：
-
-```{margin} margin 侧边栏标题
-
-margin 侧边栏标题内容
-
-```
-
-````md
-```{margin} margin 侧边栏标题
-
-margin 侧边栏标题内容
-
-```
-````
-
-```{margin} margin 侧边栏标题
-
-margin 侧边栏标题内容
-
-```
-
-通过上文我们可以知道，margin 侧边栏标题与代码块之类的组件是没有办法处于同一行（水平的）位置的，我们在使用 margin 侧边栏标题时需要注意其放置的位置。
-
 ## Markdown 友好指令
 
 想使用在标准 Markdown 编辑器中正确呈现的语法吗？请参阅 {ref}`扩展语法选项 <markdown-ext-syntax-colon>`。
