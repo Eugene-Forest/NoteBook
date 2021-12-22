@@ -46,11 +46,13 @@ MyST 解析器与 Sphinx 扩展捆绑在一起，允许您完全在 MyST 中（�
 
 ## 在 Jupyter Notebooks 中使用 MyST
 
-## 包含来自 docs / source 文件夹之外的文件（如README.md）
-
+MyST-NB 工具提供了一个Sphinx扩展，**用于解析使用 MyST Markdown 写的 Jupyter Notebooks**。它包括在文档构建期间自动执行笔记本、存储笔记本单元输出以便将它们插入文档的其他地方等功能。有关更多信息，[请参阅MyST-NB文档](myst-nb)。
 
 ## 自动为节标题创建目标
 
+```{seealso}
+查看 Sphinx 插件 [autosectionlabel](../extend/autosectionlabel.md) 的激活和使用即可。
+```
+
 ## Sphinx 特定的页面前端
 
-## 将预先存在的 rST 迁移到 MyST

@@ -32,7 +32,7 @@ extensions = [
     "sphinx.ext.intersphinx",
     "sphinx.ext.viewcode",
     # label 标签自动选中确保唯一性,并允许引用节使用其标题,同时自动为标题创建label
-    # 'sphinx.ext.autosectionlabel',
+    'sphinx.ext.autosectionlabel',
     # myst 解析器, 默认情况下，myst_parser 会解析 markdown(.md) ,而 .rst 文件会被 Sphinx 原生解析器 restructureText 解析。
     # 'myst_parser',
     # 默认情况下，MyST-NB 会同时解析 markdown(.md) 和 notebooks(.ipynb)。如果您在文档中使用 MyST-NB，请不要激活myst-parser. 它将被自动激活myst-nb。
@@ -56,7 +56,7 @@ extensions = [
 ]
 
 # Make sure the target is unique
-# autosectionlabel_prefix_document = True
+autosectionlabel_prefix_document = True
 
 # 控制切换按钮悬停文本
 togglebutton_hint = "展示隐藏内容"
@@ -77,7 +77,6 @@ myst_enable_extensions = [
 ]
 # 如果为false,只有包含方案（例如http）的链接才会被识别为外部链接
 myst_linkify_fuzzy_links = False
-# myst_heading_anchors = 2
 # myst_footnote_transition = True
 # myst_dmath_double_inline = True
 

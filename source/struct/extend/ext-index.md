@@ -30,6 +30,7 @@ copybutton_prompt_text = "myinputprompt"
 选项卡工具—— Sphinx tabs <./tab>
 实时重新加载 Sphinx 文档 <./autobuild>
 RST-to-MyST 转换工具 <rst-to-myst>
+自动生成的标题锚点工具 <autosectionlabel>
 ```
 
 ```{dropdown} 其他插件
