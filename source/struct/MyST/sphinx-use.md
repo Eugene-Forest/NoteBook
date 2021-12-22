@@ -56,3 +56,12 @@ MyST-NB 工具提供了一个Sphinx扩展，**用于解析使用 MyST Markdown �
 
 ## Sphinx 特定的页面前端
 
+一个经典的用例是指定“孤立”文档，这些文档未在任何目录树中指定。例如，在页面顶部插入以下语法将导致 Sphinx 将其视为孤立页面:
+
+```md
+---
+orphan: true
+---
+
+This is an orphan document, not specified in any toctrees.
+```
