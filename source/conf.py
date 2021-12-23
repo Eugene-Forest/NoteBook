@@ -32,9 +32,10 @@ extensions = [
     "sphinx.ext.intersphinx",
     "sphinx.ext.viewcode",
     # label 标签自动选中确保唯一性,并允许引用节使用其标题,同时自动为标题创建label
-    'sphinx.ext.autosectionlabel',
+    "sphinx.ext.autosectionlabel",
     # myst 解析器, 默认情况下，myst_parser 会解析 markdown(.md) ,而 .rst 文件会被 Sphinx 原生解析器 restructureText 解析。
-    'myst_parser',
+    # 'myst_parser',
+    "myst_nb",
     # 使您的代码单元与Thebe和Binder提供的内核进行交互。
     "sphinx_thebe",
     # 用于设计美观、视图大小的响应式 Web 组件。
@@ -47,7 +48,7 @@ extensions = [
     "sphinx_togglebutton",
     # 美人鱼，通过代码生成时序图等
     "sphinxcontrib.mermaid",
-    # 博客 ——https://daobook.github.io/ablog/zh-CN
+    # 博客
     # 'ablog',
     # 评论区
     # "sphinx_comments",
@@ -232,14 +233,12 @@ html_theme_options = {
 
     # 用于交互的启动按钮
     # Thebe将您的静态代码块转换 为由 Jupyter 内核提供支持的交互式代码块。它通过要求一个BinderHub内核做到这一点 的引擎盖下，您的所有代码细胞转换成互动码单元。这允许用户在不离开页面的情况下在您的页面上运行代码。
-    "launch_buttons": {
-        "binderhub_url": "https://mybinder.org",
-        # "jupyterhub_url": "https://datahub.berkeley.edu",  # For testing
-        # "colab_url": "https://colab.research.google.com/",
-        # 控制打开的用户界面
-        "notebook_interface": "jupyterlab",
-        "thebe": True,
-    },
+    # "launch_buttons": {
+    #     "binderhub_url": "https://mybinder.org",
+    #     # 控制打开的用户界面
+    #     "notebook_interface": "jupyterlab",
+    #     "thebe": True,
+    # },
     # -- 在每个页面的页脚添加额外的 HTML。---
     # "extra_footer": '',
 }

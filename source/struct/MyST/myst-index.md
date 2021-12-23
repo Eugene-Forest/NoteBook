@@ -57,11 +57,5 @@ MyST 语法指南 <./syntax-guide>
 MyST 的扩展语法 <./optional-syntax>
 MyST 与 Sphinx <sphinx-use>
 sphinx_book_theme 下的 MyST 扩展语法 <sbt-ext-syntax>
-```
-
-```{toctree}
-:caption: 交互式代码（目前支持 python）
-
-示例1 <./example/example>
-示例2 <./example/exa>
+关于交互式笔记 <thebe>
 ```
