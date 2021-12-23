@@ -87,7 +87,7 @@ sphinx-tabs.tabs 插件还有 group-tab 指令 和 [code-tab](./example/tab/tab-
 
 ## 使用 MyST Parser 的 Markdown 语法使用
 
-```markdown
+```
 ::::{tabs}
 
 :::{tab} Label1

@@ -55,13 +55,14 @@ xshell以及xftp的教育版下载 </software/xshell>
 ```
 
 ```{toctree}
-:caption: "用以构建文档的工具和标记语言"
+:caption: "构建文档的工具和标记语言"
 :maxdepth: 1
 
 Sphinx 工具和 reST 标记语言 <struct/sphinx/sphinx-index>
 Markdown 标记语言 <struct/markdown/md-index>
 MyST <struct/MyST/myst-index>
 Sphinx 扩展工具 <struct/extend/ext-index>
+MyST-NB <struct/MyST-NB/MyST-NB>
 ```
 
 [github-badge]: https://img.shields.io/github/last-commit/Eugene-Forest/NoteBook

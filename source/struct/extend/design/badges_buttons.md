@@ -221,7 +221,7 @@ Use either `fa` (deprecated in font-awesome v5), `fas`, `fab` or `far` for the r
 Note that not all regular style icons are free, `far` role only works with free ones.
 
 ````{tab-set-code}
-```markdown
+```
 An icon {fas}`spinner;sd-bg-primary sd-bg-text-primary`, some more text.
 ```
 ```rst

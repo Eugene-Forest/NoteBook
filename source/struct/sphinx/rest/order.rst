@@ -2,24 +2,28 @@
 指令
 ==============================
 
+本章介绍 reStructuredText 的指令，可以 `点击前往指令的参考文档 <https://www.sphinx-doc.org/zh_CN/master/usage/restructuredtext/directives.html#code-examples>`_ 。
+
 .. note:: 
 
-   本章介绍 reStructuredText 的指令，可以 `点击前往指令的参考文档 <https://www.sphinx-doc.org/zh_CN/master/usage/restructuredtext/directives.html#code-examples>`_ 。
-
    需要注意的是，我们在使用指令时大多会遇到 指令和内容分开，而且还有指令的可选项的情况。根据语法，这些指令的内容和可选项都需要缩进 **3个空格**。
-   
-   由于笔者使用 VsCode 编写笔记，然后发现通过分别设置 用户、工作区、文件夹的 ``settings.json`` 文件中的  ``"editor.tabSize": 3`` 属性都没有很好的设置到 tab 的空格数。所以笔者索性通过插件 *EditorConfig for Visual Studio Code* 使用 ``.editorconfig`` 文件来格式化不同文件下的 tab 键。
 
+   由于笔者使用 VsCode 编写笔记，然后发现通过分别设置 用户、工作区、文件夹的 ``settings.json`` 文件中的  ``"editor.tabSize": 3`` 属性都没有很好的设置到 tab 的空格数。所以笔者索性通过插件 *EditorConfig for Visual Studio Code* 使用 ``.editorconfig`` 文件来格式化不同文件下的 tab 键。
 
 epigraph 题词
 ====================
+
+.. seealso::
+
+   这个指令在 sphinx-book-theme 中能够正常显示。 更多查看 :ref:`sphinx book theme 特殊内容块 <sbt-special-blocks>` 。
 
 
 题词是一种适当的(合适的，恰当的或相关的)短题词，通常是引文或诗歌，在文件或章节的开头。
 
 .. epigraph::
 
-   No matter where you go, there you are.          
+   No matter where you go, there you are.
+
    -- Buckaroo Banzai
 
 

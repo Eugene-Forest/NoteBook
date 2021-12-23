@@ -1,6 +1,5 @@
 # 样式
 
-
 ## CSS Variables
 
 All colors used by sphinx-design are defined as [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties).
@@ -185,7 +184,7 @@ Note, for grids the special gutter classes `sd-g-{screen-size}-{spacing}` are us
 
 ### Colors
 
-Colors can be set using [CSS variable](./css_variables.md), they are defined for the semantic color names: `primary`, `secondary`, `success`, `warning`, `danger`, `info`, `light`, `dark`, and `muted`, and specific colors `black` and `white`.
+Colors can be set using CSS variable, they are defined for the semantic color names: `primary`, `secondary`, `success`, `warning`, `danger`, `info`, `light`, `dark`, and `muted`, and specific colors `black` and `white`.
 
 - `sd-bg-{name}`
 - `sd-bg-text-{name}`
@@ -351,19 +350,19 @@ These classes center an image, set their size and add a circular crop:
 :gutter: 1
 
 ```{grid-item-card} sd-avatar-xs
-<img src="images/ebp-logo.png" class="sd-avatar-xs sd-border-1">
+<img src="snippets/notebook-logo.svg" class="sd-avatar-xs sd-border-1">
 ```
 ```{grid-item-card} sd-avatar-sm
-<img src="images/ebp-logo.png" class="sd-avatar-sm sd-border-1">
+<img src="snippets/notebook-logo.svg" class="sd-avatar-sm sd-border-1">
 ```
 ```{grid-item-card} sd-avatar-md
-<img src="images/ebp-logo.png" class="sd-avatar-md sd-border-1">
+<img src="snippets/notebook-logo.svg" class="sd-avatar-md sd-border-1">
 ```
 ```{grid-item-card} sd-avatar-lg
-<img src="images/ebp-logo.png" class="sd-avatar-lg sd-border-1">
+<img src="snippets/notebook-logo.svg" class="sd-avatar-lg sd-border-1">
 ```
 ```{grid-item-card} sd-avatar-xl
-<img src="images/ebp-logo.png" class="sd-avatar-xl sd-border-1">
+<img src="snippets/notebook-logo.svg" class="sd-avatar-xl sd-border-1">
 ```
 ````
 

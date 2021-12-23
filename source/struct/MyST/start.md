@@ -12,13 +12,13 @@
 
 要安装 MyST 解析器，请在Conda 环境中运行以下命令 （推荐）：
 
-```cmd
+```PowerShell
 conda install -c conda-forge myst-parser
 ```
 
 或者
 
-```cmd
+```PowerShell
 pip install myst-parser
 ```
 
@@ -47,12 +47,12 @@ MyST Markdown 是两种 Markdown 风格的混合体：
 
 它在其基础上支持 [CommonMark Markdown](https://commonmark.org/) 的所有语法。这是许多项目中使用的社区标准的 Markdown 风格。
 
-此外，它还包括对 **CommonMark 的[几个扩展](./syntax.md)**。这些为技术写作添加了额外的语法特性，例如 Sphinx 使用的角色和指令。
+此外，它还包括对 **CommonMark 的[几个扩展](./optional-syntax.md)**。这些为技术写作添加了额外的语法特性，例如 Sphinx 使用的角色和指令。
 :::
 
-首先，创建一个名为的空文件myfile.md并给它一个 Markdown 标题和文本。
+首先，创建一个名为的空文件 myfile.md 并给它一个 Markdown 标题和文本。
 
-```markdown
+```
 # My nifty title
 
 Some **text**!
@@ -60,7 +60,7 @@ Some **text**!
 
 在您的 Sphinx 项目的“主文档”（您的 Sphinx 文档的登录页面）中，包含myfile.md一个toctree指令，以便将其包含在您的文档中：
 
-```restructureText
+```rest
 .. toctree::
 
    myfile.md
@@ -68,7 +68,7 @@ Some **text**!
 
 现在建立你的网站：
 
-```cmd
+```PowerShell
 make html
 ```
 
@@ -80,7 +80,7 @@ make html
 
 MyST Markdown 最重要的功能是编写指令。指令有点像为编写内容而设计的函数。Sphinx 和 reStructuredText 广泛使用指令。以下是指令在 MyST markdown 中的外观：
 
-````markdown
+````
 ```{directivename} <directive arguments>
 :optionname: <valuename>
 
@@ -88,9 +88,9 @@ MyST Markdown 最重要的功能是编写指令。指令有点像为编写内容
 ```
 ````
 
-<!-- //todo 如果无法激活 myst markdown margin侧边栏则取消使用 -->
-````{margin}替代选项语法
+````{margin} 替代选项语法
 如果您的指令有很多选项，或者有一个非常长的值（例如，跨越多行），那么您还可以将选项包装在行中 `---` 并将它们写为 YAML。例如：
+
 ```yaml
 ---
 key1: val1
@@ -99,6 +99,7 @@ key2: |
   val line 2
 ---
 ```
+
 ````
 
 如上所述，编写指令时需要考虑四个主要部分。

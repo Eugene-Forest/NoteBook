@@ -53,23 +53,23 @@ sphinx使用解释文本角色将语义标记插入到文档中。它们被写�
    引用标签(label)必须以下划线开头。引用标签时，必须省略下划线（请参见上面的示例）。
 
 
-:ref:`引用可下载文件 <knowledge/sphinx/rest/roles:引用可下载文件>` 
-:ref:`menuselection <knowledge/sphinx/rest/roles:交叉引用任意位置 / 锚>` 
+:ref:`引用可下载文件 <struct/sphinx/rest/roles:引用可下载文件>` 
+:ref:`menuselection <struct/sphinx/rest/roles:交叉引用任意位置 / 锚>` 
 
 
 .. code-block:: rest
 
    .. 上方两个锚点的代码如下：
 
-   :ref:`引用可下载文件 <knowledge/sphinx/rest/roles:引用可下载文件>` 
-   :ref:`menuselection <knowledge/sphinx/rest/roles:交叉引用任意位置 / 锚>` 
+   :ref:`引用可下载文件 <struct/sphinx/rest/roles:引用可下载文件>` 
+   :ref:`menuselection <struct/sphinx/rest/roles:交叉引用任意位置 / 锚>` 
 
 
 .. important:: 
 
    手动为每个部分添加一个明确的目标并确保其唯一性是一项艰巨的任务！幸运的是，Sphinx 包含一个扩展来帮助我们解决这个问题， ``autosectionlabel``。
 
-   要激活autosectionlabel扩展，请将其添加到您的conf.py文件中：
+   要激活 ``autosectionlabel`` 扩展，请将其添加到您的 ``conf.py`` 文件中：
 
    .. code-block:: python
 
@@ -88,8 +88,6 @@ sphinx使用解释文本角色将语义标记插入到文档中。它们被写�
      - :ref:`guides/cross-referencing-with-sphinx:explicit targets`.
 
      - :ref:`Custom title <guides/cross-referencing-with-sphinx:explicit targets>`.
-
-
 
 
 引用可下载文件

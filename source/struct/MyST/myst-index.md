@@ -56,13 +56,6 @@ MyST 向 CommonMark 添加了几个新的语法选项，以便与 Sphinx 一起�
 MyST 语法指南 <./syntax-guide>
 MyST 的扩展语法 <./optional-syntax>
 MyST 与 Sphinx <sphinx-use>
-sphinx_book_theme 下的 MyST 扩展语法 <book-theme-ext>
-关于 MyST-NB <MyST-NB>
-```
-
-```{toctree}
-:caption: 交互式代码（目前支持 python）
-
-示例1 <./example/example>
-示例2 <./example/exa>
+sphinx_book_theme 下的 MyST 扩展语法 <sbt-ext-syntax>
+关于交互式笔记 <thebe>
 ```

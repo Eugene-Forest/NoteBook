@@ -8,7 +8,7 @@ MyST 解析器与 Sphinx 扩展捆绑在一起，允许您完全在 MyST 中（�
 
 如本节所述，所有 MyST 指令都将其内容解析为 Markdown。因此，使用常规 `include` 指令，将文件内容解析为 Markdown：
 
-````md
+````
 ```{include} example/include-md.md
 ```
 ````
@@ -18,7 +18,7 @@ MyST 解析器与 Sphinx 扩展捆绑在一起，允许您完全在 MyST 中（�
 
 要包含 rST，我们必须首先将指令“包装”在 [eval-rst 指令](myst-syntax-guide-eval-rst)中：
 
-````md
+````
 ```{eval-rst}
 .. include:: ./example/include-rst.rst
 ```
@@ -46,11 +46,22 @@ MyST 解析器与 Sphinx 扩展捆绑在一起，允许您完全在 MyST 中（�
 
 ## 在 Jupyter Notebooks 中使用 MyST
 
-## 包含来自 docs / source 文件夹之外的文件（如README.md）
-
+MyST-NB 工具提供了一个Sphinx扩展，**用于解析使用 MyST Markdown 写的 Jupyter Notebooks**。它包括在文档构建期间自动执行笔记本、存储笔记本单元输出以便将它们插入文档的其他地方等功能。有关更多信息，[请参阅MyST-NB文档](myst-nb)。
 
 ## 自动为节标题创建目标
 
+```{seealso}
+查看 Sphinx 插件 [autosectionlabel](../extend/autosectionlabel.md) 的激活和使用即可。
+```
+
 ## Sphinx 特定的页面前端
 
-## 将预先存在的 rST 迁移到 MyST
+一个经典的用例是指定“孤立”文档，这些文档未在任何目录树中指定。例如，在页面顶部插入以下语法将导致 Sphinx 将其视为孤立页面:
+
+```md
+---
+orphan: true
+---
+
+This is an orphan document, not specified in any toctrees.
+```

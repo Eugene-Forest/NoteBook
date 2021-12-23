@@ -177,7 +177,7 @@ Content
 Content
 :::
 
-```markdown
+```
 :::{card} Align Center
 :width: 75%
 :margin: 0 2 auto auto

@@ -8,7 +8,7 @@ version: 2
 # Build documentation in the docs/ directory with Sphinx
 # sphinx 的构建器配置等
 sphinx:
-#   builder: html
+  builder: html
   configuration: source/conf.py
 
 #  fail_on_warning: true

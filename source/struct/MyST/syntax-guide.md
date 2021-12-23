@@ -11,7 +11,7 @@ header-rows: 1
 * - MyST 写法 1
   - MyST 写法 2
   - reStructuredText
-* - ````md
+* - ````
     ```{directivename} arguments
     ---
     key1: val1
@@ -21,7 +21,7 @@ header-rows: 1
     directive content
     ```
     ````
-  - ````md
+  - ````
     ```{directivename} arguments
     :key1: val1
     :key2: val2
@@ -46,7 +46,7 @@ header-rows: 1
 : 指令第一行之后的 YAML 前言块将被解析为指令的选项。这需要用 `---` 线包围。两者之间的所有内容都将由 YAML 解析并作为关键字参数传递给您的指令。
 : 如果您的指令有很多选项，或者有一个非常长的值（例如，跨越多行），那么您还可以将选项包装在行中 `---` 并将它们写为 YAML。
 
-    ````markdown
+    ````
     ```{code-block} python
     ---
     lineno-start: 10
@@ -77,7 +77,7 @@ header-rows: 1
 带有 `:` 字符的简写选项
 : 这种写法最接近 reST 语法，无论读者是否在学习 MyST Markdown 之前有关学习 reST 标记语言，笔者个人都推荐使用这种语法，因为这样可以使得我们能够快速切换两种语言的指令的写法。
 
-    ````markdown
+    ````
     ```{code-block} python
     :lineno-start: 10
     :emphasize-lines: 1, 3
@@ -107,7 +107,7 @@ header-rows: 1
 
 MyST 将指令内容解析为 Markdown。这意味着 MyST markdown 可以写在任何用 MyST markdown 编写的指令的内容区域中。
 
-````markdown
+````
 ```{admonition} My markdown link
 Here is [markdown link syntax](https://jupyter.org)
 ```
@@ -127,7 +127,7 @@ Here is [markdown link syntax](https://jupyter.org)
 
 对于特殊情况，MySt 还提供 `eval-rst` 指令。这会将内容解析为 **ReStructuredText**：
 
-````markdown
+````
 ```{eval-rst}
 .. figure:: img/fun-fish.png
   :width: 100px
@@ -166,7 +166,7 @@ A reference from outside: :ref:`syntax/guide/parsing`
 
 * - MyST Markdown
   - 渲染结果
-* - `````markdown
+* - `````
     ````{note}
     The next info should be nested
     ```{warning}
@@ -194,7 +194,7 @@ A reference from outside: :ref:`syntax/guide/parsing`
 
 可以缩进内部代码围栏，只要它们的缩进不超过 3 个空格就可以被渲染。否则，它们将被呈现为代码块：
 
-`````markdown
+`````
 ````{note}
 The warning block will be properly-parsed
 
@@ -229,7 +229,7 @@ But the next block will be parsed as raw text
 
 想使用在标准 Markdown 编辑器中正确呈现的语法吗？请参阅 {ref}`扩展语法选项 <markdown-ext-syntax-colon>`。
 
-```markdown
+```
 :::{note}
 This text is **standard** _Markdown_
 :::
@@ -249,7 +249,7 @@ header-rows: 1
 ---
 * - MyST
   - reStructuredText
-* - ````md
+* - ````
     {role-name}`role content`
     ````
   - ```rst
@@ -259,7 +259,7 @@ header-rows: 1
 
 例如，下面的代码:
 
-```md
+```
 Since Pythagoras, we know that {math}`a^2 + b^2 = c^2`
 ```
 
@@ -282,12 +282,12 @@ header-rows: 1
   - `$x^2$`
   - N/A
 * - 指令可选项
-  - ```md
+  - ```
     ---
     key: val
     ---
     ```
-  - ```md
+  - ```
     :key: val
     ```
 * - 注释
@@ -306,7 +306,7 @@ header-rows: 1
 
 在 MyST Markdown 中，目标标头使用以下语法定义：
 
-```md
+```
 (header_target)=
 ```
 
@@ -326,13 +326,13 @@ header-rows: 1
 
 ### 使用 Markdown 的链接语法
 
-```md
+```
 [my text](header_target)
 ```
 
 如果您希望将目标的标题插入到您的文本中，您可以将 Markdown 链接的“文本”部分留空。例如，这个 markdown: `[](header.md)` 。
 
-```md
+```
     [](./optional-syntax.md)
 
     [](myst-opational-syntax)
@@ -350,7 +350,7 @@ header-rows: 1
 
 例如，这段代码：
 
-```markdown
+```
 % my comment
 ```
 
@@ -363,7 +363,7 @@ MyST Markdown 依旧遵循原来 Markdown 语法，所以 Markdown 的注释语�
 
 例如，这段代码：
 
-```markdown
+```
 <!-- my comment -->
 ```
 
@@ -376,7 +376,7 @@ MyST Markdown 依旧遵循原来 Markdown 语法，所以 Markdown 的注释语�
 ````{important}
 由于注释是块级实体，它们将终止前一个块。实际上，这意味着以下几行将分成两段，从而在它们之间产生新的一行：
 
-```md
+```
 a line
 % a comment
 another line
@@ -393,7 +393,7 @@ another line
 
 例如，这段代码：
 
-```md
+```
 +++ some text
 ```
 
