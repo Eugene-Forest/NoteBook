@@ -62,6 +62,7 @@ Sphinx 工具和 reST 标记语言 <struct/sphinx/sphinx-index>
 Markdown 标记语言 <struct/markdown/md-index>
 MyST <struct/MyST/myst-index>
 Sphinx 扩展工具 <struct/extend/ext-index>
+MyST-NB <struct/MyST-NB/MyST-NB>
 ```
 
 [github-badge]: https://img.shields.io/github/last-commit/Eugene-Forest/NoteBook

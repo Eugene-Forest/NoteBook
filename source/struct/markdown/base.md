@@ -1,4 +1,4 @@
-# Markdown基础语法学习
+# Markdown基础语法学习 (1)
 
 ## 标题
 
@@ -215,7 +215,7 @@ ___粗斜体文本___
 
 * This is the first list item.
 
-     > A blockquote would look great below the second list item.
+    > A blockquote would look great below the second list item.
 
 * Here's the second list item.
 
@@ -223,21 +223,17 @@ ___粗斜体文本___
 
 * And here's the third list item.
 
+    ```html
     <head>
         <title>Test</title>
     </head>
+    ```
 
 * And here's the fourth list item.
 
     ![tux.png](./example/tux.png)
 
 * And here's the fifth list item.
-
-## 水平线
-
-要创建水平线`***`，请单独在一行上使用三个或更多的星号（），破折号（`---`）或下划线（`___`）
-
----
 
 ## 代码
 
@@ -372,6 +368,12 @@ In a hole in the ground there lived a hobbit. Not a nasty, dirty, wet hole, fill
 ![tux.png](./example/tux.png)
 
 <img src="./example/tux.png" alt="tux.png" style="zoom:33%;" />
+
+## 水平线
+
+要创建水平线`***`，请单独在一行上使用三个或更多的星号（），破折号（`---`）或下划线（`___`）
+
+---
 
 ## 转义字符
 

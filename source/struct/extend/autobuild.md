@@ -52,7 +52,7 @@ sphinx-autobuild source source/_build/html --open-browser --port=0
 
 `sphinx-autobuild` 接受与 `sphinx-build`（这些在每次构建时传递给 `sphinx-build` ）相同的参数。它还有一些额外的选项，可以通过运行看到 `sphinx-autobuild --help`
 
-```sell
+```shell
 $ sphinx-autobuild --help
 usage: sphinx-autobuild [-h] [--port PORT] [--host HOST] [--re-ignore RE_IGNORE] [--ignore IGNORE] [--no-initial] [--open-browser]
                         [--delay DELAY] [--watch DIR] [--pre-build COMMAND] [--version]
