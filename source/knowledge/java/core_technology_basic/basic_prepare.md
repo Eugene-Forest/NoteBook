@@ -10,6 +10,7 @@
 - 包名一律小写，使用小写字母同时不要使用下划线将单词分开，如 `com.xxx.settlment`，不要 `com.xxx.Settlement`，也不要 `com.xxx.settlement.jsf_util`。
 
 :::{note}
+
 为了更好区分方法名以及变量名，同时在为变量和方法命名时最好取些有意义的名字，应尽量使用简短的英文单词。 较好的方法是：
 
 - 方法名以 **动词+名词** 为组合命名，如 `initInformation`
@@ -49,6 +50,7 @@
 | 字符   | char   | 2字节    |                                                         |
 
 :::{note}
+
 下面是用于表示溢出和出错情况的三个特殊的浮点数值：
 
 - 正无穷大
@@ -57,11 +59,13 @@
 :::
 
 :::{attention}
+
 - 不同于 C++， Java 没有任何无符号（unsigned) 形式的 int、 long、short 或 byte 类型。
 - Java 有一个能够表示任意精度的算术包， 通常称为“大数值”（ big number。) 虽然被称为大数值，但它并不是一种新的 Java 类型，而是一个 Java 对象。
 :::
 
 :::{warning}
+
 - 不建议在 Java 程序中使用 char 数据类型。 {ref}`参见 Java 中 char 和 String 的细节和使用注意 <not-using-char>` 。
 - 注意基本数据类型的封装类的使用方法。 {ref}`参见 Java 的基本数据类型及其封装类 <java-basic-datatype-and-class>` 。
 :::
@@ -106,6 +110,7 @@ String 类没有提供用于修改字符串的方法。由于不能修改 Java �
 `if (str != null && str.length() != 0)`
 
 :::{note}
+
 了解java虚拟机的垃圾回收机制；了解String的字符串共享存储池机制。
 :::
 
@@ -163,6 +168,8 @@ Hello, Eugene Forest
 | a      | 十六进制浮点数 | 0xl.fccdp3 |
 
 :::{note}
+
+
 在实际使用中，浮点数的标准输出流的格式化使用地比较多。
 :::
 
@@ -202,6 +209,7 @@ If you live to 90 years, you have already spent 24.44 persent of your life!
 **创建一个数字数组时， 所有元素都初始化为 0。boolean 数组的元素会初始化为 false。对象数组的元素则初始化为一个特殊值 null, 这表示这些元素（还）未存放任何对象。**
 
 :::{note}
+
 对于对象数组类型的，在Java中一般使用集合来实现和使用。
 :::
 

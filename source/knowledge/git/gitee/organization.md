@@ -1,6 +1,7 @@
 # gitee 远程仓库协作
 
 :::{note}
+
 idea git插件的简单使用：前往笔记 {ref}`在jetbrains系列软件中使用版本控制 <jetbrains-gitee>`
 :::
 

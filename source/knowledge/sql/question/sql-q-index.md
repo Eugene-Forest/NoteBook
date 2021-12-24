@@ -1,7 +1,7 @@
 # 问题集
 
 ```{toctree}
-:caption: "SQL \u95EE\u9898\u96C6"
+:caption: "SQL 问题集"
 
 分页问题 <paging>
 SQLServer 问题子集 <./mssql/question>

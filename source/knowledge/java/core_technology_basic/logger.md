@@ -15,11 +15,9 @@
 要生成简单的日志记录，可以使用全局日志记录器（global logger) 并调用日志方法：
 
 ```{literalinclude} ../example_java/basic/logger/LogMain.java
-:caption: "\u5168\u5C40\u65E5\u5FD7\u8BB0\u5F55\u7684\u4F7F\u7528"
+:caption: "全局日志记录的使用"
 :language: java
 ```
-
-
 
 ## 高级日志
 
@@ -36,6 +34,7 @@
 与包名类似，日志记录器名也具有层次结构。事实上， 与包名相比，日志记录器的层次性更强。 对于包来说，一个包的名字与其父包的名字之间没有语义关系，但是日志记录器的父与子之间将共享某些属性。例如， 如果对 com.mycompany 日志记录器设置了日志级别，它的子记录器也会继承这个级别。
 
 :::{note}
+
 有以下 7 个日志记录器级别：
 
 - SEVERE
@@ -51,8 +50,6 @@
 另外，可以使用 Level.ALL 开启所有级别的记录， 或者使用 `Level.OFF` 关闭所有级别的记录。
 :::
 
-
-
 ## 修改日志管理器配置
 
 可以通过编辑配置文件来修改日志系统的各种属性。在默认情况下，配置文件存在于 `jre/lib/logging.properties` 。 {download}`java version "1.8.0_281" 的 logging.properties <../example_java/basic/logger/logging.properties>`
@@ -66,6 +63,7 @@
 :::
 
 :::{note}
+
 在 IDE 中，通过编辑运行或调试配置来设置 VM 选项 ( `-Djava.util.logging.config.file=configFile_path` )。当然也可以直接通过命令行添加运行所需的 VM 选项。
 :::
 
@@ -83,6 +81,7 @@
 :::
 
 :::{note}
+
 **在日志管理器配置的属性设置不是系统属性**， 因此， 用 `-Dcom.mycompany.myapp.level= FINE` 启动应用程序不会对日志记录器产生任何影响。
 :::
 
@@ -181,7 +180,7 @@ public static void main(String[] args) {
 开启文件循环功能也是一个不错的主意。日志文件以 myapp.log.0, myapp.log.1 , myapp.log.2, 这种循环序列的形式出现 ， 只要文件超出了大小限制， 最旧的文件就会被删除， 其他的文件将重新命名， 同时创建一个新文件， 其编号为 0。
 
 ```{code-block} java
-:caption: "TestMain4--\u5C06\u65E5\u5FD7\u6253\u5370\u5230\u6587\u4EF6\u4E2D"
+:caption: "TestMain4--将日志打印到文件中"
 
 public static void main(String[] args) {
     List<String> list= Arrays.asList("12443039","eugene-forest");

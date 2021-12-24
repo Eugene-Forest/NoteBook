@@ -77,6 +77,7 @@ update order_infos set quantity=10 where item_price=10.99;
 ## SQL Server 中的视图 [^id8]
 
 :::{note}
+
 [点击前往 SQL 文档的视图部分文档查看更多类型的视图](https://docs.microsoft.com/zh-cn/sql/relational-databases/views/views?view=sql-server-ver15#types-of-views)
 :::
 
@@ -111,9 +112,7 @@ select * from order_infos where item_price=10.99
 -- 更新语句成功执行，且基本表中的数据也被更新
 update order_infos set quantity=10 where item_price=10.99
 ```
-
-______________________________________________________________________
-
+ 
 [^id7]: 原文出自【易百教程】，MySQL视图——原文链接 <https://www.yiibai.com/mysql/views.html>
 
 [^id8]: 原文出自【microsoft SQL 文档】，视图——原文链接 <https://docs.microsoft.com/zh-cn/sql/relational-databases/views/views?view=sql-server-ver15>

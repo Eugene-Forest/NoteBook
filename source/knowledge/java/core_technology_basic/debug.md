@@ -99,6 +99,7 @@ class FilePathMistakeException extends Exception{
 ```
 
 :::{note}
+
 如果在一个方法中发生了一个受查异常， 而不允许抛出它， 那么包装技术就十分有用。我们可以捕获这个受查异常，并将它包装成一个运行时异常。
 
 这里所说的所谓包装技术类似于下文结构，只不过下文样例代码只是对异常进行记录后直接传递（也就是异常再抛出）：
@@ -226,6 +227,7 @@ try (FileInputStream fileInputStream = new FileInputStream("C:/apache-maven-3.6.
 ```
 
 :::{note}
+
 带资源的 try 语句自身也可以有 catch 子句和一个 finally 子句。 这些子句会在关闭资源之后执行。 不过在实际中， 一个 try 语句中加入这么多内容可能不是一个好主意。
 :::
 
@@ -290,6 +292,7 @@ assert condition : expression;
 :::
 
 :::{note}
+
 然而，有些类不是由类加载器加载， 而是直接由虚拟机加载。启用和禁用所有断言的 -ea 和 -da 开关不能应用到那些没有类加载器的 “系统类” 上。对于这些 “系统类” 来说， 需要使用 -enablesystemassertions/-esa 开关启用断言。
 :::
 
@@ -299,5 +302,6 @@ assert condition : expression;
 - 断言检查只用于开发和测阶段
 
 :::{note}
+
 断言是一种测试和调试阶段所使用的战术性工具; 而日志记录是一种在程序的整个生命周期都可以使用的策略性工具。
 :::

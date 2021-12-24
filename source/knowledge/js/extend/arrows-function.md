@@ -61,7 +61,5 @@ elements.map(({ "length": lengthFooBArX }) => lengthFooBArX); // [8, 6, 7, 9]
 ```
 
 **引入箭头函数有两个方面的作用：更简短的函数并且不绑定this。**
-
-______________________________________________________________________
-
+ 
 [^id3]: 本文摘自 MDN Web Docs 箭头函数 : <https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/arrow_functions>

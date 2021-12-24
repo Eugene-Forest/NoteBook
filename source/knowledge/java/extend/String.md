@@ -13,14 +13,14 @@
 字符串在 Java 中是不可变的，因此适合在多线程环境下使用。
 
 ```{code-block} java
-:caption: "String \u7684\u5B9A\u4E49"
+:caption: "String 的定义"
 
 public final class String
     implements java.io.Serializable, Comparable<String>, CharSequence
 ```
 
 ```{code-block} java
-:caption: "String \u5B57\u7B26\u4E32\u7684\u5B58\u50A8\u65B9\u5F0F"
+:caption: "String 字符串的存储方式"
 
 /** The value is used for character storage. */
 private final char value[];
@@ -29,7 +29,7 @@ private final char value[];
 ### String类对象的实例化方式
 
 ```{code-block} java
-:caption: "String\u7C7B\u5BF9\u8C61\u7684\u5B9E\u4F8B\u5316\u65B9\u5F0F"
+:caption: "String类对象的实例化方式"
 
 String name1 = "Sakura";    //直接赋值方式
 String name2 = new String("Sakura");  //利用构造方法实例化
@@ -44,7 +44,7 @@ String name2 = new String("Sakura");  //利用构造方法实例化
 #### 使用"=="和equals比较字符串是否相等
 
 ```{code-block} java
-:caption: "\"==\"\u548Cequals\u6BD4\u8F83\u5B57\u7B26\u4E32\u662F\u5426\u76F8\u7B49"
+:caption: ==和equals比较字符串是否相等
 
 String name1 = "Sakura";
 String name2 = new String("Sakura");
@@ -73,11 +73,12 @@ Java中不允许程序员重载任何操作符，但是Java内部重载了两个
 由于 String 在 Java 中是不可变的，因此每当我们执行字符串拼接操作时，它都会生成一个新的 String 并丢弃旧的 String 以进行垃圾收集。
 
 :::{note}
+
 这些重复的操作会在堆中产生大量垃圾冗余。所以 Java 提供了 StringBuffer 和 StringBuilder 类，用于字符串操作。StringBuffer 和 StringBuilder 是 Java 中的可变对象。
 :::
 
 ```{code-block} java
-:caption: "\u5B57\u7B26\u4E32\u62FC\u63A5\u6D4B\u8BD5\u4EE3\u7801"
+:caption: 字符串拼接测试代码
 
 public static void main(String[] args) {
     String name1 = "Sakura";
@@ -87,8 +88,7 @@ public static void main(String[] args) {
 ```
 
 ```{code-block} guess
-:caption: "\u53CD\u7F16\u8BD1\u5B57\u7B26\u4E32\u62FC\u63A5\u6D4B\u8BD5\u4EE3\u7801\
-:  \uFF08javap -c\uFF09"
+:caption: 反编译字符串拼接测试代码（javap -c）
 
 public static void main(java.lang.String[]);
 Code:
@@ -114,6 +114,7 @@ Code:
 我们通过反汇编测试代码的 class 文件，然后我们可以看到在 main 方法中的行编号为13的地方新建了一个 StringBuilder 对象，而且通过之后的代码可知，字符串的拼接运算是通过 StringBuilder.append 方法来执行的。
 
 :::{note}
+
 javap 是 Java class文件分解器，可以反编译（即对javac编译的文件进行反编译），也可以查看java编译器生成的字节码；用于分解class文件。javap 的可选选项可以通过命令 `javap -help` 了解。 关于 javap 的更多信息 {ref}`点击查看 javap 命令 笔记 <command-javap>`
 :::
 

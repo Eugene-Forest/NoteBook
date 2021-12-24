@@ -83,6 +83,7 @@ List<Departments> list= departmentsMapper.page(map);
 ```
 
 :::{note}
+
 如果出现需要指定参数类型的情况，那么可以在 xml 文件中添加参数的映射，如：
 
 ```xml

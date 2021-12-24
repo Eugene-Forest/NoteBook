@@ -35,6 +35,7 @@ Branch 'main' set up to track remote branch 'main' from 'origin'.
 ```
 
 :::{note}
+
 使用ssh地址的唯一问题是每次推送需要验证密匙。并且在本地的git中，添加了ssh密匙。
 {ref}`点击前往添加GitHub SSH笔记记录 <add-github-ssh>`。
 :::

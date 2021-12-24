@@ -37,6 +37,7 @@ Spring 从两个方面来实现自动化装配：
 ```
 
 :::{note}
+
 Spring 应用上下文中所有的 bean 都会给定一个 ID。对于没有直接设定命名的组件，Spring 可能根据全限定类名来进行命名 （对于上文代码的soundsystem.CDPlayer类，其 ID 可能为 soundsystem.CDPlayer#0）。当然可以直接通过注解来命名如 `@Component("cdPlayer")`。
 :::
 
@@ -113,6 +114,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
 ```
 
 :::{note}
+
 在自动装配中，Spring 同时支持 @Inject 和 @Autowired 。@Inject 注解来源于 Java 依赖注入规范。尽管 @Inject 和 @Autowired 之间有着一些细微的差别，但是在大多数场景下，它们都是可以互相替换的。 @Named 与 @Component 之间的关系也与它们一样。
 :::
 
@@ -129,6 +131,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
 ```
 
 :::{note}
+
 JavaConfig 的装配方法可以使得所有的装配逻辑都集中在一个配置类中（虽然大多数时候不可能），简化了 bean 的复杂度（比如可以不用写 @Autowired 注解）。
 :::
 
@@ -241,6 +244,7 @@ public CDPlayer otherCDPlayer(CompactDisc compactDisc){
 property 标签中的 name 对应的是所在 bean 的字段名，ref 对应的是被注入的 bean 的 ID。
 
 :::{note}
+
 在此不对 xml 配置做更加详细的说明；
 :::
 

@@ -3,6 +3,7 @@
 ## 查看数据库系统的所有数据库
 
 :::{note}
+
 对于 SQL Server 来说，获取一些基本信息常常需要使用系统定义的存储过程。
 :::
 
@@ -90,6 +91,7 @@ mysql> show databases;
 ```
 
 :::{note}
+
 这个方法通用于 SQL Server 和 MySQL 。
 :::
 
@@ -103,6 +105,7 @@ mysql> show databases;
 - 通过查询 `sys.tables`
 
 :::{note}
+
 由于 sp_tables 的实现代码长且复杂，同时如果不带参数地执行该存储过程，那么其结果将包含该库的所有表（一般来说我们只需要看 dbo 部分的表）。同时为节省篇幅，所以不将其展示。{download}`sp_tables 存储过程 <../result-file/sp_tables.sql>` [^id11]
 :::
 
@@ -235,9 +238,8 @@ UNIQUE KEY `dept_name` (`dept_name`)
 ```
 
 :::{note}
+
 `show create database database_name;`
 :::
-
-______________________________________________________________________
-
+ 
 [^id11]: 所有的系统级存储过程都可以在 SQL Server  的系统数据库的系统存储过程中找到。

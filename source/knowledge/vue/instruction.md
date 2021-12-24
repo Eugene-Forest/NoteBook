@@ -169,6 +169,7 @@ v-if/v-else/v-show 这三个指令主要用于根据条件展示对应的模板�
 当包含参数 index 或 key 时，对象参数修改为（item, index）或（value, key），这样与 JS Array 对象的新方法 forEach 和 map，以及一些对象迭代器（例如 lodash）的参数能保持一致。
 
 :::{note}
+
 v-for="n in 10" 中的 n 由原来的 0 ～ 9 迭代变成 1 ～ 10 迭代。
 :::
 

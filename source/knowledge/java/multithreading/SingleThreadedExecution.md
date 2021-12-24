@@ -1,6 +1,7 @@
 # single threaded execution mode (one by one)
 
 :::{note}
+
 关键词： `synchronized`
 :::
 
@@ -132,5 +133,6 @@ public class TestMain {
 ```
 
 :::{note}
+
 synchronized静态方法是使用该类的类对象的锁来执行线程的互斥处理，TestThread.class是TestThread类对应的java.lang.Class类的实例。
 :::

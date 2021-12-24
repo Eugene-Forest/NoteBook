@@ -19,15 +19,14 @@ Vue CLI 致力于将 Vue 生态中的工具基础标准化。它确保了各种�
 
 同时，关于 vue-cli 的安装 [点击前往官网查看](https://cli.vuejs.org/zh/guide/installation.html) 。
 :::
-
-______________________________________________________________________
-
+ 
 :::{note}
+
 关于 vue-cli 的基础部分， [点击前往官网查看基础部分](https://cli.vuejs.org/zh/guide/prototyping.html)
 :::
 
 ```{toctree}
-:caption: "\u5F00\u53D1\u90E8\u5206"
+:caption: "开发部分"
 :maxdepth: 2
 
 HTML和静态资源 <html-and-static-assets>

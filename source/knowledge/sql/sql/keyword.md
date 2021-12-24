@@ -35,9 +35,7 @@ FNG01        9.49
 :::{attention}
 不能部分使用 DISTINCT, DISTINCT 关键字作用于所有的列而不仅仅是紧跟在其后的一列。【比较上文的结果可知】
 :::
-
-______________________________________________________________________
-
+ 
 ## limit 和 top 以及其他限制结果的关键字
 
 需要清楚的是，限制结果的关键字在不同的数据库中有所不同，比如在 SQL Server 中为 `select top 5 * from table_name;` , 在 MySQL、MariaDB、PostgreSQL、SQLite 中为 `select * from table_name limit 5;` ，在 DB2 中为 `SELECT * FROM table_name FETCH FIRST 5 ROWS ONLY;` ,在 Oracle 为 `select * from table_name where ROWNUM <= 5;`

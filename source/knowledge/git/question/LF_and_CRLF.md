@@ -5,13 +5,9 @@ $ git add README.md
 warning: LF will be replaced by CRLF in README.md.
 The file will have its original line endings in your working directory
 ```
-
-______________________________________________________________________
-
+ 
 本文链接：<https://blog.csdn.net/wq6ylg08/article/details/88761581>
-
-______________________________________________________________________
-
+ 
 ## 分析了解CR and CRLF
 
 1. 不同操作系统下，处理行尾结束符的方法是不同的：
@@ -58,6 +54,7 @@ ______________________________________________________________________
 2. 如果我们是Linux 或 Mac平台,我们不需要功能“在检出或克隆远程版本库时，Git自动把LF转换成CRLF”。然而当一个CRLF作为行结束符的文件在我们的Linux 或 Mac平台不小心被引入时，你肯定想让 Git 修正。 所以，你可以通过config --global core.autocrlf input命令把 core.autocrlf 设置成 input 来告诉 Git 在提交(commit)时把CRLF转换成LF，检出(git checkout)时不转换
 
 :::{note}
+
 提到的那句警告：“IF will be replaced by CRLF in \<file-name>”
 
 这句警告的下面其实还有一句很重要的话：The file will have its original line endings in your working directory.

@@ -94,7 +94,5 @@ cnx.commit()
 cursor.close()
 cnx.close()
 ```
-
-______________________________________________________________________
-
+ 
 [^id4]: 该章节引用 mysql-connector-python 文档，链接为 <https://dev.mysql.com/doc/connector-python/en/connector-python-example-connecting.html>

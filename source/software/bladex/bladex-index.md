@@ -8,7 +8,7 @@
 在此记录使用 BladeX Boot 。
 
 ```{toctree}
-:caption: "BladeX boot \u5FEB\u901F\u5F00\u53D1"
+:caption: "BladeX boot 快速开发"
 
 安装并初始化原始项目 <init>
 Swagger 接口文档系统功能的使用 <func-swagger>

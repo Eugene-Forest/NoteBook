@@ -53,5 +53,6 @@ curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-
 安装/重加载mysql源 : `yum search mysql`
 
 :::{note}
+
 关于安装mysql请前往 :{ref}`安装mysql server 笔记记录 <install-mysql-at-linux>`
 :::

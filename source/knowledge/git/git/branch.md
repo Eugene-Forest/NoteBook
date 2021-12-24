@@ -4,9 +4,7 @@
 - `git checkout -b`  创建并切换分支
 - `git merge` 合并分支
 - `git log --graph`  以图表形式查看分支
-
-______________________________________________________________________
-
+ 
 ## git branch
 
 显示分支一览表或者创建一个新的分支。
@@ -26,6 +24,7 @@ feature-A
 分支左侧标有“\*”（星号），表示这我们当前所在的分支。
 
 :::{note}
+
 通过git branch命令还可以删除指定分支， 只需要添加参数 -d；如： `git branch -d BRANCH_NAME`
 
 ```shell
@@ -67,6 +66,7 @@ master
 合并有快速合并 `git merge BRANCH_NAME` 以及普通合并 `git merge --no-ff BRANCH_NAME` 之分，区别在于后者可以存在分支合并历史记录，而前者不能。
 
 :::{note}
+
 合并分支多半需要进行冲突处理。
 :::
 
@@ -100,9 +100,7 @@ Author: hirocaster <hohtsuka@gmail.com>
 Date: Sun May 5 16:06:49 2013 +0900
 First commit
 ```
-
-______________________________________________________________________
-
+ 
 ## 关于 `git checkout` 与 `git switch` 和 `git restore`
 
 关于 `git restore`,是用来恢复暂存区或工作区文件的， {ref}`点击查看相关笔记 <git-restore>` 。

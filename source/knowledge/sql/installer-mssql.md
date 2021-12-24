@@ -90,6 +90,7 @@ Choose an edition of SQL Server:
 ```
 
 :::{note}
+
 如果遇到： `/bin/bash: /opt/mssql/bin/sqlservr: 权限不够` ，执行 ： `chmod 777 sqlservr` 后再开启服务 `systemctl start mssql-server`
 :::
 
@@ -114,9 +115,7 @@ export MSSQL_COLLATION='Chinese_PRC_CI_AS'
 export MSSQL_LCID='2052'
 sudo /opt/mssql/bin/mssql-conf setup
 ```
-
-______________________________________________________________________
-
+ 
 参考文章：
 
 - [SQL Server 2017 Linux安装说明以及避坑指南](https://www.jianshu.com/p/6acb714e37be)

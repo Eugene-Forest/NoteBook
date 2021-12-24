@@ -37,6 +37,7 @@ OK
 ```
 
 :::{note}
+
 具体的配置名和配置效果有哪些请前往 [菜鸟教程—— Redis 配置](https://www.runoob.com/redis/redis-conf.html) 查看。
 :::
 

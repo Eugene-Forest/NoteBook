@@ -1,6 +1,7 @@
 # Effective Java
 
 :::{note}
+
 这个篇章最终需要与 core_tech 合并。
 :::
 

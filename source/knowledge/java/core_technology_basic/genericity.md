@@ -152,6 +152,7 @@ public class Pair {
   : - 将 equals 方法添加到 Pair 类，考虑一个 Pair\<String>。从概念上讲， 它有两个 equals 方法: `boolean equals(String) // defined in Pai r<T>` 以及 `boolean equals(Object) // inherited from Object` 。但是，方法擦除 `boolean equals(String)` 后就是 `boolean equals(Object)` ，与 Object.equals 方法发生冲突。当然，补救的办法是重新命名引发错误的方法。
 
 :::{note}
+
 ```java
 Pair<String> stringPair = . .
 Pair<Employee〉employeePair = . .
@@ -184,7 +185,5 @@ if (stringPair.getClass() == employeePair.getClass()) // they are equal
 通配符限定与类型变量限定十分类似，但是，还有一个附加的能力，即可以指定一个超类型限定 （super type bound)
 
 `? super Manager`  这个通配符限制为 Manager 的所有超类型。
-
-______________________________________________________________________
-
+ 
 [^id11]: Java 泛型（generics）是 JDK 5 中引入的一个新特性, 泛型提供了编译时类型安全检测机制，该机制允许程序员在编译时检测到非法的类型。

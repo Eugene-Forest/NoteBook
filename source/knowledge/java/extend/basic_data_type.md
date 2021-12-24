@@ -14,11 +14,8 @@ Java语言提供了八种基本类型。六种数字类型（四个整数型，�
 |  封装器类  | Boolean | Byte  |   Character    | Short | Integer |  Long  |   Float    |   Double   | Void  |
 | 类中默认值 |  false  |   0   | ' ' (ASCII为0) |   0   |    0    | 0 (0L) | 0.0 (0.0f) | 0.0 (0.0d) |  --   |
 
-
-
 ```{code-block} java
-:caption: "Java \u57FA\u672C\u7C7B\u578B\u5728\u7C7B\u4E2D\u9ED8\u8BA4\u503C \u7684\
-:  \u6D4B\u8BD5\u7C7B"
+:caption: "Java 基本类型在类中默认值的测试类"
 
 public class BaseTest {
    private boolean aBoolean;
@@ -67,7 +64,7 @@ Boolean 将对象中的基元类型boolean的值进行包装。 类型为 Boolea
 首先来看看定义：
 
 ```{code-block} java
-:caption: "Boolean\u7C7B\u5B9A\u4E49"
+:caption: "Boolean类定义"
 
 public final class Boolean
    extends Object
@@ -104,7 +101,7 @@ Boolean 类的其他几个比较重要的方法：
     : 返回一个表示指定布尔值的String对象。如果指定的布尔值为true，则返回字符串"true"，否则返回字符串"false"。
 
 ```{code-block} Java
-:caption: "\u793A\u4F8B\u4EE3\u7801"
+:caption: "示例代码"
 
 import java.util.logging.Logger;
 
@@ -122,12 +119,10 @@ public class Main {
 ```
 
 ```{code-block} guess
-:caption: "\u8FD0\u884C\u7ED3\u679C"
+:caption: "运行结果"
 
 信息: aBoolean is true and aBoolean2 is true; aBoolean3 is false
 ```
-
-
 
 ## byte and Byte
 
@@ -142,7 +137,7 @@ Byte类在一个对象中包含一个基本类型byte的值。 类型为Byte的�
 Byte 类的定义：
 
 ```{code-block} java
-:caption: "Byte\u7C7B\u5B9A\u4E49"
+:caption: "Byte类定义"
 
 public final class Byte
    extends Number
@@ -172,7 +167,7 @@ char 类型原本用于表示单个字符。不过，现在情况已经有所变
 ### Character类
 
 ```{code-block} java
-:caption: "Character \u7C7B\u5B9A\u4E49"
+:caption: "Character 类定义"
 
 public final class Character
    extends Object
@@ -180,6 +175,7 @@ public final class Character
 ```
 
 :::{note}
+
 因为笔者从未直接使用过 Character 类所以暂时不详细记录对象。
 :::
 
@@ -200,7 +196,7 @@ int数据类型的变量需要32位(4\*8bit)内存。
 Integer类的一个对象中包含一个基本类型int的值。 类型为Integer的对象包含一个单一字段，其类型为int 。 此外，该类还提供了一些将int转换为String和String转换为int ，以及在处理int时有用的其他常量和方法。
 
 ```{code-block} java
-:caption: "Integer \u7C7B\u5B9A\u4E49"
+:caption: "Integer 类定义"
 
 public final class Integer
    extends Number
@@ -234,7 +230,7 @@ short 数据类型是 16 位 （2\*8bit）、有符号的以二进制补码表�
 Short类在一个对象中包含一个基本类型short的值。 类型为Short的对象包含一个类型为short的单个字段。
 
 ```{code-block} java
-:caption: "Short \u7C7B\u7684\u5B9A\u4E49"
+:caption: "Short 类的定义"
 
 public final class Short
    extends Number
@@ -248,6 +244,7 @@ public final class Short
     : 构造一个新分配 Short对象，表示 short由指示值 String参数。
 
 :::{note}
+
 由于 Short 类实现了 Comparable\<Short> 接口，所以该类中有 compareTo 方法，同理其他封装类如果实现了 Comparable 接口，那么也有 compareTo 方法，同时，这些类通常有对应的基础类型的静态的比较方法。
 :::
 
@@ -267,7 +264,7 @@ long 数据类型是 64 位、有符号的以二进制补码表示的整数；
 Long类在一个对象中包含一个基本类型long的值。 类型为Long的对象包含一个单一字段，其类型为long。
 
 ```{code-block} java
-:caption: "Long \u7C7B\u7684\u5B9A\u4E49"
+:caption: "Long 类的定义"
 
 public final class Long
    extends Number
@@ -294,7 +291,7 @@ float 在储存大型浮点数组的时候可节省内存空间；
 Float类在一个对象中包含一个基本类型float的值。 类型为Float的对象包含一个单一字段，其类型为float 。
 
 ```{code-block} java
-:caption: "Float \u7C7B\u7684\u5B9A\u4E49"
+:caption: "Float 类的定义"
 
 public final class Float
    extends Number
@@ -324,7 +321,7 @@ double 数据类型是双精度、64 位、符合 IEEE 754 标准的浮点数；
 Double 类在一个对象中包含一个基本类型double的值。 类型为 Double 的对象包含一个单一字段，其类型为 double 。
 
 ```{code-block} java
-:caption: "Double \u7C7B\u7684\u5B9A\u4E49"
+:caption: "Double 类的定义"
 
 public final class Double
    extends Number

@@ -21,7 +21,5 @@
 ```{literalinclude} ../example_python/hzu/GetNewsFromHzu.py
 :language: python
 ```
-
-______________________________________________________________________
-
+ 
 [^id6]: 2021年4月30日 测试正常

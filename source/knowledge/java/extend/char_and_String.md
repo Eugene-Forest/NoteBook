@@ -58,6 +58,7 @@ UTF-8 的特点是对不同范围的字符使用不同长度的编码。对于 0
 解码的过程也十分简单：如果一个字节的第一位是 0 ，则说明这个字节对应一个字符；如果一个字节的第一位1，那么连续有多少个 1，就表示该字符占用多少个字节。
 
 :::{note}
+
 Java 字符编码 [了解更多](https://www.cnblogs.com/binarylei/p/10760233.html)
 :::
 
@@ -119,8 +120,7 @@ W2 = W2 | Vl
 **由于 Java 采用的是 16 位的 Unicode 字符集，即 UTF-16，所以在 Java 中 char 数据类型是定长的，其长度永远只有 16 位，char 数据类型永远只能表示代码点在 U+0000 ~ U+FFFF 之间的字符，也就是在 BMP 内的字符。如果代码点超过了这个范围，即使用了增补字符，那么 char 数据类型将无法支持，因为增补字符需要 32 位的长度来存储，我们只能转而使用 String 来存储这个字符。**
 
 ```{code-block} java
-:caption: "\u7F16\u8BD1\u5668\u5C06\u4F1A\u62A5\u9519\u2014\u2014\u5B57\u7B26\u6587\
-:  \u5B57\u4E2D\u7684\u5B57\u7B26\u6570\u8FC7\u591A"
+:caption: "编译器将会报错——字符文字中的字符数过多"
 
 char c1 = '��';
 char c2 = '\u64321';
@@ -131,6 +131,7 @@ char c2 = '\u64321';
 随着互联网用户的不断增多以及互联网语言的不断丰富，用户越来越高频率的在互联网上使用一些特殊字符来表达丰富的语义，而这些字符很有可能是属于辅助平面里的增补字符，所以如果我们使用 char 类型来进行处理，就很有可能减低我们程序的健壮性。
 
 :::{note}
+
 char 数据类型永远只能表示代码点在 U+0000 ~ U+FFFF 之间的字符，也就是在 BMP 内的字符。如果代码点超过了这个范围，即使用了增补字符，那么 char 数据类型将无法支持，因为增补字符需要 32 位的长度来存储。
 :::
 
@@ -143,8 +144,7 @@ char 数据类型永远只能表示代码点在 U+0000 ~ U+FFFF 之间的字符�
 String 是我们在编程时使用的非常多的数据类型，它用来表示一个字符串。查看 String 的源码，我们可以看到其底层实际是使用一个 char 类型数组在存储我们的字符。
 
 ```{code-block} java
-:caption: "String \u7684\u5B58\u50A8\u662F\u7531 char \u7C7B\u578B\u6570\u7EC4\u5B9E\
-:  \u73B0\u7684"
+:caption: "String 的存储是由 char 类型数组实现的"
 
 public final class String
          implements java.io.Serializable, Comparable<String>, CharSequence {
@@ -158,7 +158,7 @@ public final class String
 我们也知道调用其 length() 方法可以得到字符串的长度，即字符串中字符的数量。其实现是直接返回底层 value 数组的长度，代码如下：
 
 ```{code-block} java
-:caption: "String.length()\u7684\u5B9E\u73B0"
+:caption: "String.length()的实现"
 
 /**
    * Returns the length of this string.
@@ -174,7 +174,7 @@ public final class String
 结合我们上面对于字符编码的知识，我们知道 Java 中 char 的长度永远是 16 位，如果我们在字符串中使用了增补字符，那就意味着需要 2 个 char 类型的长度才能存储，对于 String 底层存储字符的数组 value 来说，就需要 2 个数组元素的位置。所以下面的这个程序我们将得到一个意料之外的结果：
 
 ```{code-block} java
-:caption: "\uFFFD\uFFFD \u5B57\u7B26\u7684\u6D4B\u8BD5"
+:caption: "�� 字符的测试"
 
 String tt = "我喜欢��这个字符";
 System.out.println(tt.length()); // 9

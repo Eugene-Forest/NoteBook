@@ -33,6 +33,7 @@
   - 接口冲突。 如果一个超接口提供了一个默认方法，另一个接口提供了一个同名而且参数类型（不论是否是默认参数）相同的方法， 必须覆盖这个方法来解决冲突。
 
 :::{note}
+
 “ 类优先” 规则可以确保与 Java SE 7 的兼容性。如果为一个接口增加默认方法，这对于有这个默认方法之前能正常工作的代码不会有任何影响。
 :::
 
@@ -41,7 +42,7 @@
 回调（ callback) 是一种常见的程序设计模式。在这种模式中，可以指出某个特定事件发生时应该采取的动作。例如，可以指出在按下鼠标或选择某个菜单项时应该采取什么行动。
 
 ```{code-block} java
-:caption: "\u56DE\u8C03\u793A\u4F8B"
+:caption: "回调示例"
 
 public class RunMain {
     public static void main(String[] args) {
@@ -67,7 +68,7 @@ class RunTestThread implements Runnable{
 2. 有一个数组和一个比较器 ( comparator ) 作为参数；而比较器是实现了 Comparator 接口的类的实例，其可以实现自定义的比较方法。
 
 ```{code-block} java
-:caption: "Comparator \u63A5\u53E3\u5B9E\u73B0\u6BD4\u8F83"
+:caption: "Comparator 接口实现比较"
 
 public class StringLengthComparator implements Comparator<String> {
     @Override
@@ -89,9 +90,7 @@ public class StringLengthComparator implements Comparator<String> {
   }
 }
 ```
-
-______________________________________________________________________
-
+ 
 [^id10]: 实例域对应的英文应该是 `Object field`， 也就是我们常说的对象域，或者说是类对象的字段、类对象的属性。
 
 [^id11]: 有人会疑惑，前面不是说接口不能有实例域吗？那么我们就需要明白类域和对象域之间的区别：当类没有实例化时，不存在对象域，但是却存在类域；所有该类的实例化对象都共享一个类域，而其对象域是相互独立的。而被 `static` 声明的常量就属于类域。

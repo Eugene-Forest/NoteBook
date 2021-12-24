@@ -5,6 +5,7 @@
 ## 关于在git中添加Github的账户的ssh密匙
 
 :::{note}
+
 首先，要在本机中创建一个ssh密匙，然后在GitHub网站中添加公共密匙。最后在本机中验证密匙即可。后续操作中可能会重复使用私有密匙的映射密码验证。
 :::
 
@@ -57,9 +58,7 @@ $ ssh -T git@github.com
 Enter passphrase for key '/c/Users/qaz22/.ssh/id_rsa':
 Hi Eugene-Forest! You've successfully authenticated, but GitHub does not provide shell access.
 ```
-
-______________________________________________________________________
-
+ 
 ## 通过git bash克隆已经创建的仓库，以及添加并提交更新
 
 1. `git add <file_name>`
@@ -67,9 +66,7 @@ ______________________________________________________________________
 3. `git push`
 
 - 通过 `git status` 查看更改状态，通过 `git log` 查看提交情况。
-
-______________________________________________________________________
-
+ 
 首先，在克隆下的仓库的文件夹下添加文件或更改文件，然后可以执行 `git status` 来查看哪些文件有变动。
 
 ```bash

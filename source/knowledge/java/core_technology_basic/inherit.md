@@ -226,9 +226,7 @@ public String toString() {
 ```
 
 Object 类定义了 toString 方法， 用来打印输出对象所属的类名和散列码（hashCode）。例如， 调用 `System.out.println(System.out);` 将输出内容 *java.io.PrintStream@74a14482*，之所以得到这样的结果是因为 PrintStream 类的设计者没有覆盖 toString 方法。
-
-______________________________________________________________________
-
+ 
 [^id6]: Java instanceof 关键字详解 : <http://c.biancheng.net/view/6346.html>
 
 [^id7]: 此观点需要验证！！笔者对此有疑惑。

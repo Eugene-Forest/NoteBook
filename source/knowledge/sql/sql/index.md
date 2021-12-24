@@ -3,7 +3,7 @@
 该笔记集包含现在和将来的 SQL 类笔记记录和学习。[^id2]
 
 ```{toctree}
-:caption: "sql \u901A\u7528\u77E5\u8BC6"
+:caption: "sql 通用知识"
 :maxdepth: 3
 :numbered: true
 
@@ -18,7 +18,5 @@ sql insert into select <insert-into-select>
 游标 <cursor>
 存储过程以及存储函数 <procedure>
 ```
-
-______________________________________________________________________
-
+ 
 [^id2]: 主要在 w3school 中学习。 <https://www.w3school.com.cn/sql/index.asp> ；同时参考 sql 必知必会第五版。

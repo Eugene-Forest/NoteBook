@@ -21,6 +21,7 @@ DatagramSocket 有多个构造方法
 `bind(SocketAddress addr)` :将此DatagramSocket绑定到特定的地址和端口。
 
 :::{note}
+
 两个方法的意思是将socket与指定地址绑定，绑定成功后只能往该地址发送数据。并不是建立连接，因为udp是面向非连接的
 :::
 
@@ -50,5 +51,6 @@ while(!mSocket){
 ```
 
 :::{note}
+
 使用DatagramSocket发送数据报时，DatagramSocket并不知道将该数据报发送到哪里，而是由DatagramPacket自身决定数据报的目的地。在该例子中接收数据时，DatagramPacket并没有指定地址，默认所有地址的包都能接收。
 :::

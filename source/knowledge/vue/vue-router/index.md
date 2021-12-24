@@ -10,9 +10,7 @@ Vue Router 是 Vue.js (opens new window)官方的路由管理器。它和 Vue.js
 - 带有自动激活的 CSS class 的链接
 - HTML5 历史模式或 hash 模式，在 IE9 中自动降级
 - 自定义的滚动条行为
-
-______________________________________________________________________
-
+ 
 ```{toctree}
 :caption: vue-router
 :maxdepth: 3

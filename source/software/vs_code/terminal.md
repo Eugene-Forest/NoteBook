@@ -1,6 +1,7 @@
 # 关于配置vscode的终端问题
 
 :::{note}
+
 最基本的方法是通过修改.vscode文件夹下的setting.json文件的 `"terminal.integrated.shell.windows":` 属性来修改。
 :::
 
@@ -24,9 +25,7 @@
 ```{image} ../../img/vs_code/shell.png
 :alt: "vscode\u7684\u65B0\u5EFA\u7EC8\u7AEF"
 ```
-
-______________________________________________________________________
-
+ 
 **最终使用方案：**
 
 ```json

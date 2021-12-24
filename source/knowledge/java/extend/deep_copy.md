@@ -11,8 +11,7 @@
   - 当方法传入的参数为非基本类型时（也就是说是一个对象类型的变量）， 方法里面改变参数变量的同时变量原型也会随之改变。这种特性就叫做“引用传递”，也叫做 **传址**，即方法操作参数变量时是拷贝了变量的引用。
 
 ```{literalinclude} ../example_java/extend/ValueMain.java
-:caption: "String \u5B57\u7B26\u4E32\u5BF9\u8C61\u548C\u57FA\u672C\u7C7B\u578B\u7684\
-:  \u201C\u503C\u4F20\u9012\u201D"
+:caption: "String 字符串对象和基本类型的“值传递”"
 :language: java
 :linenos: true
 ```
@@ -28,9 +27,7 @@
   - 引用传递 ：方法接收的直接是实参所引用的对象在堆中的地址，不会创建副本，对形参的修改将影响到实参。 很多程序设计语言（比如 C++、 Pascal )提供了两种参数传递的方式，不过，在 Java 中只有值传递。
 
 ```{code-block} java
-:caption: "\u9A8C\u8BC1 Java \u5B9E\u53C2\u4F20\u9012\u7ED9\u65B9\u6CD5\uFF08\u6216\
-:  \u51FD\u6570\uFF09\u7684\u65B9\u5F0F\u662F\u503C\u4F20\u9012\u7684\u6D4B\u8BD5\u4EE3\
-:  \u7801"
+:caption: "验证 Java 实参传递给方法（或函数）的方式是值传递的测试代码"
 :linenos: true
 
 public static void main(String[] args) {
@@ -68,7 +65,7 @@ public static <T> void swapPrinter(T first, T second){
 ```
 
 ```{code-block} guess
-:caption: "\u8FD0\u884C\u7ED3\u679C"
+:caption: "运行结果"
 
 -----execute swap function----
 first object is: Department{id=2399, name='2399'}
@@ -95,10 +92,9 @@ Java 中将实参传递给方法（或函数）的方式是值传递 ：
 : 简单来说，如果参数是基本类型的话，很简单，传递的就是基本类型的字面量值的拷贝，会创建副本。 如果参数是引用类型，传递的就是实参所引用的对象在堆中地址值的拷贝，同样也会创建副本。
 
 :::{note}
+
 理解这些需要了解 Java 的栈和堆。JVM里的堆（heap）特指用于存放Java对象的内存区域。所以根据这个定义，Java对象全部都在堆上。而栈中保存的是基本类型或自定义对象的引用（地址），而自定义对象的引用则指向堆。Java 中传递给方法（或函数）的实参是将拷贝后的栈中的值。
 :::
-
-
 
 ## 通过实现 Cloneable 接口进行拷贝 [^id8]
 
@@ -117,11 +113,12 @@ clone
 : 创建一个新对象，然后将当前对象的非静态字段复制到该新对象，如果字段是值类型（即是 Java 基本类型或 String 类型的）的，那么对该字段执行复制；如果该字段是引用类型的话，则复制引用但不复制引用的对象，原始对象及其副本引用同一个对象。
 
 :::{note}
+
 浅拷贝之所以称之为浅拷贝，那便是他不能彻底拷贝一个对象。通过浅拷贝获得的拷贝对象的存储仍然与源对象的存储有交叉。参考下文中的 {ref}`浅拷贝示例 <java-extend-shallow-copy-example>` 。
 :::
 
 ```{code-block} java
-:caption: "\u62F7\u8D1D\u793A\u4F8B\u7C7B Department"
+:caption: "拷贝示例类 Department"
 :linenos: true
 :name: java-extend-department
 
@@ -154,7 +151,7 @@ public class implements Cloneable{
 ```
 
 ```{code-block} java
-:caption: "\u62F7\u8D1D\u793A\u4F8B\u7C7B Employee"
+:caption: "拷贝示例类 Employee"
 :linenos: true
 :name: java-extend-employee
 
@@ -180,7 +177,7 @@ public class Employee implements Cloneable{
 ```
 
 ```{code-block} java
-:caption: "\u6D45\u62F7\u8D1D\u793A\u4F8B"
+:caption: "浅拷贝示例"
 :linenos: true
 :name: java-extend-shallow-copy-example
 
@@ -201,7 +198,7 @@ public static void main(String[] args) throws CloneNotSupportedException {
 需要注意的是，一些对象（该对象的属性都是基本类型或String）的浅拷贝的表现类似于深拷贝。
 
 ```{code-block} java
-:caption: "\u6D45\u62F7\u8D1D\u793A\u4F8B2"
+:caption: "浅拷贝示例2"
 :linenos: true
 
 public static void main(String[] args) throws CloneNotSupportedException {
@@ -225,8 +222,7 @@ public static void main(String[] args) throws CloneNotSupportedException {
 深拷贝示例依旧使用拷贝示例类 {ref}`Employee <java-extend-employee>`  和 {ref}`Department <java-extend-department>` ；唯一区别在于 Employee 类的 clone 方法需要重写成以下形式：
 
 ```{code-block} java
-:caption: "\u62F7\u8D1D\u793A\u4F8B\u7C7B Employee \u7C7B\u7684 clone \u65B9\u6CD5\u91CD\
-:  \u5199"
+:caption: "拷贝示例类 Employee 类的 clone 方法重写"
 :linenos: true
 
 @Override
@@ -238,7 +234,7 @@ protected Object clone() throws CloneNotSupportedException {
 ```
 
 ```{code-block} java
-:caption: "\u6DF1\u62F7\u8D1D\u793A\u4F8B"
+:caption: "深拷贝示例"
 :linenos: true
 
 public static void main(String[] args) throws CloneNotSupportedException {
@@ -254,8 +250,7 @@ public static void main(String[] args) throws CloneNotSupportedException {
 ```
 
 ```{code-block} java
-:caption: "\u6DF1\u62F7\u8D1D\u793A\u4F8B2\uFF08\u540C\u6D45\u62F7\u8D1D\u793A\u4F8B\
-:  \uFF09"
+:caption: "深拷贝示例2"
 :linenos: true
 :name: java-extend-deep-copy-example
 
@@ -275,8 +270,6 @@ public static void main(String[] args) throws CloneNotSupportedException {
 
 这种做法有个弊端，这里我们 Employee 类只有一个 Department 引用类型，而 Department 类没有，所以我们只用重写 Department 类的 clone 方法，但是如果 Department 类也存在一个引用类型，那么我们也要重写其 clone 方法，这样下去，有多少个引用类型，我们就要重写多少次，如果存在很多引用类型，那么代码量显然会很大，所以这种方法不太合适对已有代码进行修改。
 
-
-
 ## 通过实现 Serializable 接口进行深拷贝
 
 序列化是将对象写到流中便于传输，而反序列化则是把对象从流中读取出来。这里写到流中的对象则是原始对象的一个拷贝，因为原始对象还存在 JVM 中，所以我们可以利用对象的序列化产生克隆对象，然后通过反序列化获取这个对象。
@@ -292,7 +285,7 @@ public static void main(String[] args) throws CloneNotSupportedException {
      : - 自己对要序列化的内容进行控制，控制哪些属性能被序列化，哪些不能被序列化。
 
 ```{code-block} java
-:caption: "\u5B9E\u73B0\u5E8F\u5217\u5316\u63A5\u53E3\u7684 Department \u7C7B"
+:caption: "实现序列化接口的 Department 类"
 :linenos: true
 
 public class Department implements Serializable
@@ -311,7 +304,7 @@ public class Department implements Serializable
 ```
 
 ```{code-block} java
-:caption: "\u5B9E\u73B0\u5E8F\u5217\u5316\u63A5\u53E3\u7684 Employee \u7C7B"
+:caption: "实现序列化接口的 Employee 类"
 :linenos: true
 
 public class Employee implements Serializable {
@@ -332,7 +325,7 @@ public class Employee implements Serializable {
 ```
 
 ```{code-block} java
-:caption: "\u901A\u8FC7\u5E8F\u5217\u5316\u5B9E\u73B0\u6DF1\u62F7\u8D1D\u793A\u4F8B"
+:caption: "通过序列化实现深拷贝示例"
 :linenos: true
 
 public class DeepCopyMain {
@@ -367,9 +360,7 @@ public class DeepCopyMain {
     }
 }
 ```
-
-______________________________________________________________________
-
+ 
 [^id7]: 引用自 JavaGuide 文章： [为什么 Java 只有值传递？](https://javaguide.cn/java/basis/why-there-only-value-passing-in-java/#%E4%B8%BA%E4%BB%80%E4%B9%88-java-%E5%8F%AA%E6%9C%89%E5%80%BC%E4%BC%A0%E9%80%92)
 
 [^id8]: 引用自 博客园 文章： [Java的深拷贝和浅拷贝](https://www.cnblogs.com/ysocean/p/8482979.html)

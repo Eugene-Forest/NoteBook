@@ -17,6 +17,7 @@ git push -u origin master
 ```
 
 :::{note}
+
 运行 `git remote add <shortname> <url>` 添加一个新的远程 Git 仓库，同时指定一个方便使用的简写。如上代码所示，即可使用origin来代替 *git@github.com:Eugene-Forest/Forest.git* 这个URL。
 :::
 
@@ -72,6 +73,7 @@ git push <remote> <branch>
 ```
 
 :::{note}
+
 [Git push与pull的默认行为](https://segmentfault.com/a/1190000002783245)
 :::
 
@@ -117,6 +119,7 @@ origin  https://gitee.com/eugene-forest/NoteBook.git (push)
 ```
 
 :::{note}
+
 从运行结果来看，通过 `git remote set-url --add <repo_name> <other-url>` 命令添加的远程仓库只有被推送的权利，当我们向远程拉取的时候还是一开始的远程仓库。
 :::
 

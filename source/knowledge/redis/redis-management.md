@@ -45,6 +45,7 @@ root     15861 15829  0 16:56 pts/1    00:00:00 grep --color=auto redis
 ```
 
 :::{note}
+
 由查看进程信息我们就知道，redis有服务端和客户端之分。而且redis server是通过服务器的6379来提供服务的。所以如果想要在本地之外访问redis服务就需要通过防火墙把6379端口打开。
 :::
 
@@ -82,6 +83,7 @@ redis-server.exe <redis.windows.conf>
 ```
 
 :::{note}
+
 如果只是运行 redis-server.exe 而没有后面的 conf 文件名参数，那么配置文件的变动就不会生效（无密码和其他配置）。
 :::
 

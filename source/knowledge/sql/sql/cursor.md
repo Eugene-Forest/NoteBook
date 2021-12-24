@@ -11,6 +11,7 @@
 % //todo 添加 可滚动的游标 笔记记录
 
 :::{note}
+
 文章中只提及（只进）游标的基本使用。
 :::
 
@@ -76,5 +77,6 @@ SQL Server 中游标的基本使用相较于 MySQL 来说比较简单。
 ```
 
 :::{note}
+
 [更多关于游标](https://docs.microsoft.com/zh-cn/sql/relational-databases/cursors?view=sql-server-ver15)
 :::

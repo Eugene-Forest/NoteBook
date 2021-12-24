@@ -17,13 +17,12 @@ Windows 下安装 MySQL 5.7 最新版本可以通过官方的 [MySQL installer](
 {ref}`点击前往Linux下的mysql5.7安装笔记 <install-mysql-at-linux>`
 
 :::{note}
+
 更多其他与mysql相关的软件可以通过官方 [MySQL 社区下载](https://dev.mysql.com/downloads/)  获得。
 :::
 
 ## Windows 下可供参考的下载以及安装配置教程
 
 C语言中文网的 [MySQL 教程](http://c.biancheng.net/view/2391.html)
-
-______________________________________________________________________
-
+ 
 [^id3]: 2021年3月26日获取的数据。

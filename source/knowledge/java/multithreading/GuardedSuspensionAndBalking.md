@@ -8,13 +8,13 @@ Guarded suspension mode [^id6] 以及 Balking mode [^id7] 都是是类似于 “
 
 ## Guarded suspension mode 实例(等待我准备好)
 
-| 类名           | 说明      |
-| ------------ | ------- |
+| 类名         | 说明           |
+| ------------ | -------------- |
 | Request      | 表示一个请求类 |
-| RequestQueue | 存放请求的类  |
-| ClientThread | 发送请求的类  |
-| ServerThread | 接收请求的类  |
-| Main         | 测试类     |
+| RequestQueue | 存放请求的类   |
+| ClientThread | 发送请求的类   |
+| ServerThread | 接收请求的类   |
+| Main         | 测试类         |
 
 ### Request
 
@@ -83,12 +83,12 @@ Bobby handles  [ Request No.8 ]
 
 ## Balking mode 实例(不需要就算了)
 
-| 类名            | 说明          |
-| ------------- | ----------- |
+| 类名          | 说明                   |
+| ------------- | ---------------------- |
 | Data          | 可修改并保存的数据的类 |
-| SaverThread   | 定期保存数据的类    |
+| SaverThread   | 定期保存数据的类       |
 | ChangerThread | 修改并保存数据内容的类 |
-| Main          | 测试类         |
+| Main          | 测试类                 |
 
 ### Data
 
@@ -148,9 +148,7 @@ SaverThread calls doSave, content = No.15
 通过以上两种模式的例子可知，其实际执行的语句都是比较极端的，比如 Guarded suspension模式中如果条件永远不满足那么就可能永远地等待下去；而 Balking 模式中如果条件不满足就立马停止操作在实际使用中可能也会受到限制。那么作为这两者地折中方案，Guarded timed 模式就可以极好地解决。
 
 % //todo 添加time out模式笔记
-
-______________________________________________________________________
-
+ 
 [^id6]: Guarded suspension : 防护着的暂停
 
 [^id7]: Balking : 阻停

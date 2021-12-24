@@ -36,6 +36,7 @@ class Something {
 - 公有的域更改器方法
 
 :::{note}
+
 需要注意的是，对于公有的域访问器方法和公有的域更改器方法，不要编写返回引用可变对象的访问器/更改器方法。如果需要返回一个可变对象的引用， 应该首先对它进行克隆（clone )。对象 clone 是指存放在另一个位置上的对象副本。
 
 ```java
@@ -159,6 +160,7 @@ forest
 通过以上实例，我们发现传入swap方法的两个对象参数都是拷贝引用。
 
 :::{note}
+
 C++ 有 值调用 和 引用调用。引用参数标有 & 符号。`void swap(Something& x, Something& y)` 方法可实现修改。
 :::
 
@@ -208,7 +210,7 @@ private String zip;
 Abstract 关键字同样可以用来声明抽象方法，抽象方法只包含一个方法名，而没有方法体。
 
 ```{code-block} java
-:caption: "\u62BD\u8C61\u7C7B\u548C\u62BD\u8C61\u65B9\u6CD5"
+:caption: "抽象类和抽象方法"
 
 public abstract class Employee
 {
@@ -223,6 +225,7 @@ public abstract class Employee
 ```
 
 :::{note}
+
 声明抽象方法会造成以下两个结果：
 
 - 如果一个类包含抽象方法，那么该类必须是抽象类。
@@ -259,9 +262,7 @@ class OuterClass {   // 外部类
 :::{warning}
 因为笔者暂时未使用到内部类（使用到的基本上是匿名内部类），所以暂时将内部类的笔记记录搁置。如果想要查看相关笔记，可以 [点击前往笔者推荐的博客文章—— Java内部类详解](https://www.cnblogs.com/dolphin0520/p/3811445.html)
 :::
-
-______________________________________________________________________
-
+ 
 [^id11]: 文章引用自菜鸟教程——抽象类； [抽象类](https://www.runoob.com/java/java-abstraction.html)
 
 [^id12]: 文章引用博客园——Java内部类详解； [Java内部类详解](https://www.cnblogs.com/dolphin0520/p/3811445.html)

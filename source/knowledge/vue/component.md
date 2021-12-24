@@ -218,6 +218,7 @@ var vm2 = new Vue({
 ```
 
 :::{note}
+
 使用不同对象来向子组件传递数据的具体方法大同小异，需要了解更多 [点击前往官网查看更多关于传递静态或动态 Prop](https://cn.vuejs.org/v2/guide/components-props.html#%E4%BC%A0%E9%80%92%E9%9D%99%E6%80%81%E6%88%96%E5%8A%A8%E6%80%81-Prop)
 :::
 
@@ -360,6 +361,7 @@ inheritAttrs: false,
 ```
 
 :::{note}
+
 注意 `inheritAttrs: false` 选项不会影响 style 和 class 的绑定。
 :::
 
@@ -487,6 +489,7 @@ template: '<input  \
 这里的 lovingVue 的值将会传入这个名为 checked 的 prop。同时当 \<base-checkbox> 触发一个 change 事件并附带一个新的值的时候，这个 lovingVue 的 property 将会被更新。
 
 :::{note}
+
 需要注意的是，你仍然需要在组件的 props 选项里声明 checked 这个 prop。
 :::
 

@@ -3,7 +3,7 @@
 文章使用的测试用 Java 环境为 1.8.0_311
 
 ```{code-block} guess
-:caption: "\u6D4B\u8BD5\u7528 Java \u73AF\u5883"
+:caption: "测试用 Java 环境"
 
 C:\Users\qaz22>java -version
 java version "1.8.0_311"
@@ -14,7 +14,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.311-b11, mixed mode)
 <https://docs.oracle.com/search/?q=javap&pg=1&size=10&library=%2Fjavase%2F8%2Fdocs%2Ftechnotes%2Ftools%2F&book=JSWOR&lang=en>
 
 ```{toctree}
-:caption: "java \u547D\u4EE4\u7684\u4F7F\u7528"
+:caption: "java 命令的使用"
 :maxdepth: 1
 :numbered: true
 

@@ -1,6 +1,7 @@
 # java 虚拟机环境安装
 
 :::{note}
+
 以下Java版本为1.8.0。
 :::
 
@@ -52,6 +53,7 @@ jvm目录下的文件夹看似多，实际指向的都是同一文件夹，比�
 ## 关于运行java文件出现 `Error: Could not find or load main class ..`
 
 :::{note}
+
 情况限定于java文件以及.class文件均在同一目录下。
 :::
 

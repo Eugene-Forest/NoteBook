@@ -11,6 +11,7 @@
 ```
 
 :::{note}
+
 如果无法连接 Github 可在 Gitee 中搜索 test_db 查看相关项目，有许多 fork test_db 的项目。如 [xudayjt/test_db](https://gitee.com/xudayjt/test_db?_from=gitee_search)
 :::
 
@@ -126,9 +127,7 @@ Enter password:
 +--------------+------------------+------------------------------------------+
 ERROR 1271 (HY000) at line 60: Illegal mix of collations for operation 'concat_ws'
 ```
-
-______________________________________________________________________
-
+ 
 [^id3]: 2021年11月10日测试未成功。 ERROR 1271 (HY000) at line 60: Illegal mix of collations for operation 'concat_ws' 。
 
 ## 安装 SQL in 10 Minutes 的测试库
