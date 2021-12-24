@@ -1,3 +1,0 @@
-:bdg-link-primary:`https://example.com`
-
-:bdg-link-primary-line:`explicit title <https://example.com>`
