@@ -1,0 +1,9 @@
+```{article-info}
+:avatar: ../../../_static/notebook-logo.svg
+:avatar-link: https://github.com/Eugene-Forest/
+:avatar-outline: muted
+:author: Eugene-Forest
+:date: "2021年12月15日"
+:read-time: "5 min"
+:class-container: sd-p-2 sd-outline-muted sd-rounded-1
+```
