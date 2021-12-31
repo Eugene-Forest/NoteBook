@@ -9,12 +9,12 @@
 
 ## Cambria字体
 
-```{image} ../../img/netbeans/font.png
+```{image} ../img/netbeans/font.png
 :alt: font cambria
 ```
 
 ## Monospaced字体
 
-```{image} ../../img/netbeans/font-utf8.png
+```{image} ../img/netbeans/font-utf8.png
 :alt: font monospaced
 ```

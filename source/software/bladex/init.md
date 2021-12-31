@@ -20,12 +20,11 @@ dev 配置文件修改和获取sql文件
 [开发手册网盘链接](https://pan.baidu.com/s/1j8sQPBlUt9CWROvzqSOnrQ) 提取码：1244
 
 ```{image} ./file/bladex_doc.png
-:alt: "\u5F00\u53D1\u624B\u518C"
+:alt: 开发手册
 :scale: 30%
 ```
+
 :::
-
-
 
 ## Saber
 

@@ -93,10 +93,11 @@ List<Departments> list= departmentsMapper.page(map);
     <parameter property="total" jdbcType="INTEGER" mode="OUT"/>
 </parameterMap>
 ```
+
 :::
 
-```{image} ../../img/project/business/paging/map-list.png
-:alt: "\u5B58\u50A8\u8FC7\u7A0B\u7684\u5206\u9875\u67E5\u8BE2\u7ED3\u679C"
+```{image} ../img/business/paging/map-list.png
+:alt: 存储过程的分页查询结果
 ```
 
 ### 使用 xml 文件定义分页查询
@@ -125,8 +126,8 @@ List<List<?>> page_xml(Integer offset,Integer size);
 List<List<?>> lists=departmentsMapper.page_xml(1, 2);
 ```
 
-```{image} ../../img/project/business/paging/list-list.png
-:alt: "xml \u6587\u4EF6\u5B9A\u4E49\u5206\u9875\u67E5\u8BE2\u7ED3\u679C"
+```{image} ../img/business/paging/list-list.png
+:alt: xml 文件定义分页查询结果
 ```
 
 :::{warning}

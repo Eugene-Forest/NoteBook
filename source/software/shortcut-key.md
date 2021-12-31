@@ -4,8 +4,9 @@
 
 1. 全局搜索项目的代码段并替换： `ctrl + shift + h`
 
-:::{figure} ../img/vs_code/ctrl_shift_h.png
+:::{figure} ./img/vs_code/ctrl_shift_h.png
 全局搜索项目的代码段并替换 —— ctrl + shift + h
 :::
 
 ## IntelliJ IDEA
+

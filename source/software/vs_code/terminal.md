@@ -22,8 +22,8 @@
 这种方法更改后的shell终端只能开启一种类型（cmd,powershell,bash其中一种）；如果我要在vscode中新建多个类型终端如cmd,powershell,bash，这个如何实现？
 :::
 
-```{image} ../../img/vs_code/shell.png
-:alt: "vscode\u7684\u65B0\u5EFA\u7EC8\u7AEF"
+```{image} ../img/vs_code/shell.png
+:alt: vscode 的新建终端
 ```
  
 **最终使用方案：**
@@ -38,6 +38,6 @@
  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\git-cmd.exe"
 ```
 
-```{image} ../../img/vs_code/diff-shell.png
+```{image} ../img/vs_code/diff-shell.png
 :alt: diff shell
 ```

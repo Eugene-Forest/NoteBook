@@ -19,17 +19,19 @@
 :caption: "knowledge 笔记记录"
 :maxdepth: 1
 
-Java 笔记记录 </knowledge/java/java-index>
-Git 笔记记录 </knowledge/git/git-index>
-Vue 笔记记录 </knowledge/vue/vue-index>
-Element-UI 笔记记录 </knowledge/element-ui/el-index>
-JavaScript 笔记记录 </knowledge/js/js-index>
-计算机网络 </knowledge/network/net-index>
-Python 笔记记录 </knowledge/python/python-index>
-SQL 笔记记录 </knowledge/sql/sql-index>
-Linux 笔记记录 </knowledge/linux/linux-index>
-Redis 笔记记录 </knowledge/redis/redis-index>
+Java 笔记记录 <k-java/java-index>
+Git 笔记记录 <k-git/git-index>
+Vue 笔记记录 <k-vue/vue-index>
+Element-UI 笔记记录 <k-element-ui/el-index>
+JavaScript 笔记记录 <k-js/js-index>
+计算机网络 <k-network/net-index>
+Python 笔记记录 <k-python/python-index>
+SQL 笔记记录 <k-sql/sql-index>
+Linux 笔记记录 <k-linux/linux-index>
+Redis 笔记记录 <k-redis/redis-index>
 ```
+
+<!-- For Project -->
 
 ```{toctree}
 :caption: "项目以及常见业务实现"
@@ -39,6 +41,8 @@ Redis 笔记记录 </knowledge/redis/redis-index>
 项目：工具箱 </project/toolbox/box-index>
 毕设：医院住院部护士排班ASP系统-管理者端的构建 </project/nsms/nsms-index>
 ```
+
+<!-- For Software -->
 
 ```{toctree}
 :caption: "软件或工具包安装以及配置记录"
@@ -53,6 +57,8 @@ wireshark </software/wireshark/index>
 xshell以及xftp的教育版下载 </software/xshell>
 一些常用软件的快捷键 </software/shortcut-key>
 ```
+
+<!-- For Builder Doc -->
 
 ```{toctree}
 :caption: "构建文档的工具和标记语言"
