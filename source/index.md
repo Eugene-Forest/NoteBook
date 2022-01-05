@@ -67,5 +67,5 @@ MyST-NB <struct/MyST-NB/MyST-NB>
 
 [github-badge]: https://img.shields.io/github/last-commit/Eugene-Forest/NoteBook
 [github-link]: https://img.shields.io/github/last-commit/Eugene-Forest/NoteBook
-[rtd-badge]: https://readthedocs.org/projects/studynotes/badge/?version=latest
-[rtd-link]: https://studynotes.readthedocs.io/zh/latest/?badge=latest
+[rtd-badge]: https://readthedocs.org/projects/studynotes/badge/?version=builder-doc
+[rtd-link]: https://studynotes.readthedocs.io/zh/builder-doc/?badge=builder-doc
