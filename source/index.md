@@ -56,8 +56,8 @@ vscode </software/vs-code/index>
 eclipse </software/eclipse/index>
 netbeans </software/netbeans/index>
 wireshark </software/wireshark/index>
-xshell以及xftp的教育版下载 </software/xshell>
 一些常用软件的快捷键 </software/shortcut-key>
+Navicat Premium 实用技巧 </software/navicat/navicat>
 ```
 
 % ----------- For Builder Doc branch ---------------
