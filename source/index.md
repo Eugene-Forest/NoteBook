@@ -9,6 +9,8 @@
 
 % //todo 主页待更新
 
+<!-- idea1: 将目录以表格卡片的形式展示，如同 sphinx-book-theme 的主页一样 -->
+
 ## 关于本项目
 
 本项目是通过 Sphinx 来实现的，使用了 reStructuredText、Markdown、MyST Markdown 标记语言以及其他基于这些语言的 Sphinx 插件扩展语法来编写文档，并托管与 Read The Docs 平台运行。
@@ -19,17 +21,19 @@
 :caption: "knowledge 笔记记录"
 :maxdepth: 1
 
-Java 笔记记录 </knowledge/java/java-index>
-Git 笔记记录 </knowledge/git/git-index>
-Vue 笔记记录 </knowledge/vue/vue-index>
-Element-UI 笔记记录 </knowledge/element-ui/el-index>
-JavaScript 笔记记录 </knowledge/js/js-index>
-计算机网络 </knowledge/network/net-index>
-Python 笔记记录 </knowledge/python/python-index>
-SQL 笔记记录 </knowledge/sql/sql-index>
-Linux 笔记记录 </knowledge/linux/linux-index>
-Redis 笔记记录 </knowledge/redis/redis-index>
+Java 笔记记录 <k-java/java-index>
+Git 笔记记录 <k-git/git-index>
+Vue 笔记记录 <k-vue/vue-index>
+Element-UI 笔记记录 <k-element-ui/el-index>
+JavaScript 笔记记录 <k-js/js-index>
+计算机网络 <k-network/net-index>
+Python 笔记记录 <k-python/python-index>
+SQL 笔记记录 <k-sql/sql-index>
+Linux 笔记记录 <k-linux/linux-index>
+Redis 笔记记录 <k-redis/redis-index>
 ```
+
+<!-- For Project -->
 
 ```{toctree}
 :caption: "项目以及常见业务实现"
@@ -40,19 +44,24 @@ Redis 笔记记录 </knowledge/redis/redis-index>
 毕设：医院住院部护士排班ASP系统-管理者端的构建 </project/nsms/nsms-index>
 ```
 
+<!-- For Software -->
+
 ```{toctree}
 :caption: "软件或工具包安装以及配置记录"
 :maxdepth: 1
 
 bladex 快速开发平台的使用 </software/bladex/bladex-index>
 jetbrains </software/jetbrains/index>
-vscode </software/vs_code/index>
+vscode </software/vs-code/index>
 eclipse </software/eclipse/index>
 netbeans </software/netbeans/index>
 wireshark </software/wireshark/index>
-xshell以及xftp的教育版下载 </software/xshell>
 一些常用软件的快捷键 </software/shortcut-key>
+Navicat Premium 实用技巧 </software/navicat/navicat>
 ```
+
+% ----------- For Builder Doc branch ---------------
+% Here is the Toctree for the Builder-Doc branch  
 
 ```{toctree}
 :caption: "构建文档的工具和标记语言"
@@ -64,6 +73,10 @@ MyST <struct/MyST/myst-index>
 Sphinx 扩展工具 <struct/extend/ext-index>
 MyST-NB <struct/MyST-NB/MyST-NB>
 ```
+
+% ------------------------------------------------------------
+
+<!-- For endnote -->
 
 [github-badge]: https://img.shields.io/github/last-commit/Eugene-Forest/NoteBook
 [github-link]: https://img.shields.io/github/last-commit/Eugene-Forest/NoteBook
