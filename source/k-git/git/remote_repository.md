@@ -89,7 +89,7 @@ git remote rename BRANCH_NAME_FROM BRANCH_NAME_TO
 
 `git remote set-url <repo_name> <new_url>`
 
-```Git
+```bash
 > git remote -v
 gitee   https://gitee.com/eugene-forest/NoteBook.git (fetch)
 gitee   https://gitee.com/eugene-forest/NoteBook.git (push)

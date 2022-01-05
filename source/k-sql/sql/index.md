@@ -5,7 +5,6 @@
 ```{toctree}
 :caption: "sql 通用知识"
 :maxdepth: 3
-:numbered: true
 
 数据库和表的基本操作 <base>
 sql 常用关键字集 <keyword>
@@ -18,5 +17,5 @@ sql insert into select <insert-into-select>
 游标 <cursor>
 存储过程以及存储函数 <procedure>
 ```
- 
+
 [^id2]: 主要在 w3school 中学习。 <https://www.w3school.com.cn/sql/index.asp> ；同时参考 sql 必知必会第五版。

@@ -2,11 +2,11 @@
 
 ## 在idea中创建新的本地分支
 
-```{image} ../../img/git/jetbrains/git-new-branch.png
+```{image} ../img/jetbrains/git-new-branch.png
 :alt: git branch
 ```
 
-```{image} ../../img/git/jetbrains/git-new-branch2.png
+```{image} ../img/jetbrains/git-new-branch2.png
 :alt: git branch
 ```
 
@@ -18,25 +18,25 @@
 
 在idea右下角的地方有git的分支控制按钮。如图：
 
-```{image} ../../img/git/jetbrains/git-branch-button.png
+```{image} ../img/jetbrains/git-branch-button.png
 :alt: git branch button
 ```
 
 检出主分支：
 
-```{image} ../../img/git/jetbrains/git-checkout-main.png
+```{image} ../img/jetbrains/git-checkout-main.png
 :alt: git switch main
 ```
 
 找到合并分支的功能：
 
-```{image} ../../img/git/jetbrains/git-branch-merge.png
+```{image} ../img/jetbrains/git-branch-merge.png
 :alt: find git merge
 ```
 
 合并分支：
 
-```{image} ../../img/git/jetbrains/git-local-merge.png
+```{image} ../img/jetbrains/git-local-merge.png
 :alt: git merge
 ```
 

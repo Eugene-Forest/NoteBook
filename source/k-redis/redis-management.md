@@ -73,7 +73,7 @@ OK
 
 下载地址: [redis for windows](https://github.com/tporadowski/redis/releases)
 
-```{image} ../img/github-redis.png
+```{image} ./img//github-redis.png
 :alt: redis for windows
 ```
 

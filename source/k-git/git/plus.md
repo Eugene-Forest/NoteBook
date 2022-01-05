@@ -40,7 +40,7 @@ doc/**/*.pdf
 
 .gitignore文件通用模板
 
-```{literalinclude} ./.gitignore
+```{literalinclude} ./.gitignore.txt
 ```
 
 :::

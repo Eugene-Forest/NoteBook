@@ -22,7 +22,7 @@ Enter same passphrase again: 再次输入密码
 输入密码后会出现以下结果。
 ```
 
-```shell
+:::shell
 Your identification has been saved in /Users/your_user_directory/.ssh/id_rsa.
 Your public key has been saved in /Users/your_user_directory/.ssh/id_rsa.pub.
 The key fingerprint is:
@@ -32,7 +32,7 @@ The key's randomart image is:
 | .+ + |
 | = o O . |
 略
-```
+:::
 
 ```{image} ../img/hello_key.png
 :alt: hello_key
@@ -53,11 +53,11 @@ ssh -T git@github.com
 
 执行该命令后出现以下结果说明成功。
 
-```shell
+:::shell
 $ ssh -T git@github.com
 Enter passphrase for key '/c/Users/qaz22/.ssh/id_rsa':
 Hi Eugene-Forest! You've successfully authenticated, but GitHub does not provide shell access.
-```
+:::
 
 ## 通过git bash克隆已经创建的仓库，以及添加并提交更新
 

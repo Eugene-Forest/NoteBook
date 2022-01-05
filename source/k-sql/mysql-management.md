@@ -64,7 +64,7 @@ shell> grep 'temporary password' /var/log/mysqld.log
 shell> mysql -u root -p
 ```
 
-```{image} ../../img/linux/mysqld/first-login.png
+```{image} ./img/first-login.png
 :alt: first login
 ```
 
@@ -72,7 +72,7 @@ shell> mysql -u root -p
 mysql> set password for 'root'@'localhost'=password('MyNewPass4!');
 ```
 
-```{image} ../../img/linux/mysqld/reset-first-password.png
+```{image} ./img/reset-first-password.png
 :alt: reset first password
 ```
 

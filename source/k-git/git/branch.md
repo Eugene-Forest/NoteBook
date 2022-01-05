@@ -100,10 +100,10 @@ Author: hirocaster <hohtsuka@gmail.com>
 Date: Sun May 5 16:06:49 2013 +0900
 First commit
 ```
- 
+
 ## 关于 `git checkout` 与 `git switch` 和 `git restore`
 
-关于 `git restore`,是用来恢复暂存区或工作区文件的， {ref}`点击查看相关笔记 <git-restore>` 。
+关于 `git restore`,是用来恢复暂存区或工作区文件的， {ref}`点击查看相关笔记 <k-git/git/recall:git restore>` 。
 
 关于 `git switch`,是用来切换分支的。
 

@@ -3,8 +3,8 @@
 :::{sidebar} 测试库
 在笔者编写笔记的过程中，使用的测试库和测试表源于 MySQL 的 test_db 以及 书籍 SQL in 10 Minutes 的测试表，其测试库和表的下载前往测试库安装笔记:
 
-- {ref}`MySQL 测试库/表 安装笔记 <mssql_test_db_installer>`
-- {ref}`SQL Server 测试库/表 安装笔记 <mysql_test_db_installer>`
+- {ref}`MySQL 测试库/表 安装笔记 <mssql-test-db-installer>`
+- {ref}`SQL Server 测试库/表 安装笔记 <mysql-test-db-installer>`
 :::
 
 视图是一个虚拟表，其内容由查询定义。 同表一样，视图包含一系列带有名称的列和行数据。 视图在数据库中并不是以数据值存储集形式存在（但是除了 SQL Server 中的索引视图）。 行和列数据来自由定义视图的查询所引用的表，并且在引用视图时动态生成。
@@ -26,7 +26,7 @@
 
 MySQL 允许基于其他视图创建视图。在视图定义的 SELECT 语句中，可以引用另一个视图。
 
-```mysql
+```sql
 CREATE
 [ALGORITHM = {MERGE  | TEMPTABLE | UNDEFINED}]
 VIEW [database_name].[view_name]

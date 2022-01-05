@@ -12,7 +12,7 @@ Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进
 ```{toctree}
 :caption: "vue目录"
 :maxdepth: 2
-:numbered: true
+:numbered:
 
 起步 <start>
 指令 <instruction>

@@ -2,17 +2,17 @@
 
 ## Get from version control
 
-```{image} ../../img/git/jetbrains/get-from-vcs.png
+```{image} ../img/jetbrains/get-from-vcs.png
 :alt: get from vcs
 ```
 
-```{image} ../../img/git/jetbrains/get-from-version-control.png
+```{image} ../img/jetbrains/get-from-version-control.png
 :alt: get from version control
 ```
 
 ## Add remote repository url
 
-```{image} ../../img/git/jetbrains/repository_url.png
+```{image} ../img/jetbrains/repository_url.png
 :alt: repository_url
 ```
  
@@ -25,7 +25,7 @@
  
 ## 将项目提交到本地仓库中
 
-```{image} ../../img/git/jetbrains/git-commit.png
+```{image} ../img/jetbrains/git-commit.png
 :alt: git-commit
 ```
 
@@ -33,7 +33,7 @@
 
 ### 点击推送
 
-```{image} ../../img/git/jetbrains/git-add-remote.png
+```{image} ../img/jetbrains/git-add-remote.png
 :alt: git-add-remote
 ```
 
@@ -41,7 +41,7 @@
 
 如果是第一次推送，则会出现gitee账户登录的弹窗。如图：
 
-```{image} ../../img/git/jetbrains/gitee-login.png
+```{image} ../img/jetbrains/gitee-login.png
 :alt: git-login
 ```
 
@@ -54,6 +54,6 @@
 
 登录成功并推送之后，如下图
 
-```{image} ../../img/git/jetbrains/remote.png
+```{image} ../img/jetbrains/remote.png
 :alt: remote
 ```

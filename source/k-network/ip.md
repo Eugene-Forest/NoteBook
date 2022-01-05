@@ -12,7 +12,7 @@ IP 地址的编址方法经历了三个阶段：
 
 IP 地址由32位标识符（二进制数）组成；它可分为五类，分别为 A 类、 B 类 、C 类 、D 类 和 E 类。
 
-```{image} ../img/IP.png
+```{image} ./img/IP.png
 :alt: IP
 ```
 
@@ -57,14 +57,14 @@ IP 地址由32位标识符（二进制数）组成；它可分为五类，分别
 
 三级 IP 地址 ： **IP=网络号+子网号+主机号**
 
-```{image} ../img/subnet_instance.png
+```{image} ./img/subnet_instance.png
 :alt: 子网划分实例
 ```
 
-```{image} ../img/subnet_default.png
+```{image} ./img/subnet_default.png
 :alt: A、B、C类网络的默认子网掩码
 ```
 
-```{image} ../img/B_subnet.png
+```{image} ./img/B_subnet.png
 :alt: B 类网络的子网划分
 ```

@@ -10,7 +10,7 @@
 - 将 dev 配置文件中的数据库和用户密码改为自己的
 - 重新初始化项目仓库
 
-:::{figure} ../../img/project/bladex/boot/dev-sql.png
+:::{figure} ../img/bladex/boot/dev-sql.png
 :alt: dev-sql
 
 dev 配置文件修改和获取sql文件
@@ -38,7 +38,7 @@ dev 配置文件修改和获取sql文件
 
 以下命令前提为安装了 `nodejs` 和 `npm` 。
 
-```guess
+```powershell
 Microsoft Windows [版本 10.0.19043.1348]
 (c) Microsoft Corporation。保留所有权利。
 

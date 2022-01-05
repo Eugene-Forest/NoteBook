@@ -9,6 +9,8 @@
 
 % //todo 主页待更新
 
+<!-- idea1: 将目录以表格卡片的形式展示，如同 sphinx-book-theme 的主页一样 -->
+
 ## 关于本项目
 
 本项目是通过 Sphinx 来实现的，使用了 reStructuredText、Markdown、MyST Markdown 标记语言以及其他基于这些语言的 Sphinx 插件扩展语法来编写文档，并托管与 Read The Docs 平台运行。
@@ -50,7 +52,7 @@ Redis 笔记记录 <k-redis/redis-index>
 
 bladex 快速开发平台的使用 </software/bladex/bladex-index>
 jetbrains </software/jetbrains/index>
-vscode </software/vs_code/index>
+vscode </software/vs-code/index>
 eclipse </software/eclipse/index>
 netbeans </software/netbeans/index>
 wireshark </software/wireshark/index>
@@ -58,7 +60,8 @@ xshell以及xftp的教育版下载 </software/xshell>
 一些常用软件的快捷键 </software/shortcut-key>
 ```
 
-<!-- For Builder Doc -->
+% ----------- For Builder Doc branch ---------------
+% Here is the Toctree for the Builder-Doc branch  
 
 ```{toctree}
 :caption: "构建文档的工具和标记语言"
@@ -70,6 +73,10 @@ MyST <struct/MyST/myst-index>
 Sphinx 扩展工具 <struct/extend/ext-index>
 MyST-NB <struct/MyST-NB/MyST-NB>
 ```
+
+% ------------------------------------------------------------
+
+<!-- For endnote -->
 
 [github-badge]: https://img.shields.io/github/last-commit/Eugene-Forest/NoteBook
 [github-link]: https://img.shields.io/github/last-commit/Eugene-Forest/NoteBook

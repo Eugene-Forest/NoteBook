@@ -11,13 +11,13 @@
  
 ## 在jetbrains系列软件的项目中启用版本管理
 
-```{image} ../../img/git/jetbrains/git-on.png
+```{image} ../img/jetbrains/git-on.png
 :alt: git-on
 ```
 
 ## 选择版本控制系统为 **Git**
 
-```{image} ../../img/git/jetbrains/git-choice.png
+```{image} ../img/jetbrains/git-choice.png
 :alt: git-choice
 ```
 
@@ -28,7 +28,7 @@
 
 ## 将项目提交到本地仓库中
 
-```{image} ../../img/git/jetbrains/git-commit.png
+```{image} ../img/jetbrains/git-commit.png
 :alt: git-commit
 ```
 
@@ -41,13 +41,13 @@
 
 ### 获取仓库http链接
 
-```{image} ../../img/git/jetbrains/git-remote.png
+```{image} ../img/jetbrains/git-remote.png
 :alt: git-remote
 ```
 
 ### 点击推送
 
-```{image} ../../img/git/jetbrains/git-pull.png
+```{image} ../img/jetbrains/git-pull.png
 :alt: git-pull
 ```
 
@@ -55,7 +55,7 @@
 
 ### 添加远程仓库
 
-```{image} ../../img/git/jetbrains/git-add-remote.png
+```{image} ../img/jetbrains/git-add-remote.png
 :alt: git-add-remote
 ```
 
@@ -63,7 +63,7 @@
 
 如果是第一次推送，则会出现gitee账户登录的弹窗。如图：
 
-```{image} ../../img/git/jetbrains/gitee-login.png
+```{image} ../img/jetbrains/gitee-login.png
 :alt: git-login
 ```
 
@@ -71,6 +71,6 @@
 
 登录成功并推送之后，如下图
 
-```{image} ../../img/git/jetbrains/remote.png
+```{image} ../img/jetbrains/remote.png
 :alt: remote
 ```

@@ -7,7 +7,7 @@
 
 具体路径具体分析更改
 
-```
+:::
 // Command Prompt
 "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe"
 
@@ -16,28 +16,30 @@
 
 // Git Bash
 "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe"
-```
+:::
 
 :::{warning}
 这种方法更改后的shell终端只能开启一种类型（cmd,powershell,bash其中一种）；如果我要在vscode中新建多个类型终端如cmd,powershell,bash，这个如何实现？
 :::
 
-```{image} ../img/vs_code/shell.png
+```{image} ../img/vs-code/shell.png
 :alt: vscode 的新建终端
 ```
- 
+
 **最终使用方案：**
 
 ```json
-"terminal.integrated.shellArgs.windows": [
- "--command=usr/bin/bash.exe",
- "-l",
- "-i"
- ]
- // Bash on Ubuntu (on Windows)
- "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\git-cmd.exe"
+{
+    "terminal.integrated.shellArgs.windows": [
+        "--command=usr/bin/bash.exe",
+        "-l",
+        "-i"
+    ],
+    // Bash on Ubuntu (on Windows)
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\git-cmd.exe"
+}
 ```
 
-```{image} ../img/vs_code/diff-shell.png
+```{image} ../img/vs-code/diff-shell.png
 :alt: diff shell
 ```
