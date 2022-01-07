@@ -62,9 +62,9 @@ autosectionlabel_maxdepth
 > 运行渲染效果如下：
 
 ```{card}
-{ref}`struct/extend/autosectionlabel:activate autosectionlabel`
+{ref}`syntax/extend/autosectionlabel:activate autosectionlabel`
 
-{ref}`struct/extend/autosectionlabel:配置`
+{ref}`syntax/extend/autosectionlabel:配置`
 
 [标签 activate-autosectionlabel](#activate-autosectionlabel)
 
@@ -72,7 +72,7 @@ autosectionlabel_maxdepth
 ```
 
 我们在使用 `ref` 来表示内部链接时的两种写法：
-* ``` {ref}`struct/extend/autosectionlabel:配置` ``` ： 以文档根目录（`source`文件夹下开始为根）为起点，以路径唯一地确认到一个文件，并用冒号来指向文件中的一个标题。
+* ``` {ref}`syntax/extend/autosectionlabel:配置` ``` ： 以文档根目录（`source`文件夹下开始为根）为起点，以路径唯一地确认到一个文件，并用冒号来指向文件中的一个标题。
 * ``` {ref}`title <label-name>` ``` ： 直接在尖括号中填写 label 标签名，在 title 中添加表示内部链接的文本。
 
 我们在以 Markdown 链接语法 `[]()` 来表示内部链接时：
@@ -102,12 +102,12 @@ MyST Markdown 与 RST 的写法中不同的在于前者需要明确指出文件�
 我们可以发现：
 
 * 对于中文标题
-  * `autosectionlabel` 是没有办法识别的，所以它会自动以 `id + 数字` 编排 `label` ；例如本文中的 {ref}`struct/extend/autosectionlabel:自动为节标题创建目标` 标题。
+  * `autosectionlabel` 是没有办法识别的，所以它会自动以 `id + 数字` 编排 `label` ；例如本文中的 {ref}`syntax/extend/autosectionlabel:自动为节标题创建目标` 标题。
 * 如果是中英文混搭的标题
-  * 那么它将会只识别英文；然后便是参考下一级的规律编排 `label`。例如本文中的 {ref}`struct/extend/autosectionlabel:在RST中使用autosectionlabel` 标题。
+  * 那么它将会只识别英文；然后便是参考下一级的规律编排 `label`。例如本文中的 {ref}`syntax/extend/autosectionlabel:在RST中使用autosectionlabel` 标题。
 * 对于英文标题
-  * 如果是一个单词，那么这个单词会作为 `label` ，如果是多个单词（一般都是以空格间隔），那么单词之间以 `-` 相连作为此标题的 `label` ；例如本文中的 {ref}`struct/extend/autosectionlabel:activate autosectionlabel` 标题。
-  * 如果发现在此文件中已经存在相同的 `label` ，那么除了第一个是有效的之外，其他的都是无效的需要重新以 `id + 数字` 编排 `label`的； 例如本文中的 {ref}`struct/extend/autosectionlabel:autosectionlabel 自动创建锚点的规律` 标题。
+  * 如果是一个单词，那么这个单词会作为 `label` ，如果是多个单词（一般都是以空格间隔），那么单词之间以 `-` 相连作为此标题的 `label` ；例如本文中的 {ref}`syntax/extend/autosectionlabel:activate autosectionlabel` 标题。
+  * 如果发现在此文件中已经存在相同的 `label` ，那么除了第一个是有效的之外，其他的都是无效的需要重新以 `id + 数字` 编排 `label`的； 例如本文中的 {ref}`syntax/extend/autosectionlabel:autosectionlabel 自动创建锚点的规律` 标题。
 
 ## 自动为节标题创建标签的另一种实现 myst-anchors
 

@@ -5,15 +5,24 @@
 总得来说，codeblock代码块指令有两种形式，一种是直接将代码放入代码块中，另一种是引用已有的文件的代码将其放入代码块中。
 
 
+.. admonition:: 语法高亮支持的语言
+
+   支持以下值：
+
+   * ``none`` （无突出显示）
+   * ``default`` （类似于 python3 但却退缩到 none 不带警告的突出显示失败；默认情况下 highlight_language 未设置）
+   * ``guess`` （让Pygments根据内容猜测lexer，只适用于某些可识别的语言）
+   * ``python``
+   * ``rest``
+   * ``c``
+   * ``java``
+   * … 以及其他语法高亮 `Pygments supports <https://pygments.org/languages/>`_  
+
+
 代码形式：
 
 * 前者： ``.. code-block:: code_language_type``
 * 后者： ``.. literalinclude:: code_file_path(local or internet)``
-
-
-.. seealso::
-   
-   `关于代码高亮 pygments 支持的语言 <https://pygments.org/languages/>`_ 
 
 |75|
 
