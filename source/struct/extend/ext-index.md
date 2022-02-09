@@ -3,7 +3,7 @@
 
 > **更新时间: 2021-12-21, 11:46:56  | Sphinx 版本：{{sphinx}}  | markdown-it-py 版本：{{markdown_it_py}}**
 
-Sphinx 插件还有原生插件和非原生插件之分，原生插件的命名格式以 `sphinx.ext.` 开头，否则就是非原生插件（前提它是 Sphinx 插件），所有 Sphinx 插件都是需要在 `conf.py` 中被配置的。
+Sphinx 插件还有 [原生插件](https://www.osgeo.cn/sphinx/usage/extensions/index.html) 和非原生插件之分，原生插件的命名格式以 `sphinx.ext.` 开头，否则就是非原生插件（前提它是 Sphinx 插件），所有 Sphinx 插件都是需要在 `conf.py` 中被配置的。
 
 对于原生插件，它是不需要在 ``requirements`` 相关文件中添加的，需要添加到在 requirements[^1] 相关文件的插件是那些非原生插件。
 
@@ -31,6 +31,7 @@ copybutton_prompt_text = "myinputprompt"
 实时重新加载 Sphinx 文档 <./autobuild>
 RST-to-MyST 转换工具 <rst-to-myst>
 自动生成的标题锚点工具 <autosectionlabel>
+提供了对 TODO 项的支持 <todo>
 ```
 
 ```{dropdown} 其他插件

@@ -40,7 +40,7 @@ sphinx-autobuild source source/_build/html --open-browser --port=0
 sphinx-autobuild source source/_build/html --open-browser --port=0
 ```
 
-```{code-block} cmd
+```{code-block} powershell
 :caption: .bat 批处理
 
 sphinx-autobuild source source/_build/html --open-browser --port=0
