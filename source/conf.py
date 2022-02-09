@@ -72,12 +72,19 @@ myst_enable_extensions = [
     "smartquotes", "replacements",
     "linkify",
     "html_image",
-    "substitution"
+    "substitution",
+    "dollarmath", "amsmath",
 ]
 # 如果为false,只有包含方案（例如http）的链接才会被识别为外部链接
 myst_linkify_fuzzy_links = False
 # myst_footnote_transition = True
-# myst_dmath_double_inline = True
+
+# 数学公式语法 $ （dollar math） 设置
+myst_dmath_allow_labels = True
+myst_dmath_double_inline = True
+# myst_dmath_allow_space = False, will cause inline math to only be parsed if there are no initial / final spaces, e.g. $a$ but not $ a$ or $a $.
+# myst_dmath_allow_digits = False, will cause inline math to only be parsed if there are no initial / final digits, e.g. $a$ but not 1$a$ or $a$2.
+
 
 # substitution 的扩展的全局替换，作用于 .md
 myst_substitutions = {

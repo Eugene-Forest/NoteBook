@@ -83,10 +83,6 @@ myst_enable_extensions = [
 
 此扩展需要安装 [linkify-it-py](https://github.com/tsutsu3/linkify-it-py)。要么直接 `pip install linkify-it-py` 或通过 `pip install myst-parser[linkify]` 安装 Python 模块。
 
-## 数学公式的语法支持
-
-由于笔者现阶段不需要使用到数学公式，而且同时还考虑到其语法的复杂性，所以展示没有收录。如果读者对数学公式的语法支持感兴趣，那么可以前往官网查看 [数学公式的语法支持](https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#syntax-math) 的文档。
-
 (markdown-ext-syntax-colon)=
 
 ## 使用冒号的代码围栏
@@ -360,3 +356,116 @@ Block level:
 {{ '[a link](https://{}.com)'.format(key4) }}
 
 {{ '<https://studynotes.readthedocs.io/zh/builder-doc/REPLACE.html>'.replace('REPLACE', env.docname) }}
+
+
+## 数学公式的语法支持
+
+Math 是通过在 sphinx `conf.py` 配置文件中添加 `myst_enable_extensions` 列表选项来解析的:
+
+* 用于解析被 `$` 和 `$$` 封装的数学。
+* `amsmath` 用于直接解析 [amsmath LaTeX environments](https://ctan.org/pkg/amsmath) 。
+
+这些选项启用了它们各自的 Markdown 解析器插件，详情请参见 [Markdown-it](https://markdown-it-py.readthedocs.io/en/latest/plugins.html#md-plugins) 插件指南。
+
+````{important}
+
+在 MyST Markdown 中，这两个选项需要配合使用才能发挥出最大功效。
+```python
+myst_enable_extensions = ["dollarmath", "amsmath"]
+```
+````
+
+### 美元(`$`)分隔的数学
+
+启用 `dollarmath` 将解析以下语法:
+
+* Inline math (内联数学): `$...$`
+* Display (block) math (块数学): `$$...$$`
+
+另外，如果设置了 `myst_dmath_allow_labels=True` (默认值):
+
+* Display (block) math with equation label (带有编号的块数学): `$$...$$ (1)`
+
+````{dropdown} 带有编号的块数学示例
+:open:
+
+```
+$$
+e = mc^2
+$$ (eqn:best)
+
+This is the best equation {eq}`eqn:best`
+```
+
+$$
+e = mc^2
+$$ (eqn:best)
+
+This is the best equation {eq}`eqn:best`
+````
+
+````{admonition} 扩展了解
+:class: seealso
+
+如果了解之前的语法，我们会发现可以使用角色指令来实现与美元分隔的数学，示例如下：
+
+`$x_{hey}=it+is^{math}$` 被解析为 $x_{hey}=it+is^{math}$ 
+
+同样的，通过以下角色指令可达到同样效果：
+
+```rest
+{math}`x_{hey}=it+is^{math}`
+```
+
+同时，如果是使用 Vs Code 编写文档，那么**可以通过美元分隔符号来触发 LaTeX 的代码提示**。
+
+对于大部分的 LaTeX 支持的符号，在 MyST Markdown 中也能实现。具体的符号对应语法参考 [LaTeX Math Symbols](https://www.caam.rice.edu/~heinken/latex/symbols.pdf) 。
+或者点击链接直接本地下载 {download}`》》symbols.pdf《《 <./example/symbols.pdf>`
+````
+
+
+```{admonition} 避免美元符号被解析
+:class: tip
+
+可以通过在第一个 `$` 符号前添加一个 `\` 来进行转义(否定)，例如 `\$a$` 呈现为 $a$。转义也可以在数学中使用，例如 `$a=\$3$` 呈现为 $a=\$3$。
+
+相反， `\\` 将否定转义，所以 `\\$a$` 呈现为 \\$a$。
+
+```
+
+### LaTeX 数学
+
+通过添加 `"amsmath"` 到 `myst_enable_extensions` （在 sphinx `conf.py` 配置文件中），您可以启用 `amsmath LaTeX` 方程的直接解析。然后将直接解析这些数学表达：
+
+These *top-level math environments* (以标记语言的角度来说就像是指令) will then be directly parsed:
+
+> equation, multline, gather, align, alignat, flalign, matrix, pmatrix, bmatrix, Bmatrix, vmatrix, Vmatrix, eqnarray.
+
+同时，以 `*` 结尾的环境不会被编号:
+
+```latex
+\begin{gather*}
+a_1=b_1+c_1\\
+a_2=b_2+c_2-d_2+e_2
+\end{gather*}
+
+\begin{align}
+a_{11}& =b_{11}&
+  a_{12}& =b_{12}\\
+a_{21}& =b_{21}&
+  a_{22}& =b_{22}+c_{22}
+\end{align}
+```
+
+
+\begin{gather*}
+a_1=b_1+c_1\\
+a_2=b_2+c_2-d_2+e_2
+\end{gather*}
+
+\begin{align}
+a_{11}& =b_{11}&
+  a_{12}& =b_{12}\\
+a_{21}& =b_{21}&
+  a_{22}& =b_{22}+c_{22}
+\end{align}
