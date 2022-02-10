@@ -2,11 +2,11 @@
 
 (add-github-ssh)=
 
-## 关于在git中添加Github的账户的ssh密匙
+## 关于在 Git 中添加 Github 的账户的 ssh 密匙
 
 :::{note}
 
-首先，要在本机中创建一个ssh密匙，然后在GitHub网站中添加公共密匙。最后在本机中验证密匙即可。后续操作中可能会重复使用私有密匙的映射密码验证。
+首先，要在本机中创建一个 ssh 密匙，然后在 GitHub 网站中添加公共密匙。最后在本机中验证密匙即可。后续操作中可能会重复使用私有密匙的映射密码验证。
 :::
 
 运行下面的命令创建 SSH Key。
@@ -38,10 +38,10 @@ The key's randomart image is:
 :alt: hello_key
 ```
 
-id_rsa 文件是私有密钥，id_rsa.pub 是公开密钥。
+`id_rsa` 文件是私有密钥，`id_rsa.pub` 是公开密钥。
 
 在 GitHub 中添加公开密钥，今后就可以用私有密钥进行认证了。
-点击右上角的账户设定按钮（Account Settings），选择 SSH Keys 菜单。点击 Add SSH Key 之后,在 Title 中输入适当的密钥名称。Key 部分请粘贴 id_rsa.pub 文件里的内容。
+点击右上角的账户设定按钮（Account Settings），选择 SSH Keys 菜单。点击 Add SSH Key 之后,在 Title 中输入适当的密钥名称。Key 部分请粘贴 `id_rsa.pub` 文件里的内容。
 
 添加成功之后，创建账户时所用的邮箱会接到一封提示“公共密钥添加完成”的邮件。
 
@@ -59,7 +59,7 @@ Enter passphrase for key '/c/Users/qaz22/.ssh/id_rsa':
 Hi Eugene-Forest! You've successfully authenticated, but GitHub does not provide shell access.
 :::
 
-## 通过git bash克隆已经创建的仓库，以及添加并提交更新
+## 通过 `git bash` 克隆已经创建的仓库，以及添加并提交更新
 
 1. `git add <file_name>`
 2. `git commit -m 'commit message'`

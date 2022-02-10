@@ -1,8 +1,8 @@
 # 与远程仓库 *remote repository* 的交互
 
-首先，在github中创建一个空的同名仓库，然后获得远程仓库的链接(形如 *git@github.com:Eugene-Forest/Forest.git* )后，再通过命令将本地的仓库内容添加到远程仓库中。
+首先，在 Github 中创建一个空的同名仓库，然后获得远程仓库的链接(形如 *git@github.com:Eugene-Forest/Forest.git* )后，再通过命令将本地的仓库内容添加到远程仓库中。
 
-## 添加远程仓库之一：create a new repository on the command line
+## 添加远程仓库之一：*create a new repository on the command line*
 
 添加一个新的远程 Git 仓库 `git remote add <shortname> <url>`
 
@@ -21,7 +21,7 @@ git push -u origin master
 运行 `git remote add <shortname> <url>` 添加一个新的远程 Git 仓库，同时指定一个方便使用的简写。如上代码所示，即可使用origin来代替 *git@github.com:Eugene-Forest/Forest.git* 这个URL。
 :::
 
-## 添加远程仓库之二：push an existing repository from the command line
+## 添加远程仓库之二：*push an existing repository from the command line*
 
 ```shell
 git remote add origin git@github.com:Eugene-Forest/Forest.git
@@ -29,7 +29,7 @@ git branch -M master
 git push -u origin master
 ```
 
-## 添加远程仓库之三：clone
+## 添加远程仓库之三：*clone*
 
 ```shell
 git clone git@github.com:Eugene-Forest/Forest.git
