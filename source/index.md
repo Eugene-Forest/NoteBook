@@ -1,7 +1,6 @@
 # Eugene forest's notebook
 
 [![GitHub last commit][github-badge]][github-link]
-[![Documentation Status][rtd-badge]][rtd-link]
 
 > **文档构建时间: {sub-ref}`today`**
 
@@ -80,5 +79,3 @@ MyST-NB <struct/MyST-NB/MyST-NB>
 
 [github-badge]: https://img.shields.io/github/last-commit/Eugene-Forest/NoteBook
 [github-link]: https://img.shields.io/github/last-commit/Eugene-Forest/NoteBook
-[rtd-badge]: https://readthedocs.org/projects/studynotes/badge/?version=latest
-[rtd-link]: https://studynotes.readthedocs.io/zh/latest/?badge=latest
