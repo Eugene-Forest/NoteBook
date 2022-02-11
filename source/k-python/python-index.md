@@ -16,6 +16,7 @@
 
 自动化 <auto/index>
 扩展篇 <extend/index>
+Python 包管理器 pip 的使用 <pip>
 ```
 
 % 基础篇 <basic/index>

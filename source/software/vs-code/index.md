@@ -13,7 +13,8 @@
 :caption: VS Code 权威指南的学习笔记
 :numbered:
 
-start <./guide/start>
+快速入门 <./guide/start>
+
 ```
 
 ```{toctree}
