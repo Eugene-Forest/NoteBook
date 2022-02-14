@@ -8,7 +8,10 @@ reStructuredText 是Sphinx使用的默认纯文本标记语言。本节简要介
 
 .. important:: 
 
-   1) `reStructureText 学习文档（Created using Sphinx 5.0.0+） <https://www.sphinx-doc.org/zh_CN/master/usage/restructuredtext/basics.html>`_ 
+   * `reStructureText 文档 —— sphinx-doc 版 <https://www.sphinx-doc.org/zh_CN/master/usage/restructuredtext/basics.html>`_
+   * `reStructureText 文档 —— osgeo 版 <https://www.osgeo.cn/sphinx/usage/restructuredtext/index.html>`_
+   * 可参见 `my-study-restructuredtext <https://my-study-restructuredtext.readthedocs.io/en/latest/index.html>`_ 学习该标记语言
+   * 当然还可参加本项目中的 `reStructuredText 语言学习 <https://studynotes.readthedocs.io/zh/latest/knowledge/sphinx/rest/rest-index.html>`_
 
 
 .. warning:: 
