@@ -24,4 +24,5 @@
 终端的配置 <terminal>
 run code插件的运行配置 <run_code>
 工作区的插件设置 <workspace-plugin>
+不同需求下的 VS Code 插件环境配置  <env-config>
 ```
