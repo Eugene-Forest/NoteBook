@@ -18,6 +18,8 @@ TypeScript 设计目标是开发大型应用，它可以编译成纯 JavaScript�
 :maxdepth: 2
 
 数据类型 <data-type>
+变量声明 <declare-variable>
+类型推导 <type-inference>
 函数 <function>
 类 <class-and-interface>
 泛型 <genericity>
