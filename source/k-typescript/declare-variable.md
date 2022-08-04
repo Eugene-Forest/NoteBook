@@ -31,7 +31,63 @@ f(false); // returns 'undefined'
 * 块作用域
 * 重定义及屏蔽
 * 块级作用域变量的获取
-* 
+
+#### 块作用域
+
+拥有块级作用域的变量的另一个特点是，它们不能在被声明之前读或写。注意一点，我们仍然可以在一个拥有块作用域变量被声明前获取它。 只是我们不能在变量声明前去调用那个函数。 
+
+```{code-block} ts
+
+function foo() {
+    // okay to capture 'a'
+    return a;
+}
+
+// 不能在'a'被声明前调用'foo'
+// 运行时应该抛出错误
+foo();
+
+let a;
+```
+
+#### 重定义及屏蔽
+
+在一个 *嵌套作用域里引入* 一个新名字的行为称做屏蔽。 它是一把双刃剑，它可能会不小心地引入新问题，同时也可能会解决一些错误。
+
+```{code-block} ts
+function sumMatrix(matrix: number[][]) {
+    let sum = 0;
+    for (let i = 0; i < matrix.length; i++) {
+        var currentRow = matrix[i];
+        for (let i = 0; i < currentRow.length; i++) {
+            sum += currentRow[i];
+        }
+    }
+
+    return sum;
+}
+```
+
+#### 块级作用域变量的获取
+
+直观地讲，每次进入一个作用域时，它创建了一个变量的环境。 就算作用域内代码已经执行完毕，这个环境与其捕获的变量依然存在。
+
+```{code-block} ts
+
+function theCityThatAlwaysSleeps() {
+    let getCity;
+
+    if (true) {
+        let city = "Seattle";
+        getCity = function() {
+            return city;
+        }
+    }
+
+    return getCity();
+}
+//因为我们已经在city的环境里获取到了city，所以就算if语句执行结束后我们仍然可以访问它。
+```
 
 ### `const` 声明
 
@@ -41,6 +97,105 @@ f(false); // returns 'undefined'
 
 
 
-## 解构
+## 解构 (**析构声明**)
 
 
+### 解构数组
+
+```{code-block} ts
+
+let input = [1, 2];
+let [first, second] = input;
+console.log(first); // outputs 1
+console.log(second); // outputs 2
+//相当于使用了索引，但更为方便
+// first = input[0];
+// second = input[1];
+```
+
+还可以对函数参数解构：
+
+
+```{code-block} ts
+
+function f([first, second]: [number, number]) {
+    console.log(first);
+    console.log(second);
+}
+f(input);
+```
+
+
+还可以在数组里使用 `...` 语法创建剩余变量:
+
+
+```{code-block} ts
+
+let [first, ...rest] = [1, 2, 3, 4];
+console.log(first); // outputs 1
+console.log(rest); // outputs [ 2, 3, 4 ]
+
+let [s] = [1, 2, 3, 4];
+console.log(s); // outputs 1
+let [, second, , fourth] = [1, 2, 3, 4];
+console.log(second); //outputs 2
+console.log(fourth); //outputs 4
+```
+
+### 对象解构
+
+
+```{code-block} ts
+
+let o = {
+    a: "foo",
+    b: 12,
+    c: "bar"
+};
+let { a, b } = o;
+
+// let { a, b } = o; 的析构声明可以简单写为：
+// let newName1 = o.a;
+// let newName2 = o.b;
+
+//let { a, b } = o; 等价于：
+({ a, b } = { a: "baz", b: 101 }); //使用不显示声明的赋值
+
+// 可以使用 ... 语法来说创建剩余变量
+let { a, ...passthrough } = o;
+let total = passthrough.b + passthrough.c.length;
+
+```
+
+```{attention} 
+
+注意，对一个对象进行不声明地析构时，我们需要用小括号将它括起来，因为Javascript通常会将以 `{` 起始的语句解析为一个块。
+```
+
+
+#### 属性的重命名
+
+你也可以给属性以不同的名字：
+
+```{code-block} ts
+
+let { a: newName1, b: newName2 } = o;
+```
+
+这里的冒号不是指示类型的。 如果你想指定它的类型， 仍然需要在其后写上完整的模式。
+
+```{code-block} ts
+
+let {a, b}: {a: string, b: number} = o;
+```
+
+
+
+
+
+
+```{warning}
+
+
+要小心使用解构。因为即便是最简单的解构表达式也是难以理解的。解构表达式要尽量保持小而简单。
+```
