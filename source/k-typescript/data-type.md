@@ -34,7 +34,7 @@
 
 * **数组** 
 
-    TypeScript像JavaScript一样可以操作数组元素。
+    TypeScript 像 JavaScript 一样可以操作数组元素。
 
     ```{code-block} ts
 
@@ -186,31 +186,52 @@ console.log(my_tuple);
 ```
 ````
 
+## 其他数据类型
+
+### ReadonlyArray<T>
+
+TypeScript 具有 `ReadonlyArray<T>` 类型，它与 `Array<T>` 相似，只是把所有可变方法去掉了，因此可以确保数组创建后再也不能被修改：
+
+```{code-block} ts
+
+let a: number[] = [1, 2, 3, 4];
+let ro: ReadonlyArray<number> = a;
+ro[0] = 12; // error!
+ro.push(5); // error!
+ro.length = 100; // error!
+a = ro; // error!
+```
+
+可以看到就算把整个 `ReadonlyArray` 赋值到一个普通数组也是不可以的。 但是你可以用类型断言重写：
+
+```{code-block} ts
+
+a = ro as number[]; //success
+```
+
 ## 类型断言
 
 **类型断言好比其它语言里的类型转换**，但是不进行特殊的数据检查和解构。 它没有运行时的影响，只是在编译阶段起作用。
 
 类型断言有两种形式。 其一是`“尖括号”`语法：
 
-```{code-block} ts
+````{code-block} ts
 
 let someValue: any = "this is a string";
 
 let strLength: number = (<string>someValue).length;
-```
+````
 
 
 另一个为 `as` 语法：
 
-```{code-block} ts
+````{code-block} ts
 
 let someValue: any = "this is a string";
 
 let strLength: number = (someValue as string).length;
-```
 
-两种形式是等价的。*然而，当在TypeScript里使用JSX时，只有as语法断言是被允许的。*
-
+````
 
 
 ----

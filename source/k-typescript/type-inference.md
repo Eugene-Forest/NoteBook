@@ -1,2 +1,2 @@
-## 类型推导 (type inference)
+# 类型推导 (type inference)
 
