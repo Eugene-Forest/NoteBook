@@ -18,13 +18,16 @@
 
 Java 笔记记录 <k-java/java-index>
 Git 笔记记录 <k-git/git-index>
+TypeScript 笔记记录 <k-typescript/typescript-index>
+Node 笔记记录 <k-node/node-index>
+Linux 和 Shell 笔记记录 <k-linux/linux-index>
+SQL 笔记记录 <k-sql/sql-index>
+Windows 笔记记录 <k-windows/windows-index>
 Vue 笔记记录 <k-vue/vue-index>
 Element-UI 笔记记录 <k-element-ui/el-index>
 JavaScript 笔记记录 <k-js/js-index>
 计算机网络 <k-network/net-index>
 Python 笔记记录 <k-python/python-index>
-SQL 笔记记录 <k-sql/sql-index>
-Linux 笔记记录 <k-linux/linux-index>
 Redis 笔记记录 <k-redis/redis-index>
 ```
 

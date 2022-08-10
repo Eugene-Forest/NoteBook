@@ -12,4 +12,5 @@
 
 安装并初始化原始项目 <init>
 Swagger 接口文档系统功能的使用 <func-swagger>
+项目部署 <deploy>
 ```

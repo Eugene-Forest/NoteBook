@@ -97,7 +97,7 @@ pip install --upgrade SomePackage==1.7
 我们可以直接在 `pip` 命令中使用 `-i` 参数来指定镜像地址：
 
 ```{code-block} python
-:caption: 临时使用清华大学镜像
+:caption: "临时使用清华大学镜像"
 
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
 ```
@@ -107,7 +107,8 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
 升级 `pip` 到最新的版本 (>=10.0.0) 后进行配置：
 
 ```{code-block} python
-:caption: 设清华大学镜像为默认
+:caption: "设清华大学镜像为默认"
+
 pip install pip -U
 pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 ```
@@ -115,20 +116,21 @@ pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 如果到 `pip` 默认源的网络连接较差，临时使用清华大学镜像镜像站来升级 `pip` ：
 
 ```{code-block} python
-:caption: 临时使用清华大学镜像镜像站来升级 pip
+:caption: "临时使用清华大学镜像镜像站来升级 pip"
+
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pip -U
 ```
 
 
-```{code-block} powershell
-:caption： Windows 下测试设清华大学镜像为默认
-C:\Users\qaz22>pip config list
+```
+> pip config list
 
-C:\Users\qaz22>pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+> pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 Writing to C:\Users\qaz22\AppData\Roaming\pip\pip.ini
 
-C:\Users\qaz22>pip config list
+> pip config list
 global.index-url='https://pypi.tuna.tsinghua.edu.cn/simple'
+
 ```
 
 ````{admonition} 修改配置文件来设置默认镜像

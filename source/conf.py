@@ -62,7 +62,7 @@ togglebutton_hint = "展示隐藏内容"
 
 thebe_config = {
     "repository_url": "https://github.com/binder-examples/jupyter-stacks-datascience",
-    "repository_branch": "master",
+    "repository_branch": "main",
 }
 
 myst_enable_extensions = [
