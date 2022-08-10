@@ -19,6 +19,7 @@
 Java 笔记记录 <k-java/java-index>
 Git 笔记记录 <k-git/git-index>
 TypeScript 笔记记录 <k-typescript/typescript-index>
+Node 笔记记录 <k-node/node-index>
 Linux 和 Shell 笔记记录 <k-linux/linux-index>
 SQL 笔记记录 <k-sql/sql-index>
 Windows 笔记记录 <k-windows/windows-index>
