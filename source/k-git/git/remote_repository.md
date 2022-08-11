@@ -128,3 +128,58 @@ origin  https://gitee.com/eugene-forest/NoteBook.git (push)
 ```shell
 git remote remove repo_name # git remote rm repo_name
 ```
+
+
+## 查看远程仓库的分支并拉取到本地
+
+
+* 通过 `git branch -a` 命令可以查看所有的无论是本地还是远程的分支。
+* 通过 `git branch -r` 命令可以查看所有的远程的分支。
+
+* `git checkout -b LOCAL_BRANCH_NAME REMOTE_NAME/REMOTE_BRANCH_NAME` 在本地新建分支并从远程拉取，采用此种方法建立的本地分支会和远程分支建立映射关系。
+* `git fetch origin REMOTE_BRANCH_NAME:LOCAL_BRANCH_NAME` 在本地新建分支并从远程拉取，这种方法建立的本地分支不会和远程分支建立映射关系。
+
+
+## 本地分支与远程分支的映射关系
+
+* `git branch -vv` 查看本地分支与远程分支的映射关系
+
+    ```{code-block} bash
+
+    Eugene-Forest@DESKTOP-4BMMHQP MINGW64 ~/workspace-git/repository/GitOperationManual (main)
+    $ git branch -vv
+    feature-a b4ef42a a test for diff feature delete files
+    * main      022c10a [gitee/main] add RemoteGitee.md.
+    ```
+
+* 本地分支与远程分支的映射关系的撤销 `git branch --unset-upstream`
+
+    ```{code-block} bash
+
+    Eugene-Forest@DESKTOP-4BMMHQP MINGW64 ~/workspace-git/repository/GitOperationManual (main)
+    $ git branch --unset-upstream
+
+    Eugene-Forest@DESKTOP-4BMMHQP MINGW64 ~/workspace-git/repository/GitOperationManual (main)
+    $ git branch -vv
+    feature-a b4ef42a a test for diff feature delete files
+    * main      022c10a add RemoteGitee.md.
+    ```
+
+* 本地分支与远程分支的映射关系的建立
+
+  * `git branch -u REMOTE_NAME/REMOTE_BRANCH_NAME`
+
+  * `git branch --set-upstream-to=REMOTE_NAME/REMOTE_BRANCH_NAME`
+
+   ```{code-block} bash
+
+    Eugene-Forest@DESKTOP-4BMMHQP MINGW64 ~/workspace-git/repository/GitOperationManual (main)
+    $ git branch --set-upstream-to=gitee/main
+    Branch 'main' set up to track remote branch 'main' from 'gitee'.
+
+    Eugene-Forest@DESKTOP-4BMMHQP MINGW64 ~/workspace-git/repository/GitOperationManual (main)
+    $ git branch -vv
+    feature-a b4ef42a a test for diff feature delete files
+    * main      022c10a [gitee/main] add RemoteGitee.md.
+
+   ```
