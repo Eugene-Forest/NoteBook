@@ -1,5 +1,7 @@
 # Eugene forest's notebook
 
+![GitHub issues](https://img.shields.io/github/issues/Eugene-Forest/NoteBook)
+![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/Eugene-Forest/NoteBook)
 [![GitHub last commit][github-badge]][github-link]
 [![Documentation Status][rtd-badge]][rtd-link]
 
