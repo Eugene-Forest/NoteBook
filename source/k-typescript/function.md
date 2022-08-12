@@ -46,6 +46,24 @@ function add(x: number, y: number): number {
 let myAdd = function(x: number, y: number): number { return x + y; };
 ```
 
+我们可以给每个参数添加类型之后再为函数本身添加返回值类型。 TypeScript 能够根据返回语句自动推断出返回值类型，因此我们通常省略它。
+
+```{code-block} ts
+:caption: 完整的函数类型（将变量声明为函数）
+
+    let myAdd: (x:number, y:number) => number =
+    function(x: number, y: number): number { return x + y; };
+```
+
+**函数类型包含两部分：参数类型和返回值类型。** 当写出完整函数类型的时候，这两部分都是需要的。 我们以参数列表的形式写出参数类型，为每个参数指定一个名字和类型。 这个名字只是为了增加可读性。只要参数类型是匹配的，那么就认为它是有效的函数类型，而不在乎参数名是否正确。故而我们也可以这么写：
+
+```{code-block} ts
+:caption: 完整的函数类型2
+
+let myAdd: (baseValue: number, increment: number) => number =
+    function(x: number, y: number): number { return x + y; };
+```
+
 ## 可选参数和默认参数
 
 TypeScript 里的每个函数参数都是必须的 （即：传递给一个函数的参数个数必须与函数期望的参数个数一致。）。这不是指不能传递 null 或 undefined 作为参数，而是说编译器检查用户是否为每个参数都传入了值。
