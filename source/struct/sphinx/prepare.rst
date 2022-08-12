@@ -105,31 +105,49 @@
 
    更多主题配置点击查看  :ref:`HTML Theme <sphinx-html-theme>`  笔记.
 
-
 |30|
 
-通过vscode的git插件创建存储库
--------------------------------
-
-创建完之后，添加.gitignore文件以及README.md文件
-
-
-本项目的.gitignore文件代码如下：
-
-.. literalinclude:: ../../../.gitignore
-   :language: git
-
-本项目的README.md文件代码如下：
-
-.. literalinclude:: ../../../README.md
-   :language: markdown
-
-|30|
-
-推送
+初次运行 Sphinx 文档项目
 -------------------------
 
-添加远程仓库，可以通过添加url添加仓库；如果使用了GitHub插件，那么可以直接选择并推送到现存的空仓库。
+.. code-block:: shell
+
+   sphinx-autobuild source source/_build/html --open-browser --port=0
+
+
+运行上方的命令后，就会自动构建并打开浏览器显示文档预览，此时是处于热部署状态，可以边编写文档便查看预览情况。
+
+当然，如果使用过几次之后你就会发现，当你改动了目录索引的时候部分页面是不会重新加载的。所以一般来说，笔者在执行构建之前都会将原有的缓存清除，执行操作的文件如下：
+
+
+.. code-block:: shell
+   :caption: deleteOutput.sh
+
+   #!/bin/sh
+
+   ## 删除自动构建或预览产生的html文件等
+
+   ## 判断 source 文件夹下是否存在 _build 文件夹
+
+   if [ -d "source/_build/" ];then
+   echo "文件 source/_build/ 存在，即将进行删除操作..."
+   cd source/_build/
+   rm -rf *
+   echo "******成功删除 _build 文件夹下的所有文件************"
+   else
+   echo "文件夹 source/_build/ 不存在，将为您创建 source/_build/ 文件夹..."
+   mkdir source/_build/
+   fi
+
+.. code-block:: shell
+   :caption: autobuild.sh
+
+   #!/bin/sh
+
+   ./deleteOutput.sh
+   echo "***开始构建文档***"
+   sphinx-autobuild source source/_build/html --open-browser --port=0
+
 
 
 |30|
