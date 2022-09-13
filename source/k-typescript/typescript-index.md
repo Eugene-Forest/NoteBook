@@ -16,15 +16,22 @@ TypeScript 设计目标是开发大型应用，它可以编译成纯 JavaScript�
 :caption: TypeScript 语法集
 :hidden:
 :maxdepth: 2
+:numbered:
 
 数据类型 <data-type>
 变量声明 <declare-variable>
+流程处理 <flow-block>
 字面量 <object-literal>
 类型推导 <type-inference>
 函数 <function>
 类 <class-and-interface>
 泛型 <generic>
 关键字 <keyword>
+封装对象 <package-object>
+联合对象 <union-type>
+命名空间 <namespace>
+模块 <module>
+声明文件 <declaration-file>
 ```
 
 
