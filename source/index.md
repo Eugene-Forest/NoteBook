@@ -118,7 +118,7 @@ reStructuredText (.rst) --> rst parser ----+
 
 ## 关于免费的开源托管平台 Read the Docs
 
-[Read the Docs](https://readthedocs.org/) 通过自动为您构建，版本控制和托管文档来简化软件文档。 
+[Read the Docs](https://readthedocs.org/) 通过自动为您构建，版本控制和托管文档来简化软件文档。
 
 
 
