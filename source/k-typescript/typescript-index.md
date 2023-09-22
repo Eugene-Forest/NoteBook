@@ -16,13 +16,22 @@ TypeScript 设计目标是开发大型应用，它可以编译成纯 JavaScript�
 :caption: TypeScript 语法集
 :hidden:
 :maxdepth: 2
+:numbered:
 
 数据类型 <data-type>
 变量声明 <declare-variable>
+流程处理 <flow-block>
+字面量 <object-literal>
 类型推导 <type-inference>
 函数 <function>
 类 <class-and-interface>
-泛型 <genericity>
+泛型 <generic>
+关键字 <keyword>
+封装对象 <package-object>
+联合对象 <union-type>
+命名空间 <namespace>
+模块 <module>
+声明文件 <declaration-file>
 ```
 
 
@@ -36,7 +45,7 @@ TypeScript 设计目标是开发大型应用，它可以编译成纯 JavaScript�
 
 ```{admonition} 为什么使用 webpack
 
-ES2015 中的 `import` 和 `export` 语句已经被标准化。虽然大多数浏览器还无法支持它们，但是 `webpack` 却能够提供开箱即用般的支持。 
+ES2015 中的 `import` 和 `export` 语句已经被标准化。但是大多数浏览器还无法支持它们，但是 `webpack` 却能够提供开箱即用般的支持。 
 
 我们当然可以直接创建一个简单的 TypeScript 项目，但是在接触到模块的时候我们会发现，直接通过 `tsc` 命令产生的 Js 文件在浏览器中无法使用 `import` 和 `export` 语句。
 ```

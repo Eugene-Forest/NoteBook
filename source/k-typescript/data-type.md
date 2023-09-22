@@ -215,23 +215,23 @@ a = ro as number[]; //success
 
 类型断言有两种形式。 其一是`“尖括号”`语法：
 
-````{code-block} ts
+```{code-block} ts
 
 let someValue: any = "this is a string";
 
 let strLength: number = (<string>someValue).length;
-````
+```
 
 
 另一个为 `as` 语法：
 
-````{code-block} ts
+```{code-block} ts
 
 let someValue: any = "this is a string";
 
 let strLength: number = (someValue as string).length;
 
-````
+```
 
 
 ----

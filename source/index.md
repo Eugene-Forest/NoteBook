@@ -31,6 +31,7 @@ JavaScript 笔记记录 <k-js/js-index>
 计算机网络 <k-network/net-index>
 Python 笔记记录 <k-python/python-index>
 Redis 笔记记录 <k-redis/redis-index>
+效率工具：代码模板 <k-liveTemplate/live-template-index>
 ```
 
 <!-- For Project -->
