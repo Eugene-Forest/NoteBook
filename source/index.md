@@ -24,7 +24,7 @@ TypeScript 笔记记录 <k-typescript/typescript-index>
 Node 笔记记录 <k-node/node-index>
 Linux 和 Shell 笔记记录 <k-linux/linux-index>
 SQL 笔记记录 <k-sql/sql-index>
-Batch&Shell 笔记记录 <k-batch&shell/index>
+Batch&Shell 笔记记录 <k-batch&shell/script-index>
 Vue 笔记记录 <k-vue/vue-index>
 Element-UI 笔记记录 <k-element-ui/el-index>
 JavaScript 笔记记录 <k-js/js-index>
