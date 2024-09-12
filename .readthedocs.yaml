@@ -13,19 +13,21 @@ sphinx:
 
 #  fail_on_warning: true
 
+build:
+  os: ubuntu-22.04
+  tools:
+    python: "3.7"
 # Optionally build your docs in additional formats such as PDF
 # 需要预先构建的文件类型，用于下载使用
 # formats:
 #    - htmlzip
-   # - pdf
-   # - epub 
+# - pdf
+# - epub
 
 # Optionally set the version of Python and requirements required to build your docs
 # 环境配置，如python版本，需额外下载的(第三方) python 包。
 python:
-   version: "3.7"
-   install:
-   - requirements: requirements/requirements.txt
-
+  install:
+    - requirements: requirements/requirements.txt
 #   - requirements: other_requirement.txt
 
