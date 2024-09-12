@@ -25,7 +25,8 @@ Node 笔记记录 <k-node/node-index>
 Linux 和 Shell 笔记记录 <k-linux/linux-index>
 SQL 笔记记录 <k-sql/sql-index>
 Batch&Shell 笔记记录 <k-batch&shell/script-index>
-Vue 笔记记录 <k-vue/vue-index>
+Vue2 笔记记录 <k-vue/vue-index>
+Vue3 笔记记录 <k-vue3/vue-index>
 Element-UI 笔记记录 <k-element-ui/el-index>
 JavaScript 笔记记录 <k-js/js-index>
 计算机网络 <k-network/net-index>
