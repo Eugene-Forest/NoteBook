@@ -13,10 +13,7 @@ Vue 使用一种基于 HTML 的模板语法，使我们能够声明式地将其�
 
 ```
 
-## 序
-
-````{admonition} html 元素基础
-
+## html 元素基础
 
 ```{image} ./image/grumpy-cat-small.png
 :alt: grumpy-cat-small.png
@@ -29,16 +26,13 @@ Vue 使用一种基于 HTML 的模板语法，使我们能够声明式地将其�
 -   内容（Content）：元素的内容，本例中就是所输入的文本本身。
 -   元素（Element）：开始标签、结束标签与内容相结合，便是一个完整的元素。
 
-----
-
 ```{image} ./image/grumpy-cat-attribute-small.png
 :alt: grumpy-cat-attribute-small
 ```
+
 属性包含了关于元素的一些额外信息，这些信息本身不应显现在内容中。本例中，`class` 是属性名称，`editor-note` 是属性的值。`class` 属性可为元素提供一个标识名称，以便进一步为元素指定样式或进行其他操作时使用。
 
-````
-
-### 文本插值 Content
+## 文本插值 Content
 
 最基本的数据绑定形式是文本插值，它使用的是“Mustache”语法 (即双大括号)：
 
@@ -47,9 +41,9 @@ Vue 使用一种基于 HTML 的模板语法，使我们能够声明式地将其�
 <span>Message: {{ msg }}</span>
 ```
 
-### 计算属性
+## 计算属性
 
-### 属性 Attribute
+## 属性 Attribute
 
 > HTML 中的元素拥有属性（attribute）；这些额外的值可以配置元素或者以各种方式来调整元素的行为，进而满足用户所需的标准。
 
@@ -60,7 +54,7 @@ Vue 使用一种基于 HTML 的模板语法，使我们能够声明式地将其�
 <div v-bind:id="dynamicId"></div>
 ```
 
-### 指令 Directives
+## 指令 Directives
 
 指令是带有 `v-` 前缀的特殊 attribute。
 
