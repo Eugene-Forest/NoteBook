@@ -1,31 +1,34 @@
 # 响应式数据
 
-````{note}
+你可能会好奇：为什么我们需要使用响应式数据(_带有 .value 的 ref_)，而不是普通的变量？为了解释这一点，我们需要简单地讨论一下 Vue 的响应式系统是如何工作的。
 
-你可能会好奇：为什么我们需要使用响应式数据(*带有 .value 的 ref*)，而不是普通的变量？为了解释这一点，我们需要简单地讨论一下 Vue 的响应式系统是如何工作的。
+```{admonition} 模板
+:class: margin
 
-当你在模板中使用了一个 ref，然后改变了这个 ref 的值时，Vue 会自动检测到这个变化，并且相应地更新 DOM。这是通过一个基于依赖追踪的响应式系统实现的。当一个组件首次渲染时，Vue 会追踪在渲染过程中使用的每一个 ref。然后，当一个 ref 被修改时，它会触发追踪它的组件的一次重新渲染。
+所谓模板，指 Vue 文件的 `<template>` 标签模块。
+```
+
+当你在 **_模板_** 中使用了一个 ref，然后改变了这个 ref 的值时，Vue 会自动检测到这个变化，并且相应地更新 DOM。这是通过一个基于依赖追踪的响应式系统实现的。当一个组件首次渲染时，Vue 会追踪在渲染过程中使用的每一个 ref。然后，当一个 ref 被修改时，它会触发追踪它的组件的一次重新渲染。
 
 在标准的 JavaScript 中，检测普通变量的访问或修改是行不通的。然而，我们可以通过 getter 和 setter 方法来拦截对象属性的 get 和 set 操作。
 
 该 .value 属性给予了 Vue 一个机会来检测 ref 何时被访问或修改。在其内部，Vue 在它的 getter 中执行追踪，在它的 setter 中执行触发。从概念上讲，你可以将 ref 看作是一个像这样的对象：
 
-   ```{code-block} js
+```{code-block} js
 
-   // 伪代码，不是真正的实现
-   const myRef = {
-   _value: 0,
-   get value() {
-      track()//触发取值
-      return this._value
-   },
-   set value(newValue) {
-      this._value = newValue
-      trigger()//触发赋值
-   }
-   }
-   ```
-````
+// 伪代码，不是真正的实现
+const myRef = {
+_value: 0,
+get value() {
+   track()//触发取值
+   return this._value
+},
+set value(newValue) {
+   this._value = newValue
+   trigger()//触发赋值
+}
+}
+```
 
 ## `ref()`
 
@@ -118,4 +121,116 @@ async function increment() {
 
 ## `reactive()`
 
-ref toRef 和 toRefs
+还有另一种声明响应式状态的方式，即使用 reactive() API。与将内部值包装在特殊对象中的 ref 不同，reactive() 将使对象本身具有响应性：
+
+```{code-block} html
+
+<template>
+    <button @click="state.count++">
+    {{ state.count }}
+    </button>
+</template>
+
+<script setup>
+import { reactive } from 'vue'
+
+const state = reactive({ count: 0 })
+</script>
+```
+
+-   值得注意的是，reactive() 返回的是一个原始对象的 Proxy，它和原始对象是不相等的
+
+-   **只有代理对象是响应式的，更改原始对象不会触发更新。因此，使用 Vue 的响应式系统的最佳实践是仅使用你声明对象的代理版本。**
+
+-   为保证访问代理的一致性，对同一个原始对象调用 reactive() 会总是返回同样的代理对象，而对一个已存在的代理对象调用 reactive() 会返回其本身
+
+-   依靠深层响应性，响应式对象内的嵌套对象依然是代理
+
+```{code-block}js
+
+const raw = {}
+const proxy = reactive(raw)
+
+// 代理对象和原始对象不是全等的
+console.log(proxy === raw) // false
+
+// 在同一个对象上调用 reactive() 会返回相同的代理
+console.log(reactive(raw) === proxy) // true
+
+// 在一个代理上调用 reactive() 会返回它自己
+console.log(reactive(proxy) === proxy) // true
+
+
+```
+
+reactive() API 有一些局限性：
+
+-   有限的值类型：它只能用于对象类型 (对象、数组和如 Map、Set 这样的集合类型)。它不能持有如 string、number 或 boolean 这样的原始类型。
+
+-   不能替换整个对象：由于 Vue 的响应式跟踪是通过属性访问实现的，因此我们必须始终保持对响应式对象的相同引用。这意味着我们不能轻易地“替换”响应式对象，因为这样的话与第一个引用的响应性连接将丢失：
+
+```js
+let state = reactive({ count: 0 });
+
+// 上面的 ({ count: 0 }) 引用将不再被追踪
+// (响应性连接已丢失！)
+state = reactive({ count: 1 });
+```
+
+-   对解构操作不友好：当我们将响应式对象的原始类型属性解构为本地变量时，或者将该属性传递给函数时，我们将丢失响应性连接：
+
+```js
+const state = reactive({ count: 0 });
+
+// 当解构时，count 已经与 state.count 断开连接
+let { count } = state;
+// 不会影响原始的 state
+count++;
+
+// 该函数接收到的是一个普通的数字
+// 并且无法追踪 state.count 的变化
+// 我们必须传入整个对象以保持响应性
+callSomeFunction(state.count);
+```
+
+## ref 、 toRef 和 toRefs
+
+-   ref
+    1. 生成值类型的响应式数据, 通过 .value 修改值
+    2. 可用于 reactive 中
+    3. 可用于获取 Dom
+-   toRef
+    -   针对一个响应式对象的 prop, 创建一个 ref，具有响应式, 两者保持引用关系
+-   toRefs
+    -   toRefs 将响应式对象变成普通对象后，每一个属性都具有响应式 ref
+
+由于 `reactive` 命令封装的响应对象在解构的时候会丢失响应特性，所以引申出 `toRef` 以及 `toRefs` 命令。
+
+```{code-block} js
+
+const proxyTom = reactive({
+    name: 'JL',
+    age: 18
+})
+
+//1. 通过 toRef 进行指定属性的解构
+const ageRef = toRef(proxyTom, "age");
+//2. 通过 toRefs 进行的所有属性的解构，需要特别注意这个解构对象的各个属性与代理对象的属性同名
+const { name, age } = toRefs(proxyTom);
+//3. 解构成普通对象，但是所有属性都是响应式
+const tempTom = toRefs(proxyTom);
+```
+
+从写法上来说，不建议第二个方式的解构方式，除非能保证代理对象的属性名不会出现业务上的重名问题（这是比较困难的）。
+
+```{note}
+
+***“`reactive` 做对象的响应式，`ref` 做值类型响应式”***
+
+可能你会认为上面这句是有道理的，但是这句话是比较片面甚至误导初学者的。
+
+首先从语法上， `ref` 既可以做值响应，也可以做对象响应；而 `reactive` 只能做对象响应而没有办法做值响应。由于命令最初的定义问题，导致 `reactive` 可以相对于 `ref` 在非模板代码中更加方便的解构，但是其部分特性带来的歧义也不可小视，例如解构后的解构不再带有响应式。
+
+`reactive` 带来的解构语法的便利性是否会带来最终代码的阅读和维护问题，这个可能也是因人而异的问题。
+
+```
