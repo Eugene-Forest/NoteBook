@@ -9,9 +9,17 @@ Vue 使用一种基于 HTML 的模板语法，使我们能够声明式地将其�
 :hidden:
 
 响应数据 <reactive>
+计算属性 <computed>
 路由 <router>
 
 ```
+
+```{seealso} 推荐阅读
+
+* [深入理解Vue.js实战--第二部分 Vue的正确使用方式](https://godbasin.github.io/vue-ebook/vue-ebook/9.html#_9-1-%E7%BC%96%E7%A0%81%E6%80%9D%E7%BB%B4%E8%BD%AC%E5%8F%98)
+
+```
+
 
 ## html 元素基础
 
