@@ -13,4 +13,5 @@
 
 软件及其服务管理篇 <software-management>
 防火墙管理 <firewall-management>
+Alibaba Cloud Linux <alibabaCloudLinux>
 ```
