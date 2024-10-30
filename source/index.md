@@ -36,7 +36,7 @@ Redis 笔记记录 <k-redis/redis-index>
 ```
 
 <!-- For Project -->
-
+<!-- 
 ```{toctree}
 :caption: "项目以及常见业务实现"
 :hidden:
@@ -45,7 +45,7 @@ Redis 笔记记录 <k-redis/redis-index>
 常见业务实现 </project/business/b-index>
 项目：工具箱 </project/toolbox/box-index>
 毕设：医院住院部护士排班ASP系统-管理者端的构建 </project/nsms/nsms-index>
-```
+``` -->
 
 <!-- For Software -->
 
@@ -55,17 +55,17 @@ Redis 笔记记录 <k-redis/redis-index>
 :maxdepth: 1
 
 bladex 快速开发平台的使用 </software/bladex/bladex-index>
-jetbrains </software/jetbrains/index>
 vscode </software/vs-code/index>
-eclipse </software/eclipse/index>
-netbeans </software/netbeans/index>
-wireshark </software/wireshark/index>
 一些常用软件的快捷键 </software/shortcut-key>
 Navicat Premium 实用技巧 </software/navicat/navicat>
 ```
+<!-- eclipse </software/eclipse/index> -->
+<!-- netbeans </software/netbeans/index> -->
+<!-- wireshark </software/wireshark/index> -->
+<!-- jetbrains </software/jetbrains/index> -->
 
-% ----------- For Builder Doc branch ---------------
-% Here is the Toctree for the Builder-Doc branch
+<!-- ----------- For Builder Doc branch --------------- -->
+<!-- Here is the Toctree for the Builder-Doc branch -->
 
 ```{toctree}
 :caption: "构建文档的工具和标记语言"
@@ -79,7 +79,7 @@ Sphinx 扩展工具 <struct/extend/ext-index>
 MyST-NB <struct/MyST-NB/MyST-NB>
 ```
 
-% ------------------------------------------------------------
+<!-- ------------------------------------------------------------ -->
 
 ## 关于 `MyST`
 
@@ -115,7 +115,7 @@ reStructuredText (.rst) --> rst parser ----+
 
 ## 项目对应的电子书在线查看
 
-本项目已经挂载在 [Read the Docs](https://readthedocs.org/) 中，点击下方链接即可在线查看项目的实现即电子书。链接如下： https://studynotes.readthedocs.io/zh/k-doc
+本项目已经挂载在 [Read the Docs](https://readthedocs.org/) 中，点击下方链接即可在线查看项目的实现即电子书。链接如下： <https://studynotes.readthedocs.io/zh/k-doc>
 
 ## 关于免费的开源托管平台 Read the Docs
 
