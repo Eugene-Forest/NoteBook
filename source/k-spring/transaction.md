@@ -87,6 +87,10 @@ class DuplicateUserException extends Exception {}
 | rollbackFor | 用于指定能够触发事务回滚的异常类型，并且可以指定多个异常类型 |
 |   timeout   | 事务的超时时间，默认值为-1（不会超时）。如果超过该时间限制但事务还没有完成，则自动回滚事务。 |
 
+* 超时属性：你可以使用timeout属性来定义事务的超时时间，单位为秒。如果事务在规定时间内未完成，它将被自动回滚。例如：@Transactional(timeout = 30)表示事务的超时时间为30秒。
+* 只读属性：通过设置readOnly属性为true，可以告诉Spring该事务只读，不会修改数据。这可以提高事务的性能。例如：@Transactional(readOnly = true)。
+* 回滚条件：你可以使用rollbackFor和noRollbackFor属性来定义在何种异常情况下事务应该回滚或不回滚。默认是运行错误会导致回滚。
+
 ## 事务管理器
 
 在 Spring 中，事务管理器（Transaction Manager）是用于管理事务的关键组件。事务管理器负责事务的开始、提交和回滚操作，并与底层的数据库或持久化框架进行交互。
