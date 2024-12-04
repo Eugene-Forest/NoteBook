@@ -17,6 +17,7 @@ Maven <plugin/maven>
 Nacos <alibaba/nacos>
 Seata <alibaba/seata>
 Spring Action 4 <spring/index>
+Mybatis <mybatis/mybatis-index>
 ```
 
 ## Spring & Spring Boot
