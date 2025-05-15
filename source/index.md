@@ -33,7 +33,6 @@ Python 笔记记录 <k-python/python-index>
 Linux 和 Shell 笔记记录 <k-linux/linux-index>
 Batch&Shell 笔记记录 <k-batch&shell/script-index>
 效率工具：代码模板 <k-liveTemplate/live-template-index>
-计算机网络 <k-network/net-index>
 ```
 
 <!-- For Project -->
